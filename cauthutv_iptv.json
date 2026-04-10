@@ -2,7 +2,7 @@
   "id": "cauthutv-live",
   "name": "CauThu TV - Trực tiếp thể thao",
   "url": "https://cauthutv.shop/",
-  "description": "Cập nhật lúc 11/04/2026 01:54 ICT (UTC+7)",
+  "description": "Cập nhật lúc 11/04/2026 02:42 ICT (UTC+7)",
   "disable_ads": true,
   "color": "#0f3460",
   "grid_number": 3,
@@ -12,119 +12,12 @@
   },
   "groups": [
     {
-      "id": "b-ng",
-      "name": "⚽ Bóng đá",
-      "image": null,
-      "channels": [
-        {
-          "id": "6641bc0013292094",
-          "name": "Paris FC 4 - 1 AS Monaco vs Paris FC  🕐 00:00 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/044ba61ad3c50b18cd6ef65d089fef54/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 00-00",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "325451d122a9fc5d",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "aef6208f6f376367",
-                  "name": "Paris FC 4 - 1 AS Monaco vs Paris FC  🕐 00:00 | 11/04",
-                  "streams": [
-                    {
-                      "id": "4ab19b1ef2a3ab23",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "5ed1ac15e698e3db",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live10.footballvideocdn20xx.info/live/blv-van-chuan/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/paris-fc-vs-as-monaco"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "2be76635916ae386",
-                          "name": "Link 2",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/783ed9db9ffdcb695255868018d26772/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/paris-fc-vs-as-monaco"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "9d9de8817c599374",
-                          "name": "Link 3",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/livehd/783ed9db9ffdcb695255868018d26772/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/paris-fc-vs-as-monaco"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "th--thao-kh-c",
       "name": "🏆 Thể thao khác",
       "image": null,
       "channels": [
         {
-          "id": "1a20441807c287ad",
+          "id": "385d201b2e120975",
           "name": "Trực Tiếp  🔴 LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -147,19 +40,19 @@
           ],
           "sources": [
             {
-              "id": "0039ad093f62f51f",
+              "id": "8964dc6e4ee86e18",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "c882f1c821f99b92",
+                  "id": "1f3380df483bd839",
                   "name": "Trực Tiếp  🔴 LIVE",
                   "streams": [
                     {
-                      "id": "65ead31044527cb0",
+                      "id": "205e1e865d055233",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "70f206adf7d581d1",
+                          "id": "8d65a892f243161f",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -184,8 +77,8 @@
           ]
         },
         {
-          "id": "d5bf9ba7e9acd4ca",
-          "name": "Limanovia Limanowa 1 - 2 GKS Glinik Gorlice vs Limanovia Limanowa  🕐 00:00 | 11/04",
+          "id": "8a4f07a000eedff0",
+          "name": "FC Teutonia 05 0 - 2 USC Paloma vs FC Teutonia 05  🕐 00:45 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -193,7 +86,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/c8f43a199e59108b91b27b0d8cacdd83/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/d7c4d2fa51afc9876bc4bb046dc3268f/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -205,7 +98,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 00-00",
+              "text": "KT 00-45",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -213,19 +106,19 @@
           ],
           "sources": [
             {
-              "id": "8291c3b42ce7999d",
+              "id": "7b9819d8fed97a1a",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "630f2e09d3b75d4b",
-                  "name": "Limanovia Limanowa 1 - 2 GKS Glinik Gorlice vs Limanovia Limanowa  🕐 00:00 | 11/04",
+                  "id": "e596b867a86adc29",
+                  "name": "FC Teutonia 05 0 - 2 USC Paloma vs FC Teutonia 05  🕐 00:45 | 11/04",
                   "streams": [
                     {
-                      "id": "91670018ecdcc4f2",
+                      "id": "04f8d4e1c17d14c5",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "cd99bce9776bcf12",
+                          "id": "672e35f3fd2e133f",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -233,7 +126,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/limanovia-limanowa-vs-gks-glinik-gorlice"
+                              "value": "https://cauthutv.shop/fc-teutonia-05-vs-usc-paloma"
                             },
                             {
                               "key": "User-Agent",
@@ -250,8 +143,8 @@
           ]
         },
         {
-          "id": "aace5eccd174feda",
-          "name": "Vipers 0 - 0 Airtel Kitara FC vs Vipers  🕐 00:00 | 11/04",
+          "id": "3bce952f912be326",
+          "name": "Eimsbutteler TV 3 - 1 FC Türkiye Wilhelmsburg vs Eimsbutteler TV  🕐 00:45 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -259,7 +152,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/593822eeca7d1dd72c64db7a014e254a/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/b1ee9c42ef5e91def3e23792cc092885/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -271,7 +164,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 00-00",
+              "text": "KT 00-45",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -279,19 +172,19 @@
           ],
           "sources": [
             {
-              "id": "45f7c678edb51a8f",
+              "id": "d6741e90823665c1",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "0d3a19e6a5678313",
-                  "name": "Vipers 0 - 0 Airtel Kitara FC vs Vipers  🕐 00:00 | 11/04",
+                  "id": "28db0f364519713a",
+                  "name": "Eimsbutteler TV 3 - 1 FC Türkiye Wilhelmsburg vs Eimsbutteler TV  🕐 00:45 | 11/04",
                   "streams": [
                     {
-                      "id": "d2a1b18572d95fee",
+                      "id": "d692e99dce7b6424",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "09efb20a4a51e912",
+                          "id": "5ca8569c24ff2528",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -299,7 +192,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/vipers-vs-airtel-kitara-fc"
+                              "value": "https://cauthutv.shop/eimsbutteler-tv-vs-fc-trkiye-wilhelmsburg"
                             },
                             {
                               "key": "User-Agent",
@@ -316,8 +209,8 @@
           ]
         },
         {
-          "id": "7d4487eabc47168f",
-          "name": "SV Wildon 1 - 2 SV Tillmitsch vs SV Wildon  🕐 00:00 | 11/04",
+          "id": "a16d838497389806",
+          "name": "FC Eindhoven 1 - 3 Roda JC vs FC Eindhoven  🕐 01:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -325,7 +218,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/1436403037789c5d0481db1ba89bc76e/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/2ab485740abf88b517d86c2f3b640098/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -337,7 +230,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 00-00",
+              "text": "KT 01-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -345,27 +238,27 @@
           ],
           "sources": [
             {
-              "id": "a744800b2f062fc8",
+              "id": "a2e529ce6bc77858",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "2569cc640d33cf2b",
-                  "name": "SV Wildon 1 - 2 SV Tillmitsch vs SV Wildon  🕐 00:00 | 11/04",
+                  "id": "0f3ebbe545922615",
+                  "name": "FC Eindhoven 1 - 3 Roda JC vs FC Eindhoven  🕐 01:00 | 11/04",
                   "streams": [
                     {
-                      "id": "ec275fde9ef5fc76",
+                      "id": "fdc78defb4a03443",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "a7da5581ba297761",
+                          "id": "4e0d49692194288c",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
-                          "url": "https://xemlaitrandau.live/",
+                          "url": "https://live.alilicloud.com/live/3217c95a4d4767763a5c721caf7c707e/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/sv-wildon-vs-sv-tillmitsch"
+                              "value": "https://cauthutv.shop/fc-eindhoven-vs-roda-jc"
                             },
                             {
                               "key": "User-Agent",
@@ -382,8 +275,8 @@
           ]
         },
         {
-          "id": "387a0fd86c3ddc77",
-          "name": "SK Furstenfeld 0 - 1 Allerheiligen vs SK Furstenfeld  🕐 00:00 | 11/04",
+          "id": "5eed03261a29dbdb",
+          "name": "Birmingham U21 0 - 3 Ipswich U21 vs Birmingham U21  🕐 01:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -391,7 +284,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/14fcc496959be6ae6f5aed9a8611474e/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/48fb4328fb991d82447ffc9afc32a90c/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -403,7 +296,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 00-00",
+              "text": "KT 01-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -411,19 +304,19 @@
           ],
           "sources": [
             {
-              "id": "84a08aca505264b2",
+              "id": "e87932ec022ca276",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "9103d8c24a93689d",
-                  "name": "SK Furstenfeld 0 - 1 Allerheiligen vs SK Furstenfeld  🕐 00:00 | 11/04",
+                  "id": "f70f28121ce2af96",
+                  "name": "Birmingham U21 0 - 3 Ipswich U21 vs Birmingham U21  🕐 01:00 | 11/04",
                   "streams": [
                     {
-                      "id": "e45a6da2c5eca631",
+                      "id": "7136894c4481f2e8",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "d76ea603459f15b3",
+                          "id": "656fd9f0a5e605a1",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -431,7 +324,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/sk-furstenfeld-vs-allerheiligen"
+                              "value": "https://cauthutv.shop/birmingham-u21-vs-ipswich-u21"
                             },
                             {
                               "key": "User-Agent",
@@ -448,8 +341,8 @@
           ]
         },
         {
-          "id": "d8eb5405c8fd3a55",
-          "name": "Sieradz 1 - 2 KS CK Troszyn vs Sieradz  🕐 00:00 | 11/04",
+          "id": "6a76f4145bec895a",
+          "name": "RKC Waalwijk 3 - 0 Emmen vs RKC Waalwijk  🕐 01:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -457,7 +350,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/eee6b88cb4d488391cd016cca05dcada/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/58e245efa38c665c457a14fe2a39f946/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -469,7 +362,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 00-00",
+              "text": "KT 01-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -477,27 +370,27 @@
           ],
           "sources": [
             {
-              "id": "f0572e0df3cfb39d",
+              "id": "2b095285c1ad7e9b",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "afcd4125e6b728c3",
-                  "name": "Sieradz 1 - 2 KS CK Troszyn vs Sieradz  🕐 00:00 | 11/04",
+                  "id": "faa7725b7a347d96",
+                  "name": "RKC Waalwijk 3 - 0 Emmen vs RKC Waalwijk  🕐 01:00 | 11/04",
                   "streams": [
                     {
-                      "id": "bbd88d29fe063d79",
+                      "id": "587a15ffc0120c8c",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "eb3da7bd54481629",
+                          "id": "1b2b95c273849d45",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
-                          "url": "https://xemlaitrandau.live/",
+                          "url": "https://live.alilicloud.com/live/e7d73d691f008c03f35f63edbe0f9716/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/sieradz-vs-ks-ck-troszyn"
+                              "value": "https://cauthutv.shop/rkc-waalwijk-vs-emmen"
                             },
                             {
                               "key": "User-Agent",
@@ -514,8 +407,8 @@
           ]
         },
         {
-          "id": "e2d7a6da02ec80de",
-          "name": "SC Grossschwarzenlohe 2 - 0 Bayern Hof vs SC Grossschwarzenlohe  🕐 00:00 | 11/04",
+          "id": "4fbe5f3a15757abd",
+          "name": "KSC Lokeren 1 - 1 RFC Seraing vs KSC Lokeren  🕐 01:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -523,7 +416,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/554418e17972a2990aa9e8f1ed76b76f/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/d70c73b5d22e7ca20c65c72357a43cbc/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -535,7 +428,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 00-00",
+              "text": "KT 01-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -543,27 +436,27 @@
           ],
           "sources": [
             {
-              "id": "995e6683c9b14aee",
+              "id": "f4958882a130d871",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "8a12409274e658d8",
-                  "name": "SC Grossschwarzenlohe 2 - 0 Bayern Hof vs SC Grossschwarzenlohe  🕐 00:00 | 11/04",
+                  "id": "cbcbfcef1be6f10a",
+                  "name": "KSC Lokeren 1 - 1 RFC Seraing vs KSC Lokeren  🕐 01:00 | 11/04",
                   "streams": [
                     {
-                      "id": "63636d6f3a8e9229",
+                      "id": "310fb3ce556be3df",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "10cbf7ae44de9e13",
+                          "id": "06f569e44bdd9802",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
-                          "url": "https://xemlaitrandau.live/",
+                          "url": "https://live.alilicloud.com/live/d5102d094d2095909ecf33316dad172c/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/sc-grossschwarzenlohe-vs-bayern-hof"
+                              "value": "https://cauthutv.shop/ksc-lokeren-vs-rfc-seraing"
                             },
                             {
                               "key": "User-Agent",
@@ -580,8 +473,8 @@
           ]
         },
         {
-          "id": "27e3c4ba91140a5a",
-          "name": "KS Polonia Sroda Wlkp 0 - 1 Unia Swarzedz vs KS Polonia Sroda Wlkp  🕐 00:00 | 11/04",
+          "id": "81703a1a37bc46d6",
+          "name": "Patro Eisden U21 1 - 2 Westerlo U21 vs Patro Eisden U21  🕐 01:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -589,7 +482,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/96326e1aaa831dbd55c83875580c66b0/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/91711388cbbea8298fc148048f41cb2c/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -601,7 +494,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 00-00",
+              "text": "KT 01-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -609,19 +502,19 @@
           ],
           "sources": [
             {
-              "id": "acf709d6b5a95466",
+              "id": "af440b95cb0224ad",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "62cce28405c68a3a",
-                  "name": "KS Polonia Sroda Wlkp 0 - 1 Unia Swarzedz vs KS Polonia Sroda Wlkp  🕐 00:00 | 11/04",
+                  "id": "cf0f5c2ed397ea4b",
+                  "name": "Patro Eisden U21 1 - 2 Westerlo U21 vs Patro Eisden U21  🕐 01:00 | 11/04",
                   "streams": [
                     {
-                      "id": "19000648573f3453",
+                      "id": "784fb5740e2be538",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "abf089ce76a4ea00",
+                          "id": "3d4336169abb4aca",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -629,7 +522,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/ks-polonia-sroda-wlkp-vs-unia-swarzedz"
+                              "value": "https://cauthutv.shop/patro-eisden-u21-vs-westerlo-u21"
                             },
                             {
                               "key": "User-Agent",
@@ -646,8 +539,8 @@
           ]
         },
         {
-          "id": "0de813ef055d1de8",
-          "name": "Arminia Bielefeld B 1 - 5 SC Preussen Munster II vs Arminia Bielefeld B  🕐 00:00 | 11/04",
+          "id": "d2a36f198cb83b4b",
+          "name": "Annecy 0 - 0 Montpellier Hérault SC vs Annecy  🕐 01:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -655,7 +548,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/990bc03d024da4f2ce804a1395c02c08/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/cb4e676e03397ca33f9f424394b3efff/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -667,7 +560,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 00-00",
+              "text": "KT 01-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -675,27 +568,27 @@
           ],
           "sources": [
             {
-              "id": "98ddfccefeef27c6",
+              "id": "94aab82d2c383fa7",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "449d7863bac44db2",
-                  "name": "Arminia Bielefeld B 1 - 5 SC Preussen Munster II vs Arminia Bielefeld B  🕐 00:00 | 11/04",
+                  "id": "1b23ac756c0e84b0",
+                  "name": "Annecy 0 - 0 Montpellier Hérault SC vs Annecy  🕐 01:00 | 11/04",
                   "streams": [
                     {
-                      "id": "712781ad434bd10b",
+                      "id": "5ae5c618a8bb460d",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "51603f68e0761a80",
+                          "id": "92ec6004434c4e23",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
-                          "url": "https://xemlaitrandau.live/",
+                          "url": "https://live.alilicloud.com/live/c8f8449530cb187cca0ebf7ae06af43c/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/arminia-bielefeld-b-vs-sc-preussen-munster-ii"
+                              "value": "https://cauthutv.shop/annecy-vs-montpellier-herault-sc"
                             },
                             {
                               "key": "User-Agent",
@@ -712,8 +605,8 @@
           ]
         },
         {
-          "id": "cd66709b42af8180",
-          "name": "SV Erlbach 0 - 1 TUS Geretsried vs SV Erlbach  🕐 00:00 | 11/04",
+          "id": "a5fb16be15b85414",
+          "name": "Sueca 2 - 0 Acero vs Sueca  🕐 01:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -721,7 +614,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/1e6687eb452c39d19a9709e6ee76a171/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/f12c9cba241a8bb73609e28a758f93d9/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -733,7 +626,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 00-00",
+              "text": "KT 01-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -741,19 +634,19 @@
           ],
           "sources": [
             {
-              "id": "0a29da1c0fc194fb",
+              "id": "146795cad51f5f87",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "6143bde8b6f43138",
-                  "name": "SV Erlbach 0 - 1 TUS Geretsried vs SV Erlbach  🕐 00:00 | 11/04",
+                  "id": "84c7c05c6cb5b7b1",
+                  "name": "Sueca 2 - 0 Acero vs Sueca  🕐 01:00 | 11/04",
                   "streams": [
                     {
-                      "id": "0dd9c503c5c2edf6",
+                      "id": "25344da0b8cbae4a",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "9432f3677a6ec38a",
+                          "id": "a157557e2bdb82db",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -761,7 +654,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/sv-erlbach-vs-tus-geretsried"
+                              "value": "https://cauthutv.shop/sueca-vs-acero"
                             },
                             {
                               "key": "User-Agent",
@@ -778,8 +671,8 @@
           ]
         },
         {
-          "id": "052a6b9d8abdf9b1",
-          "name": "SpVgg Weiden 0 - 1 ASV Cham vs SpVgg Weiden  🕐 00:00 | 11/04",
+          "id": "83aab9d65319dd9b",
+          "name": "Gaborone United 4 - 2 Orapa United vs Gaborone United  🕐 01:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -787,7 +680,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/b4adecc3735c4d91b1e08ad29e3a4454/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/bf8ab9322ae26a39e87017b7d4115801/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -799,7 +692,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 00-00",
+              "text": "KT 01-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -807,19 +700,19 @@
           ],
           "sources": [
             {
-              "id": "a474e9eb037070f4",
+              "id": "35f679d3653e88fa",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "14bfd818999b61ad",
-                  "name": "SpVgg Weiden 0 - 1 ASV Cham vs SpVgg Weiden  🕐 00:00 | 11/04",
+                  "id": "203e36e91d695868",
+                  "name": "Gaborone United 4 - 2 Orapa United vs Gaborone United  🕐 01:00 | 11/04",
                   "streams": [
                     {
-                      "id": "8d8b4defb5295a10",
+                      "id": "8635676a90693742",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "0235ba33950c2f00",
+                          "id": "bb4337190b2d978b",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -827,7 +720,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/spvgg-weiden-vs-asv-cham"
+                              "value": "https://cauthutv.shop/gaborone-united-vs-orapa-united"
                             },
                             {
                               "key": "User-Agent",
@@ -844,8 +737,8 @@
           ]
         },
         {
-          "id": "e1a5075de0c276ae",
-          "name": "Karlovy Vary Dvory 0 - 1 Psary vs Karlovy Vary Dvory  🕐 00:00 | 11/04",
+          "id": "bfb39c9c92bad0b1",
+          "name": "Habenhauser 4 - 2 FC Oberneuland vs Habenhauser  🕐 01:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -853,7 +746,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/58a356f888fee3e05913c0aa19635ed0/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/79548357db4eff41363355df6a685fbd/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -865,7 +758,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 00-00",
+              "text": "KT 01-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -873,19 +766,19 @@
           ],
           "sources": [
             {
-              "id": "230b4175f0974382",
+              "id": "c9263ef9cff702de",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "a19650b43f5e1e65",
-                  "name": "Karlovy Vary Dvory 0 - 1 Psary vs Karlovy Vary Dvory  🕐 00:00 | 11/04",
+                  "id": "b3870fa630001673",
+                  "name": "Habenhauser 4 - 2 FC Oberneuland vs Habenhauser  🕐 01:00 | 11/04",
                   "streams": [
                     {
-                      "id": "5faaf16700c1dd7c",
+                      "id": "0fe7e62bee9f86a7",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "fdd12d2992902d2c",
+                          "id": "7ac6b75caa5cc940",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -893,7 +786,73 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/karlovy-vary-dvory-vs-psary"
+                              "value": "https://cauthutv.shop/habenhauser-vs-fc-oberneuland"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8387090e097b781b",
+          "name": "Patriotas PR Youth 1 - 0 Parana Clube Youth vs Patriotas PR Youth  🕐 01:00 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/e9e61dafe13d7fc4b99995f7e9538cc9/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 01-00",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "4f76e007c5ccd6ae",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "ddf7e44fb137b118",
+                  "name": "Patriotas PR Youth 1 - 0 Parana Clube Youth vs Patriotas PR Youth  🕐 01:00 | 11/04",
+                  "streams": [
+                    {
+                      "id": "ddd58d6c0c979bff",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "8ad45913e8c91e00",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/patriotas-pr-youth-vs-parana-clube-youth"
                             },
                             {
                               "key": "User-Agent",
