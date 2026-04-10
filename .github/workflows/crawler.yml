@@ -1,0 +1,125 @@
+name: 🏟 Crawler CauThuTV
+
+on:
+  # Chạy tự động mỗi 30 phút
+  schedule:
+    - cron: '*/30 * * * *'
+
+  # Cho phép chạy thủ công từ tab Actions
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Chế độ crawl'
+        required: false
+        default: 'default'
+        type: choice
+        options:
+          - default      # chỉ trận chính (phân theo môn)
+          - all          # tất cả trận, 1 group
+          - no-stream    # không crawl stream (nhanh)
+          - debug        # lưu HTML để kiểm tra
+      output:
+        description: 'Tên file output (mặc định: cauthutv_iptv.json)'
+        required: false
+        default: 'cauthutv_iptv.json'
+
+  # Kích hoạt khi push code lên nhánh main
+  push:
+    branches: [ main ]
+    paths:
+      - 'crawler_cauthutv.py'
+      - '.github/workflows/crawler.yml'
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    permissions:
+      contents: write   # cần để commit file JSON
+
+    steps:
+      # ── 1. Checkout repo ─────────────────────────────────────
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # ── 2. Setup Python ──────────────────────────────────────
+      - name: 🐍 Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # ── 3. Cài thư viện ──────────────────────────────────────
+      - name: 📦 Cài dependencies
+        run: |
+          pip install --upgrade pip
+          pip install cloudscraper beautifulsoup4 lxml requests pillow
+
+      # ── 4. Chạy crawler ──────────────────────────────────────
+      - name: 🕷️ Chạy crawler
+        env:
+          TZ: Asia/Ho_Chi_Minh
+        run: |
+          OUTPUT="${{ github.event.inputs.output || 'cauthutv_iptv.json' }}"
+          MODE="${{ github.event.inputs.mode || 'default' }}"
+
+          case "$MODE" in
+            all)       python crawler_cauthutv.py --all      --output "$OUTPUT" ;;
+            no-stream) python crawler_cauthutv.py --no-stream --output "$OUTPUT" ;;
+            debug)     python crawler_cauthutv.py --debug    --output "$OUTPUT" ;;
+            *)         python crawler_cauthutv.py             --output "$OUTPUT" ;;
+          esac
+
+      # ── 5. Kiểm tra output ───────────────────────────────────
+      - name: ✅ Kiểm tra file output
+        run: |
+          OUTPUT="${{ github.event.inputs.output || 'cauthutv_iptv.json' }}"
+          if [ -f "$OUTPUT" ]; then
+            SIZE=$(wc -c < "$OUTPUT")
+            MATCHES=$(python -c "
+          import json, sys
+          with open('$OUTPUT') as f:
+              d = json.load(f)
+          total = sum(len(g.get('channels',[])) for g in d.get('groups',[]))
+          groups = len(d.get('groups',[]))
+          print(f'{total} trận, {groups} group')
+          " 2>/dev/null || echo "?")
+            echo "📁 $OUTPUT  ($SIZE bytes)"
+            echo "📊 $MATCHES"
+          else
+            echo "❌ Không tìm thấy file output!"
+            exit 1
+          fi
+
+      # ── 6. Upload artifact (luôn lưu kể cả khi fail) ─────────
+      - name: 📤 Upload artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cauthutv-iptv-${{ github.run_number }}
+          path: |
+            cauthutv_iptv.json
+            debug_cauthutv.html
+          retention-days: 7
+          if-no-files-found: warn
+
+      # ── 7. Commit & push JSON về repo ────────────────────────
+      - name: 💾 Commit & Push JSON
+        if: success()
+        run: |
+          OUTPUT="${{ github.event.inputs.output || 'cauthutv_iptv.json' }}"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add "$OUTPUT" || true
+          # Chỉ commit nếu có thay đổi
+          if git diff --staged --quiet; then
+            echo "⚡ Không có thay đổi, bỏ qua commit."
+          else
+            NOW=$(TZ=Asia/Ho_Chi_Minh date '+%d/%m/%Y %H:%M ICT')
+            git commit -m "🏟 Auto-update $OUTPUT [$NOW]"
+            git push
+          fi
