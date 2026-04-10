@@ -2,7 +2,7 @@
   "id": "cauthutv-live",
   "name": "CauThu TV - Trực tiếp thể thao",
   "url": "https://cauthutv.shop/",
-  "description": "Cập nhật lúc 10/04/2026 20:35 ICT (UTC+7)",
+  "description": "Cập nhật lúc 10/04/2026 21:46 ICT (UTC+7)",
   "disable_ads": true,
   "color": "#0f3460",
   "grid_number": 3,
@@ -12,12 +12,85 @@
   },
   "groups": [
     {
+      "id": "boxing-mma",
+      "name": "🥊 Boxing/MMA",
+      "image": null,
+      "channels": [
+        {
+          "id": "bae428cc129e2599",
+          "name": "Ramtha SC U19 2 - 0 Al Ahli Amman U19 vs Ramtha SC U19  🕐 20:00 | 10/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/638e409f96fc60f07b6d8676ad5accb9/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 20-00",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "6a25a41d07ede311",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "f053f63cad26a060",
+                  "name": "Ramtha SC U19 2 - 0 Al Ahli Amman U19 vs Ramtha SC U19  🕐 20:00 | 10/04",
+                  "streams": [
+                    {
+                      "id": "2af2eb50c639089a",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "e053bfdbc7deb1e8",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/ramtha-sc-u19-vs-al-ahli-amman-u19"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "th--thao-kh-c",
       "name": "🏆 Thể thao khác",
       "image": null,
       "channels": [
         {
-          "id": "385d201b2e120975",
+          "id": "1a20441807c287ad",
           "name": "Trực Tiếp  🔴 LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -40,19 +113,19 @@
           ],
           "sources": [
             {
-              "id": "8964dc6e4ee86e18",
+              "id": "0039ad093f62f51f",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "1f3380df483bd839",
+                  "id": "c882f1c821f99b92",
                   "name": "Trực Tiếp  🔴 LIVE",
                   "streams": [
                     {
-                      "id": "205e1e865d055233",
+                      "id": "65ead31044527cb0",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "8d65a892f243161f",
+                          "id": "70f206adf7d581d1",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -77,8 +150,8 @@
           ]
         },
         {
-          "id": "a5b9dfc6635865a9",
-          "name": "Ferencvarosi TC U19 3 - 2 Ujpest FC U19 vs Ferencvarosi TC U19  🕐 19:00 | 10/04",
+          "id": "fa51e2fd598aaab2",
+          "name": "Perlis GSA FC 1 - 0 Kedah D.A. FC vs Perlis GSA FC  🕐 19:45 | 10/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -86,7 +159,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/283566600c878091e0b348865b25002c/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/0b9cdf92071d22ca372545954dcf2b92/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -98,7 +171,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 19-00",
+              "text": "KT 19-45",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -106,19 +179,19 @@
           ],
           "sources": [
             {
-              "id": "5a9b5915db21bfe5",
+              "id": "11a6dbed1eec4372",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "1d68ac23dae48192",
-                  "name": "Ferencvarosi TC U19 3 - 2 Ujpest FC U19 vs Ferencvarosi TC U19  🕐 19:00 | 10/04",
+                  "id": "3e0c37977ab166b5",
+                  "name": "Perlis GSA FC 1 - 0 Kedah D.A. FC vs Perlis GSA FC  🕐 19:45 | 10/04",
                   "streams": [
                     {
-                      "id": "507406ec4a62371c",
+                      "id": "08b87bb81f3a65a9",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "aa9b1c25e5f8caa2",
+                          "id": "70b78d8ab9daf574",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -126,7 +199,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/ferencvarosi-tc-u19-vs-ujpest-fc-u19"
+                              "value": "https://cauthutv.shop/perlis-gsa-fc-vs-kedah-da-fc"
                             },
                             {
                               "key": "User-Agent",
@@ -143,8 +216,8 @@
           ]
         },
         {
-          "id": "9d6a8a9490cd9871",
-          "name": "Radnik Bijeljina U19 4 - 0 FK Krupa U19 vs Radnik Bijeljina U19  🕐 19:00 | 10/04",
+          "id": "a786422ae4332441",
+          "name": "Lugazi Municipal FC 1 - 1 Entebbe UPPC vs Lugazi Municipal FC  🕐 20:00 | 10/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -152,7 +225,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/b17836dce9857112cb8e32923c50206d/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/97fffe4caea819dea5f74e01ef5c439b/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -164,7 +237,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 19-00",
+              "text": "KT 20-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -172,19 +245,19 @@
           ],
           "sources": [
             {
-              "id": "c9f6daa75f727e0c",
+              "id": "fc7a491a88dce209",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "eabdfb9d11c5581c",
-                  "name": "Radnik Bijeljina U19 4 - 0 FK Krupa U19 vs Radnik Bijeljina U19  🕐 19:00 | 10/04",
+                  "id": "150bd643482aa9c4",
+                  "name": "Lugazi Municipal FC 1 - 1 Entebbe UPPC vs Lugazi Municipal FC  🕐 20:00 | 10/04",
                   "streams": [
                     {
-                      "id": "1ebb0e98ccec10eb",
+                      "id": "786ecbcadc43403a",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "93b466c359128e83",
+                          "id": "03a1b1a9d5aed97f",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -192,7 +265,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/radnik-bijeljina-u19-vs-fk-krupa-u19"
+                              "value": "https://cauthutv.shop/lugazi-municipal-fc-vs-entebbe-uppc"
                             },
                             {
                               "key": "User-Agent",
@@ -209,8 +282,8 @@
           ]
         },
         {
-          "id": "cbc478c701fe034a",
-          "name": "Bahir Dar Kenema FC 2 - 1 Adama City vs Bahir Dar Kenema FC  🕐 19:00 | 10/04",
+          "id": "d66fbf6f3735d376",
+          "name": "Atlantida SC 2 - 3 Cristobal Colon JAS vs Atlantida SC  🕐 20:00 | 10/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -218,7 +291,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/96e422701d5938bceaab5f8292667336/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/5a82f80a7ebf50c59dba84417b545d47/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -230,7 +303,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 19-00",
+              "text": "KT 20-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -238,19 +311,19 @@
           ],
           "sources": [
             {
-              "id": "88586cd65e422226",
+              "id": "9af64d96156be797",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "2aadd308de766489",
-                  "name": "Bahir Dar Kenema FC 2 - 1 Adama City vs Bahir Dar Kenema FC  🕐 19:00 | 10/04",
+                  "id": "97447b6bfc45463a",
+                  "name": "Atlantida SC 2 - 3 Cristobal Colon JAS vs Atlantida SC  🕐 20:00 | 10/04",
                   "streams": [
                     {
-                      "id": "264a63aa06727605",
+                      "id": "194d706540bb2aea",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "d295c1a8180f92b8",
+                          "id": "3b5f926ee61c6310",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -258,7 +331,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/bahir-dar-kenema-fc-vs-adama-city"
+                              "value": "https://cauthutv.shop/atlantida-sc-vs-cristobal-colon-jas"
                             },
                             {
                               "key": "User-Agent",
@@ -275,8 +348,8 @@
           ]
         },
         {
-          "id": "8415f87ddfe70eaa",
-          "name": "Hapoel Raanana 1 - 0 Hapoel Afula vs Hapoel Raanana  🕐 19:00 | 10/04",
+          "id": "2cc2935e6472bb55",
+          "name": "Kipanga FC 2 - 1 New King vs Kipanga FC  🕐 20:00 | 10/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -284,7 +357,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/78392d87b79daa55cdb506d2ef30abb8/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/e1c5e961015c045b28f846e4acaa9efa/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -296,7 +369,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 19-00",
+              "text": "KT 20-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -304,19 +377,19 @@
           ],
           "sources": [
             {
-              "id": "2d7bafc9ed011ba4",
+              "id": "764b82a66688156f",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "2f681a6639283b8d",
-                  "name": "Hapoel Raanana 1 - 0 Hapoel Afula vs Hapoel Raanana  🕐 19:00 | 10/04",
+                  "id": "87611971f0c10a6f",
+                  "name": "Kipanga FC 2 - 1 New King vs Kipanga FC  🕐 20:00 | 10/04",
                   "streams": [
                     {
-                      "id": "eefd62f4c39d8bcd",
+                      "id": "bfcc418aa11f2748",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "6c2667e97352a139",
+                          "id": "a0ed0def12249c64",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -324,7 +397,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/hapoel-raanana-vs-hapoel-afula"
+                              "value": "https://cauthutv.shop/kipanga-fc-vs-new-king"
                             },
                             {
                               "key": "User-Agent",
@@ -341,8 +414,8 @@
           ]
         },
         {
-          "id": "a07ad0267aa3c4d3",
-          "name": "Barnsley U21 4 - 0 Colchester United U21 vs Barnsley U21  🕐 19:00 | 10/04",
+          "id": "7a504edaaf53baf2",
+          "name": "KMKM 0 - 0 Mafunzo FC vs KMKM  🕐 20:00 | 10/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -350,7 +423,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/c61c455c566fb2fdb5e3415e830540f8/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/8b9ff658d73eebf7d2a9c301c8975ec6/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -362,7 +435,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 19-00",
+              "text": "KT 20-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -370,19 +443,19 @@
           ],
           "sources": [
             {
-              "id": "cedb423d34f1aeba",
+              "id": "1144baa6b8f4b772",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "4fb88e899add12c8",
-                  "name": "Barnsley U21 4 - 0 Colchester United U21 vs Barnsley U21  🕐 19:00 | 10/04",
+                  "id": "95dd8ce13d703587",
+                  "name": "KMKM 0 - 0 Mafunzo FC vs KMKM  🕐 20:00 | 10/04",
                   "streams": [
                     {
-                      "id": "d7629f1ef342057c",
+                      "id": "bebcb932f0e556b2",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "34e40e7a2918193e",
+                          "id": "5973581321e71187",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -390,7 +463,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/barnsley-u21-vs-colchester-united-u21"
+                              "value": "https://cauthutv.shop/kmkm-vs-mafunzo-fc"
                             },
                             {
                               "key": "User-Agent",
@@ -407,8 +480,8 @@
           ]
         },
         {
-          "id": "f7bd2823e05d231a",
-          "name": "Kiryat Yam SC 0 - 2 Maccabi Petah Tikva FC vs Kiryat Yam SC  🕐 19:00 | 10/04",
+          "id": "d40b8aaba55497f2",
+          "name": "Al Hussein 0 - 0 Naft Al-Basra SC vs Al Hussein  🕐 20:00 | 10/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -416,7 +489,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/10b88b8f2a4c1f9cdedff1c210db263f/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/c0d0745fa2faa0134bde8b9d4d4149f5/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -428,7 +501,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 19-00",
+              "text": "KT 20-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -436,85 +509,19 @@
           ],
           "sources": [
             {
-              "id": "79405b147dee570b",
+              "id": "0ae09f333537d66e",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "f098caf0db84d19f",
-                  "name": "Kiryat Yam SC 0 - 2 Maccabi Petah Tikva FC vs Kiryat Yam SC  🕐 19:00 | 10/04",
+                  "id": "d5f5044d0e285a9f",
+                  "name": "Al Hussein 0 - 0 Naft Al-Basra SC vs Al Hussein  🕐 20:00 | 10/04",
                   "streams": [
                     {
-                      "id": "4bf9fd5ab787d8e3",
+                      "id": "f11e6fe725cf6646",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "32797fdc1f950f0a",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/422f64af150ee1045cdd5fb1eaf1f0d5/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/kiryat-yam-sc-vs-maccabi-petah-tikva-fc"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ef04aa2457a5003a",
-          "name": "CSKA Pamir Dushanbe 0 - 1 Barkchi Hisor vs CSKA Pamir Dushanbe  🕐 19:00 | 10/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/7277cac44c15c6e8baa2a76fad693745/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 19-00",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "c27936fddeccbbdb",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "c949e892f2e08374",
-                  "name": "CSKA Pamir Dushanbe 0 - 1 Barkchi Hisor vs CSKA Pamir Dushanbe  🕐 19:00 | 10/04",
-                  "streams": [
-                    {
-                      "id": "c114ec5771831808",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "698ad55d9f09a831",
+                          "id": "ac80e14a2e554bbc",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -522,7 +529,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/cska-pamir-dushanbe-vs-barkchi-hisor"
+                              "value": "https://cauthutv.shop/al-hussein-vs-naft-al-basra-sc"
                             },
                             {
                               "key": "User-Agent",
@@ -539,8 +546,8 @@
           ]
         },
         {
-          "id": "a853579cd6b6dcea",
-          "name": "Rubin Kazan Reserves 0 - 1 FK Rostov Youth vs Rubin Kazan Reserves  🕐 19:00 | 10/04",
+          "id": "b15ba958584af52b",
+          "name": "Al-Hudod 2 - 1 Kadhimiya SC vs Al-Hudod  🕐 20:00 | 10/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -548,7 +555,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/501437d9ec99b990bf7270c0e2ccca10/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/6daeeae2ae2193ebd340f13b2173ba2e/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -560,7 +567,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 19-00",
+              "text": "KT 20-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -568,19 +575,19 @@
           ],
           "sources": [
             {
-              "id": "64bac3e6f2371bf9",
+              "id": "8f07b8701e9963e0",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "f0afd9f588e08f8f",
-                  "name": "Rubin Kazan Reserves 0 - 1 FK Rostov Youth vs Rubin Kazan Reserves  🕐 19:00 | 10/04",
+                  "id": "d3a4c027e13da10f",
+                  "name": "Al-Hudod 2 - 1 Kadhimiya SC vs Al-Hudod  🕐 20:00 | 10/04",
                   "streams": [
                     {
-                      "id": "df837d873604bbf6",
+                      "id": "0d6840b145d56c0e",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "738a07c1b029080d",
+                          "id": "629861cf72b25c3a",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -588,7 +595,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/rubin-kazan-reserves-vs-fk-rostov-youth"
+                              "value": "https://cauthutv.shop/al-hudod-vs-kadhimiya-sc"
                             },
                             {
                               "key": "User-Agent",
@@ -605,8 +612,8 @@
           ]
         },
         {
-          "id": "ab61f5fa815551e0",
-          "name": "Persita Tangerang 0 - 1 Arema FC vs Persita Tangerang  🕐 19:00 | 10/04",
+          "id": "e80c2f2637399880",
+          "name": "Metallurg Bekobod 1 - 1 Respublika FA vs Metallurg Bekobod  🕐 20:00 | 10/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -614,7 +621,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/66939a8a3a47b6f40f3b7ddfd19dd0ef/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/4a88903ab27f7e3740d6805e0c3d2825/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -626,7 +633,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 19-00",
+              "text": "KT 20-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -634,27 +641,27 @@
           ],
           "sources": [
             {
-              "id": "f335acf990a6d5b1",
+              "id": "381e819281cd54a5",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "c58cca0a6fe6f5f3",
-                  "name": "Persita Tangerang 0 - 1 Arema FC vs Persita Tangerang  🕐 19:00 | 10/04",
+                  "id": "0cacde5733c78f15",
+                  "name": "Metallurg Bekobod 1 - 1 Respublika FA vs Metallurg Bekobod  🕐 20:00 | 10/04",
                   "streams": [
                     {
-                      "id": "832e92c71ac1444c",
+                      "id": "d49733a2d1ade68c",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "cb47929e0fe0f3f9",
+                          "id": "6651366b20b53e3d",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
-                          "url": "https://live.alilicloud.com/live/4d2f3b76af2ec2b5fef553c7942f0f09/playlist.m3u8",
+                          "url": "https://live.alilicloud.com/live/f4f6b09ddf8a7e663e78cf586c7ffe27/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/persita-tangerang-vs-arema-fc"
+                              "value": "https://cauthutv.shop/metallurg-bekobod-vs-respublika-fa"
                             },
                             {
                               "key": "User-Agent",
@@ -671,8 +678,8 @@
           ]
         },
         {
-          "id": "dfe39eed480cd99a",
-          "name": "FC Pari Nizhniy Novgorod Youth 0 - 2 Dinamo Moscow Youth vs FC Pari Nizhniy Novgorod Youth  🕐 19:00 | 10/04",
+          "id": "5b48ad9cf69c5bd5",
+          "name": "Iskra Stal Ribnita 1 - 1 CF Sparta Selemet vs Iskra Stal Ribnita  🕐 20:00 | 10/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -680,7 +687,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/8f772768931efbcc69b88412dfb748e5/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/8375c247d3268d02e619e75ed3170d5d/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -692,7 +699,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 19-00",
+              "text": "KT 20-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -700,85 +707,19 @@
           ],
           "sources": [
             {
-              "id": "5101f78d404ec144",
+              "id": "4794d896b0258f19",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "3846da844d0c91a3",
-                  "name": "FC Pari Nizhniy Novgorod Youth 0 - 2 Dinamo Moscow Youth vs FC Pari Nizhniy Novgorod Youth  🕐 19:00 | 10/04",
+                  "id": "cc57a783e8d5b985",
+                  "name": "Iskra Stal Ribnita 1 - 1 CF Sparta Selemet vs Iskra Stal Ribnita  🕐 20:00 | 10/04",
                   "streams": [
                     {
-                      "id": "8024800b97ac712b",
+                      "id": "959e7762370832f9",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "0822028bebd2a913",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://xemlaitrandau.live/",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/fc-pari-nizhniy-novgorod-youth-vs-dinamo-moscow-youth"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "aaa814f3d1c0a064",
-          "name": "Hapoel Kfar Saba 1 - 0 Kafr Qasim vs Hapoel Kfar Saba  🕐 19:00 | 10/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/76a554ea343f070344fbf1029ffb07bd/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 19-00",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "99907c423b3eaef2",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "8dd3216504c7cbe5",
-                  "name": "Hapoel Kfar Saba 1 - 0 Kafr Qasim vs Hapoel Kfar Saba  🕐 19:00 | 10/04",
-                  "streams": [
-                    {
-                      "id": "ca7817f724c9f532",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "b60a0029d0e3b0e8",
+                          "id": "fafbd9dad07a660c",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -786,7 +727,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/hapoel-kfar-saba-vs-kafr-qasim"
+                              "value": "https://cauthutv.shop/iskra-stal-ribnita-vs-cf-sparta-selemet"
                             },
                             {
                               "key": "User-Agent",
@@ -803,8 +744,8 @@
           ]
         },
         {
-          "id": "2da376b4b760af21",
-          "name": "Dinamo Makhachkala Youth 1 - 2 FC Rodina Moscow Youth vs Dinamo Makhachkala Youth  🕐 19:00 | 10/04",
+          "id": "f017a23cd08ace21",
+          "name": "FC Sheriff B 0 - 1 Zimbru Chisinau B vs FC Sheriff B  🕐 20:00 | 10/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -812,7 +753,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/d321e27e9a65e49964af8e658accf178/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/cccef0ebe1058a1c8425b50cec43087b/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -824,7 +765,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 19-00",
+              "text": "KT 20-00",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -832,19 +773,19 @@
           ],
           "sources": [
             {
-              "id": "c6d1a7386fa0c3a2",
+              "id": "817cee884a53a315",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "05954653aeca5d98",
-                  "name": "Dinamo Makhachkala Youth 1 - 2 FC Rodina Moscow Youth vs Dinamo Makhachkala Youth  🕐 19:00 | 10/04",
+                  "id": "b13d8f9b3afbb9da",
+                  "name": "FC Sheriff B 0 - 1 Zimbru Chisinau B vs FC Sheriff B  🕐 20:00 | 10/04",
                   "streams": [
                     {
-                      "id": "ef3db10e3d785a57",
+                      "id": "907f3d485abad0ce",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "dc1b6fd6696e7180",
+                          "id": "694dddf44206abe4",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -852,7 +793,73 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/dinamo-makhachkala-youth-vs-fc-rodina-moscow-youth"
+                              "value": "https://cauthutv.shop/fc-sheriff-b-vs-zimbru-chisinau-b"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8ca836c1307c43dd",
+          "name": "Al-Rawdhah 2 - 0 Al Taraji vs Al-Rawdhah  🕐 20:00 | 10/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/3d840051f0bb6200a4e7e883abd98a2b/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 20-00",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "7023d3363488f8ae",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "9bd5c583456be17b",
+                  "name": "Al-Rawdhah 2 - 0 Al Taraji vs Al-Rawdhah  🕐 20:00 | 10/04",
+                  "streams": [
+                    {
+                      "id": "24c47f6d61cfcf52",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "b6cbe1844dce42b4",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/al-rawdhah-vs-al-taraji"
                             },
                             {
                               "key": "User-Agent",
