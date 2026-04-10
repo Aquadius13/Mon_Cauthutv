@@ -1,18 +1,5 @@
 name: 🏟 Crawler CauThuTV
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4  # Phải có bước này đầu tiên
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-          cache: 'pip' # Setup-python sẽ tìm file requirements.txt ở đây
-
 on:
   # Chạy tự động mỗi 30 phút
   schedule:
