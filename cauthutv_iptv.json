@@ -2,7 +2,7 @@
   "id": "cauthutv-live",
   "name": "CauThu TV - Trực tiếp thể thao",
   "url": "https://cauthutv.shop/",
-  "description": "Cập nhật lúc 11/04/2026 04:35 ICT (UTC+7)",
+  "description": "Cập nhật lúc 11/04/2026 05:35 ICT (UTC+7)",
   "disable_ads": true,
   "color": "#0f3460",
   "grid_number": 3,
@@ -12,12 +12,85 @@
   },
   "groups": [
     {
+      "id": "b-ng",
+      "name": "⚽ Bóng đá",
+      "image": null,
+      "channels": [
+        {
+          "id": "4c6343edd8c22a1c",
+          "name": "Atletico Hidalgo 0 - 3 Cordobes Futbol Club vs Atletico Hidalgo  🕐 05:00 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/0fe260f4538825729ce24f92a8ab835e/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 05-00",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "617ebc2155192a48",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "da94635d5e4cf368",
+                  "name": "Atletico Hidalgo 0 - 3 Cordobes Futbol Club vs Atletico Hidalgo  🕐 05:00 | 11/04",
+                  "streams": [
+                    {
+                      "id": "8376dd9b6cb7ad0a",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "5c3a8928c519ff63",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/atletico-hidalgo-vs-cordobes-futbol-club"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "th--thao-kh-c",
       "name": "🏆 Thể thao khác",
       "image": null,
       "channels": [
         {
-          "id": "385d201b2e120975",
+          "id": "1a20441807c287ad",
           "name": "Trực Tiếp  🔴 LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -40,19 +113,19 @@
           ],
           "sources": [
             {
-              "id": "8964dc6e4ee86e18",
+              "id": "0039ad093f62f51f",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "1f3380df483bd839",
+                  "id": "c882f1c821f99b92",
                   "name": "Trực Tiếp  🔴 LIVE",
                   "streams": [
                     {
-                      "id": "205e1e865d055233",
+                      "id": "65ead31044527cb0",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "8d65a892f243161f",
+                          "id": "70f206adf7d581d1",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -77,536 +150,8 @@
           ]
         },
         {
-          "id": "06fb2196af6cb5c6",
-          "name": "FC Famalicao 1 - 1 Moreirense vs FC Famalicao  🕐 02:45 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/2b91efda8f1e808fedfe93e4bf2b12c4/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 02-45",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "b22bcb2c6faf5f0c",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "a95cd0d48902c4f8",
-                  "name": "FC Famalicao 1 - 1 Moreirense vs FC Famalicao  🕐 02:45 | 11/04",
-                  "streams": [
-                    {
-                      "id": "2afcf47845bdec8c",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "81141ed40fde9b43",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/06597e7d608172b283c97b41dd7f7480/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/fc-famalicao-vs-moreirense"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "72e382b5712dbd5f",
-          "name": "San Martin FC 2 - 0 Chorrillo vs San Martin FC  🕐 03:00 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/c6eb75297a4e4e8f105e221105e3848d/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 03-00",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "608b266db269143b",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "80f14e46ca027a04",
-                  "name": "San Martin FC 2 - 0 Chorrillo vs San Martin FC  🕐 03:00 | 11/04",
-                  "streams": [
-                    {
-                      "id": "ae92c70511f19a33",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "b87950e9648c3abb",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://xemlaitrandau.live/",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/san-martin-fc-vs-chorrillo"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "8c8644e76b0da590",
-          "name": "Ymir 1 - 2 Throttur Vogum vs Ymir  🕐 03:00 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/cf961b1ad58cf2fbc8bdeacd8b3331e4/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 03-00",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "cacd4cb74c5476c6",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "87b6c0bcbc451b99",
-                  "name": "Ymir 1 - 2 Throttur Vogum vs Ymir  🕐 03:00 | 11/04",
-                  "streams": [
-                    {
-                      "id": "5852625eb823070d",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "49f81dc2cc7c15e5",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://xemlaitrandau.live/",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/ymir-vs-throttur-vogum"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "3ac2552b527a903b",
-          "name": "Atlético Tembetary 1 - 2 Guairena vs Atlético Tembetary  🕐 03:00 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/bd9647c2ebbb5617d7a115384e954935/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 03-00",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "9de13dd6f1174a48",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "af4a232e7f8101cd",
-                  "name": "Atlético Tembetary 1 - 2 Guairena vs Atlético Tembetary  🕐 03:00 | 11/04",
-                  "streams": [
-                    {
-                      "id": "be7714d3ebb23a20",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "678da56ae9068aa9",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://xemlaitrandau.live/",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/atletico-tembetary-vs-guairena"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "e9b4e873a1a6ae6c",
-          "name": "Venezuela U17 1 - 0 PeruU17 vs Venezuela U17  🕐 03:00 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/a5261e32369bc44b31afcb1fc736831b/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 03-00",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "d624aad64acf400e",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "a33aa60d1d7d706a",
-                  "name": "Venezuela U17 1 - 0 PeruU17 vs Venezuela U17  🕐 03:00 | 11/04",
-                  "streams": [
-                    {
-                      "id": "dc542261456d0a90",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "ede7c30a5b8286d7",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/67faf67274d897164e9f004172f18af2/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/venezuela-u17-vs-peruu17"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "38e54539dd9da19f",
-          "name": "12 de Octubre 2 - 0 Club 3 de Febrero vs 12 de Octubre  🕐 03:00 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/5b5a84453b12e874213e30b9baf3511e/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 03-00",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "322eb7ceda4c1d54",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "d029439fb1e54c73",
-                  "name": "12 de Octubre 2 - 0 Club 3 de Febrero vs 12 de Octubre  🕐 03:00 | 11/04",
-                  "streams": [
-                    {
-                      "id": "300fe4ba1f51345a",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "6542d271c5f8e483",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://xemlaitrandau.live/",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/12-de-octubre-vs-club-3-de-febrero"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "79774379ea049163",
-          "name": "Sportivo Luqueno Reserves 1 - 1 Deportivo Recoleta Reserves vs Sportivo Luqueno Reserves  🕐 03:00 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/b26efc7295cb9d7bca0b98efeb742cb5/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 03-00",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "1d268d3352556b66",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "6fad6cf6bf445c09",
-                  "name": "Sportivo Luqueno Reserves 1 - 1 Deportivo Recoleta Reserves vs Sportivo Luqueno Reserves  🕐 03:00 | 11/04",
-                  "streams": [
-                    {
-                      "id": "de39b1fea4aa6840",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "33bc1852e66343da",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://xemlaitrandau.live/",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/sportivo-luqueno-reserves-vs-deportivo-recoleta-reserves"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "a6bdbc600f3717ab",
-          "name": "Deportivo Pereira 0 - 0 Deportiva Once Caldas vs Deportivo Pereira  🕐 03:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/0de0384d9877ee3693168689011b911b/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 03-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "9fcf8a53e4336d8b",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "05e6745c818ca6b2",
-                  "name": "Deportivo Pereira 0 - 0 Deportiva Once Caldas vs Deportivo Pereira  🕐 03:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "444a2da1f713d9b5",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "f8ef7b202d0916da",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/31d0d7025079031758a482e04671a8b3/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/deportivo-pereira-vs-deportiva-once-caldas"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "62d79ad1abe6fdd2",
-          "name": "CDSC Aguara 0 - 0 Rodelindo Roman vs CDSC Aguara  🕐 04:00 | 11/04",
+          "id": "f7643e1b688607ef",
+          "name": "CDSC Aguara 3 - 0 Rodelindo Roman vs CDSC Aguara  🕐 04:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -634,19 +179,19 @@
           ],
           "sources": [
             {
-              "id": "42cc8b0da5eb606d",
+              "id": "0e2d8c4f1f0bb286",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "77ce7fc4bc11f1a8",
-                  "name": "CDSC Aguara 0 - 0 Rodelindo Roman vs CDSC Aguara  🕐 04:00 | 11/04",
+                  "id": "7560b8758d93cde9",
+                  "name": "CDSC Aguara 3 - 0 Rodelindo Roman vs CDSC Aguara  🕐 04:00 | 11/04",
                   "streams": [
                     {
-                      "id": "20bc5aa4afc8dd8c",
+                      "id": "a28c9a5557d4fe76",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "7cf01a59245a2167",
+                          "id": "038efdbf0732b167",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -671,8 +216,8 @@
           ]
         },
         {
-          "id": "e92740beefebf3ee",
-          "name": "Peru Women 1 - 1 Uruguay Women vs Peru Women  🕐 04:00 | 11/04",
+          "id": "71ae7be202dfe0be",
+          "name": "Peru Women 2 - 1 Uruguay Women vs Peru Women  🕐 04:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -700,19 +245,19 @@
           ],
           "sources": [
             {
-              "id": "b1a1470601342314",
+              "id": "7612bb0be555ad77",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "422c10fa5b758092",
-                  "name": "Peru Women 1 - 1 Uruguay Women vs Peru Women  🕐 04:00 | 11/04",
+                  "id": "0500f374c9123076",
+                  "name": "Peru Women 2 - 1 Uruguay Women vs Peru Women  🕐 04:00 | 11/04",
                   "streams": [
                     {
-                      "id": "082c2ce466990720",
+                      "id": "472221ed5db474cd",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "918d739acebca96c",
+                          "id": "c12eb3a0a6f64d69",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -737,7 +282,7 @@
           ]
         },
         {
-          "id": "9cc467e462d93601",
+          "id": "ac9a6bd0dab95f04",
           "name": "Paysandu FC 0 - 1 Rentistas vs Paysandu FC  🕐 04:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -766,19 +311,19 @@
           ],
           "sources": [
             {
-              "id": "82e63dac7d934809",
+              "id": "c882d2d4e9350908",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "2068330eec3a9dbc",
+                  "id": "6f4ecb626d32c829",
                   "name": "Paysandu FC 0 - 1 Rentistas vs Paysandu FC  🕐 04:00 | 11/04",
                   "streams": [
                     {
-                      "id": "6450966eaca4d6d3",
+                      "id": "2c2507bdddf2d118",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "eaf5fc5ccf16ec3c",
+                          "id": "8857876825016aae",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -803,8 +348,8 @@
           ]
         },
         {
-          "id": "ddab39faaedb81f4",
-          "name": "CD Victoria La Ceiba Reserves 1 - 1 Motagua Reserves vs CD Victoria La Ceiba Reserves  🕐 04:00 | 11/04",
+          "id": "2e2aad9fb3b4ca37",
+          "name": "CD Victoria La Ceiba Reserves 2 - 2 Motagua Reserves vs CD Victoria La Ceiba Reserves  🕐 04:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -832,19 +377,19 @@
           ],
           "sources": [
             {
-              "id": "9c6ba31f8bcd1517",
+              "id": "05abedd8b2c43bbe",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "92899ca43e792aa9",
-                  "name": "CD Victoria La Ceiba Reserves 1 - 1 Motagua Reserves vs CD Victoria La Ceiba Reserves  🕐 04:00 | 11/04",
+                  "id": "9a1f7845d744b65a",
+                  "name": "CD Victoria La Ceiba Reserves 2 - 2 Motagua Reserves vs CD Victoria La Ceiba Reserves  🕐 04:00 | 11/04",
                   "streams": [
                     {
-                      "id": "ac88820ef0d9a299",
+                      "id": "87966a3e426d835a",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "baeb5682d764c7ad",
+                          "id": "6e440a8cc6de96c5",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -853,6 +398,468 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/cd-victoria-la-ceiba-reserves-vs-motagua-reserves"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9d3e03ce225244f1",
+          "name": "CD Choloma Reserves 0 - 1 CD Platense Reserves vs CD Choloma Reserves  🕐 04:00 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/ee7e0d15b96ff7b69cdee0883cfb9a44/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 04-00",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "9f313cd10ca75a1b",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "be6ea8b7a2840ddb",
+                  "name": "CD Choloma Reserves 0 - 1 CD Platense Reserves vs CD Choloma Reserves  🕐 04:00 | 11/04",
+                  "streams": [
+                    {
+                      "id": "4804404bcfb1bcd6",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "6e2e6e71f5933910",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/cd-choloma-reserves-vs-cd-platense-reserves"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c6e156be8f227405",
+          "name": "Genesis de Comayagua Reserve 2 - 0 Juticalpa Reserves vs Genesis de Comayagua Reserve  🕐 04:00 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/65831a812be12a447b89b4d0320fc285/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 04-00",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "40d909d6a305cdbe",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "8264fe3ab0b647cb",
+                  "name": "Genesis de Comayagua Reserve 2 - 0 Juticalpa Reserves vs Genesis de Comayagua Reserve  🕐 04:00 | 11/04",
+                  "streams": [
+                    {
+                      "id": "f8559455e0a731a2",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "a360919f6c9b4e69",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/genesis-de-comayagua-reserve-vs-juticalpa-reserves"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7a8f2b399aaf648f",
+          "name": "Real Espana Reserves 1 - 2 CD Marathon Reserves vs Real Espana Reserves  🕐 04:00 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/2da7e1e9e42a8e665eff63f3fc0c9a3d/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 04-00",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "696f7d55e8e46e69",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "3385304cee4c1b5a",
+                  "name": "Real Espana Reserves 1 - 2 CD Marathon Reserves vs Real Espana Reserves  🕐 04:00 | 11/04",
+                  "streams": [
+                    {
+                      "id": "8f687fee22da1306",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "3c51c6d6e84c82eb",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/real-espana-reserves-vs-cd-marathon-reserves"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5426d55697fe7dac",
+          "name": "Club Sportivo 2 de Mayo 1 - 0 Sportivo Ameliano vs Club Sportivo 2 de Mayo  🕐 04:15 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/37a88ed896a94f40f75cb6f406b8ee82/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 04-15",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "ce876adc396ff2bf",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "b32c7ebd97a62492",
+                  "name": "Club Sportivo 2 de Mayo 1 - 0 Sportivo Ameliano vs Club Sportivo 2 de Mayo  🕐 04:15 | 11/04",
+                  "streams": [
+                    {
+                      "id": "cf3740e1c57f31df",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "dcf9ce306c7e1121",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/0349a829519f6bda57396c73ab576114/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/club-sportivo-2-de-mayo-vs-sportivo-ameliano"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9d835a203602253f",
+          "name": "Fuerte San Francisco Women 0 - 0 Zacatecoluca FC (W) vs Fuerte San Francisco Women  🕐 04:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/1d99971124f0fb2912ba6bb0d9b57182/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 04-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "aa196cf50adf2e16",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "ecf706c81954a52e",
+                  "name": "Fuerte San Francisco Women 0 - 0 Zacatecoluca FC (W) vs Fuerte San Francisco Women  🕐 04:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "21221ab8388c938d",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "f5adb1ca02fd60db",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/fuerte-san-francisco-women-vs-zacatecoluca-fc-w"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2844d17d8ba91bde",
+          "name": "Independiente FBC 0 - 0 Sol de America vs Independiente FBC  🕐 05:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/25bf685a20e76b2c0ccc32f457faea7c/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 05-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "b44fa8e3b15e289b",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "4e1eaf5b441e906c",
+                  "name": "Independiente FBC 0 - 0 Sol de America vs Independiente FBC  🕐 05:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "73c8614631b3a89d",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "2478619e20d74aca",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/independiente-fbc-vs-sol-de-america"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8dcf5e29bb66ac27",
+          "name": "Deportivo Tachira 0 - 0 Deportivo La Guaira vs Deportivo Tachira  🕐 05:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/b4174619b7363c46b20ed597f3a305d2/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 05-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "58facdeb96baf0e8",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "d6eeab7486353003",
+                  "name": "Deportivo Tachira 0 - 0 Deportivo La Guaira vs Deportivo Tachira  🕐 05:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "b9bab98f0d3d3008",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "653149cd7a38d104",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/deportivo-tachira-vs-deportivo-la-guaira"
                             },
                             {
                               "key": "User-Agent",
