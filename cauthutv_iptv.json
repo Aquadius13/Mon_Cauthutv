@@ -2,7 +2,7 @@
   "id": "cauthutv-live",
   "name": "CauThu TV - Trực tiếp thể thao",
   "url": "https://cauthutv.shop/",
-  "description": "Cập nhật lúc 11/04/2026 16:23 ICT (UTC+7)",
+  "description": "Cập nhật lúc 11/04/2026 16:24 ICT (UTC+7)",
   "disable_ads": true,
   "color": "#0f3460",
   "grid_number": 3,
@@ -18,85 +18,12 @@
   },
   "groups": [
     {
-      "id": "b-ng",
-      "name": "⚽ Bóng đá",
-      "image": null,
-      "channels": [
-        {
-          "id": "5789d724f67b7bd1",
-          "name": "Gwangju Football Club 0 - 1 Bucheon FC 1995 vs Gwangju Football Club  🕐 14:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/6d863231d694643571a4a060844b6454/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 14-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "f60c12f49322619a",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "4b403ee19c548c7b",
-                  "name": "Gwangju Football Club 0 - 1 Bucheon FC 1995 vs Gwangju Football Club  🕐 14:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "db4ddfa99c5ff809",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "aae238b4122b5649",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/0ca6a2f7d1f2ed9d50b739c38b630e06/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/gwangju-football-club-vs-bucheon-fc-1995"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "th--thao-kh-c",
       "name": "🏆 Thể thao khác",
       "image": null,
       "channels": [
         {
-          "id": "1a20441807c287ad",
+          "id": "385d201b2e120975",
           "name": "Trực Tiếp  🔴 LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -119,19 +46,19 @@
           ],
           "sources": [
             {
-              "id": "0039ad093f62f51f",
+              "id": "8964dc6e4ee86e18",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "c882f1c821f99b92",
+                  "id": "1f3380df483bd839",
                   "name": "Trực Tiếp  🔴 LIVE",
                   "streams": [
                     {
-                      "id": "65ead31044527cb0",
+                      "id": "205e1e865d055233",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "70f206adf7d581d1",
+                          "id": "8d65a892f243161f",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -156,7 +83,7 @@
           ]
         },
         {
-          "id": "c288a92021720ea5",
+          "id": "be356297fb5f6fca",
           "name": "Gladesville Ryde Magic 0 - 2 Fraser Park FC vs Gladesville Ryde Magic  🕐 14:30 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -185,19 +112,19 @@
           ],
           "sources": [
             {
-              "id": "a3830b324d585f99",
+              "id": "e37ad4cca6072c1a",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "990b30ffc1ad2a41",
+                  "id": "b54f91194efec12f",
                   "name": "Gladesville Ryde Magic 0 - 2 Fraser Park FC vs Gladesville Ryde Magic  🕐 14:30 | 11/04",
                   "streams": [
                     {
-                      "id": "7db14cbe55a4c072",
+                      "id": "6d185772d71366c6",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "16e92b7f58cd8180",
+                          "id": "0014fb875a122d00",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -222,73 +149,7 @@
           ]
         },
         {
-          "id": "efd9e61aff764d42",
-          "name": "Hwaseong FC 1 - 0 Jeonnam Dragons vs Hwaseong FC  🕐 14:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/6fd0df3a9aef8e5b3fa3614199dd5485/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 14-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "af2b908d2cb88814",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "2cd7ed317ee5f2c0",
-                  "name": "Hwaseong FC 1 - 0 Jeonnam Dragons vs Hwaseong FC  🕐 14:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "cd379e2bfa0ad6ea",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "3e51fc245ed79976",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/dd144b077a44e82f46254c1ce1f8d619/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/hwaseong-fc-vs-jeonnam-dragons"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "76a596cbc4a5d25d",
+          "id": "3faa0f845c85e2af",
           "name": "Incheon United Club 1 - 1 Ulsan HD FC vs Incheon United Club  🕐 14:30 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -317,19 +178,19 @@
           ],
           "sources": [
             {
-              "id": "1dab57fa3f150730",
+              "id": "9017795a1689a50e",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "1a01bb30987d9d00",
+                  "id": "30912fa2b56e08e2",
                   "name": "Incheon United Club 1 - 1 Ulsan HD FC vs Incheon United Club  🕐 14:30 | 11/04",
                   "streams": [
                     {
-                      "id": "0fff1f50fdd448d6",
+                      "id": "0e04803249a47b77",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "ed2f24b8ad29636c",
+                          "id": "1d8e1d70b609e470",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -354,7 +215,7 @@
           ]
         },
         {
-          "id": "7057a9bd9b559307",
+          "id": "8bafd6dc417a6776",
           "name": "Nanchong Team 2 - 0 Dazhou Team vs Nanchong Team  🕐 14:30 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -383,19 +244,19 @@
           ],
           "sources": [
             {
-              "id": "0be786ce230ecf05",
+              "id": "3b7164ad95f4ed71",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "e0f8607637dd7094",
+                  "id": "6293c10b2ba5149e",
                   "name": "Nanchong Team 2 - 0 Dazhou Team vs Nanchong Team  🕐 14:30 | 11/04",
                   "streams": [
                     {
-                      "id": "22b6c7b3d1dfab13",
+                      "id": "a0221d09b70fa182",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "66e1ffdeab52822b",
+                          "id": "3a4901349b0f50f2",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -420,8 +281,8 @@
           ]
         },
         {
-          "id": "67c1e883b3553215",
-          "name": "Qingdao Red Lions 2 - 1 Shanghai Second vs Qingdao Red Lions  🕐 14:30 | 11/04",
+          "id": "e077b67e6cfde4be",
+          "name": "Qingdao Red Lions 2 - 2 Shanghai Second vs Qingdao Red Lions  🕐 14:30 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -449,19 +310,19 @@
           ],
           "sources": [
             {
-              "id": "55fa51beda4e7a10",
+              "id": "dff57c008abee359",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "fc726a052fcaa0d1",
-                  "name": "Qingdao Red Lions 2 - 1 Shanghai Second vs Qingdao Red Lions  🕐 14:30 | 11/04",
+                  "id": "08e05e8b7b6e2bf2",
+                  "name": "Qingdao Red Lions 2 - 2 Shanghai Second vs Qingdao Red Lions  🕐 14:30 | 11/04",
                   "streams": [
                     {
-                      "id": "9d0a20d826a7dabb",
+                      "id": "2b3c50ea6010228e",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "4774011c0c770232",
+                          "id": "0a4d1bc4d7ff97bf",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -486,7 +347,7 @@
           ]
         },
         {
-          "id": "1c79dfdc8bef8d59",
+          "id": "70d317e2a455d37d",
           "name": "Paju Frontier FC 1 - 3 Seoul E-Land FC vs Paju Frontier FC  🕐 14:30 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -515,19 +376,19 @@
           ],
           "sources": [
             {
-              "id": "4acffbde53d6c37d",
+              "id": "2c6c82a5eca6c252",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "a0041c3286634d79",
+                  "id": "53294f0a20d9974f",
                   "name": "Paju Frontier FC 1 - 3 Seoul E-Land FC vs Paju Frontier FC  🕐 14:30 | 11/04",
                   "streams": [
                     {
-                      "id": "44a0ce732d3b1973",
+                      "id": "85200384ebe2f27d",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "a1582f356fc77051",
+                          "id": "9cdba194a3807e53",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -552,7 +413,7 @@
           ]
         },
         {
-          "id": "6e0049113bf9d0d6",
+          "id": "542e867394754497",
           "name": "Changchun Yatai 2 - 1 Shaanxi Union vs Changchun Yatai  🕐 14:30 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -581,19 +442,19 @@
           ],
           "sources": [
             {
-              "id": "45183c04f4942a24",
+              "id": "e33acc69de33fb18",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "853ed1b1c6e63d71",
+                  "id": "ed40bd0155dc42cb",
                   "name": "Changchun Yatai 2 - 1 Shaanxi Union vs Changchun Yatai  🕐 14:30 | 11/04",
                   "streams": [
                     {
-                      "id": "eb936fca75e51a9d",
+                      "id": "46a54e661df87f19",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "6e4e13c88e88a2f0",
+                          "id": "755ef9730e5eed6a",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -618,7 +479,7 @@
           ]
         },
         {
-          "id": "9a315759d7d1685f",
+          "id": "bc5dfdedb7433d69",
           "name": "Campbelltown City Reserves (W） 3 - 1 Flinders United  Reserves Women vs Campbelltown City Reserves (W）  🕐 14:45 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -647,19 +508,19 @@
           ],
           "sources": [
             {
-              "id": "1443f5d381bc0402",
+              "id": "4ac3d8e912069d0f",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "7a47945f0910d7fd",
+                  "id": "b309a667c0d502ee",
                   "name": "Campbelltown City Reserves (W） 3 - 1 Flinders United  Reserves Women vs Campbelltown City Reserves (W）  🕐 14:45 | 11/04",
                   "streams": [
                     {
-                      "id": "bcf4ac1572dfc596",
+                      "id": "4379bc8cfcd0eaf5",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "ae51adcda95a0520",
+                          "id": "bce349168f420e49",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -684,7 +545,7 @@
           ]
         },
         {
-          "id": "4ace93c0538d236d",
+          "id": "70ad735b24fa2f83",
           "name": "Kudrivka Nyva U21 2 - 1 Kryvbas U21 vs Kudrivka Nyva U21  🕐 15:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -713,19 +574,19 @@
           ],
           "sources": [
             {
-              "id": "0e872f042410768c",
+              "id": "3357609abc5b8e98",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "45270b53f033da59",
+                  "id": "9780856b0cc9d2f4",
                   "name": "Kudrivka Nyva U21 2 - 1 Kryvbas U21 vs Kudrivka Nyva U21  🕐 15:00 | 11/04",
                   "streams": [
                     {
-                      "id": "dfeff12b5ceaf684",
+                      "id": "cdab987b620dab34",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "dbaf1dd178303232",
+                          "id": "157652c8bc9da693",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -750,7 +611,7 @@
           ]
         },
         {
-          "id": "986de5baef4bf175",
+          "id": "403f75f3ed806e1e",
           "name": "NK Samobor U19 0 - 2 Mladost Zdralovi U19 vs NK Samobor U19  🕐 15:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -779,19 +640,19 @@
           ],
           "sources": [
             {
-              "id": "740e36e894727510",
+              "id": "6b18a9d23efe572e",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "25428e93b4cbaa7a",
+                  "id": "c6cb3638e7a9edf2",
                   "name": "NK Samobor U19 0 - 2 Mladost Zdralovi U19 vs NK Samobor U19  🕐 15:00 | 11/04",
                   "streams": [
                     {
-                      "id": "24c93a2604359888",
+                      "id": "d6c51d847f9b747b",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "74980f48335461d6",
+                          "id": "9055fac82e7df89f",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -816,8 +677,8 @@
           ]
         },
         {
-          "id": "9802194a90860e55",
-          "name": "Mando United 0 - 11 HIFK vs Mando United  🕐 15:00 | 11/04",
+          "id": "cb33a2444e6f5eb9",
+          "name": "Mando United 0 - 12 HIFK vs Mando United  🕐 15:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -845,19 +706,19 @@
           ],
           "sources": [
             {
-              "id": "4953f3d707365e79",
+              "id": "9b5515ab69a18939",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "eeb04cf7e791c81d",
-                  "name": "Mando United 0 - 11 HIFK vs Mando United  🕐 15:00 | 11/04",
+                  "id": "972a80bcfeb483e5",
+                  "name": "Mando United 0 - 12 HIFK vs Mando United  🕐 15:00 | 11/04",
                   "streams": [
                     {
-                      "id": "3becf76e876e6b04",
+                      "id": "26ba4039ad8dcdd7",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "de63255f3263ea57",
+                          "id": "eaf8998c52e7803a",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -866,6 +727,138 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/mando-united-vs-hifk"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "b1fc0c6e834962cf",
+          "name": "Mamelodi Sundowns Reserves 0 - 0 Stellenbosch FC Reserves vs Mamelodi Sundowns Reserves  🕐 15:00 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/3a1868770240b18aebe552c9d8e52676/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 15-00",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "b29c398bf879ac5f",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "70f89c79f23ef04d",
+                  "name": "Mamelodi Sundowns Reserves 0 - 0 Stellenbosch FC Reserves vs Mamelodi Sundowns Reserves  🕐 15:00 | 11/04",
+                  "streams": [
+                    {
+                      "id": "6367195fad59588c",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "a9f888e4f10ca68d",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/mamelodi-sundowns-reserves-vs-stellenbosch-fc-reserves"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "0acfc779aa02e583",
+          "name": "Magesi FC Reserves 0 - 0 Orbit College Reserves vs Magesi FC Reserves  🕐 15:00 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/2b9f1a6de866748d5313801a6324fb1c/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 15-00",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "29b9555e6a838f14",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "60284f6b50e4546c",
+                  "name": "Magesi FC Reserves 0 - 0 Orbit College Reserves vs Magesi FC Reserves  🕐 15:00 | 11/04",
+                  "streams": [
+                    {
+                      "id": "8f02100efc7e9d6e",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "1915680bed78615b",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/magesi-fc-reserves-vs-orbit-college-reserves"
                             },
                             {
                               "key": "User-Agent",
