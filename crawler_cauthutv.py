@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
 ╔══════════════════════════════════════════════════════════════╗
-║   Crawler Trực Tiếp — cauthutv.shop  v1                     ║
-║   Dựa theo crawler_quechoa9_v10, adapt cho cauthutv.shop     ║
+║   Crawler Trực Tiếp — cauthutv.shop  v2                     ║
+║   + Crawl mục "Trận HOT" (thay "Trận tâm điểm")            ║
 ║   + Phát hiện card đa chiến lược (Tailwind / Bootstrap /     ║
-║     HTML thông thường)                                       ║
-║   + Thumbnail tạo bằng Pillow (logo 2 đội)                   ║
+║     HTML thông thường / section HOT)                        ║
+║   + Thumbnail Pillow: LUÔN hiển thị 2 logo đội thi đấu     ║
+║   + Icon trang: dùng favicon chính thức cauthutv.shop       ║
 ║   + Crawl stream: m3u8 / DASH / iframe                       ║
 ║   + Phân loại môn thể thao tự động                          ║
 ║   + Debug mode: lưu HTML để phân tích cấu trúc              ║
@@ -45,8 +46,17 @@ CHROME_UA   = (
 )
 VN_TZ = timezone(timedelta(hours=7))
 
+SITE_ICON_URL = f"{BASE_URL}/wp-content/uploads/2024/01/logo-cauthutv.png"
+# Fallback icon paths theo thứ tự ưu tiên
+ICON_CANDIDATES = [
+    f"{BASE_URL}/wp-content/uploads/2024/01/logo-cauthutv.png",
+    f"{BASE_URL}/wp-content/themes/cauthutv/assets/images/logo.png",
+    f"{BASE_URL}/images/logo.png",
+    f"{BASE_URL}/favicon.ico",
+]
+
 PLACEHOLDER_IMG = {
-    "padding": 0, "background_color": "#000000", "display": "cover",
+    "padding": 0, "background_color": "#0f3460", "display": "cover",
     "url": f"{BASE_URL}/favicon.ico", "width": 512, "height": 512,
 }
 
@@ -139,13 +149,17 @@ def make_match_thumbnail_b64(
     status: str = "upcoming", score: str = "",
     league: str = "",
 ) -> str:
-    """Tạo thumbnail JPEG 800×450 → data:image/jpeg;base64,..."""
+    """Tạo thumbnail JPEG 800×450 → data:image/jpeg;base64,...
+    LUÔN hiển thị 2 logo: logo đội nhà (trái) + logo đội khách (phải).
+    Nếu không tải được logo, hiển thị chữ viết tắt thay thế.
+    """
     if not _PILLOW_OK:
         return ""
     W, H = 800, 450
     img  = Image.new("RGB", (W, H), (30, 42, 65))
     draw = ImageDraw.Draw(img)
 
+    # Background gradient
     for y in range(H):
         t = y / H
         draw.line([(0, y), (W, y)], fill=(
@@ -165,7 +179,18 @@ def make_match_thumbnail_b64(
     NAME_Y      = LOGO_Y + LOGO_SIZE // 2 + 26
     LX = 155; RX = W - 155
 
+    # ── Logo circles (background) để đảm bảo luôn có vị trí cho 2 đội ──
+    for cx in (LX, RX):
+        r = LOGO_SIZE // 2 + 8
+        draw.ellipse(
+            [(cx - r, LOGO_Y - r), (cx + r, LOGO_Y + r)],
+            fill=(255, 255, 255, 18),
+            outline=(255, 255, 255, 40),
+            width=2,
+        )
+
     def _paste_logo(cx, cy, logo_img, name):
+        """Dán logo hoặc vẽ chữ viết tắt nếu không có logo."""
         if logo_img:
             lw, lh  = logo_img.size
             scale   = min(LOGO_SIZE / lw, LOGO_SIZE / lh, 1.0)
@@ -173,24 +198,41 @@ def make_match_thumbnail_b64(
             resized = logo_img.resize((nw, nh), Image.LANCZOS)
             ox, oy  = cx - nw // 2, cy - nh // 2
             if resized.mode == "RGBA":
-                bg     = Image.new("RGBA", (nw, nh), (255, 255, 255, 30))
-                merged = Image.alpha_composite(bg, resized)
-                img.paste(merged.convert("RGB"), (ox, oy), merged.split()[3])
+                bg     = Image.new("RGBA", img.size, (0, 0, 0, 0))
+                bg.paste(resized, (ox, oy), resized.split()[3])
+                img.paste(
+                    bg.convert("RGB"), (0, 0),
+                    bg.split()[3],
+                )
             else:
                 img.paste(resized.convert("RGB"), (ox, oy))
         else:
-            init = "".join(w[0].upper() for w in (name or "?").split()[:2]) or "?"
-            draw.text((cx, cy), init, fill=(190, 210, 255),
-                      font=_font(48), anchor="mm")
+            # Chữ viết tắt (luôn hiển thị khi không có logo)
+            words = (name or "?").split()
+            init  = "".join(w[0].upper() for w in words[:2]) or "?"
+            # Vẽ vòng tròn nền
+            r = LOGO_SIZE // 2
+            draw.ellipse(
+                [(cx - r, cy - r), (cx + r, cy + r)],
+                fill=(40, 60, 100),
+                outline=(120, 160, 220),
+                width=3,
+            )
+            draw.text((cx, cy), init, fill=(190, 220, 255),
+                      font=_font(52), anchor="mm")
 
+    # Tải logo cho CẢ 2 đội — song song ý tưởng nhưng tuần tự
     logo_a = find_team_logo(home_team, logo_a_url, LOGO_SIZE * 3)
     logo_b = find_team_logo(away_team, logo_b_url, LOGO_SIZE * 3)
+
+    # Dán logo đội nhà (trái) và đội khách (phải)
     _paste_logo(LX, LOGO_Y, logo_a, home_team)
     _paste_logo(RX, LOGO_Y, logo_b, away_team)
 
-    draw.text((LX, NAME_Y), home_team[:16], fill=(255, 255, 255, 230),
+    # Tên đội
+    draw.text((LX, NAME_Y), (home_team or "?")[:16], fill=(255, 255, 255, 230),
               font=_font(20), anchor="mm")
-    draw.text((RX, NAME_Y), away_team[:16], fill=(255, 255, 255, 230),
+    draw.text((RX, NAME_Y), (away_team or "?")[:16], fill=(255, 255, 255, 230),
               font=_font(20), anchor="mm")
 
     cx, cy = W // 2, LOGO_Y
@@ -644,21 +686,123 @@ def classify_sport(match: dict) -> str:
             return sport_name
     return "🏆 Thể thao khác"
 
+def extract_hot_matches(html: str, bs) -> list:
+    """
+    Crawl mục 'Trận HOT' từ cauthutv.shop.
+    Tìm section/div có chứa từ khóa hot/featured/highlight/tâm điểm
+    rồi lấy card trận bên trong.
+    """
+    HOT_KEYWORDS = re.compile(
+        r"tran[-_]?hot|hot[-_]?match|featured|highlight|tam[-_]?diem|"
+        r"trandau[-_]?hot|tran[-_]?tam[-_]?diem|match[-_]?hot|"
+        r"top[-_]?match|pick|trending|spotlight",
+        re.I
+    )
+    HOT_TEXT = re.compile(
+        r"trận\s*hot|hot\s*match|nổi\s*bật|tâm\s*điểm|đỉnh\s*cao|"
+        r"trận\s*đỉnh|được\s*xem\s*nhiều|trending|featured",
+        re.I | re.UNICODE
+    )
+
+    hot_section = None
+
+    # Chiến lược A: tìm qua class/id chứa từ khóa hot
+    for tag in bs.find_all(["section", "div", "ul", "article"],
+                            id=HOT_KEYWORDS):
+        hot_section = tag
+        log("  → HOT section: tìm qua id")
+        break
+
+    if not hot_section:
+        for tag in bs.find_all(["section", "div", "ul"],
+                                class_=HOT_KEYWORDS):
+            hot_section = tag
+            log("  → HOT section: tìm qua class")
+            break
+
+    # Chiến lược B: tìm heading có text 'hot/tâm điểm'
+    if not hot_section:
+        for h in bs.find_all(["h1", "h2", "h3", "h4", "span", "p"]):
+            if HOT_TEXT.search(h.get_text()):
+                # Lấy phần tử cha gần nhất có nhiều card
+                parent = h.parent
+                for _ in range(4):
+                    if parent and len(parent.find_all("a", href=True)) >= 2:
+                        hot_section = parent
+                        log(f"  → HOT section: tìm qua heading '{h.get_text(strip=True)[:30]}'")
+                        break
+                    parent = parent.parent if parent else None
+                if hot_section:
+                    break
+
+    # Chiến lược C: trong __NEXT_DATA__ tìm key hot/featured
+    if not hot_section:
+        nd_tag = bs.find("script", id="__NEXT_DATA__")
+        if nd_tag and nd_tag.string:
+            try:
+                nd    = json.loads(nd_tag.string)
+                props = nd.get("props", {}).get("pageProps", {})
+                for key in props:
+                    kl = key.lower()
+                    if any(x in kl for x in ("hot", "featured", "highlight", "tamdiem")):
+                        items = props[key]
+                        if isinstance(items, list) and items:
+                            hot_matches = []
+                            for obj in items:
+                                m = parse_nextdata_match(obj) if isinstance(obj, dict) else None
+                                if m:
+                                    hot_matches.append(m)
+                            if hot_matches:
+                                log(f"  → HOT: tìm qua __NEXT_DATA__['{key}']")
+                                return merge_matches(hot_matches)
+            except Exception:
+                pass
+
+    if not hot_section:
+        return []
+
+    # Parse cards trong hot_section
+    raw, seen_urls = [], set()
+    for a in hot_section.find_all("a", href=True):
+        text = a.get_text(" ", strip=True)
+        if not re.search(r"\bvs\b|\bLive\b|:\d{2}|trực tiếp", text, re.I):
+            continue
+        m = parse_card(a)
+        if m and m["detail_url"] not in seen_urls:
+            seen_urls.add(m["detail_url"])
+            raw.append(m)
+
+    if raw:
+        log(f"  → HOT section: {len(raw)} trận tìm thấy")
+    return merge_matches(raw)
+
+
 def extract_matches_by_section(html: str, bs) -> list[tuple[str, list]]:
     all_matches = extract_matches(html, bs, only_featured=False)
     if not all_matches:
         return []
 
-    # Tách live/upcoming/finished trong cùng section
+    result = []
+
+    # ── Ưu tiên 1: Trận HOT (crawl riêng mục hot) ──
+    hot_matches = extract_hot_matches(html, bs)
+    hot_titles  = set()
+    if hot_matches:
+        result.append(("🔥 Trận HOT", hot_matches))
+        log(f"  ✅ 🔥 Trận HOT: {len(hot_matches)} trận")
+        hot_titles = {_normalize_title(m["base_title"]) for m in hot_matches}
+
+    # ── Ưu tiên 2: Phân loại môn thể thao (bỏ trùng với HOT) ──
     sport_buckets: dict[str, list] = {}
     for m in all_matches:
+        if _normalize_title(m["base_title"]) in hot_titles:
+            continue
         sport = classify_sport(m)
         sport_buckets.setdefault(sport, []).append(m)
 
-    result = []
-    order  = ["⚽ Bóng đá", "🏀 Bóng rổ", "🏐 Bóng chuyền", "🎾 Tennis",
-              "🏉 Rugby/Bóng bầu dục", "🏏 Cricket", "🏒 Hockey",
-              "🥊 Boxing/MMA", "🏆 Thể thao khác"]
+    order = ["⚽ Bóng đá", "🏀 Bóng rổ", "🏐 Bóng chuyền", "🎾 Tennis",
+             "🏉 Rugby/Bóng bầu dục", "🏏 Cricket", "🏒 Hockey",
+             "🥊 Boxing/MMA", "🏆 Thể thao khác"]
     for sport in order:
         matches = sport_buckets.get(sport, [])
         if matches:
@@ -958,11 +1102,45 @@ def build_channel(m: dict, all_streams: list, thumb: str,
     }
 
 # ── Root JSON ─────────────────────────────────────────────────
-def build_iptv_json(groups_data: list, now_str: str) -> dict:
+def fetch_site_icon(html: str, bs) -> str:
+    """Tìm URL icon/favicon thật từ HTML trang chủ cauthutv.shop."""
+    # 1. <link rel="icon" / "apple-touch-icon" / "shortcut icon">
+    for rel in ("apple-touch-icon", "icon", "shortcut icon"):
+        tag = bs.find("link", rel=lambda r: r and rel in r)
+        if tag:
+            href = tag.get("href", "")
+            if href:
+                url = href if href.startswith("http") else urljoin(BASE_URL, href)
+                if not url.endswith(".ico") or "favicon" in url:
+                    return url
+
+    # 2. og:image thứ cấp (có thể là logo)
+    og = bs.find("meta", property="og:image")
+    if og:
+        url = og.get("content", "")
+        if url and "logo" in url.lower():
+            return url
+
+    # 3. Tìm <img> chứa "logo" trong src
+    for img in bs.find_all("img", src=True):
+        src = img.get("src", "")
+        if "logo" in src.lower() and src.startswith("http"):
+            return src
+
+    # 4. Dùng danh sách fallback
+    return ICON_CANDIDATES[0]
+
+
+# ── Root JSON ─────────────────────────────────────────────────
+def build_iptv_json(groups_data: list, now_str: str, site_icon: str = "") -> dict:
     groups_out = []
     for label, channels in groups_data:
         gid = re.sub(r"[^a-z0-9]", "-", label.lower())[:24].strip("-")
         groups_out.append({"id": gid, "name": label, "image": None, "channels": channels})
+
+    # Dùng icon được phát hiện từ HTML, nếu không có thì dùng fallback
+    resolved_icon = site_icon or ICON_CANDIDATES[0]
+
     return {
         "id":          "cauthutv-live",
         "name":        "CauThu TV - Trực tiếp thể thao",
@@ -971,8 +1149,12 @@ def build_iptv_json(groups_data: list, now_str: str) -> dict:
         "disable_ads": True,
         "color":       "#0f3460",
         "grid_number": 3,
-        "image":       {"type": "cover", "url": f"{BASE_URL}/favicon.ico"},
-        "groups":      groups_out,
+        "image": {
+            "type":          "cover",
+            "url":           resolved_icon,
+            "fallback_urls": [u for u in ICON_CANDIDATES if u != resolved_icon],
+        },
+        "groups": groups_out,
     }
 
 # ── Main ──────────────────────────────────────────────────────
@@ -985,8 +1167,8 @@ def main():
     args = ap.parse_args()
 
     log("\n" + "═" * 62)
-    log("  🏟  CRAWLER — cauthutv.shop  v1")
-    log("  📸  Thumbnail Pillow + 🎙 Tách stream theo BLV")
+    log("  🏟  CRAWLER — cauthutv.shop  v2")
+    log("  🔥  Trận HOT + 🖼 2 Logo + 🎙 BLV streams")
     log("═" * 62 + "\n")
 
     now_vn  = datetime.now(VN_TZ)
@@ -1007,6 +1189,10 @@ def main():
         log(f"  💾 Đã lưu HTML → {DEBUG_HTML}")
 
     bs = BeautifulSoup(html, "lxml")
+
+    # Phát hiện icon/logo thật của trang
+    site_icon = fetch_site_icon(html, bs)
+    log(f"  🖼  Site icon: {site_icon}")
 
     log(f"\n🔍 Phân tích trang...")
     if args.all:
@@ -1064,7 +1250,7 @@ def main():
             channels.append(build_channel(m, all_streams, thumb, i, m.get("league", "")))
         groups_data.append((label, channels))
 
-    result = build_iptv_json(groups_data, now_str)
+    result = build_iptv_json(groups_data, now_str, site_icon=site_icon)
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
