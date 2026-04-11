@@ -306,73 +306,126 @@ def parse_match_datetime(raw: str):
 #  Tìm mục TRẬN HOT trên trang chủ
 # ══════════════════════════════════════════════════════════════
 
-# Regex nhận diện section HOT
-_HOT_ID_RE = re.compile(
-    r"tran[-_]?hot|hot[-_]?match|featured|highlight|tam[-_]?diem|"
-    r"trandau[-_]?hot|tran[-_]?tam[-_]?diem|match[-_]?hot|"
-    r"top[-_]?match|pick|trending|spotlight|hot",
-    re.I
-)
+# ── Text chính xác xuất hiện trên trang cauthutv.shop ──
+# Danh sách theo thứ tự ưu tiên (khớp đầu tiên thắng)
+_HOT_EXACT_TEXTS = [
+    "Các Trận HOT",
+    "Các trận HOT",
+    "Các Trận Hot",
+    "các trận hot",
+    "Trận HOT",
+    "Trận Hot",
+    "trận hot",
+    "HOT matches",
+    "Hot matches",
+]
+
+# Regex dự phòng (nếu không tìm được exact text)
 _HOT_TEXT_RE = re.compile(
-    r"trận\s*hot|hot\s*match|nổi\s*bật|tâm\s*điểm|đỉnh\s*cao|"
-    r"trận\s*đỉnh|được\s*xem\s*nhiều|trending|featured|trận hot",
-    re.I | re.UNICODE
+    r"các\s+trận\s+hot|trận\s*hot|hot\s+match|nổi\s*bật|tâm\s*điểm|"
+    r"đỉnh\s*cao|trận\s*đỉnh|được\s*xem\s*nhiều|trending|featured",
+    re.I | re.UNICODE,
+)
+
+# Regex nhận diện id/class
+_HOT_ID_RE = re.compile(
+    r"hot|featured|highlight|trending|spotlight|tam.diem|tran.hot",
+    re.I,
 )
 
 
 def _cards_in(container, min_cards: int = 1) -> list:
     """Lấy thẻ <a> trông như card trận đấu trong container."""
-    VS_RE = re.compile(r"\bvs\b|\blive\b|:\d{2}|trực tiếp", re.I)
+    VS_RE = re.compile(r"\bvs\b|\blive\b|:\d{2}|trực tiếp|live", re.I)
     result = []
     seen   = set()
     for a in container.find_all("a", href=True):
         href = a.get("href", "")
         if href in seen: continue
         text = a.get_text(" ", strip=True)
-        if VS_RE.search(text) and len(text) > 5:
+        if VS_RE.search(text) and len(text) > 4:
             result.append(a)
             seen.add(href)
     return result if len(result) >= min_cards else []
 
 
-def find_hot_section(bs) -> "Tag | None":
+def _climb_to_section(heading_tag, min_cards: int = 1):
+    """Từ 1 heading, leo lên DOM tìm container cha có đủ card."""
+    parent = heading_tag.parent
+    for _ in range(8):
+        if parent is None or parent.name in ("body", "html"):
+            break
+        cards = _cards_in(parent, min_cards)
+        if cards:
+            return parent
+        parent = parent.parent
+    return None
+
+
+def find_hot_section(bs, debug: bool = False):
     """
-    Trả về phần tử HTML chứa các card trận HOT.
-    Thử theo thứ tự: id/class HOT → heading HOT → section đầu tiên có nhiều card.
+    Tìm mục 'Các Trận HOT' trên trang cauthutv.shop.
+
+    Chiến lược (theo thứ tự ưu tiên):
+      1. Text chính xác (vd "Các Trận HOT") trong bất kỳ thẻ nào
+      2. Regex text tiếng Việt
+      3. id / class chứa từ khóa 'hot'
+      4. Fallback: container đầu tiên trên trang có ≥ 2 card
     """
-    # 1. id / class khớp từ khóa hot
-    for tag in bs.find_all(["section", "div", "ul", "article"]):
-        tid  = " ".join(tag.get("id",    []) if isinstance(tag.get("id"), list)    else [tag.get("id","") or ""])
-        tcls = " ".join(tag.get("class", []))
+
+    # ── Chiến lược 1: text chính xác ──────────────────────────
+    for exact in _HOT_EXACT_TEXTS:
+        for tag in bs.find_all(string=lambda t, _e=exact: t and _e in t):
+            parent_tag = tag.parent
+            log(f"  → Tìm thấy text '{exact}' trong <{parent_tag.name} "
+                f"class='{' '.join(parent_tag.get('class',[]))[:40]}'>")
+            section = _climb_to_section(parent_tag, min_cards=1)
+            if section:
+                n = len(_cards_in(section, 1))
+                log(f"  ✅ HOT section (exact text): {n} card, "
+                    f"<{section.name} class='{' '.join(section.get('class',[]))[:50]}'>")
+                return section
+
+    # ── Chiến lược 2: regex text heading ──────────────────────
+    for h in bs.find_all(["h1","h2","h3","h4","h5","p","span","div","strong","li"]):
+        txt = h.get_text(strip=True)
+        if _HOT_TEXT_RE.search(txt) and len(txt) < 60:
+            log(f"  → Regex text khớp: '{txt[:50]}'")
+            section = _climb_to_section(h, min_cards=1)
+            if section:
+                n = len(_cards_in(section, 1))
+                log(f"  ✅ HOT section (regex text): {n} card")
+                return section
+
+    # ── Chiến lược 3: id / class ──────────────────────────────
+    for tag in bs.find_all(["section","div","ul","article"]):
+        tid  = tag.get("id","") or ""
+        tcls = " ".join(tag.get("class",[]))
         if _HOT_ID_RE.search(tid) or _HOT_ID_RE.search(tcls):
-            if _cards_in(tag):
-                log(f"  → HOT section via id/class: id='{tag.get('id','')}' cls='{tcls[:50]}'")
+            cards = _cards_in(tag, min_cards=1)
+            if cards:
+                log(f"  ✅ HOT section (id/class): id='{tid}' cls='{tcls[:50]}' "
+                    f"{len(cards)} card")
                 return tag
 
-    # 2. heading có chữ hot
-    for h in bs.find_all(["h1","h2","h3","h4","span","p","strong"]):
-        if _HOT_TEXT_RE.search(h.get_text()):
-            parent = h.parent
-            for _ in range(5):
-                if parent is None: break
-                cards = _cards_in(parent)
-                if len(cards) >= 2:
-                    log(f"  → HOT section via heading: '{h.get_text(strip=True)[:40]}'")
-                    return parent
-                parent = parent.parent
-            break
+    # ── Chiến lược 4: fallback — container đầu tiên có ≥2 card ─
+    if debug:
+        log("\n  ⚠ Không tìm thấy mục HOT theo text/class. "
+            "Liệt kê TẤT CẢ heading và section có card:")
+        for h in bs.find_all(["h1","h2","h3","h4","h5"]):
+            log(f"    heading: '{h.get_text(strip=True)[:60]}'")
+        for tag in bs.find_all(["section","div"], limit=40):
+            cards = _cards_in(tag, 1)
+            if cards:
+                tcls = " ".join(tag.get("class",[]))
+                log(f"    section <{tag.name} id='{tag.get('id','')}' "
+                    f"class='{tcls[:40]}'> → {len(cards)} card")
 
-    # 3. Fallback: section / div đầu tiên chứa nhiều card (trang chủ thường để HOT lên đầu)
-    for tag in bs.find_all(["section", "div", "ul"], recursive=False):
-        cards = _cards_in(tag, min_cards=3)
+    for tag in bs.find_all(["section","div","ul"]):
+        cards = _cards_in(tag, min_cards=2)
         if cards:
-            log(f"  → HOT section via fallback (first big section)")
-            return tag
-    # Thử toàn body
-    for tag in bs.find_all(["section", "div"], limit=20):
-        cards = _cards_in(tag, min_cards=3)
-        if len(cards) >= 3:
-            log(f"  → HOT section via body scan")
+            log(f"  ✅ HOT section (fallback đầu tiên có ≥2 card): {len(cards)} card, "
+                f"<{tag.name} class='{' '.join(tag.get('class',[]))[:50]}'>")
             return tag
 
     return None
@@ -866,17 +919,16 @@ def main():
     site_icon = detect_site_icon(html, bs)
     log(f"  🖼  Icon trang: {site_icon}")
 
-    log("\n🔍 Tìm mục Trận HOT...")
-    hot_section = find_hot_section(bs)
+    log("\n🔍 Tìm mục 'Các Trận HOT'...")
+    hot_section = find_hot_section(bs, debug=args.debug)
     if not hot_section:
-        log("❌ Không tìm thấy mục Trận HOT.")
-        if not args.debug:
-            log("  💡 Thử --debug để lưu HTML và kiểm tra cấu trúc.")
+        log("❌ Không tìm thấy mục 'Các Trận HOT'.")
+        log("  💡 Chạy với --debug để xem toàn bộ heading và section trên trang.")
         sys.exit(1)
 
-    # Parse cards
+    # Parse cards — dùng cùng pattern với _cards_in
     raw, seen_urls = [], set()
-    VS_RE = re.compile(r"\bvs\b|\blive\b|:\d{2}|trực tiếp", re.I)
+    VS_RE = re.compile(r"\bvs\b|\blive\b|:\d{2}|trực tiếp|live", re.I)
     for a in hot_section.find_all("a", href=True):
         text = a.get_text(" ", strip=True)
         if not VS_RE.search(text): continue
