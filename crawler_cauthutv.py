@@ -1,41 +1,42 @@
 #!/usr/bin/env python3
 """
 ╔══════════════════════════════════════════════════════════════╗
-║   Crawler Trực Tiếp — cauthutv.shop  v2                     ║
-║   + Crawl mục "Trận HOT" (thay "Trận tâm điểm")            ║
-║   + Phát hiện card đa chiến lược (Tailwind / Bootstrap /     ║
-║     HTML thông thường / section HOT)                        ║
-║   + Thumbnail Pillow: LUÔN hiển thị 2 logo đội thi đấu     ║
-║   + Icon trang: dùng favicon chính thức cauthutv.shop       ║
+║   Crawler Trực Tiếp — cauthutv.shop  v3                     ║
+║   CHỈ crawl mục "Trận HOT" trên trang chủ                  ║
+║   Logo thumbnail: ghép 2 ảnh đội từ card HTML               ║
+║     (không dùng thesportsdb / vẽ chữ tắt)                  ║
 ║   + Crawl stream: m3u8 / DASH / iframe                       ║
-║   + Phân loại môn thể thao tự động                          ║
-║   + Debug mode: lưu HTML để phân tích cấu trúc              ║
+║   + Debug mode: lưu HTML để kiểm tra                        ║
 ╚══════════════════════════════════════════════════════════════╝
 Cài đặt:
     pip install cloudscraper beautifulsoup4 lxml requests pillow
 
 Chạy:
     python crawler_cauthutv.py                  # mặc định
-    python crawler_cauthutv.py --all            # tất cả trận
     python crawler_cauthutv.py --no-stream      # không crawl stream
     python crawler_cauthutv.py --debug          # lưu HTML để kiểm tra
     python crawler_cauthutv.py --output out.json
 """
 
 import argparse, base64, hashlib, io, json, os, re, sys, time, unicodedata
-from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from urllib.parse import urljoin, urlparse
 
 try:
     import cloudscraper
-    from bs4 import BeautifulSoup, NavigableString, Tag
+    from bs4 import BeautifulSoup
     import requests
 except ImportError:
-    print("Cài đặt: pip install cloudscraper beautifulsoup4 lxml requests")
+    print("Cài đặt: pip install cloudscraper beautifulsoup4 lxml requests pillow")
     sys.exit(1)
 
-# ── Constants ─────────────────────────────────────────────────
+try:
+    from PIL import Image, ImageDraw, ImageFont
+    _PILLOW_OK = True
+except ImportError:
+    _PILLOW_OK = False
+
+# ── Constants ──────────────────────────────────────────────────
 BASE_URL    = "https://cauthutv.shop"
 OUTPUT_FILE = "cauthutv_iptv.json"
 DEBUG_HTML  = "debug_cauthutv.html"
@@ -46,34 +47,26 @@ CHROME_UA   = (
 )
 VN_TZ = timezone(timedelta(hours=7))
 
-SITE_ICON_URL = f"{BASE_URL}/wp-content/uploads/2024/01/logo-cauthutv.png"
-# Fallback icon paths theo thứ tự ưu tiên
-ICON_CANDIDATES = [
-    f"{BASE_URL}/wp-content/uploads/2024/01/logo-cauthutv.png",
-    f"{BASE_URL}/wp-content/themes/cauthutv/assets/images/logo.png",
-    f"{BASE_URL}/images/logo.png",
+# Icon favicon thật của trang (phát hiện tự động, đây là fallback)
+SITE_ICON_CANDIDATES = [
+    f"{BASE_URL}/assets/image/favicon64.png",
+    f"{BASE_URL}/assets/image/logo.png",
     f"{BASE_URL}/favicon.ico",
 ]
 
 PLACEHOLDER_IMG = {
     "padding": 0, "background_color": "#0f3460", "display": "cover",
-    "url": f"{BASE_URL}/favicon.ico", "width": 512, "height": 512,
+    "url": SITE_ICON_CANDIDATES[0], "width": 512, "height": 512,
 }
 
-# ── Logging ───────────────────────────────────────────────────
-def log(*args, **kwargs):
-    print(*args, **kwargs, flush=True)
+def log(*a, **kw): print(*a, **kw, flush=True)
 
-# ── Pillow (thumbnail) ────────────────────────────────────────
-try:
-    from PIL import Image, ImageDraw, ImageFont
-    _PILLOW_OK = True
-except ImportError:
-    _PILLOW_OK = False
+# ══════════════════════════════════════════════════════════════
+#  THUMBNAIL — ghép 2 logo đội từ URL ảnh lấy trên card
+# ══════════════════════════════════════════════════════════════
 
 def _font(size, bold=True):
-    if not _PILLOW_OK:
-        return None
+    if not _PILLOW_OK: return None
     paths = [
         "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold
             else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
@@ -82,163 +75,135 @@ def _font(size, bold=True):
         "C:/Windows/Fonts/arialbd.ttf",
     ]
     for p in paths:
-        try:
-            return ImageFont.truetype(p, size)
-        except Exception:
-            pass
+        try: return ImageFont.truetype(p, size)
+        except: pass
     return ImageFont.load_default()
 
-_LOGO_GOOD_DOMAINS = [
-    "media.api-sports.io", "thesportsdb.com", "r2.dev",
-    "sofascore.com", "flashscore.com", "upload.wikimedia.org/wikipedia",
-    "logos-world.net", "worldvectorlogo.com", "footballdatabase.eu",
-]
-_LOGO_BLOCKED = ["wikipedia.org/api/", "/static/images/", "opengraph", "og-image"]
 
-def _is_logo_url(url: str) -> bool:
-    if not url: return False
-    ul = url.lower()
-    for b in _LOGO_BLOCKED:
-        if b in ul: return False
-    for d in _LOGO_GOOD_DOMAINS:
-        if d in ul: return True
-    if re.search(r'\.(png|svg|webp)(\?|$)', ul):
-        if any(k in ul for k in ['team', 'club', 'badge', 'logo', 'crest', 'emblem']):
-            return True
-    return False
-
-def _fetch_logo(url: str, size: int) -> "Image.Image | None":
-    if not url or not _PILLOW_OK or not _is_logo_url(url): return None
+def fetch_img(url: str, max_px: int = 300) -> "Image.Image | None":
+    """Tải ảnh từ URL, resize về max_px × max_px, trả về RGBA."""
+    if not url or not _PILLOW_OK: return None
     try:
-        resp = requests.get(url, timeout=7, headers={"User-Agent": "Mozilla/5.0"})
-        resp.raise_for_status()
-        ct = resp.headers.get("content-type", "")
+        r = requests.get(url.strip(), timeout=8,
+                         headers={"User-Agent": "Mozilla/5.0"}, stream=True)
+        r.raise_for_status()
+        ct = r.headers.get("content-type", "")
         if "html" in ct or "json" in ct: return None
-        logo = Image.open(io.BytesIO(resp.content)).convert("RGBA")
-        if logo.width > 2000 or logo.height > 2000: return None
-        logo.thumbnail((size, size), Image.LANCZOS)
-        return logo
+        data = b""
+        for chunk in r.iter_content(65536):
+            data += chunk
+            if len(data) > 2_000_000: return None   # bỏ qua ảnh > 2 MB
+        img = Image.open(io.BytesIO(data)).convert("RGBA")
+        if img.width > 3000 or img.height > 3000: return None
+        img.thumbnail((max_px, max_px), Image.LANCZOS)
+        return img
     except Exception:
         return None
 
-def find_team_logo(name: str, provided_url: str = "", size: int = 200) -> "Image.Image | None":
-    if provided_url and _is_logo_url(provided_url):
-        logo = _fetch_logo(provided_url, size)
-        if logo: return logo
-    if not name: return None
-    name_q = requests.utils.quote(name.strip())
-    try:
-        r = requests.get(
-            f"https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t={name_q}",
-            timeout=7, headers={"User-Agent": "Mozilla/5.0"})
-        teams = r.json().get("teams") or []
-        if teams:
-            for key in ("strTeamBadge", "strTeamLogo"):
-                url = teams[0].get(key, "")
-                if url:
-                    logo = _fetch_logo(url + "/preview", size) or _fetch_logo(url, size)
-                    if logo: return logo
-    except Exception:
-        pass
-    return None
 
-def make_match_thumbnail_b64(
+def make_thumbnail_b64(
     home_team: str, away_team: str,
     logo_a_url: str = "", logo_b_url: str = "",
     time_str: str = "", date_str: str = "",
     status: str = "upcoming", score: str = "",
     league: str = "",
 ) -> str:
-    """Tạo thumbnail JPEG 800×450 → data:image/jpeg;base64,...
-    LUÔN hiển thị 2 logo: logo đội nhà (trái) + logo đội khách (phải).
-    Nếu không tải được logo, hiển thị chữ viết tắt thay thế.
     """
-    if not _PILLOW_OK:
-        return ""
+    Tạo thumbnail JPEG 800×450.
+    Logo A (đội nhà) lấy từ logo_a_url  → paste bên TRÁI.
+    Logo B (đội khách) lấy từ logo_b_url → paste bên PHẢI.
+    Nếu URL không tải được → vẽ vòng tròn + chữ viết tắt.
+    Trả về data:image/jpeg;base64,...
+    """
+    if not _PILLOW_OK: return ""
+
     W, H = 800, 450
-    img  = Image.new("RGB", (W, H), (30, 42, 65))
+    img  = Image.new("RGBA", (W, H), (20, 30, 55, 255))
     draw = ImageDraw.Draw(img)
 
-    # Background gradient
+    # ── gradient nền ──
     for y in range(H):
         t = y / H
-        draw.line([(0, y), (W, y)], fill=(
-            int(25 + 20*t), int(38 + 24*t), int(60 + 30*t),
-        ))
+        r_ = int(18 + 22*t); g_ = int(28 + 30*t); b_ = int(52 + 35*t)
+        draw.line([(0, y), (W, y)], fill=(r_, g_, b_, 255))
 
-    # League bar
-    draw.rectangle([(0, 0), (W, 56)], fill=(8, 14, 28))
+    # ── thanh giải đấu ──
+    draw.rectangle([(0, 0), (W, 52)], fill=(8, 12, 26, 255))
     if league:
-        draw.text((W//2, 30), league[:35], fill=(245, 245, 245),
-                  font=_font(22), anchor="mm")
-    draw.line([(0, 56), (W, 56)], fill=(80, 110, 180, 80), width=2)
+        f22 = _font(22)
+        draw.text((W//2, 28), league[:40], fill=(240, 240, 240, 255),
+                  font=f22, anchor="mm")
+    draw.line([(0, 52), (W, 52)], fill=(60, 100, 200, 120), width=2)
 
-    CONTENT_MID = (64 + 420) // 2
-    LOGO_SIZE   = 130
-    LOGO_Y      = CONTENT_MID - 30
-    NAME_Y      = LOGO_Y + LOGO_SIZE // 2 + 26
-    LX = 155; RX = W - 155
+    LOGO_D  = 160          # diameter vòng tròn nền logo
+    LOGO_R  = LOGO_D // 2
+    LOGO_Y  = 55 + (H - 55 - 80) // 2 + 10   # tâm logo theo chiều dọc
+    NAME_Y  = LOGO_Y + LOGO_R + 22
+    LX      = 160          # tâm logo trái
+    RX      = W - 160      # tâm logo phải
+    CX      = W // 2       # tâm giữa (score / giờ)
 
-    # ── Logo circles (background) để đảm bảo luôn có vị trí cho 2 đội ──
-    for cx in (LX, RX):
-        r = LOGO_SIZE // 2 + 8
+    # ── hàm vẽ 1 logo ──
+    def _draw_logo(cx, cy, url, name):
+        # vòng tròn nền
         draw.ellipse(
-            [(cx - r, LOGO_Y - r), (cx + r, LOGO_Y + r)],
-            fill=(255, 255, 255, 18),
-            outline=(255, 255, 255, 40),
-            width=2,
+            [(cx - LOGO_R - 6, cy - LOGO_R - 6),
+             (cx + LOGO_R + 6, cy + LOGO_R + 6)],
+            fill=(255, 255, 255, 18), outline=(180, 200, 255, 60), width=2
         )
 
-    def _paste_logo(cx, cy, logo_img, name):
-        """Dán logo hoặc vẽ chữ viết tắt nếu không có logo."""
-        if logo_img:
-            lw, lh  = logo_img.size
-            scale   = min(LOGO_SIZE / lw, LOGO_SIZE / lh, 1.0)
-            nw, nh  = max(1, int(lw * scale)), max(1, int(lh * scale))
-            resized = logo_img.resize((nw, nh), Image.LANCZOS)
-            ox, oy  = cx - nw // 2, cy - nh // 2
-            if resized.mode == "RGBA":
-                bg     = Image.new("RGBA", img.size, (0, 0, 0, 0))
-                bg.paste(resized, (ox, oy), resized.split()[3])
-                img.paste(
-                    bg.convert("RGB"), (0, 0),
-                    bg.split()[3],
-                )
-            else:
-                img.paste(resized.convert("RGB"), (ox, oy))
+        logo = fetch_img(url, LOGO_D * 2) if url else None
+
+        if logo:
+            # scale giữ tỉ lệ
+            lw, lh = logo.size
+            scale  = min((LOGO_D - 10) / lw, (LOGO_D - 10) / lh, 1.0)
+            nw     = max(1, int(lw * scale))
+            nh     = max(1, int(lh * scale))
+            logo   = logo.resize((nw, nh), Image.LANCZOS)
+
+            # tạo mask tròn để clip logo
+            mask   = Image.new("L", (nw, nh), 0)
+            mdraw  = ImageDraw.Draw(mask)
+            mdraw.ellipse([(0, 0), (nw - 1, nh - 1)], fill=255)
+
+            ox = cx - nw // 2
+            oy = cy - nh // 2
+            # Clip logo với mask tròn (không cần numpy)
+            # Nhân alpha của logo với mask tròn bằng ImageChops
+            from PIL import ImageChops
+            alpha_ch  = logo.split()[3]
+            mask_rs   = mask.resize((nw, nh), Image.LANCZOS)
+            combined  = ImageChops.multiply(alpha_ch, mask_rs)
+            # Tạo ảnh RGBA với alpha đã clip
+            logo_clip = logo.copy()
+            logo_clip.putalpha(combined)
+            # Paste lên canvas
+            img.paste(logo_clip, (ox, oy), logo_clip.split()[3])
         else:
-            # Chữ viết tắt (luôn hiển thị khi không có logo)
+            # fallback: vòng tròn màu + chữ tắt
+            draw.ellipse(
+                [(cx - LOGO_R, cy - LOGO_R), (cx + LOGO_R, cy + LOGO_R)],
+                fill=(30, 55, 110, 220), outline=(100, 150, 230, 200), width=3
+            )
             words = (name or "?").split()
             init  = "".join(w[0].upper() for w in words[:2]) or "?"
-            # Vẽ vòng tròn nền
-            r = LOGO_SIZE // 2
-            draw.ellipse(
-                [(cx - r, cy - r), (cx + r, cy + r)],
-                fill=(40, 60, 100),
-                outline=(120, 160, 220),
-                width=3,
-            )
-            draw.text((cx, cy), init, fill=(190, 220, 255),
+            draw.text((cx, cy), init, fill=(180, 215, 255, 255),
                       font=_font(52), anchor="mm")
 
-    # Tải logo cho CẢ 2 đội — song song ý tưởng nhưng tuần tự
-    logo_a = find_team_logo(home_team, logo_a_url, LOGO_SIZE * 3)
-    logo_b = find_team_logo(away_team, logo_b_url, LOGO_SIZE * 3)
+        # tên đội
+        short = (name or "?")[:16]
+        draw.text((cx, NAME_Y), short, fill=(255, 255, 255, 220),
+                  font=_font(18), anchor="mm")
 
-    # Dán logo đội nhà (trái) và đội khách (phải)
-    _paste_logo(LX, LOGO_Y, logo_a, home_team)
-    _paste_logo(RX, LOGO_Y, logo_b, away_team)
+    # ── vẽ 2 logo ──
+    _draw_logo(LX, LOGO_Y, logo_a_url, home_team)
+    _draw_logo(RX, LOGO_Y, logo_b_url, away_team)
 
-    # Tên đội
-    draw.text((LX, NAME_Y), (home_team or "?")[:16], fill=(255, 255, 255, 230),
-              font=_font(20), anchor="mm")
-    draw.text((RX, NAME_Y), (away_team or "?")[:16], fill=(255, 255, 255, 230),
-              font=_font(20), anchor="mm")
-
-    cx, cy = W // 2, LOGO_Y
+    # ── vùng giữa: tỉ số / giờ ──
     if status == "live" and score and score not in ("", "VS"):
-        ctr, ctr_col = score, (255, 70, 70, 255)
-        sub, sub_col = "● LIVE", (255, 120, 120, 255)
+        ctr, ctr_col = score, (255, 60, 60, 255)
+        sub, sub_col = "● LIVE", (255, 110, 110, 255)
     elif status == "finished" and score and score not in ("", "VS"):
         ctr, ctr_col = score, (255, 255, 255, 255)
         sub, sub_col = "Kết thúc", (170, 170, 170, 255)
@@ -246,57 +211,30 @@ def make_match_thumbnail_b64(
         ctr, ctr_col = time_str or "VS", (255, 255, 255, 255)
         sub, sub_col = date_str or "", (180, 180, 180, 255)
 
-    draw.line([(cx-72, cy-10), (cx-26, cy-10)], fill=(255, 255, 255, 80), width=2)
-    draw.line([(cx+26, cy-10), (cx+72, cy-10)], fill=(255, 255, 255, 80), width=2)
-    draw.text((cx, cy-8), ctr, fill=ctr_col, font=_font(52), anchor="mm")
+    # gạch 2 bên chữ giữa
+    draw.line([(CX - 68, LOGO_Y - 8), (CX - 22, LOGO_Y - 8)],
+              fill=(255, 255, 255, 70), width=2)
+    draw.line([(CX + 22, LOGO_Y - 8), (CX + 68, LOGO_Y - 8)],
+              fill=(255, 255, 255, 70), width=2)
+    draw.text((CX, LOGO_Y - 6), ctr, fill=ctr_col, font=_font(50), anchor="mm")
     if sub:
-        draw.text((cx, cy+40), sub, fill=sub_col, font=_font(18, False), anchor="mm")
+        draw.text((CX, LOGO_Y + 36), sub, fill=sub_col,
+                  font=_font(17, False), anchor="mm")
 
-    for y in range(H - 60, H):
-        alpha = int(255 * (y - (H - 60)) / 60)
-        draw.line([(0, y), (W, y)], fill=(8, 20, 32, alpha))
+    # ── fade bottom ──
+    for y in range(H - 55, H):
+        a = int(255 * (y - (H - 55)) / 55)
+        draw.line([(0, y), (W, y)], fill=(6, 16, 28, a))
 
-    out = io.BytesIO()
-    img.convert("RGB").save(out, format="JPEG", quality=82, optimize=True)
-    b64 = base64.b64encode(out.getvalue()).decode()
-    return f"data:image/jpeg;base64,{b64}"
+    buf = io.BytesIO()
+    img.convert("RGB").save(buf, format="JPEG", quality=84, optimize=True)
+    return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
 
-# ── Utils ─────────────────────────────────────────────────────
-def make_id(*parts: str) -> str:
-    raw = "-".join(str(p) for p in parts)
-    return hashlib.md5(raw.encode()).hexdigest()[:16]
 
-def normalize_name(name: str) -> str:
-    if not name: return ""
-    n = unicodedata.normalize("NFD", name.lower())
-    n = "".join(c for c in n if not unicodedata.combining(c))
-    n = re.sub(r"[^a-z0-9\s]", " ", n)
-    return re.sub(r"\s+", " ", n).strip()
+# ══════════════════════════════════════════════════════════════
+#  HTTP helpers
+# ══════════════════════════════════════════════════════════════
 
-def tokenize(name: str) -> list:
-    stopwords = {"fc", "cf", "sc", "ac", "rc", "us", "cd", "sk", "bk", "if",
-                 "the", "of", "de", "di", "del", "la", "le", "los", "las",
-                 "a", "b", "c", "1", "2", "ii", "iii"}
-    return [t for t in normalize_name(name).split() if t and t not in stopwords]
-
-def team_match_score(a: str, b: str) -> float:
-    na, nb = normalize_name(a), normalize_name(b)
-    if not na or not nb: return 0.0
-    if na == nb: return 1.0
-    shorter, longer = (na, nb) if len(na) <= len(nb) else (nb, na)
-    if len(shorter) >= 4 and shorter in longer: return 0.85
-    ta, tb = set(tokenize(a)), set(tokenize(b))
-    if ta and tb:
-        inter  = len(ta & tb)
-        union  = len(ta | tb)
-        jaccard = inter / union
-        if jaccard >= 0.5: return jaccard
-        st = ta if len(ta) <= len(tb) else tb
-        lt = ta if len(ta) > len(tb) else tb
-        if st and st.issubset(lt): return 0.7
-    return 0.0
-
-# ── HTTP ──────────────────────────────────────────────────────
 def make_scraper():
     sc = cloudscraper.create_scraper(
         browser={"browser": "chrome", "platform": "windows", "mobile": False}
@@ -304,9 +242,10 @@ def make_scraper():
     sc.headers.update({
         "Accept-Language": "vi-VN,vi;q=0.9,en-US;q=0.8",
         "Referer":         BASE_URL + "/",
-        "Accept":          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept":          "text/html,application/xhtml+xml,*/*;q=0.8",
     })
     return sc
+
 
 def fetch_html(url: str, scraper, retries: int = 3) -> str | None:
     for i in range(retries):
@@ -322,157 +261,132 @@ def fetch_html(url: str, scraper, retries: int = 3) -> str | None:
                 time.sleep(wait)
     return None
 
-# ── Parse ngày giờ ────────────────────────────────────────────
-def parse_match_datetime(match_time: str):
-    if not match_time:
-        return ("", "", "")
-    m = re.search(r"(\d{1,2}):(\d{2})\s*[|\s]?\s*(\d{1,2})[./](\d{1,2})", match_time)
+
+# ══════════════════════════════════════════════════════════════
+#  Tìm icon trang
+# ══════════════════════════════════════════════════════════════
+
+def detect_site_icon(html: str, bs) -> str:
+    for rel in ("apple-touch-icon", "icon", "shortcut icon"):
+        tag = bs.find("link", rel=lambda r, _r=rel: r and _r in " ".join(r))
+        if tag:
+            href = tag.get("href", "")
+            if href:
+                return href if href.startswith("http") else urljoin(BASE_URL, href)
+    for img_tag in bs.find_all("img", src=True):
+        src = img_tag.get("src", "")
+        if "logo" in src.lower() and src.startswith("http"):
+            return src
+    return SITE_ICON_CANDIDATES[0]
+
+
+# ══════════════════════════════════════════════════════════════
+#  Parse ngày giờ
+# ══════════════════════════════════════════════════════════════
+
+def parse_match_datetime(raw: str):
+    if not raw: return "", "", ""
+    m = re.search(r"(\d{1,2}):(\d{2})\s*[|]?\s*(\d{1,2})[./](\d{1,2})", raw)
     if m:
-        hh, mm    = m.group(1).zfill(2), m.group(2)
-        day, mon  = m.group(3).zfill(2), m.group(4).zfill(2)
-        if int(hh) <= 23 and int(mm) <= 59 and 1 <= int(day) <= 31 and 1 <= int(mon) <= 12:
-            return (f"{hh}:{mm}", f"{day}/{mon}", f"{mon}-{day} {hh}:{mm}")
-    m2 = re.search(r"(\d{1,2}):(\d{2})", match_time)
+        hh, mm   = m.group(1).zfill(2), m.group(2)
+        day, mon = m.group(3).zfill(2), m.group(4).zfill(2)
+        if int(hh) <= 23 and int(mm) <= 59:
+            return f"{hh}:{mm}", f"{day}/{mon}", f"{mon}-{day} {hh}:{mm}"
+    m2 = re.search(r"(\d{1,2}):(\d{2})", raw)
     if m2:
         hh, mm = m2.group(1).zfill(2), m2.group(2)
         if int(hh) <= 23 and int(mm) <= 59:
             today = datetime.now(VN_TZ)
-            return (f"{hh}:{mm}", today.strftime("%d/%m"), f"{today.strftime('%m-%d')} {hh}:{mm}")
-    return ("", "", "")
+            return f"{hh}:{mm}", today.strftime("%d/%m"), \
+                   f"{today.strftime('%m-%d')} {hh}:{mm}"
+    return "", "", ""
 
-# ── Card detection — đa chiến lược ───────────────────────────
-def _has_class(tag, *classes) -> bool:
-    cls = " ".join(tag.get("class", []))
-    return all(c in cls for c in classes)
 
-# === Chiến lược 1: quechoa/Tailwind style ===
-_TAILWIND_CARD_CLASSES = [
-    ("hover:border-[#83ff65]", "rounded-xl"),
-    ("rounded-xl", "block"),
-    ("border", "rounded"),
-]
+# ══════════════════════════════════════════════════════════════
+#  Tìm mục TRẬN HOT trên trang chủ
+# ══════════════════════════════════════════════════════════════
 
-def _find_tailwind_cards(bs) -> list:
-    for cls1, cls2 in _TAILWIND_CARD_CLASSES:
-        cards = [t for t in bs.find_all("a") if _has_class(t, cls1, cls2)]
-        # Lọc: chỉ lấy card có chứa text VS hoặc tên đội
-        valid = [c for c in cards
-                 if re.search(r"\bvs\b|:\d{2}|\bLive\b|trực tiếp", c.get_text(), re.I)]
-        if valid:
-            log(f"  → Tailwind strategy: {len(valid)} cards (cls='{cls1}+{cls2}')")
-            return valid
-    return []
+# Regex nhận diện section HOT
+_HOT_ID_RE = re.compile(
+    r"tran[-_]?hot|hot[-_]?match|featured|highlight|tam[-_]?diem|"
+    r"trandau[-_]?hot|tran[-_]?tam[-_]?diem|match[-_]?hot|"
+    r"top[-_]?match|pick|trending|spotlight|hot",
+    re.I
+)
+_HOT_TEXT_RE = re.compile(
+    r"trận\s*hot|hot\s*match|nổi\s*bật|tâm\s*điểm|đỉnh\s*cao|"
+    r"trận\s*đỉnh|được\s*xem\s*nhiều|trending|featured|trận hot",
+    re.I | re.UNICODE
+)
 
-# === Chiến lược 2: Bootstrap / generic card style ===
-_GENERIC_CARD_SELECTORS = [
-    ("div", ["match-card", "card-match", "fixture", "game-card", "event-card"]),
-    ("article", ["match", "fixture", "event"]),
-    ("li", ["match", "fixture"]),
-    ("div", ["item-match", "match-item", "sport-card"]),
-]
 
-def _find_generic_cards(bs) -> list:
-    for tag_name, cls_list in _GENERIC_CARD_SELECTORS:
-        for cls in cls_list:
-            cards = bs.find_all(tag_name, class_=re.compile(cls, re.I))
-            if cards:
-                # Lấy href từ thẻ a bên trong nếu chính nó không phải <a>
-                result = []
-                for card in cards:
-                    a = card if card.name == "a" else card.find("a", href=True)
-                    if a and re.search(r"\bvs\b|\bLive\b|:\d{2}", card.get_text(), re.I):
-                        result.append(a if card.name != "a" else card)
-                if result:
-                    log(f"  → Generic strategy: {len(result)} cards (tag={tag_name}, cls={cls})")
-                    return result
-    return []
-
-# === Chiến lược 3: Tìm theo pattern VS trong anchor ===
-def _find_vs_cards(bs) -> list:
-    """Tìm thẻ <a> chứa 'VS' giữa 2 tên đội."""
+def _cards_in(container, min_cards: int = 1) -> list:
+    """Lấy thẻ <a> trông như card trận đấu trong container."""
+    VS_RE = re.compile(r"\bvs\b|\blive\b|:\d{2}|trực tiếp", re.I)
     result = []
     seen   = set()
-    vs_re  = re.compile(
-        r"[\w\u00C0-\u024F\u1E00-\u1EFF .'-]{2,35}"
-        r"\s+(?:VS|vs)\s+"
-        r"[\w\u00C0-\u024F\u1E00-\u1EFF .'-]{2,35}",
-        re.UNICODE | re.I
-    )
-    for a in bs.find_all("a", href=True):
+    for a in container.find_all("a", href=True):
         href = a.get("href", "")
-        text = a.get_text(" ", strip=True)
         if href in seen: continue
-        if vs_re.search(text) and len(text) > 8:
+        text = a.get_text(" ", strip=True)
+        if VS_RE.search(text) and len(text) > 5:
             result.append(a)
             seen.add(href)
-    if result:
-        log(f"  → VS-pattern strategy: {len(result)} cards")
-    return result
+    return result if len(result) >= min_cards else []
 
-# === Chiến lược 4: __NEXT_DATA__ JSON từ Next.js ===
-def _find_nextdata_matches(html: str) -> list[dict]:
+
+def find_hot_section(bs) -> "Tag | None":
     """
-    Nhiều site Next.js nhúng toàn bộ data vào <script id='__NEXT_DATA__'>.
-    Cố parse để lấy danh sách trận.
+    Trả về phần tử HTML chứa các card trận HOT.
+    Thử theo thứ tự: id/class HOT → heading HOT → section đầu tiên có nhiều card.
     """
-    m = re.search(r'<script[^>]+id=["\']__NEXT_DATA__["\'][^>]*>(.*?)</script>',
-                  html, re.S)
-    if not m: return []
-    try:
-        nd     = json.loads(m.group(1))
-        props  = nd.get("props", {}).get("pageProps", {})
-        # Tìm đệ quy danh sách có vẻ là trận đấu
-        matches = []
-        _dig_matches(props, matches, depth=0)
-        if matches:
-            log(f"  → __NEXT_DATA__ strategy: {len(matches)} matches")
-        return matches
-    except Exception:
-        return []
+    # 1. id / class khớp từ khóa hot
+    for tag in bs.find_all(["section", "div", "ul", "article"]):
+        tid  = " ".join(tag.get("id",    []) if isinstance(tag.get("id"), list)    else [tag.get("id","") or ""])
+        tcls = " ".join(tag.get("class", []))
+        if _HOT_ID_RE.search(tid) or _HOT_ID_RE.search(tcls):
+            if _cards_in(tag):
+                log(f"  → HOT section via id/class: id='{tag.get('id','')}' cls='{tcls[:50]}'")
+                return tag
 
-def _dig_matches(obj, out: list, depth: int):
-    """Đệ quy tìm object có dạng {'home_team':..., 'away_team':...} hoặc tương tự."""
-    if depth > 8: return
-    if isinstance(obj, dict):
-        keys = {k.lower() for k in obj}
-        home_keys = {"home_team","hometeam","team_a","team1","home","local"}
-        away_keys = {"away_team","awayteam","team_b","team2","away","visitor"}
-        if home_keys & keys and away_keys & keys:
-            out.append(obj)
-            return
-        for v in obj.values():
-            _dig_matches(v, out, depth + 1)
-    elif isinstance(obj, list):
-        for item in obj[:100]:
-            _dig_matches(item, out, depth + 1)
+    # 2. heading có chữ hot
+    for h in bs.find_all(["h1","h2","h3","h4","span","p","strong"]):
+        if _HOT_TEXT_RE.search(h.get_text()):
+            parent = h.parent
+            for _ in range(5):
+                if parent is None: break
+                cards = _cards_in(parent)
+                if len(cards) >= 2:
+                    log(f"  → HOT section via heading: '{h.get_text(strip=True)[:40]}'")
+                    return parent
+                parent = parent.parent
+            break
 
-def find_match_cards(bs, html: str = "", only_featured: bool = True) -> list:
-    """
-    Thử các chiến lược theo thứ tự ưu tiên.
-    Trả về list các <a> tag hoặc list dict (từ __NEXT_DATA__).
-    """
-    # 1. Tailwind (quechoa clone)
-    cards = _find_tailwind_cards(bs)
-    if cards: return cards
+    # 3. Fallback: section / div đầu tiên chứa nhiều card (trang chủ thường để HOT lên đầu)
+    for tag in bs.find_all(["section", "div", "ul"], recursive=False):
+        cards = _cards_in(tag, min_cards=3)
+        if cards:
+            log(f"  → HOT section via fallback (first big section)")
+            return tag
+    # Thử toàn body
+    for tag in bs.find_all(["section", "div"], limit=20):
+        cards = _cards_in(tag, min_cards=3)
+        if len(cards) >= 3:
+            log(f"  → HOT section via body scan")
+            return tag
 
-    # 2. Generic class
-    cards = _find_generic_cards(bs)
-    if cards: return cards
+    return None
 
-    # 3. VS pattern
-    cards = _find_vs_cards(bs)
-    if cards: return cards
 
-    log("  ⚠ Không tìm thấy card nào qua chiến lược HTML")
-    return []
+# ══════════════════════════════════════════════════════════════
+#  Parse 1 card → dict trận
+# ══════════════════════════════════════════════════════════════
 
-# ── Parse card → match dict ───────────────────────────────────
-def parse_card(card) -> dict | None:
-    """Parse 1 card <a> thành dict trận đấu."""
-    href       = card.get("href", "")
+def parse_card(a) -> dict | None:
+    href = a.get("href", "")
     if not href: return None
     detail_url = href if href.startswith("http") else urljoin(BASE_URL, href)
-    raw_text   = card.get_text(" ", strip=True)
+    raw_text   = a.get_text(" ", strip=True)
 
     # Trạng thái
     if re.search(r"\bLive\b|trực tiếp|đang phát", raw_text, re.I):
@@ -482,26 +396,25 @@ def parse_card(card) -> dict | None:
     else:
         status = "upcoming"
 
-    # Giờ thi đấu
-    match_time_raw = ""
+    # Giờ
+    mt_raw = ""
     _mt = re.search(r"(\d{1,2}:\d{2})\s*[|]\s*(\d{1,2}[./]\d{1,2})", raw_text)
     if _mt:
-        match_time_raw = _mt.group(0)
+        mt_raw = _mt.group(0)
     else:
         _mt2 = re.search(r"(\d{1,2}:\d{2})", raw_text)
         if _mt2:
-            hh, mm = int(_mt2.group(0).split(":")[0]), int(_mt2.group(0).split(":")[1])
-            if hh <= 23 and mm <= 59:
-                match_time_raw = _mt2.group(0)
+            h_, m_ = _mt2.group(0).split(":")
+            if int(h_) <= 23 and int(m_) <= 59:
+                mt_raw = _mt2.group(0)
+    time_str, date_str, sort_key = parse_match_datetime(mt_raw)
 
-    time_str, date_str, sort_key = parse_match_datetime(match_time_raw)
-
-    # Tên đội từ thẻ có class phù hợp
+    # Tên đội — ưu tiên class
     home_team = away_team = ""
     for tag in ["div", "span", "p"]:
-        for cls_hint in ["team-name", "team_name", "club-name", "team", "flex-1", "flex-col"]:
-            candidates = card.find_all(tag, class_=re.compile(cls_hint, re.I))
-            texts = [c.get_text(" ", strip=True) for c in candidates
+        for cls_hint in ["team-name","team_name","club-name","team","flex-1","flex-col"]:
+            cands = a.find_all(tag, class_=re.compile(cls_hint, re.I))
+            texts = [c.get_text(" ", strip=True) for c in cands
                      if c.get_text(strip=True) and len(c.get_text(strip=True)) >= 2
                      and not re.fullmatch(r"[\d\s:]+", c.get_text(strip=True))]
             if len(texts) >= 2:
@@ -509,7 +422,7 @@ def parse_card(card) -> dict | None:
                 break
         if home_team: break
 
-    # Fallback: regex VS trong raw_text
+    # Fallback VS regex
     if not home_team:
         vm = re.search(
             r"([\w\u00C0-\u024F\u1E00-\u1EFF][\w\u00C0-\u024F\u1E00-\u1EFF .'-]{1,34}?)"
@@ -519,47 +432,56 @@ def parse_card(card) -> dict | None:
         if vm:
             home_team, away_team = vm.group(1).strip(), vm.group(2).strip()
 
-    # Tên giải
+    # Giải đấu
     league = ""
-    for d in card.find_all(["div", "span", "p"],
-                            class_=re.compile(r"league|tournament|competition|giải", re.I)):
+    for d in a.find_all(["div","span","p"],
+                         class_=re.compile(r"league|tournament|competition|giải", re.I)):
         t = d.get_text(strip=True)
         if t and 3 < len(t) < 60 and not re.fullmatch(r"[\d:\s|./]+", t):
             league = t; break
-    if not league:
-        # Fallback: đoán từ raw_text (phần trước tên đội)
-        if home_team:
-            idx = raw_text.lower().find(home_team.lower())
-            if idx > 5:
-                candidate = raw_text[:idx].strip()
-                candidate = re.sub(r"\d{1,2}:\d{2}.*", "", candidate).strip()
-                if 3 < len(candidate) < 55:
-                    league = candidate
 
     # Tỉ số
     score = ""
-    score_m = re.search(r"\b(\d{1,2})\s*[-:]\s*(\d{1,2})\b", raw_text)
-    if score_m:
-        score = f"{score_m.group(1)}-{score_m.group(2)}"
+    sm = re.search(r"\b(\d{1,2})\s*[-:]\s*(\d{1,2})\b", raw_text)
+    if sm: score = f"{sm.group(1)}-{sm.group(2)}"
 
     # BLV
     blv = ""
-    for span in card.find_all("span", class_=re.compile(r"blv|commentator|reporter", re.I)):
-        blv = span.get_text(strip=True)
+    for sp in a.find_all("span", class_=re.compile(r"blv|commentator", re.I)):
+        blv = sp.get_text(strip=True)
         if blv: break
 
-    # Thumbnail
+    # ── Logo URLs: lấy TẤT CẢ ảnh trong card theo thứ tự xuất hiện ──
+    logo_urls = []
+    for img in a.find_all("img"):
+        src = (img.get("src") or img.get("data-src") or "").strip()
+        if not src: continue
+        if not src.startswith("http"): src = urljoin(BASE_URL, src)
+        # loại ảnh nền/banner, chỉ lấy ảnh logo nhỏ
+        _BAD = ("banner","background","bg-","bg_","cover","thumbnail",
+                "splash","ad","ads","opengraph","og-")
+        if any(b in src.lower() for b in _BAD): continue
+        logo_urls.append(src)
+
+    logo_a_url = logo_urls[0] if len(logo_urls) >= 1 else ""
+    logo_b_url = logo_urls[1] if len(logo_urls) >= 2 else ""
+
+    # Thumbnail chính (ảnh lớn đầu tiên trong card, nếu có)
     thumbnail = ""
-    img = card.find("img")
-    if img:
-        src = img.get("src") or img.get("data-src") or ""
-        thumbnail = src if src.startswith("http") else urljoin(BASE_URL, src)
+    for img in a.find_all("img"):
+        src = (img.get("src") or img.get("data-src") or "").strip()
+        if not src: continue
+        if not src.startswith("http"): src = urljoin(BASE_URL, src)
+        w = 0
+        try: w = int(img.get("width", 0))
+        except: pass
+        if w >= 300:
+            thumbnail = src; break
 
     base_title = (f"{home_team} vs {away_team}"
                   if home_team and away_team
-                  else home_team or re.sub(r"\s{2,}", " ", raw_text)[:60])
-    if not base_title or not detail_url:
-        return None
+                  else re.sub(r"\s{2,}", " ", raw_text)[:60])
+    if not base_title or not detail_url: return None
 
     return {
         "base_title":  base_title,
@@ -568,579 +490,322 @@ def parse_card(card) -> dict | None:
         "score":       score,
         "status":      status,
         "league":      league,
-        "match_time":  match_time_raw,
         "time_str":    time_str,
         "date_str":    date_str,
         "sort_key":    sort_key,
         "detail_url":  detail_url,
         "thumbnail":   thumbnail,
+        "logo_a_url":  logo_a_url,
+        "logo_b_url":  logo_b_url,
         "blv":         blv,
-        "_logo_a":     "",
-        "_logo_b":     "",
     }
 
-def parse_nextdata_match(obj: dict) -> dict | None:
-    """Parse match từ __NEXT_DATA__ JSON."""
-    def _get(d, *keys):
-        for k in keys:
-            for dk in d.keys():
-                if dk.lower() == k.lower():
-                    return d[dk]
-        return ""
 
-    home  = _get(obj, "home_team", "hometeam", "team_a", "team1", "home")
-    away  = _get(obj, "away_team", "awayteam", "team_b", "team2", "away")
-    url   = _get(obj, "url", "link", "detail_url", "slug", "href")
-    if isinstance(url, str) and url and not url.startswith("http"):
-        url = urljoin(BASE_URL, url)
+# ══════════════════════════════════════════════════════════════
+#  Merge trận trùng URL
+# ══════════════════════════════════════════════════════════════
 
-    if not home or not away: return None
-    base_title = f"{home} vs {away}"
-    return {
-        "base_title": base_title,
-        "home_team":  str(home), "away_team": str(away),
-        "score":      str(_get(obj, "score", "result", "")),
-        "status":     str(_get(obj, "status", "state", "upcoming")).lower(),
-        "league":     str(_get(obj, "league", "competition", "tournament", "")),
-        "match_time": str(_get(obj, "time", "start_time", "match_time", "")),
-        "time_str":   "", "date_str": "", "sort_key": "",
-        "detail_url": url or BASE_URL + "/",
-        "thumbnail":  str(_get(obj, "thumbnail", "thumb", "image", "")),
-        "blv":        "", "_logo_a": "", "_logo_b": "",
-    }
+def _norm(t): return re.sub(r"[^\w\s]", "", t.lower().strip())
 
-# ── Merge trận trùng ─────────────────────────────────────────
-def _normalize_title(title: str) -> str:
-    t = title.lower().strip()
-    return re.sub(r"[^\w\s]", "", re.sub(r"\s+", " ", t))
 
-def merge_matches(raw_matches: list) -> list:
+def merge_matches(raw: list) -> list:
     merged: dict[str, dict] = {}
-    for m in raw_matches:
-        key = _normalize_title(m["base_title"])
+    for m in raw:
+        key = _norm(m["base_title"])
         if key not in merged:
             merged[key] = {**m, "blv_sources": []}
-        entry = merged[key]
-        if not entry["score"] and m["score"]:         entry["score"]     = m["score"]
-        if not entry["thumbnail"] and m["thumbnail"]: entry["thumbnail"] = m["thumbnail"]
-        if not entry["league"] and m["league"]:       entry["league"]    = m["league"]
-        if entry["status"] == "upcoming" and m["status"] in ("live", "finished"):
-            entry["status"] = m["status"]
-        existing_urls = {s["detail_url"] for s in entry["blv_sources"]}
-        if m["detail_url"] not in existing_urls:
-            entry["blv_sources"].append({"blv": m.get("blv", "") or "", "detail_url": m["detail_url"]})
-
+        e = merged[key]
+        if not e["score"] and m["score"]: e["score"] = m["score"]
+        if not e["thumbnail"] and m["thumbnail"]: e["thumbnail"] = m["thumbnail"]
+        if not e["league"] and m["league"]: e["league"] = m["league"]
+        if not e["logo_a_url"] and m["logo_a_url"]: e["logo_a_url"] = m["logo_a_url"]
+        if not e["logo_b_url"] and m["logo_b_url"]: e["logo_b_url"] = m["logo_b_url"]
+        if e["status"] == "upcoming" and m["status"] in ("live","finished"):
+            e["status"] = m["status"]
+        existing = {s["detail_url"] for s in e["blv_sources"]}
+        if m["detail_url"] not in existing:
+            e["blv_sources"].append({"blv": m.get("blv","") or "", "detail_url": m["detail_url"]})
     result = list(merged.values())
-    priority = {"live": 0, "upcoming": 1, "finished": 2}
-    result.sort(key=lambda x: (priority.get(x["status"], 9), x.get("sort_key", "")))
+    pri = {"live": 0, "upcoming": 1, "finished": 2}
+    result.sort(key=lambda x: (pri.get(x["status"], 9), x.get("sort_key", "")))
     return result
 
-def extract_matches(html: str, bs, only_featured: bool = True) -> list:
-    raw, seen_urls = [], set()
-    cards = find_match_cards(bs, html, only_featured)
 
-    for card in cards:
-        if isinstance(card, dict):
-            m = parse_nextdata_match(card)
-        else:
-            m = parse_card(card)
-        if m and m["detail_url"] not in seen_urls:
-            seen_urls.add(m["detail_url"])
-            raw.append(m)
+# ══════════════════════════════════════════════════════════════
+#  Crawl chi tiết: stream + logo từ detail page
+# ══════════════════════════════════════════════════════════════
 
-    merged = merge_matches(raw)
-    log(f"  → {len(raw)} card → gộp còn {len(merged)} trận")
-    return merged
+_QUAL_RE  = re.compile(r"[_-](?:full[_-]?hd|fhd|1080p?|720p?|480p?|360p?|hd|sd)$", re.I)
+_QUAL_MAP = {"hd":"HD","sd":"SD","full-hd":"Full HD","fhd":"Full HD",
+             "1080":"Full HD","1080p":"Full HD","720":"HD","720p":"HD",
+             "480":"SD","480p":"SD","360":"360p","360p":"360p"}
+_QUAL_ORD = {"Auto":0,"Full HD":1,"HD":2,"SD":3}
 
-# ── Phân loại môn thể thao ────────────────────────────────────
-_SPORT_RULES: list[tuple[str, re.Pattern]] = [
-    ("⚽ Bóng đá", re.compile(
-        r"\bliga\b|\bleague\b|\bcup\b|serie a|bundesliga|ligue 1|premier|\bchampions\b|europa|"
-        r"world cup|euro|aff|v.?league|ngoại hạng|bóng đá|football|soccer|"
-        r"arsenal|chelsea|manchester|liverpool|barcelona|real madrid|juventus|"
-        r"inter|milan|dortmund|paris|napoli|atletico|"
-        r"mu\b|mcfc|manu\b|mci\b", re.I)),
-    ("🏀 Bóng rổ", re.compile(
-        r"\bnba\b|\bncaa\b|\bwnba\b|bóng rổ|basketball", re.I)),
-    ("🏐 Bóng chuyền", re.compile(
-        r"bóng chuyền|volleyball|\bvcl\b", re.I)),
-    ("🎾 Tennis", re.compile(
-        r"tennis|atp|wta|wimbledon|roland garros|us open|australian open", re.I)),
-    ("🏉 Rugby/Bóng bầu dục", re.compile(
-        r"rugby|bầu dục|\bnfl\b|\bnrl\b|\bsuper rugby\b", re.I)),
-    ("🏏 Cricket", re.compile(r"cricket|\bipl\b|\bpsl\b|\bbbl\b", re.I)),
-    ("🏒 Hockey", re.compile(r"hockey|\bnhl\b", re.I)),
-    ("🥊 Boxing/MMA", re.compile(r"boxing|mma|ufc|fight|đấm bốc", re.I)),
-    ("🏆 Thể thao khác", re.compile(r".*", re.I)),
-]
-
-def classify_sport(match: dict) -> str:
-    text = " ".join([
-        match.get("league", ""),
-        match.get("home_team", ""),
-        match.get("away_team", ""),
-        match.get("base_title", ""),
-    ])
-    for sport_name, pattern in _SPORT_RULES:
-        if pattern.search(text):
-            return sport_name
-    return "🏆 Thể thao khác"
-
-def extract_hot_matches(html: str, bs) -> list:
-    """
-    Crawl mục 'Trận HOT' từ cauthutv.shop.
-    Tìm section/div có chứa từ khóa hot/featured/highlight/tâm điểm
-    rồi lấy card trận bên trong.
-    """
-    HOT_KEYWORDS = re.compile(
-        r"tran[-_]?hot|hot[-_]?match|featured|highlight|tam[-_]?diem|"
-        r"trandau[-_]?hot|tran[-_]?tam[-_]?diem|match[-_]?hot|"
-        r"top[-_]?match|pick|trending|spotlight",
-        re.I
-    )
-    HOT_TEXT = re.compile(
-        r"trận\s*hot|hot\s*match|nổi\s*bật|tâm\s*điểm|đỉnh\s*cao|"
-        r"trận\s*đỉnh|được\s*xem\s*nhiều|trending|featured",
-        re.I | re.UNICODE
-    )
-
-    hot_section = None
-
-    # Chiến lược A: tìm qua class/id chứa từ khóa hot
-    for tag in bs.find_all(["section", "div", "ul", "article"],
-                            id=HOT_KEYWORDS):
-        hot_section = tag
-        log("  → HOT section: tìm qua id")
-        break
-
-    if not hot_section:
-        for tag in bs.find_all(["section", "div", "ul"],
-                                class_=HOT_KEYWORDS):
-            hot_section = tag
-            log("  → HOT section: tìm qua class")
-            break
-
-    # Chiến lược B: tìm heading có text 'hot/tâm điểm'
-    if not hot_section:
-        for h in bs.find_all(["h1", "h2", "h3", "h4", "span", "p"]):
-            if HOT_TEXT.search(h.get_text()):
-                # Lấy phần tử cha gần nhất có nhiều card
-                parent = h.parent
-                for _ in range(4):
-                    if parent and len(parent.find_all("a", href=True)) >= 2:
-                        hot_section = parent
-                        log(f"  → HOT section: tìm qua heading '{h.get_text(strip=True)[:30]}'")
-                        break
-                    parent = parent.parent if parent else None
-                if hot_section:
-                    break
-
-    # Chiến lược C: trong __NEXT_DATA__ tìm key hot/featured
-    if not hot_section:
-        nd_tag = bs.find("script", id="__NEXT_DATA__")
-        if nd_tag and nd_tag.string:
-            try:
-                nd    = json.loads(nd_tag.string)
-                props = nd.get("props", {}).get("pageProps", {})
-                for key in props:
-                    kl = key.lower()
-                    if any(x in kl for x in ("hot", "featured", "highlight", "tamdiem")):
-                        items = props[key]
-                        if isinstance(items, list) and items:
-                            hot_matches = []
-                            for obj in items:
-                                m = parse_nextdata_match(obj) if isinstance(obj, dict) else None
-                                if m:
-                                    hot_matches.append(m)
-                            if hot_matches:
-                                log(f"  → HOT: tìm qua __NEXT_DATA__['{key}']")
-                                return merge_matches(hot_matches)
-            except Exception:
-                pass
-
-    if not hot_section:
-        return []
-
-    # Parse cards trong hot_section
-    raw, seen_urls = [], set()
-    for a in hot_section.find_all("a", href=True):
-        text = a.get_text(" ", strip=True)
-        if not re.search(r"\bvs\b|\bLive\b|:\d{2}|trực tiếp", text, re.I):
-            continue
-        m = parse_card(a)
-        if m and m["detail_url"] not in seen_urls:
-            seen_urls.add(m["detail_url"])
-            raw.append(m)
-
-    if raw:
-        log(f"  → HOT section: {len(raw)} trận tìm thấy")
-    return merge_matches(raw)
-
-
-def extract_matches_by_section(html: str, bs) -> list[tuple[str, list]]:
-    all_matches = extract_matches(html, bs, only_featured=False)
-    if not all_matches:
-        return []
-
-    result = []
-
-    # ── Ưu tiên 1: Trận HOT (crawl riêng mục hot) ──
-    hot_matches = extract_hot_matches(html, bs)
-    hot_titles  = set()
-    if hot_matches:
-        result.append(("🔥 Trận HOT", hot_matches))
-        log(f"  ✅ 🔥 Trận HOT: {len(hot_matches)} trận")
-        hot_titles = {_normalize_title(m["base_title"]) for m in hot_matches}
-
-    # ── Ưu tiên 2: Phân loại môn thể thao (bỏ trùng với HOT) ──
-    sport_buckets: dict[str, list] = {}
-    for m in all_matches:
-        if _normalize_title(m["base_title"]) in hot_titles:
-            continue
-        sport = classify_sport(m)
-        sport_buckets.setdefault(sport, []).append(m)
-
-    order = ["⚽ Bóng đá", "🏀 Bóng rổ", "🏐 Bóng chuyền", "🎾 Tennis",
-             "🏉 Rugby/Bóng bầu dục", "🏏 Cricket", "🏒 Hockey",
-             "🥊 Boxing/MMA", "🏆 Thể thao khác"]
-    for sport in order:
-        matches = sport_buckets.get(sport, [])
-        if matches:
-            result.append((sport, matches))
-            log(f"  ✅ {sport}: {len(matches)} trận")
-    return result
-
-# ── Stream extraction ─────────────────────────────────────────
-CDN_THUMB_RE  = re.compile(
-    r'https?://pub-[a-f0-9]+\.r2\.dev/[^\s\'"<>\\]+\.webp(?:\?[^\s\'"<>\\]*)?', re.I)
-IMG_URL_RE    = re.compile(
-    r'https?://[^\s\'"<>\\]+\.(?:webp|jpg|jpeg|png)(?:\?[^\s\'"<>\\]*)?', re.I)
-_THUMB_EXCL   = re.compile(
-    r'(?:favicon|logo-site|avatar|icon-\d|sprite|\d{1,2}x\d{1,2}|/ads?/)', re.I)
-
-def _is_valid_thumb(url: str) -> bool:
-    return bool(url) and not _THUMB_EXCL.search(url) and len(url) > 20
-
-def extract_thumb_from_detail(html: str, bs) -> str:
-    next_tag = bs.find("script", id="__NEXT_DATA__")
-    if next_tag and next_tag.string:
-        m = CDN_THUMB_RE.search(next_tag.string)
-        if m and _is_valid_thumb(m.group(0)):
-            return m.group(0)
-    for attr in [{"property": "og:image"}, {"name": "og:image"}, {"name": "twitter:image"}]:
-        tag = bs.find("meta", attrs=attr)
-        if tag:
-            url = tag.get("content", "")
-            if url and _is_valid_thumb(url) and IMG_URL_RE.match(url):
-                return url
-    m = CDN_THUMB_RE.search(html)
-    if m and _is_valid_thumb(m.group(0)):
-        return m.group(0)
-    best_url, best_w = "", 0
-    for img in bs.find_all("img", src=True):
-        src = img.get("src", "") or img.get("data-src", "")
-        if not src or not src.startswith("http") or not _is_valid_thumb(src): continue
-        try:    w = int(img.get("width", 0))
-        except: w = 0
-        if w > best_w: best_w, best_url = w, src
-    return best_url if best_w >= 200 else ""
-
-_QUALITY_RE  = re.compile(r"[_-](?:full[_-]?hd|fhd|1080p?|720p?|480p?|360p?|hd|sd)$", re.I)
-_QUALITY_MAP = {"hd":"HD","sd":"SD","full-hd":"Full HD","full_hd":"Full HD","fhd":"Full HD",
-                "1080":"Full HD","1080p":"Full HD","720":"HD","720p":"HD",
-                "480":"SD","480p":"SD","360":"360p","360p":"360p"}
-_QUALITY_ORDER = {"Auto": 0, "Full HD": 1, "HD": 2, "SD": 3}
-
-def _stream_base(url):
-    return _QUALITY_RE.sub("", re.sub(r"\.\w+$", "", url.rstrip("/").split("/")[-1])).lower()
 
 def _quality_label(url):
     fname = re.sub(r"\.\w+$", "", url.rstrip("/").split("/")[-1]).lower()
-    m = _QUALITY_RE.search(fname)
-    return _QUALITY_MAP.get(m.group(0).lstrip("-_").lower(), m.group(0).upper()) if m else "Auto"
+    m = _QUAL_RE.search(fname)
+    return _QUAL_MAP.get(m.group(0).lstrip("-_").lower(), m.group(0).upper()) if m else "Auto"
 
-def filter_streams(streams: list) -> list:
-    hls   = [s for s in streams if s["type"] == "hls"]
-    other = [s for s in streams if s["type"] != "hls"]
-    if hls:
-        base  = _stream_base(hls[0]["url"])
-        group = [{**s, "name": _quality_label(s["url"])} for s in hls
-                 if _stream_base(s["url"]) == base]
-        group.sort(key=lambda x: _QUALITY_ORDER.get(x["name"], 99))
-        return group + other
-    return other
 
-def extract_streams_from_url(detail_url: str, html: str, bs) -> list:
+def extract_streams(detail_url: str, html: str, bs) -> list:
     seen, raw = set(), []
 
     def add(name, url, kind):
         url = url.strip()
         if url and url not in seen and len(url) > 12:
-            seen.add(url)
-            raw.append({"name": name, "url": url, "type": kind, "referer": detail_url})
+            seen.add(url); raw.append({"name":name,"url":url,"type":kind,"referer":detail_url})
 
-    for iframe in bs.find_all("iframe", src=True):
-        if re.search(r"live|stream|embed|player|sport|watch|truc.?tiep", iframe["src"], re.I):
-            add("embed", iframe["src"], "iframe")
+    for fr in bs.find_all("iframe", src=True):
+        if re.search(r"live|stream|embed|player|sport|watch|truc.?tiep", fr["src"], re.I):
+            add("embed", fr["src"], "iframe")
     for m in re.finditer(r'(https?://[^\s\'"<>\]\\]+\.m3u8(?:[?#][^\s\'"<>\]\\]*)?)', html):
         add("HLS", m.group(1), "hls")
     for m in re.finditer(r'(https?://[^\s\'"<>\]\\]+\.mpd(?:[?#][^\s\'"<>\]\\]*)?)', html):
         add("DASH", m.group(1), "dash")
-    for script in bs.find_all("script"):
-        c = script.string or ""
+    for sc in bs.find_all("script"):
+        c = sc.string or ""
         for m in re.finditer(
                 r'"(?:file|src|source|stream|url|hls|playlist|videoUrl|streamUrl)"\s*:\s*"(https?://[^"]+)"', c):
             u = m.group(1)
-            if re.search(r"m3u8|stream|live|video|play", u, re.I):
-                add("Stream config", u, "hls")
-        for m in re.finditer(r'(?:streamUrl|videoUrl|hlsUrl|playerUrl)\s*=\s*["\']([^"\']+)["\']', c):
+            if re.search(r"m3u8|stream|live|video|play", u, re.I): add("config", u, "hls")
+        for m in re.finditer(r'(?:streamUrl|videoUrl|hlsUrl)\s*=\s*["\']([^"\']+)["\']', c):
             u = m.group(1)
-            if u.startswith("http"): add("JS stream", u, "hls")
-    for a in bs.find_all("a", href=True):
-        href, txt = a["href"], a.get_text(strip=True)
-        if re.search(r"xem|live|watch|stream|truc.?tiep|play|server", txt + href, re.I):
-            if href.startswith("http") and href != detail_url:
-                add(txt or "Link", href, "hls")
+            if u.startswith("http"): add("js", u, "hls")
 
     if not raw:
-        raw.append({"name": "Trang trực tiếp", "url": detail_url,
-                    "type": "iframe", "referer": detail_url})
+        raw.append({"name":"Trực tiếp","url":detail_url,"type":"iframe","referer":detail_url})
         return raw
-    hls = [s for s in raw if s["type"] == "hls"]
-    return filter_streams(hls) if hls else raw
 
-def extract_logos_from_detail(html: str, bs) -> tuple[str, str]:
+    hls = [s for s in raw if s["type"] == "hls"]
+    if hls:
+        # nhóm theo base, lấy nhóm lớn nhất
+        from collections import Counter
+        def base(u): return _QUAL_RE.sub("", re.sub(r"\.\w+$","",u.rstrip("/").split("/")[-1])).lower()
+        cnt = Counter(base(s["url"]) for s in hls)
+        top_base = cnt.most_common(1)[0][0]
+        group = [{**s,"name":_quality_label(s["url"])} for s in hls if base(s["url"])==top_base]
+        group.sort(key=lambda x: _QUAL_ORD.get(x["name"], 99))
+        return group
+    return raw
+
+
+def extract_logos_from_detail(html: str, bs) -> tuple:
+    """Tìm URL logo 2 đội từ trang chi tiết (Next.js data / img tags)."""
     logo_a = logo_b = ""
-    next_tag = bs.find("script", id="__NEXT_DATA__")
-    if next_tag and next_tag.string:
+
+    # __NEXT_DATA__
+    nd_tag = bs.find("script", id="__NEXT_DATA__")
+    if nd_tag and nd_tag.string:
         try:
-            nd = json.loads(next_tag.string)
-            def _find_logos(obj, depth=0):
+            nd = json.loads(nd_tag.string)
+            def _dig(obj, depth=0):
                 nonlocal logo_a, logo_b
                 if depth > 10 or (logo_a and logo_b): return
                 if isinstance(obj, dict):
                     for k, v in obj.items():
                         kl = k.lower()
-                        if isinstance(v, str) and v.startswith("http"):
-                            if any(x in kl for x in ("logo_a","logoa","team_a_logo","home_logo")):
-                                if not logo_a and _is_logo_url(v): logo_a = v
-                            elif any(x in kl for x in ("logo_b","logob","team_b_logo","away_logo")):
-                                if not logo_b and _is_logo_url(v): logo_b = v
+                        if isinstance(v, str) and v.startswith("http") and \
+                           re.search(r"\.(png|svg|webp|jpg)(\?|$)", v, re.I):
+                            if any(x in kl for x in ("logo_a","logoa","home_logo","team_a_logo")):
+                                if not logo_a: logo_a = v
+                            elif any(x in kl for x in ("logo_b","logob","away_logo","team_b_logo")):
+                                if not logo_b: logo_b = v
                             elif any(x in kl for x in ("logo","badge","crest","emblem")):
                                 if not logo_a: logo_a = v
                                 elif not logo_b: logo_b = v
-                        else:
-                            _find_logos(v, depth + 1)
+                        else: _dig(v, depth+1)
                 elif isinstance(obj, list):
-                    for item in obj[:20]: _find_logos(item, depth + 1)
-            _find_logos(nd)
-        except Exception:
-            pass
+                    for item in obj[:30]: _dig(item, depth+1)
+            _dig(nd)
+        except: pass
+
+    # img tags: lấy 2 ảnh nhỏ (logo) đầu tiên
     if not logo_a or not logo_b:
-        api_logos = re.findall(
-            r'https://media\.api-sports\.io/(?:football|basketball|baseball|hockey|rugby|volleyball)'
-            r'/teams/\d+\.png', html)
-        seen = list(dict.fromkeys(api_logos))
-        if len(seen) >= 1 and not logo_a: logo_a = seen[0]
-        if len(seen) >= 2 and not logo_b: logo_b = seen[1]
+        imgs = []
+        for img in bs.find_all("img", src=True):
+            src = (img.get("src") or "").strip()
+            if not src or not src.startswith("http"): continue
+            _BAD = ("banner","background","cover","thumbnail","splash","opengraph","og-")
+            if any(b in src.lower() for b in _BAD): continue
+            w = 0
+            try: w = int(img.get("width",0))
+            except: pass
+            if w == 0 or w <= 200:   # logo thường nhỏ
+                imgs.append(src)
+        if len(imgs) >= 1 and not logo_a: logo_a = imgs[0]
+        if len(imgs) >= 2 and not logo_b: logo_b = imgs[1]
+
     return logo_a, logo_b
 
-def crawl_blv_source(detail_url: str, blv_name: str, scraper) -> tuple[list, str, str, str]:
-    html = fetch_html(detail_url, scraper, retries=2)
-    if not html: return [], "", "", ""
-    bs     = BeautifulSoup(html, "lxml")
-    thumb  = extract_thumb_from_detail(html, bs)
-    la, lb = extract_logos_from_detail(html, bs)
-    streams = extract_streams_from_url(detail_url, html, bs)
-    for s in streams:
-        s["blv"] = blv_name
-    return streams, thumb, la, lb
 
-# ── Build display title ───────────────────────────────────────
-def build_display_title(m: dict) -> str:
+def crawl_detail(detail_url: str, blv: str, scraper):
+    html = fetch_html(detail_url, scraper, retries=2)
+    if not html: return [], "", ""
+    bs      = BeautifulSoup(html, "lxml")
+    streams = extract_streams(detail_url, html, bs)
+    for s in streams: s["blv"] = blv
+    la, lb  = extract_logos_from_detail(html, bs)
+    return streams, la, lb
+
+
+# ══════════════════════════════════════════════════════════════
+#  Build channel object
+# ══════════════════════════════════════════════════════════════
+
+def make_id(*parts): return hashlib.md5("-".join(str(p) for p in parts).encode()).hexdigest()[:16]
+
+
+def build_display_name(m: dict) -> str:
     base, score, t, d = m["base_title"], m["score"], m["time_str"], m["date_str"]
     if m["status"] == "live":
-        if score and score != "VS":
-            return f"{m['home_team']} {score} {m['away_team']}  🔴"
-        return f"{base}  🔴 LIVE"
-    elif m["status"] == "finished":
-        if score and score != "VS":
-            return f"{m['home_team']} {score} {m['away_team']}  ✅"
-        return f"{base}  ✅ KT"
-    else:
-        if t and d:  return f"{base}  🕐 {t} | {d}"
-        elif t:      return f"{base}  🕐 {t}"
-        elif d:      return f"{base}  📅 {d}"
-        return base
+        return f"{base}  🔴 LIVE" if not score or score=="VS" \
+               else f"{m['home_team']} {score} {m['away_team']}  🔴"
+    if m["status"] == "finished":
+        return f"{base}  ✅ KT" if not score or score=="VS" \
+               else f"{m['home_team']} {score} {m['away_team']}  ✅"
+    if t and d:  return f"{base}  🕐 {t} | {d}"
+    if t:        return f"{base}  🕐 {t}"
+    if d:        return f"{base}  📅 {d}"
+    return base
 
-# ── Build channel ─────────────────────────────────────────────
-def build_channel(m: dict, all_streams: list, thumb: str,
-                  index: int, league: str = "") -> dict:
 
-    ch_id        = make_id("ctt", str(index), re.sub(r"[^a-z0-9]", "-", m["base_title"].lower())[:24])
-    display_name = build_display_title(m)
-    blv_sources  = m.get("blv_sources", [])
-    score        = m.get("score", "")
-    eff_league   = league or m.get("league", "")
+def build_channel(m: dict, all_streams: list, index: int) -> dict:
+    ch_id   = make_id("ctt", index, re.sub(r"[^a-z0-9]", "-", m["base_title"].lower())[:24])
+    name    = build_display_name(m)
+    league  = m.get("league", "")
 
     # Labels
     labels = []
-    status_cfg = {
-        "live":     {"text": "● Live",          "color": "#E73131", "text_color": "#ffffff"},
-        "upcoming": {"text": "🕐 Sắp diễn ra", "color": "#d54f1a", "text_color": "#ffffff"},
-        "finished": {"text": "✅ Kết thúc",     "color": "#444444", "text_color": "#ffffff"},
-    }.get(m["status"], {"text": "● Live", "color": "#E73131", "text_color": "#ffffff"})
-    labels.append({**status_cfg, "position": "top-left"})
+    sc_map = {
+        "live":     {"text": "● Live",          "color": "#E73131", "text_color": "#fff"},
+        "upcoming": {"text": "🕐 Sắp diễn ra", "color": "#d54f1a", "text_color": "#fff"},
+        "finished": {"text": "✅ Kết thúc",     "color": "#444444", "text_color": "#fff"},
+    }
+    labels.append({**sc_map.get(m["status"], sc_map["live"]), "position": "top-left"})
 
-    blv_names = [s["blv"] for s in blv_sources if s["blv"]]
+    blv_names = [s["blv"] for s in m.get("blv_sources", []) if s["blv"]]
     if len(blv_names) > 1:
         labels.append({"text": f"🎙 {len(blv_names)} BLV", "position": "top-right",
-                       "color": "#00601f", "text_color": "#ffffff"})
+                       "color": "#00601f", "text_color": "#fff"})
     elif blv_names:
         labels.append({"text": f"🎙 {blv_names[0]}", "position": "top-right",
-                       "color": "#00601f", "text_color": "#ffffff"})
+                       "color": "#00601f", "text_color": "#fff"})
 
-    if score and score not in ("", "VS"):
-        color = "#E73131" if m["status"] == "live" else "#444444"
-        prefix = "⚽" if m["status"] == "live" else "KT"
-        labels.append({"text": f"{prefix} {score}", "position": "bottom-right",
-                       "color": color, "text_color": "#ffffff"})
+    score = m.get("score", "")
+    if score and score not in ("","VS"):
+        col = "#E73131" if m["status"]=="live" else "#444444"
+        pfx = "⚽" if m["status"]=="live" else "KT"
+        labels.append({"text": f"{pfx} {score}", "position": "bottom-right",
+                       "color": col, "text_color": "#fff"})
 
-    # Streams
-    stream_objs = []
+    # Streams → objects
     blv_groups: dict[str, list] = {}
     for s in all_streams:
         key = s.get("blv") or "__no_blv__"
         blv_groups.setdefault(key, []).append(s)
 
-    for blv_idx, (blv_key, raw_s) in enumerate(blv_groups.items()):
-        filtered = filter_streams(raw_s) if raw_s else []
-        if not filtered: continue
-        stream_label = f"🎙 {blv_key}" if blv_key != "__no_blv__" else f"Nguồn {blv_idx + 1}"
+    stream_objs = []
+    for idx, (bkey, raw_s) in enumerate(blv_groups.items()):
+        if not raw_s: continue
+        slabel = f"🎙 {bkey}" if bkey != "__no_blv__" else f"Nguồn {idx+1}"
         slinks = []
-        for lnk_idx, s in enumerate(filtered):
-            quality   = s.get("name", "Auto")
-            link_name = quality if quality != "Auto" else f"Link {lnk_idx + 1}"
-            referer   = s.get("referer", blv_sources[0]["detail_url"] if blv_sources else BASE_URL + "/")
+        for li, s in enumerate(raw_s):
+            ref = s.get("referer", m["blv_sources"][0]["detail_url"] if m["blv_sources"] else BASE_URL+"/")
             slinks.append({
-                "id":      make_id(ch_id, f"b{blv_idx}", f"l{lnk_idx}"),
-                "name":    link_name,
+                "id":      make_id(ch_id, f"b{idx}", f"l{li}"),
+                "name":    s.get("name","Auto"),
                 "type":    s["type"],
-                "default": lnk_idx == 0,
+                "default": li == 0,
                 "url":     s["url"],
                 "request_headers": [
-                    {"key": "Referer",    "value": referer},
-                    {"key": "User-Agent", "value": CHROME_UA},
+                    {"key":"Referer",    "value": ref},
+                    {"key":"User-Agent", "value": CHROME_UA},
                 ],
             })
         stream_objs.append({
-            "id":           make_id(ch_id, f"st{blv_idx}"),
-            "name":         stream_label,
+            "id":           make_id(ch_id, f"st{idx}"),
+            "name":         slabel,
             "stream_links": slinks,
         })
 
     if not stream_objs:
-        fallback_url = blv_sources[0]["detail_url"] if blv_sources else BASE_URL + "/"
+        fallback = m["blv_sources"][0]["detail_url"] if m["blv_sources"] else BASE_URL+"/"
         stream_objs.append({
-            "id": make_id(ch_id, "st0"), "name": "Trực tiếp",
-            "stream_links": [{
-                "id": "lnk0", "name": "Link 1", "type": "iframe", "default": True,
-                "url": fallback_url,
-                "request_headers": [
-                    {"key": "Referer",    "value": fallback_url},
-                    {"key": "User-Agent", "value": CHROME_UA},
+            "id":"fallback","name":"Trực tiếp",
+            "stream_links":[{
+                "id":"lnk0","name":"Link 1","type":"iframe","default":True,
+                "url": fallback,
+                "request_headers":[
+                    {"key":"Referer","value":fallback},
+                    {"key":"User-Agent","value":CHROME_UA},
                 ],
             }],
         })
 
-    # Thumbnail
-    logo_a_url = m.get("_logo_a", "")
-    logo_b_url = m.get("_logo_b", "")
-    _BAD_THUMB = ("opengraph", "favicon", "og-image", "og_image", "site-logo",
-                  "/favicon.", "opengraph-image")
-    thumb_ok = bool(thumb and thumb.startswith("http")
-                    and not any(b in thumb.lower() for b in _BAD_THUMB))
+    # ── Thumbnail ──
+    # Thứ tự ưu tiên:
+    # 1. Dùng 2 logo URL từ card/detail → tạo thumbnail ghép bằng Pillow
+    # 2. Thumbnail ảnh lớn trực tiếp từ trang (nếu có)
+    # 3. Placeholder icon site
+    la = m.get("logo_a_url", "")
+    lb = m.get("logo_b_url", "")
 
-    if thumb_ok:
-        img_obj = {"padding": 0, "background_color": "#000000", "display": "cover",
-                   "url": thumb, "width": 1600, "height": 1200}
-    elif _PILLOW_OK:
-        jpeg_uri = make_match_thumbnail_b64(
-            home_team=m["home_team"], away_team=m["away_team"],
-            logo_a_url=logo_a_url, logo_b_url=logo_b_url,
-            time_str=m.get("time_str", ""), date_str=m.get("date_str", ""),
-            status=m["status"], score=m.get("score", ""), league=eff_league,
+    _BAD_THUMB = ("opengraph","favicon","og-image","og_image","site-logo","/favicon.")
+    thumb_ok   = bool(m.get("thumbnail") and m["thumbnail"].startswith("http")
+                      and not any(b in m["thumbnail"].lower() for b in _BAD_THUMB))
+
+    if _PILLOW_OK and (la or lb):
+        # Luôn tạo thumbnail ghép 2 logo nếu Pillow khả dụng
+        jpeg_uri = make_thumbnail_b64(
+            home_team  = m["home_team"],
+            away_team  = m["away_team"],
+            logo_a_url = la,
+            logo_b_url = lb,
+            time_str   = m.get("time_str",""),
+            date_str   = m.get("date_str",""),
+            status     = m["status"],
+            score      = score,
+            league     = league,
         )
-        img_obj = ({"padding": 0, "background_color": "#000000", "display": "cover",
-                    "url": jpeg_uri, "width": 800, "height": 450}
-                   if jpeg_uri else PLACEHOLDER_IMG)
+        img_obj = {"padding":0,"background_color":"#0f3460","display":"cover",
+                   "url": jpeg_uri, "width":800, "height":450} if jpeg_uri else PLACEHOLDER_IMG
+    elif thumb_ok:
+        img_obj = {"padding":0,"background_color":"#000000","display":"cover",
+                   "url": m["thumbnail"], "width":1600, "height":1200}
     else:
         img_obj = PLACEHOLDER_IMG
 
-    content_name = display_name
-    if eff_league and len(eff_league.strip()) < 50:
-        content_name += f" · {eff_league.strip()}"
+    content_name = name
+    if league and len(league.strip()) < 50:
+        content_name += f" · {league.strip()}"
 
     has_multi = len(stream_objs) > 1
     return {
         "id":            ch_id,
-        "name":          display_name,
+        "name":          name,
         "type":          "multi" if has_multi else "single",
         "display":       "thumbnail-only",
         "enable_detail": has_multi,
         "image":         img_obj,
         "labels":        labels,
         "sources": [{
-            "id":   make_id(ch_id, "src"),
+            "id":   make_id(ch_id,"src"),
             "name": "CauThuTV Live",
             "contents": [{
-                "id":      make_id(ch_id, "ct"),
+                "id":      make_id(ch_id,"ct"),
                 "name":    content_name,
                 "streams": stream_objs,
             }],
         }],
     }
 
-# ── Root JSON ─────────────────────────────────────────────────
-def fetch_site_icon(html: str, bs) -> str:
-    """Tìm URL icon/favicon thật từ HTML trang chủ cauthutv.shop."""
-    # 1. <link rel="icon" / "apple-touch-icon" / "shortcut icon">
-    for rel in ("apple-touch-icon", "icon", "shortcut icon"):
-        tag = bs.find("link", rel=lambda r: r and rel in r)
-        if tag:
-            href = tag.get("href", "")
-            if href:
-                url = href if href.startswith("http") else urljoin(BASE_URL, href)
-                if not url.endswith(".ico") or "favicon" in url:
-                    return url
 
-    # 2. og:image thứ cấp (có thể là logo)
-    og = bs.find("meta", property="og:image")
-    if og:
-        url = og.get("content", "")
-        if url and "logo" in url.lower():
-            return url
+# ══════════════════════════════════════════════════════════════
+#  Build JSON output
+# ══════════════════════════════════════════════════════════════
 
-    # 3. Tìm <img> chứa "logo" trong src
-    for img in bs.find_all("img", src=True):
-        src = img.get("src", "")
-        if "logo" in src.lower() and src.startswith("http"):
-            return src
-
-    # 4. Dùng danh sách fallback
-    return ICON_CANDIDATES[0]
-
-
-# ── Root JSON ─────────────────────────────────────────────────
-def build_iptv_json(groups_data: list, now_str: str, site_icon: str = "") -> dict:
-    groups_out = []
-    for label, channels in groups_data:
-        gid = re.sub(r"[^a-z0-9]", "-", label.lower())[:24].strip("-")
-        groups_out.append({"id": gid, "name": label, "image": None, "channels": channels})
-
-    # Dùng icon được phát hiện từ HTML, nếu không có thì dùng fallback
-    resolved_icon = site_icon or ICON_CANDIDATES[0]
-
+def build_json(channels: list, now_str: str, site_icon: str) -> dict:
     return {
         "id":          "cauthutv-live",
         "name":        "CauThu TV - Trực tiếp thể thao",
@@ -1151,25 +816,33 @@ def build_iptv_json(groups_data: list, now_str: str, site_icon: str = "") -> dic
         "grid_number": 3,
         "image": {
             "type":          "cover",
-            "url":           resolved_icon,
-            "fallback_urls": [u for u in ICON_CANDIDATES if u != resolved_icon],
+            "url":           site_icon,
+            "fallback_urls": [u for u in SITE_ICON_CANDIDATES if u != site_icon],
         },
-        "groups": groups_out,
+        "groups": [{
+            "id":       "tran-hot",
+            "name":     "🔥 Trận HOT",
+            "image":    None,
+            "channels": channels,
+        }],
     }
 
-# ── Main ──────────────────────────────────────────────────────
+
+# ══════════════════════════════════════════════════════════════
+#  Main
+# ══════════════════════════════════════════════════════════════
+
 def main():
-    ap = argparse.ArgumentParser(description="Crawler cauthutv.shop")
-    ap.add_argument("--all",       action="store_true", help="Tất cả trận (không phân loại)")
-    ap.add_argument("--no-stream", action="store_true", help="Không crawl stream (nhanh hơn)")
-    ap.add_argument("--debug",     action="store_true", help="Lưu HTML để phân tích cấu trúc")
+    ap = argparse.ArgumentParser(description="Crawler cauthutv.shop — chỉ Trận HOT")
+    ap.add_argument("--no-stream", action="store_true", help="Không crawl stream")
+    ap.add_argument("--debug",     action="store_true", help="Lưu HTML để phân tích")
     ap.add_argument("--output",    default=OUTPUT_FILE)
     args = ap.parse_args()
 
-    log("\n" + "═" * 62)
-    log("  🏟  CRAWLER — cauthutv.shop  v2")
-    log("  🔥  Trận HOT + 🖼 2 Logo + 🎙 BLV streams")
-    log("═" * 62 + "\n")
+    log("\n" + "═"*62)
+    log("  🔥  CRAWLER — cauthutv.shop  v3  (CHỈ TRẬN HOT)")
+    log("  🖼  Thumbnail: ghép 2 logo đội từ card HTML")
+    log("═"*62 + "\n")
 
     now_vn  = datetime.now(VN_TZ)
     now_str = now_vn.strftime("%d/%m/%Y %H:%M") + " ICT (UTC+7)"
@@ -1184,80 +857,71 @@ def main():
         log("⚠ Cloudflare challenge — thử lại sau."); sys.exit(1)
 
     if args.debug:
-        with open(DEBUG_HTML, "w", encoding="utf-8") as f:
-            f.write(html)
+        with open(DEBUG_HTML, "w", encoding="utf-8") as f: f.write(html)
         log(f"  💾 Đã lưu HTML → {DEBUG_HTML}")
 
     bs = BeautifulSoup(html, "lxml")
 
-    # Phát hiện icon/logo thật của trang
-    site_icon = fetch_site_icon(html, bs)
-    log(f"  🖼  Site icon: {site_icon}")
+    # Icon trang
+    site_icon = detect_site_icon(html, bs)
+    log(f"  🖼  Icon trang: {site_icon}")
 
-    log(f"\n🔍 Phân tích trang...")
-    if args.all:
-        matches = extract_matches(html, bs, only_featured=False)
-        sections = [("🏟 Tất cả trận đấu", matches)] if matches else []
-    else:
-        sections = extract_matches_by_section(html, bs)
-        if not sections:
-            log("  ⚠ Không có section nào, thử toàn trang...")
-            matches = extract_matches(html, bs, only_featured=False)
-            sections = [("🏟 Trận đấu", matches)] if matches else []
-
-    if not sections:
-        log("  ❌ Không tìm thấy trận nào.")
+    log("\n🔍 Tìm mục Trận HOT...")
+    hot_section = find_hot_section(bs)
+    if not hot_section:
+        log("❌ Không tìm thấy mục Trận HOT.")
         if not args.debug:
-            log("  💡 Thử chạy với --debug để lưu HTML và kiểm tra cấu trúc.")
+            log("  💡 Thử --debug để lưu HTML và kiểm tra cấu trúc.")
         sys.exit(1)
 
-    total_matches = sum(len(m) for _, m in sections)
-    log(f"\n  ✅ {len(sections)} section, {total_matches} trận tổng cộng\n")
+    # Parse cards
+    raw, seen_urls = [], set()
+    VS_RE = re.compile(r"\bvs\b|\blive\b|:\d{2}|trực tiếp", re.I)
+    for a in hot_section.find_all("a", href=True):
+        text = a.get_text(" ", strip=True)
+        if not VS_RE.search(text): continue
+        m = parse_card(a)
+        if m and m["detail_url"] not in seen_urls:
+            seen_urls.add(m["detail_url"])
+            raw.append(m)
 
-    # Crawl streams + build channels
-    log(f"🖼  Crawl streams + tạo thumbnail...")
-    groups_data = []
-    global_idx  = 0
+    matches = merge_matches(raw)
+    log(f"\n  ✅ {len(raw)} card → gộp còn {len(matches)} trận HOT\n")
 
-    for label, matches in sections:
-        log(f"\n  ── {label} ({len(matches)} trận) ──")
-        channels = []
-        for m in matches:
-            global_idx += 1
-            i = global_idx
-            m["_logo_a"] = m.get("_logo_a", "")
-            m["_logo_b"] = m.get("_logo_b", "")
+    if not matches:
+        log("❌ Không tìm thấy trận nào trong mục HOT.")
+        sys.exit(1)
 
-            all_streams = []
-            thumb       = m.get("thumbnail", "")
+    # Crawl stream + logo chi tiết + tạo thumbnail
+    log("🖼  Crawl streams + tạo thumbnail 2 logo...")
+    channels = []
+    for i, m in enumerate(matches, 1):
+        all_streams = []
 
-            if not args.no_stream:
-                for src in m.get("blv_sources", []):
-                    blv_name   = src["blv"] or ""
-                    detail_url = src["detail_url"]
-                    streams, page_thumb, pg_la, pg_lb = crawl_blv_source(
-                        detail_url, blv_name, scraper)
-                    if not thumb and page_thumb: thumb = page_thumb
-                    if not m["_logo_a"] and pg_la: m["_logo_a"] = pg_la
-                    if not m["_logo_b"] and pg_lb: m["_logo_b"] = pg_lb
-                    seen_u = {s["url"] for s in all_streams}
-                    all_streams.extend(s for s in streams if s["url"] not in seen_u)
-                time.sleep(0.4)
+        if not args.no_stream:
+            for src in m.get("blv_sources", []):
+                streams, la, lb = crawl_detail(src["detail_url"], src["blv"], scraper)
+                if not m["logo_a_url"] and la: m["logo_a_url"] = la
+                if not m["logo_b_url"] and lb: m["logo_b_url"] = lb
+                seen_u = {s["url"] for s in all_streams}
+                all_streams.extend(s for s in streams if s["url"] not in seen_u)
+            time.sleep(0.4)
 
-            log(f"  [{i:03d}] {m['base_title'][:45]}"
-                f"  streams={len(all_streams)}"
-                f"  thumb={'✓' if thumb else '✗'}")
-            channels.append(build_channel(m, all_streams, thumb, i, m.get("league", "")))
-        groups_data.append((label, channels))
+        log(f"  [{i:03d}] {m['base_title'][:45]}"
+            f"  streams={len(all_streams)}"
+            f"  logo_a={'✓' if m['logo_a_url'] else '✗'}"
+            f"  logo_b={'✓' if m['logo_b_url'] else '✗'}")
 
-    result = build_iptv_json(groups_data, now_str, site_icon=site_icon)
+        channels.append(build_channel(m, all_streams, i))
+
+    result = build_json(channels, now_str, site_icon)
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
-    log(f"\n{'═' * 62}")
-    log(f"  ✅ Xong!  📁 {args.output}  {total_matches} trận  {len(sections)} group")
+    log(f"\n{'═'*62}")
+    log(f"  ✅ Xong!  📁 {args.output}  {len(channels)} trận HOT")
     log(f"  🕐 {now_str}")
-    log("═" * 62 + "\n")
+    log("═"*62 + "\n")
 
 if __name__ == "__main__":
     main()
