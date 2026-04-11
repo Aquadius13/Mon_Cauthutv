@@ -2,7 +2,7 @@
   "id": "cauthutv-live",
   "name": "CauThu TV - Trực tiếp thể thao",
   "url": "https://cauthutv.shop/",
-  "description": "Cập nhật lúc 11/04/2026 15:03 ICT (UTC+7)",
+  "description": "Cập nhật lúc 11/04/2026 16:08 ICT (UTC+7)",
   "disable_ads": true,
   "color": "#0f3460",
   "grid_number": 3,
@@ -12,12 +12,151 @@
   },
   "groups": [
     {
+      "id": "b-ng",
+      "name": "⚽ Bóng đá",
+      "image": null,
+      "channels": [
+        {
+          "id": "5789d724f67b7bd1",
+          "name": "Gwangju Football Club 0 - 1 Bucheon FC 1995 vs Gwangju Football Club  🕐 14:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/6d863231d694643571a4a060844b6454/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 14-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "f60c12f49322619a",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "4b403ee19c548c7b",
+                  "name": "Gwangju Football Club 0 - 1 Bucheon FC 1995 vs Gwangju Football Club  🕐 14:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "db4ddfa99c5ff809",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "aae238b4122b5649",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/0ca6a2f7d1f2ed9d50b739c38b630e06/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/gwangju-football-club-vs-bucheon-fc-1995"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5f13ee2ff6f97927",
+          "name": "Ningbo Professional Football Club 0 - 2 Shenzhen Juniors vs Ningbo Professional Football Club  🕐 14:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/ee3a91b59a63152ea965957cd660ab4b/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 14-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "ee6f997a19f9ec22",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "364f61d57ada9416",
+                  "name": "Ningbo Professional Football Club 0 - 2 Shenzhen Juniors vs Ningbo Professional Football Club  🕐 14:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "fa5a9b8f7fc19960",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "c9868b203b05cbec",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/197b117232501e966cd652e97fb2f664/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/ningbo-professional-football-club-vs-shenzhen-juniors"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "th--thao-kh-c",
       "name": "🏆 Thể thao khác",
       "image": null,
       "channels": [
         {
-          "id": "385d201b2e120975",
+          "id": "af38ca0d51bda3e1",
           "name": "Trực Tiếp  🔴 LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -40,19 +179,19 @@
           ],
           "sources": [
             {
-              "id": "8964dc6e4ee86e18",
+              "id": "a288b2abeee78078",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "1f3380df483bd839",
+                  "id": "d8aa9a9b2f6ef36f",
                   "name": "Trực Tiếp  🔴 LIVE",
                   "streams": [
                     {
-                      "id": "205e1e865d055233",
+                      "id": "b66a0d51ea5d6233",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "8d65a892f243161f",
+                          "id": "a7ab772120d1e501",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -77,8 +216,8 @@
           ]
         },
         {
-          "id": "7a513f992134b000",
-          "name": "Sutherland Sharks 3 - 1 Rockdale City Suns vs Sutherland Sharks  🕐 13:00 | 11/04",
+          "id": "785d6e1be898db77",
+          "name": "University NSW 1 - 1 APIA Leichhardt Tigers vs University NSW  🕐 14:15 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -86,7 +225,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/3fb394306146f914ccbf6be1f136a3fc/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/d3cfdcd968e924dc0b2cb9ebcd115ba6/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -98,7 +237,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 13-00",
+              "text": "KT 14-15",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -106,27 +245,27 @@
           ],
           "sources": [
             {
-              "id": "a29c8e2b565ce464",
+              "id": "e787ae34142df4c1",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "3a868719cacdd3e4",
-                  "name": "Sutherland Sharks 3 - 1 Rockdale City Suns vs Sutherland Sharks  🕐 13:00 | 11/04",
+                  "id": "3d363407de15dbed",
+                  "name": "University NSW 1 - 1 APIA Leichhardt Tigers vs University NSW  🕐 14:15 | 11/04",
                   "streams": [
                     {
-                      "id": "f4c36fd13e72e8ad",
+                      "id": "1e36ecd732fd41df",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "14545fb1e25e74e5",
+                          "id": "62b9e6bb9e1f66a6",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
-                          "url": "https://live.alilicloud.com/live/0383d34daa1185743b92ad77958b50cb/playlist.m3u8",
+                          "url": "https://live.alilicloud.com/live/dc0094b808ab955e4c1f360d76acf733/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/sutherland-sharks-vs-rockdale-city-suns"
+                              "value": "https://cauthutv.shop/university-nsw-vs-apia-leichhardt-tigers"
                             },
                             {
                               "key": "User-Agent",
@@ -143,8 +282,8 @@
           ]
         },
         {
-          "id": "33badd10f5d4471e",
-          "name": "Vissel Kobe 3 - 2 Nagoya Grampus vs Vissel Kobe  🕐 13:00 | 11/04",
+          "id": "5cc7cb218c7d5bdf",
+          "name": "Dandenong City SC 3 - 0 Bentleigh greens vs Dandenong City SC  🕐 14:15 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -152,7 +291,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/6de3725838da067d06b70fd535cb8733/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/8d06882fc85c80295436b15142193e27/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -164,7 +303,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 13-00",
+              "text": "KT 14-15",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -172,27 +311,27 @@
           ],
           "sources": [
             {
-              "id": "d482c4b80aee3225",
+              "id": "fbc8d91400e588e1",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "df6efcb7673af5e0",
-                  "name": "Vissel Kobe 3 - 2 Nagoya Grampus vs Vissel Kobe  🕐 13:00 | 11/04",
+                  "id": "d3f6711e319cbdc5",
+                  "name": "Dandenong City SC 3 - 0 Bentleigh greens vs Dandenong City SC  🕐 14:15 | 11/04",
                   "streams": [
                     {
-                      "id": "b23ecb84f0771755",
+                      "id": "8b8146082766d517",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "88a1031f559cf050",
+                          "id": "8976aef709175bf4",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
-                          "url": "https://live.alilicloud.com/live/07a711f20b98e44b2665cc6c956fcfaa/playlist.m3u8",
+                          "url": "https://live.alilicloud.com/live/0aefa27b96a9837009f0190d1ea162b9/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/vissel-kobe-vs-nagoya-grampus"
+                              "value": "https://cauthutv.shop/dandenong-city-sc-vs-bentleigh-greens"
                             },
                             {
                               "key": "User-Agent",
@@ -209,8 +348,8 @@
           ]
         },
         {
-          "id": "439e6ff67bb5d26f",
-          "name": "Brisbane Olympic United FC 1 - 2 Eastern Suburbs Brisbane vs Brisbane Olympic United FC  🕐 13:15 | 11/04",
+          "id": "7176479c17c2edb3",
+          "name": "Gladesville Ryde Magic 0 - 2 Fraser Park FC vs Gladesville Ryde Magic  🕐 14:30 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -218,7 +357,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/67e0c78b2af8860bae6ff876c68acb5d/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/1edf52235dcba3555a3232c048e1ee95/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -230,7 +369,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 13-15",
+              "text": "KT 14-30",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -238,85 +377,19 @@
           ],
           "sources": [
             {
-              "id": "99975c692c37ff18",
+              "id": "0eac365b0104a457",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "46ad93e70b1529dd",
-                  "name": "Brisbane Olympic United FC 1 - 2 Eastern Suburbs Brisbane vs Brisbane Olympic United FC  🕐 13:15 | 11/04",
+                  "id": "f56b557bfb99c0bf",
+                  "name": "Gladesville Ryde Magic 0 - 2 Fraser Park FC vs Gladesville Ryde Magic  🕐 14:30 | 11/04",
                   "streams": [
                     {
-                      "id": "c8b2e66344b75caf",
+                      "id": "1c6125686f8fb1aa",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "f04ce0d909fa1a58",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/0a13ba94c6f56ac7226ee34819035760/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/brisbane-olympic-united-fc-vs-eastern-suburbs-brisbane"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "849ca22a7ffa44fe",
-          "name": "West Adelaide Reserve 2 - 1 White City FK Beograd Reserves vs West Adelaide Reserve  🕐 13:15 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/d1368295d2ccabd911d1ed5ee8826510/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 13-15",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "75c2a2fe9f46e99b",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "e80bf9ab1d613b02",
-                  "name": "West Adelaide Reserve 2 - 1 White City FK Beograd Reserves vs West Adelaide Reserve  🕐 13:15 | 11/04",
-                  "streams": [
-                    {
-                      "id": "f23ea09c4ff55a58",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "608f73952987e689",
+                          "id": "83954b143c18d16b",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -324,7 +397,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/west-adelaide-reserve-vs-white-city-fk-beograd-reserves"
+                              "value": "https://cauthutv.shop/gladesville-ryde-magic-vs-fraser-park-fc"
                             },
                             {
                               "key": "User-Agent",
@@ -341,8 +414,8 @@
           ]
         },
         {
-          "id": "549c0d9c00adc38f",
-          "name": "Rydalmere Lions FCU20 0 - 3 Hakoah Sydney City East U20 vs Rydalmere Lions FCU20  🕐 13:30 | 11/04",
+          "id": "47477e284b684cda",
+          "name": "Hwaseong FC 1 - 0 Jeonnam Dragons vs Hwaseong FC  🕐 14:30 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -350,7 +423,7 @@
             "padding": 0,
             "background_color": "#000000",
             "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/cb2134bd96b8100daf9000b0bec1d233/image/small?v=1768601124",
+            "url": "https://img.rapid-api.icu/football/team/6fd0df3a9aef8e5b3fa3614199dd5485/image/small?v=1768601124",
             "width": 1600,
             "height": 1200
           },
@@ -362,7 +435,7 @@
               "position": "top-left"
             },
             {
-              "text": "KT 13-30",
+              "text": "KT 14-30",
               "position": "bottom-right",
               "color": "#444444",
               "text_color": "#ffffff"
@@ -370,19 +443,415 @@
           ],
           "sources": [
             {
-              "id": "6a46b5aea9a3753d",
+              "id": "2ac0c18606dc7b5e",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "3d52fae7914ef7cd",
-                  "name": "Rydalmere Lions FCU20 0 - 3 Hakoah Sydney City East U20 vs Rydalmere Lions FCU20  🕐 13:30 | 11/04",
+                  "id": "40a9d961133fe464",
+                  "name": "Hwaseong FC 1 - 0 Jeonnam Dragons vs Hwaseong FC  🕐 14:30 | 11/04",
                   "streams": [
                     {
-                      "id": "1fe8fb99053cc75d",
+                      "id": "cf035cc342a10679",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "c37f0d6f5b87922f",
+                          "id": "b35ffd64ea5ea708",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/dd144b077a44e82f46254c1ce1f8d619/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/hwaseong-fc-vs-jeonnam-dragons"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "0f6aea48ba5c72a3",
+          "name": "Incheon United Club 1 - 1 Ulsan HD FC vs Incheon United Club  🕐 14:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/4d008c1d910421807a93570666abe240/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 14-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "7b0a46c3ae6d4594",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "0823ca036761d945",
+                  "name": "Incheon United Club 1 - 1 Ulsan HD FC vs Incheon United Club  🕐 14:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "036c8fe89e27ab6a",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "7783abbe3f3b2478",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/f9d8496739f58458c04b348f566e5889/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/incheon-united-club-vs-ulsan-hd-fc"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5b7a7cd6c0d75017",
+          "name": "Nanchong Team 1 - 0 Dazhou Team vs Nanchong Team  🕐 14:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/a788f909c5a90ba7624b42bdfb92abdf/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 14-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "1bee7a65f67597e7",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "0579f569a9eb578b",
+                  "name": "Nanchong Team 1 - 0 Dazhou Team vs Nanchong Team  🕐 14:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "58a2dcdc4e831dda",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "a604dd38d222314d",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/50a3756a761b316517dba3b9829dfbfe/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/nanchong-team-vs-dazhou-team"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cc24cddce5e1b7fd",
+          "name": "Qingdao Red Lions 2 - 1 Shanghai Second vs Qingdao Red Lions  🕐 14:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/f727fc6838bdbf3d493cf02390e3a7ad/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 14-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "92da57840d23c841",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "293a3908f58cb181",
+                  "name": "Qingdao Red Lions 2 - 1 Shanghai Second vs Qingdao Red Lions  🕐 14:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "cbec90f470d79b19",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "851e4514519fcace",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/61beab3f6b9b14471e08b352327aafec/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/qingdao-red-lions-vs-shanghai-second"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6c514b26eb99f76c",
+          "name": "Paju Frontier FC 1 - 2 Seoul E-Land FC vs Paju Frontier FC  🕐 14:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/4cfdeaba40988ec951b553ed953b4ff1/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 14-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "e4d5aac01cade867",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "51fbc1a36adf7bfe",
+                  "name": "Paju Frontier FC 1 - 2 Seoul E-Land FC vs Paju Frontier FC  🕐 14:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "f53206b070f0c487",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "adec992daecd5c4a",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/2bec448ced595956697459a616904b06/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/paju-frontier-fc-vs-seoul-e-land-fc"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3c3e90ea3ec3f1e0",
+          "name": "Changchun Yatai 1 - 1 Shaanxi Union vs Changchun Yatai  🕐 14:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/dfb6da400ffda1447d8af657790915f7/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 14-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "fa9649ca180f59b1",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "50f3f4b8bc737a9d",
+                  "name": "Changchun Yatai 1 - 1 Shaanxi Union vs Changchun Yatai  🕐 14:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "c6fdd02a9490860a",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "5bd90bac60c034f8",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/cded73652cddd1bb53ef66ce89fc0425/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/changchun-yatai-vs-shaanxi-union"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5f608e9770245467",
+          "name": "Bulls Academy U20 2 - 0 Central Coast MarinersU20 vs Bulls Academy U20  🕐 14:35 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/b6b530e958bb5b734c3a6f23a4f657e4/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 14-35",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "abdd51c0878467ae",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "3688e88ba122c0ae",
+                  "name": "Bulls Academy U20 2 - 0 Central Coast MarinersU20 vs Bulls Academy U20  🕐 14:35 | 11/04",
+                  "streams": [
+                    {
+                      "id": "99ddd2714b117034",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "4ada58da5c16acde",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -390,469 +859,7 @@
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/rydalmere-lions-fcu20-vs-hakoah-sydney-city-east-u20"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "edd8ec63b1d51677",
-          "name": "Oakleigh Cannons 2 - 2 Hume City vs Oakleigh Cannons  🕐 13:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/376f1bd1ea18cd50c6fee5ae3e22b410/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 13-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "5063fac22c04291f",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "289fdefefb77a1f9",
-                  "name": "Oakleigh Cannons 2 - 2 Hume City vs Oakleigh Cannons  🕐 13:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "fcf79a5f5c755725",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "b68b695b32fd6daa",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/142f69a06db5bb26e4896da77e38044f/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/oakleigh-cannons-vs-hume-city"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "bbb2ffa601f6e0dd",
-          "name": "Belmont Swansea United SC 3 - 3 Edgeworth Eagles FC vs Belmont Swansea United SC  🕐 13:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/30cf5b913802d071e58e5464daeab09d/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 13-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "eed86f7d0dfc89ee",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "652b56307e49ef51",
-                  "name": "Belmont Swansea United SC 3 - 3 Edgeworth Eagles FC vs Belmont Swansea United SC  🕐 13:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "e355537f9f0d4237",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "e0d096ef17f8c44e",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://xemlaitrandau.live/",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/belmont-swansea-united-sc-vs-edgeworth-eagles-fc"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "1eb7cbff673b474b",
-          "name": "New Lambton FC Women 3 - 2 Newcastle Olympic FC Women vs New Lambton FC Women  🕐 13:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/f3fa15e0ecadd5b8a60ca4bd8c54d663/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 13-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "020115fd2593c4c3",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "e3c99cdfb770abec",
-                  "name": "New Lambton FC Women 3 - 2 Newcastle Olympic FC Women vs New Lambton FC Women  🕐 13:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "2b912c4868617726",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "b5294d63cbea858b",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/0af7d183110d9fafe117fa025372f237/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/new-lambton-fc-women-vs-newcastle-olympic-fc-women"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "6323be722edc2f18",
-          "name": "East Perth FC 2 - 1 Stirling Macedonia vs East Perth FC  🕐 13:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/56ec7f36c766cb0a1397ec3e551843e9/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 13-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "af5e251bbcb0c5ee",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "e88bed4325c647b1",
-                  "name": "East Perth FC 2 - 1 Stirling Macedonia vs East Perth FC  🕐 13:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "a5ee7c34a8b8ece2",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "d8cddf8818ad99b6",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://xemlaitrandau.live/",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/east-perth-fc-vs-stirling-macedonia"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "24b235398840bfba",
-          "name": "Western Knights 4 - 1 Kalamunda City vs Western Knights  🕐 13:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/71bff9cb4262913370d38764986d59d0/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 13-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "0f50b3bc1afda18f",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "cee75637be9e631b",
-                  "name": "Western Knights 4 - 1 Kalamunda City vs Western Knights  🕐 13:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "bb89e67b89f4ad95",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "aa9f265f338ef3d5",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://xemlaitrandau.live/",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/western-knights-vs-kalamunda-city"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "f826179512d0869c",
-          "name": "Shamrock Rovers SC 0 - 3 Fremantle City vs Shamrock Rovers SC  🕐 13:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/979654b32a110f1e41eca4fba7ac8977/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 13-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "79027c752a6b40d2",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "0eb5632a29a9eb1b",
-                  "name": "Shamrock Rovers SC 0 - 3 Fremantle City vs Shamrock Rovers SC  🕐 13:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "fe426b9a8a1090ce",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "ec1613e4e092d51d",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://xemlaitrandau.live/",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/shamrock-rovers-sc-vs-fremantle-city"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "90fa239073281e6f",
-          "name": "Clarence Zebras Reserves 1 - 1 Glenorchy Knights Reserves vs Clarence Zebras Reserves  🕐 13:45 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/a55e2fe2b2e88bc1674fbb2d1ea933a3/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 13-45",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "56e476356fa71a30",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "12023c18a17ec813",
-                  "name": "Clarence Zebras Reserves 1 - 1 Glenorchy Knights Reserves vs Clarence Zebras Reserves  🕐 13:45 | 11/04",
-                  "streams": [
-                    {
-                      "id": "6d47521224e4a54a",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "e4f246e976499f1f",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://xemlaitrandau.live/",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/clarence-zebras-reserves-vs-glenorchy-knights-reserves"
+                              "value": "https://cauthutv.shop/bulls-academy-u20-vs-central-coast-marinersu20"
                             },
                             {
                               "key": "User-Agent",
