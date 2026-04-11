@@ -463,13 +463,29 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
 # ═══════════════════════════════════════════════════════
 
 _HOT_TEXTS = [
-    "Các Trận HOT", "Các trận HOT", "Các Trận Hot",
-    "các trận hot", "Trận HOT", "Trận Hot",
+    # Đúng text hiển thị trên trang (hình 1)
+    "Các Trận Hot",
+    "Các Trận HOT",
+    "Các trận HOT",
+    "Các trận Hot",
+    "các trận hot",
+    "Trận HOT",
+    "Trận Hot",
+    "Các Trận Hot nhất",
 ]
 _HOT_RE = re.compile(
-    r"các\s+trận\s+hot|trận\s*hot|hot\s+match|nổi\s*bật|tâm\s*điểm",
+    r"các\s+trận\s+hot|trận\s*hot|hot\s+match",
     re.I | re.UNICODE,
 )
+
+# Text của section KHÔNG muốn crawl (lọc ra)
+_SKIP_SECTION_TEXTS = [
+    "Trận đấu đang diễn ra",
+    "trận đang diễn ra",
+    "Đang diễn ra",
+    "Tất cả trận",
+    "Trận sắp diễn ra",
+]
 _CARD_RE = re.compile(r"\bvs\b|\blive\b|:\d{2}|trực tiếp|live", re.I)
 
 def _card_links(container, min_n=1):
@@ -482,61 +498,90 @@ def _card_links(container, min_n=1):
             out.append(a); seen.add(href)
     return out if len(out) >= min_n else []
 
+def _section_has_skip_text(tag):
+    """Kiểm tra container có thuộc section không mong muốn không."""
+    for txt in _SKIP_SECTION_TEXTS:
+        if tag.find(string=lambda t, e=txt: t and e.lower() in t.lower()):
+            return True
+    return False
+
 def _climb(tag, min_n=1):
+    """Leo lên DOM tìm container cha gần nhất có đủ card, KHÔNG leo quá xa."""
     p = tag.parent
-    for _ in range(8):
-        if p is None or p.name in ("body","html"): break
-        if _card_links(p, min_n): return p
+    for _ in range(6):
+        if p is None or p.name in ("body","html","main"): break
+        cards = _card_links(p, min_n)
+        if cards:
+            # Không trả về nếu container này chứa nhiều section khác nhau (quá rộng)
+            text_len = len(p.get_text())
+            if text_len > 8000:   # container quá lớn → leo tiếp lên tìm cha nhỏ hơn
+                p = p.parent
+                continue
+            return p
         p = p.parent
     return None
 
 def find_hot_section(bs, debug=False):
-    # 1. Exact text
+    """
+    Tìm ĐÚNG section 'Các Trận Hot' — không lấy nhầm section khác.
+    Ưu tiên tìm theo text chính xác trước, sau đó mới fallback.
+    """
+    # 1. Tìm theo text chính xác → lấy container TRỰC TIẾP chứa cards
     for exact in _HOT_TEXTS:
         for node in bs.find_all(string=lambda t, e=exact: t and e in t):
-            pt = node.parent
-            log(f"  → Exact '{exact}' trong <{pt.name}>")
-            sec = _climb(pt, 1)
-            if sec:
-                log(f"  ✅ HOT (exact): {len(_card_links(sec,1))} card — "
-                    f"<{sec.name} class='{' '.join(sec.get('class',[]))[:50]}'>")
+            heading = node.parent
+            log(f"  → Exact '{exact}' trong <{heading.name} "
+                f"class='{' '.join(heading.get('class',[]))[:30]}'>")
+
+            # Tìm container chứa cards ngay dưới heading này
+            # Thử sibling trước (heading + grid cards cùng cấp)
+            parent = heading.parent
+            if parent:
+                cards = _card_links(parent, 1)
+                if cards and not _section_has_skip_text(parent):
+                    log(f"  ✅ HOT section (exact+parent): {len(cards)} card")
+                    return parent
+
+            # Leo lên tìm container bọc cả heading + cards
+            sec = _climb(heading, 1)
+            if sec and not _section_has_skip_text(sec):
+                log(f"  ✅ HOT section (exact+climb): {len(_card_links(sec,1))} card")
                 return sec
 
-    # 2. Regex
-    for h in bs.find_all(["h1","h2","h3","h4","h5","p","span","strong"]):
+    # 2. Regex text
+    for h in bs.find_all(["h1","h2","h3","h4","h5","p","span","strong","div"]):
         t = h.get_text(strip=True)
-        if _HOT_RE.search(t) and len(t) < 60:
+        if _HOT_RE.search(t) and 3 < len(t) < 50:
             log(f"  → Regex '{t[:40]}'")
+            parent = h.parent
+            if parent:
+                cards = _card_links(parent, 1)
+                if cards and not _section_has_skip_text(parent):
+                    log(f"  ✅ HOT section (regex+parent): {len(cards)} card")
+                    return parent
             sec = _climb(h, 1)
-            if sec:
-                log(f"  ✅ HOT (regex): {len(_card_links(sec,1))} card")
+            if sec and not _section_has_skip_text(sec):
+                log(f"  ✅ HOT section (regex+climb): {len(_card_links(sec,1))} card")
                 return sec
 
     # 3. id/class
     for tag in bs.find_all(["section","div","ul"]):
         tid  = tag.get("id","") or ""
         tcls = " ".join(tag.get("class",[]))
-        if re.search(r"hot|featured|highlight|trending", tid+tcls, re.I):
-            if _card_links(tag, 1):
+        if re.search(r"\bhot\b|featured|highlight|trending", tid+tcls, re.I):
+            if _card_links(tag, 1) and not _section_has_skip_text(tag):
                 log(f"  ✅ HOT (class): <{tag.name} id='{tid}' cls='{tcls[:40]}'>")
                 return tag
 
-    # 4. Fallback: đầu tiên có card
+    # 4. Debug + fallback
     if debug:
-        log("  ⚠ Không tìm được mục HOT. Heading trên trang:")
-        for h in bs.find_all(["h1","h2","h3","h4","h5"]):
-            log(f"    '{h.get_text(strip=True)[:60]}'")
-        log("  Sections có card:")
-        for tag in bs.find_all(["section","div"], limit=40):
-            c = _card_links(tag, 1)
-            if c:
-                log(f"    <{tag.name} id='{tag.get('id','')}' "
-                    f"class='{' '.join(tag.get('class',[]))[:40]}'> → {len(c)} card")
+        log("  ⚠ Không tìm được mục HOT. Tất cả heading:")
+        for h in bs.find_all(["h1","h2","h3","h4","h5","strong"]):
+            t = h.get_text(strip=True)
+            if t: log(f"    '{t[:70]}'")
 
-    for tag in bs.find_all(["section","div","ul"]):
-        if _card_links(tag, 2):
-            log(f"  ✅ HOT (fallback): {len(_card_links(tag))} card")
-            return tag
+    # Fallback: KHÔNG dùng nữa — trả về None để tránh crawl nhầm section
+    log("  ❌ Không tìm thấy section HOT. Chạy --debug để xem cấu trúc.")
     return None
 
 # ═══════════════════════════════════════════════════════
@@ -760,17 +805,15 @@ def make_id(*parts):
 
 def build_display_name(m):
     home, away = m["home_team"], m["away_team"]
-    base  = f"{home} vs {away}" if home and away else m["base_title"]
-    score = m.get("score","")
-    t, d  = m.get("time_str",""), m.get("date_str","")
-    st    = m["status"]
+    base = f"{home} vs {away}" if home and away else m["base_title"]
+    t, d = m.get("time_str",""), m.get("date_str","")
+    st   = m["status"]
 
+    # Không hiện tỉ số trong tên trận
     if st == "live":
-        return (f"{home} {score} {away}  🔴" if score
-                else f"{base}  🔴 LIVE")
+        return f"{base}  🔴 LIVE"
     if st == "finished":
-        return (f"{home} {score} {away}  ✅" if score
-                else f"{base}  ✅ KT")
+        return f"{base}  ✅"
     if t and d: return f"{base}  🕐 {t} | {d}"
     if t:       return f"{base}  🕐 {t}"
     if d:       return f"{base}  📅 {d}"
@@ -780,10 +823,9 @@ def build_channel(m, all_streams, index):
     ch_id = make_id("ctt", index, re.sub(r"[^a-z0-9]","-",m["base_title"].lower())[:24])
     name  = build_display_name(m)
     league = m.get("league","")
-    score  = m.get("score","")
     status = m["status"]
 
-    # Labels
+    # Labels — BỎ HOÀN TOÀN label tỉ số
     sc_map = {
         "live":     {"text":"● Live",          "color":"#E73131","text_color":"#fff"},
         "upcoming": {"text":"🕐 Sắp diễn ra", "color":"#d54f1a","text_color":"#fff"},
@@ -798,12 +840,6 @@ def build_channel(m, all_streams, index):
     elif blv_names:
         labels.append({"text":f"🎙 {blv_names[0]}","position":"top-right",
                        "color":"#00601f","text_color":"#fff"})
-
-    if score:
-        col = "#E73131" if status=="live" else "#444444"
-        pfx = "⚽" if status=="live" else "KT"
-        labels.append({"text":f"{pfx} {score}","position":"bottom-right",
-                       "color":col,"text_color":"#fff"})
 
     # Streams
     blv_groups = {}
@@ -844,7 +880,6 @@ def build_channel(m, all_streams, index):
     lb = m.get("away_logo","")
 
     if _PIL and (la or lb or m.get("home_team")):
-        # Luôn tạo thumbnail ghép 2 logo
         uri = make_thumbnail(
             home_team     = m.get("home_team",""),
             away_team     = m.get("away_team",""),
@@ -853,7 +888,7 @@ def build_channel(m, all_streams, index):
             time_str      = m.get("time_str",""),
             date_str      = m.get("date_str",""),
             status        = status,
-            score         = score,
+            score         = "",        # Bỏ tỉ số khỏi thumbnail
             league        = league,
         )
         img_obj = ({"padding":0,"background_color":"#0f3460","display":"cover",
