@@ -12,7 +12,7 @@ pip install cloudscraper beautifulsoup4 lxml requests pillow
 
 import argparse, base64, hashlib, io, json, re, sys, time
 from datetime import datetime, timezone, timedelta
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 try:
     import cloudscraper
@@ -333,107 +333,129 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
                    time_str="", date_str="", status="upcoming",
                    score="", league=""):
     """
-    Tạo ảnh JPEG 800×450 ghép 2 logo đội.
-    Trả về data:image/jpeg;base64,...
+    Tạo thumbnail JPEG 800×450 với layout cân đối:
+    - Logo trái (đội nhà) | Score/Giờ | Logo phải (đội khách)
+    - Logo hiển thị nguyên hình, KHÔNG có vòng tròn
+    - Nền: gradient xanh đậm + accent line màu
     """
     if not _PIL: return ""
     W, H = 800, 450
 
-    canvas = Image.new("RGBA", (W, H))
+    # ── Nền gradient xanh đậm hiện đại ──────────────────
+    canvas = Image.new("RGB", (W, H))
     draw   = ImageDraw.Draw(canvas)
-
-    # Gradient nền
     for y in range(H):
-        t = y / H
-        r_ = int(15 + 25*t); g_ = int(25 + 30*t); b_ = int(50 + 40*t)
-        draw.line([(0,y),(W,y)], fill=(r_,g_,b_,255))
+        t  = y / H
+        r_ = int(8  + 12*t)
+        g_ = int(16 + 20*t)
+        b_ = int(40 + 35*t)
+        draw.line([(0,y),(W,y)], fill=(r_,g_,b_))
 
-    # Bar giải đấu
-    draw.rectangle([(0,0),(W,54)], fill=(5,10,22,255))
+    # Đường accent ngang (trang trí)
+    draw.rectangle([(0, 0), (W, 4)], fill=(255, 140, 0))   # cam trên cùng
+
+    # ── Bar giải đấu ─────────────────────────────────────
+    BAR_H = 48
+    draw.rectangle([(0, 4), (W, 4+BAR_H)], fill=(0, 0, 0, 180))
     if league:
-        draw.text((W//2, 28), league[:42], fill=(235,235,235,255),
-                  font=_font(21), anchor="mm")
-    draw.line([(0,54),(W,54)], fill=(60,100,200,100), width=2)
+        txt = league[:44]
+        draw.text((W//2, 4+BAR_H//2), txt,
+                  fill=(255, 200, 50), font=_font(20), anchor="mm")
+    draw.line([(0, 4+BAR_H), (W, 4+BAR_H)], fill=(255, 140, 0, 80), width=1)
 
-    # Kích thước logo
-    LR   = 100          # bán kính vòng tròn logo
-    LY   = 54 + (H-54-80)//2 + 10 + LR   # tâm Y logo
-    NY   = LY + LR + 24     # Y tên đội
-    LX   = 175          # tâm X trái
-    RX   = W - 175      # tâm X phải
-    CX   = W // 2
+    CONTENT_TOP = 4 + BAR_H + 12       # Y bắt đầu vùng nội dung
+    CONTENT_BOT = H - 62               # Y kết thúc (trước tên đội)
+    NAME_H      = 28                   # chiều cao tên đội
+    LOGO_AREA_H = CONTENT_BOT - CONTENT_TOP - NAME_H
+    LOGO_MAX    = min(LOGO_AREA_H - 4, 155)  # Logo tối đa 155px
 
-    def draw_logo_slot(cx, cy, url, name):
-        """Vẽ 1 logo (hoặc chữ tắt nếu không có ảnh) tại (cx, cy)."""
-        # Vòng tròn nền mờ
-        r_out = LR + 8
-        draw.ellipse([(cx-r_out, cy-r_out),(cx+r_out, cy+r_out)],
-                     fill=(255,255,255,15), outline=(150,180,255,50), width=2)
+    CX = W // 2
+    LX = 145
+    RX = W - 145
+    LY = CONTENT_TOP + LOGO_AREA_H // 2 + 4   # tâm Y logo
+    NY = CONTENT_BOT - 4                        # Y tên đội
 
-        logo = fetch_logo_img(url, LR*4) if url else None
+    def draw_logo_slot(cx, cy, url, name, side):
+        """Vẽ logo KHÔNG vòng tròn — hiển thị nguyên hình, căn giữa."""
+        logo = fetch_logo_img(url, LOGO_MAX * 3) if url else None
 
         if logo:
+            # Chuyển về RGBA để xử lý transparency
+            if logo.mode != "RGBA":
+                logo = logo.convert("RGBA")
             lw, lh = logo.size
-            scale  = min((LR*2-8)/lw, (LR*2-8)/lh, 1.0)
-            nw, nh = max(1,int(lw*scale)), max(1,int(lh*scale))
-            logo   = logo.resize((nw,nh), Image.LANCZOS)
+            # Scale giữ nguyên tỉ lệ, fit trong LOGO_MAX × LOGO_MAX
+            scale = min(LOGO_MAX / lw, LOGO_MAX / lh, 1.0)
+            nw = max(1, int(lw * scale))
+            nh = max(1, int(lh * scale))
+            logo = logo.resize((nw, nh), Image.LANCZOS)
 
-            # Clip tròn
-            mask  = Image.new("L",(nw,nh),0)
-            mdraw = ImageDraw.Draw(mask)
-            mdraw.ellipse([(0,0),(nw-1,nh-1)], fill=255)
-            # Nhân alpha logo với mask tròn
-            alpha    = logo.split()[3]
-            combined = ImageChops.multiply(alpha, mask)
-            logo.putalpha(combined)
+            ox = cx - nw // 2
+            oy = cy - nh // 2
 
-            ox = cx - nw//2
-            oy = cy - nh//2
-            canvas.paste(logo, (ox,oy), logo.split()[3])
+            # Paste với alpha channel (giữ nền trong suốt của logo)
+            alpha = logo.split()[3]
+            canvas.paste(logo.convert("RGB"), (ox, oy), alpha)
         else:
-            # Fallback: vòng tròn màu + chữ tắt
-            draw.ellipse([(cx-LR,cy-LR),(cx+LR,cy+LR)],
-                         fill=(28,50,100,220), outline=(100,150,230,200), width=3)
+            # Fallback: hình vuông màu + chữ tắt (không vòng tròn)
+            sz = LOGO_MAX * 3 // 4
+            draw.rectangle(
+                [(cx-sz//2, cy-sz//2), (cx+sz//2, cy+sz//2)],
+                fill=(20, 40, 80), outline=(80, 120, 200), width=2
+            )
             words = (name or "?").split()
             init  = "".join(w[0].upper() for w in words[:2]) or "?"
-            draw.text((cx,cy), init, fill=(170,210,255,255),
-                      font=_font(48), anchor="mm")
+            draw.text((cx, cy), init,
+                      fill=(160, 200, 255), font=_font(44), anchor="mm")
 
-        # Tên đội
+        # Tên đội — dưới logo
         short = (name or "?")
-        if len(short) > 18: short = short[:17] + "…"
-        draw.text((cx, NY), short, fill=(255,255,255,215),
-                  font=_font(17), anchor="mm")
+        if len(short) > 20: short = short[:19] + "…"
+        # Shadow text
+        draw.text((cx+1, NY+1), short, fill=(0,0,0,180), font=_font(17), anchor="mm")
+        draw.text((cx, NY), short, fill=(240, 240, 240), font=_font(17), anchor="mm")
 
     # Vẽ 2 logo
-    draw_logo_slot(LX, LY, home_logo_url, home_team)
-    draw_logo_slot(RX, LY, away_logo_url, away_team)
+    draw_logo_slot(LX, LY, home_logo_url, home_team, "left")
+    draw_logo_slot(RX, LY, away_logo_url, away_team, "right")
 
-    # Vùng giữa: score / giờ / "VS"
+    # ── Vùng giữa: VS / Giờ / Score ──────────────────────
+    MID_W = RX - LX - LOGO_MAX - 20   # độ rộng vùng giữa
+    MID_X = CX
+
     if status == "live" and score:
-        ctr, cc = score, (255,55,55,255)
-        sub, sc2 = "● LIVE", (255,100,100,255)
+        line1, c1 = score,   (255, 70, 70)
+        line2, c2 = "● LIVE",(255, 120, 120)
+        f1_size   = 52
     elif status == "finished" and score:
-        ctr, cc = score, (255,255,255,255)
-        sub, sc2 = "Kết thúc", (160,160,160,255)
+        line1, c1 = score,      (255, 255, 255)
+        line2, c2 = "KẾT THÚC", (140, 140, 140)
+        f1_size   = 52
     else:
-        ctr, cc = time_str or "VS", (255,255,255,255)
-        sub, sc2 = date_str or "", (170,170,170,255)
+        line1, c1 = time_str or "VS", (255, 255, 255)
+        line2, c2 = date_str or "",   (160, 160, 160)
+        f1_size   = 46
 
-    # Gạch ngang
-    draw.line([(CX-70,LY-10),(CX-24,LY-10)], fill=(255,255,255,60), width=2)
-    draw.line([(CX+24,LY-10),(CX+70,LY-10)], fill=(255,255,255,60), width=2)
-    draw.text((CX, LY-8), ctr, fill=cc, font=_font(48), anchor="mm")
-    if sub:
-        draw.text((CX, LY+36), sub, fill=sc2, font=_font(16,False), anchor="mm")
+    # Gạch ngang trang trí 2 bên chữ giữa
+    gx1, gx2 = MID_X - 55, MID_X + 55
+    gy       = LY - 2
+    draw.line([(LX + LOGO_MAX//2 + 8, gy), (MID_X - 38, gy)],
+              fill=(255,255,255,50), width=1)
+    draw.line([(MID_X + 38, gy), (RX - LOGO_MAX//2 - 8, gy)],
+              fill=(255,255,255,50), width=1)
 
-    # Fade bottom
-    for y in range(H-50, H):
-        a = int(255*(y-(H-50))/50)
-        draw.line([(0,y),(W,y)], fill=(5,14,25,a))
+    # Chữ chính (score / giờ)
+    draw.text((MID_X+1, LY+1), line1, fill=(0,0,0,160), font=_font(f1_size), anchor="mm")
+    draw.text((MID_X,   LY),   line1, fill=c1,           font=_font(f1_size), anchor="mm")
+    if line2:
+        draw.text((MID_X, LY+40), line2, fill=c2, font=_font(16, False), anchor="mm")
+
+    # ── Footer strip ─────────────────────────────────────
+    draw.rectangle([(0, H-50), (W, H)], fill=(0, 0, 0))
+    draw.line([(0, H-50), (W, H-50)], fill=(255, 140, 0, 120), width=1)
 
     buf = io.BytesIO()
-    canvas.convert("RGB").save(buf, format="JPEG", quality=85, optimize=True)
+    canvas.save(buf, format="JPEG", quality=87, optimize=True)
     return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
 
 # ═══════════════════════════════════════════════════════
@@ -525,7 +547,23 @@ def parse_card(a):
     href = a.get("href","")
     if not href: return None
     detail_url = href if href.startswith("http") else urljoin(BASE_URL, href)
+
+    # ── Lọc URL không phải trang trận đấu ───────────────
+    path = urlparse(detail_url).path.rstrip("/")
+    # Bỏ các path rõ ràng không phải trận
+    _SKIP_PATHS = {"", "/", "/tin-tuc", "/news", "/login", "/register",
+                   "/lich-truc-tiep", "/ty-so", "/bang-xep-hang",
+                   "/lien-he", "/gioi-thieu", "/about", "/contact"}
+    if path in _SKIP_PATHS: return None
+    if len(path) < 5: return None
+    _SKIP_KW = ("/tag/", "/category/", "/chuyen-muc/", "/author/", "/page/",
+                "/wp-", "/feed", "/sitemap", "javascript:", "/tin-tuc/",
+                "/news/", "?p=", "?cat=", "/search", "/tim-kiem")
+    if any(k in detail_url.lower() for k in _SKIP_KW): return None
+    if re.search(r'\.(jpg|png|gif|css|js|ico|mp4|m3u8)$', path, re.I): return None
+
     raw = a.get_text(" ", strip=True)
+    if len(raw) < 3: return None
 
     # Tên đội từ class
     home = away = ""
