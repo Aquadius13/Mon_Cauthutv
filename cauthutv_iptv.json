@@ -2,7 +2,7 @@
   "id": "cauthutv-live",
   "name": "CauThu TV - Trực tiếp thể thao",
   "url": "https://cauthutv.shop/",
-  "description": "Cập nhật lúc 11/04/2026 14:13 ICT (UTC+7)",
+  "description": "Cập nhật lúc 11/04/2026 15:03 ICT (UTC+7)",
   "disable_ads": true,
   "color": "#0f3460",
   "grid_number": 3,
@@ -12,85 +12,12 @@
   },
   "groups": [
     {
-      "id": "b-ng",
-      "name": "⚽ Bóng đá",
-      "image": null,
-      "channels": [
-        {
-          "id": "6a3b3c29db250459",
-          "name": "Adelaide Atletico 3 - 0 The Cove FC vs Adelaide Atletico  🕐 12:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/3bc52513e2308828a6fb7a40dabcf588/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 12-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "af04a3e796dde1d7",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "7e6091a4c9dc4025",
-                  "name": "Adelaide Atletico 3 - 0 The Cove FC vs Adelaide Atletico  🕐 12:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "2357cbabf0fbb17a",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "432305d10f451516",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/b72b9330e54feb97d0329c766723dd8e/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/adelaide-atletico-vs-the-cove-fc"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "th--thao-kh-c",
       "name": "🏆 Thể thao khác",
       "image": null,
       "channels": [
         {
-          "id": "1a20441807c287ad",
+          "id": "385d201b2e120975",
           "name": "Trực Tiếp  🔴 LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -113,19 +40,19 @@
           ],
           "sources": [
             {
-              "id": "0039ad093f62f51f",
+              "id": "8964dc6e4ee86e18",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "c882f1c821f99b92",
+                  "id": "1f3380df483bd839",
                   "name": "Trực Tiếp  🔴 LIVE",
                   "streams": [
                     {
-                      "id": "65ead31044527cb0",
+                      "id": "205e1e865d055233",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "70f206adf7d581d1",
+                          "id": "8d65a892f243161f",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -150,668 +77,8 @@
           ]
         },
         {
-          "id": "0db81dd689ee4e33",
-          "name": "Dandenong City U23 4 - 4 Bentleigh Greens U23 vs Dandenong City U23  🕐 12:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/f119283ddd7a5cfbc9ea027b3268c019/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 12-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "79c0881e49576d1c",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "8de30d79833aa9ee",
-                  "name": "Dandenong City U23 4 - 4 Bentleigh Greens U23 vs Dandenong City U23  🕐 12:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "1811553c94990834",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "a5835844fc7df67a",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://xemlaitrandau.live/",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/dandenong-city-u23-vs-bentleigh-greens-u23"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "391734dd38b86f3d",
-          "name": "Fulham United FC 4 - 0 Adelaide Cobras FC vs Fulham United FC  🕐 12:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/756afa0d0bd75c19fdf1a9f3bdfeb6d7/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 12-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "cb9d80363797f67c",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "f36dbcf411e66eab",
-                  "name": "Fulham United FC 4 - 0 Adelaide Cobras FC vs Fulham United FC  🕐 12:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "11f5dc55ec0ece39",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "87ddc5e149e44c78",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/69a7d1ada997ad1ac54f753c3ee297bd/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/fulham-united-fc-vs-adelaide-cobras-fc"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "8535d01978c6da76",
-          "name": "Salisbury United 1 - 3 Adelaide Olympic vs Salisbury United  🕐 12:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/7133732a2f0d6cc739487917c00806da/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 12-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "79e6ad14ff51a246",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "e12fced33f64f683",
-                  "name": "Salisbury United 1 - 3 Adelaide Olympic vs Salisbury United  🕐 12:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "a067e314f4751b8e",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "d3123adaf2d9cf5a",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/afb1fffa1651b4398bdc45ccbcdfc302/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/salisbury-united-vs-adelaide-olympic"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "8258cf058f964eaa",
-          "name": "Modbury Jets 2 - 0 Eastern United vs Modbury Jets  🕐 12:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/9fb742a0e48579e14860d7616435f2b3/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 12-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "da619d77a6e65bd9",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "9b2dc9be3aa1a36f",
-                  "name": "Modbury Jets 2 - 0 Eastern United vs Modbury Jets  🕐 12:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "d1de26c3410c43f5",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "caab6aae8132569c",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/8d81d7fd7fe130c71deecf78281374b1/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/modbury-jets-vs-eastern-united"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "2b7fc13efe120ecf",
-          "name": "Adelaide Panthers 2 - 1 Adelaide Blue Eagles vs Adelaide Panthers  🕐 12:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/da4be40c78baf19b8c76b4ba7efef526/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 12-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "d84817b46b0e98fd",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "3c81f4290ede1b8a",
-                  "name": "Adelaide Panthers 2 - 1 Adelaide Blue Eagles vs Adelaide Panthers  🕐 12:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "571c58a4b0bad5bd",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "b3357a07d0b0330b",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/c4ca781928ff570125fc9423ff7a21c7/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/adelaide-panthers-vs-adelaide-blue-eagles"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "498e2e307d97f8f8",
-          "name": "Campbelltown City SC 1 - 0 Adelaide United FC Youth vs Campbelltown City SC  🕐 12:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/49e4deea0d7ebaba73a995fdf56871b4/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 12-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "8b2a3e68e5f60fe5",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "f99520eecb930c77",
-                  "name": "Campbelltown City SC 1 - 0 Adelaide United FC Youth vs Campbelltown City SC  🕐 12:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "f15be005a41938bb",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "d824bd1f69b68a9d",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/fa2bb54e5c1b09259bb090571dd18bec/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/campbelltown-city-sc-vs-adelaide-united-fc-youth"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "a8a23911fc0cac19",
-          "name": "Para Hills Knlghts SC 1 - 3 Adelaide City FC vs Para Hills Knlghts SC  🕐 12:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/bfbe402a0d10b2aae87ba7cb385f5529/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 12-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "dfbe18302acd5478",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "b2d84570c9199add",
-                  "name": "Para Hills Knlghts SC 1 - 3 Adelaide City FC vs Para Hills Knlghts SC  🕐 12:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "ace86d1362122220",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "e8499de007ec8b97",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/435d908296d96abbf80a0ced5283b4cf/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/para-hills-knlghts-sc-vs-adelaide-city-fc"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "37ae9b63b31a0663",
-          "name": "Playford City 1 - 0 Sturt Lions vs Playford City  🕐 12:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/1dca7f07325442c76783867188f0075c/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 12-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "14ea12d30596674f",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "889ee44064dbf3b6",
-                  "name": "Playford City 1 - 0 Sturt Lions vs Playford City  🕐 12:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "01ab806ee3c64db6",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "4b6df33815cc2f7c",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/6552f1e51e4f743fd06c08410b0ce3bb/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/playford-city-vs-sturt-lions"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "f9f0eae6575124e0",
-          "name": "Cooma Tigers U23 5 - 0 Canberra White Eagles U23 vs Cooma Tigers U23  🕐 12:30 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/fceec9e2e571dde7cfbedc25aca29ad6/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 12-30",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "689172c815a18ce1",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "de74c964b70b0851",
-                  "name": "Cooma Tigers U23 5 - 0 Canberra White Eagles U23 vs Cooma Tigers U23  🕐 12:30 | 11/04",
-                  "streams": [
-                    {
-                      "id": "776c2cae9de4693b",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "8989bb353e919cdb",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/48aeea6e0f1c16148f36fc82f8a4df49/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/cooma-tigers-u23-vs-canberra-white-eagles-u23"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "f20eeeba7e501963",
-          "name": "Shao Jiang 0 - 1 S.L. Benfica de Macau vs Shao Jiang  🕐 13:00 | 11/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#000000",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/34114671307f69d4bae2cffd4d8a9919/image/small?v=1768601124",
-            "width": 1600,
-            "height": 1200
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#ffffff",
-              "position": "top-left"
-            },
-            {
-              "text": "KT 13-00",
-              "position": "bottom-right",
-              "color": "#444444",
-              "text_color": "#ffffff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "f3cd38b5f417cfc3",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "b9bc6765b4ce4058",
-                  "name": "Shao Jiang 0 - 1 S.L. Benfica de Macau vs Shao Jiang  🕐 13:00 | 11/04",
-                  "streams": [
-                    {
-                      "id": "cbf2430db7737c31",
-                      "name": "Nguồn 1",
-                      "stream_links": [
-                        {
-                          "id": "07335f49d4685ed6",
-                          "name": "Link 1",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/abffdb0d77384f8eaab89d00d47e219e/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/shao-jiang-vs-sl-benfica-de-macau"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "363f72f63f69487c",
-          "name": "Sutherland Sharks 2 - 0 Rockdale City Suns vs Sutherland Sharks  🕐 13:00 | 11/04",
+          "id": "7a513f992134b000",
+          "name": "Sutherland Sharks 3 - 1 Rockdale City Suns vs Sutherland Sharks  🕐 13:00 | 11/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -839,19 +106,19 @@
           ],
           "sources": [
             {
-              "id": "16e818a696b7da1a",
+              "id": "a29c8e2b565ce464",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "eda7c3547e366811",
-                  "name": "Sutherland Sharks 2 - 0 Rockdale City Suns vs Sutherland Sharks  🕐 13:00 | 11/04",
+                  "id": "3a868719cacdd3e4",
+                  "name": "Sutherland Sharks 3 - 1 Rockdale City Suns vs Sutherland Sharks  🕐 13:00 | 11/04",
                   "streams": [
                     {
-                      "id": "c8f0f754a7c55843",
+                      "id": "f4c36fd13e72e8ad",
                       "name": "Nguồn 1",
                       "stream_links": [
                         {
-                          "id": "8d37765eb68c34c5",
+                          "id": "14545fb1e25e74e5",
                           "name": "Link 1",
                           "type": "hls",
                           "default": true,
@@ -860,6 +127,732 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/sutherland-sharks-vs-rockdale-city-suns"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "33badd10f5d4471e",
+          "name": "Vissel Kobe 3 - 2 Nagoya Grampus vs Vissel Kobe  🕐 13:00 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/6de3725838da067d06b70fd535cb8733/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 13-00",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "d482c4b80aee3225",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "df6efcb7673af5e0",
+                  "name": "Vissel Kobe 3 - 2 Nagoya Grampus vs Vissel Kobe  🕐 13:00 | 11/04",
+                  "streams": [
+                    {
+                      "id": "b23ecb84f0771755",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "88a1031f559cf050",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/07a711f20b98e44b2665cc6c956fcfaa/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/vissel-kobe-vs-nagoya-grampus"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "439e6ff67bb5d26f",
+          "name": "Brisbane Olympic United FC 1 - 2 Eastern Suburbs Brisbane vs Brisbane Olympic United FC  🕐 13:15 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/67e0c78b2af8860bae6ff876c68acb5d/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 13-15",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "99975c692c37ff18",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "46ad93e70b1529dd",
+                  "name": "Brisbane Olympic United FC 1 - 2 Eastern Suburbs Brisbane vs Brisbane Olympic United FC  🕐 13:15 | 11/04",
+                  "streams": [
+                    {
+                      "id": "c8b2e66344b75caf",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "f04ce0d909fa1a58",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/0a13ba94c6f56ac7226ee34819035760/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/brisbane-olympic-united-fc-vs-eastern-suburbs-brisbane"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "849ca22a7ffa44fe",
+          "name": "West Adelaide Reserve 2 - 1 White City FK Beograd Reserves vs West Adelaide Reserve  🕐 13:15 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/d1368295d2ccabd911d1ed5ee8826510/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 13-15",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "75c2a2fe9f46e99b",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "e80bf9ab1d613b02",
+                  "name": "West Adelaide Reserve 2 - 1 White City FK Beograd Reserves vs West Adelaide Reserve  🕐 13:15 | 11/04",
+                  "streams": [
+                    {
+                      "id": "f23ea09c4ff55a58",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "608f73952987e689",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/west-adelaide-reserve-vs-white-city-fk-beograd-reserves"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "549c0d9c00adc38f",
+          "name": "Rydalmere Lions FCU20 0 - 3 Hakoah Sydney City East U20 vs Rydalmere Lions FCU20  🕐 13:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/cb2134bd96b8100daf9000b0bec1d233/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 13-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "6a46b5aea9a3753d",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "3d52fae7914ef7cd",
+                  "name": "Rydalmere Lions FCU20 0 - 3 Hakoah Sydney City East U20 vs Rydalmere Lions FCU20  🕐 13:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "1fe8fb99053cc75d",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "c37f0d6f5b87922f",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/rydalmere-lions-fcu20-vs-hakoah-sydney-city-east-u20"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "edd8ec63b1d51677",
+          "name": "Oakleigh Cannons 2 - 2 Hume City vs Oakleigh Cannons  🕐 13:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/376f1bd1ea18cd50c6fee5ae3e22b410/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 13-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "5063fac22c04291f",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "289fdefefb77a1f9",
+                  "name": "Oakleigh Cannons 2 - 2 Hume City vs Oakleigh Cannons  🕐 13:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "fcf79a5f5c755725",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "b68b695b32fd6daa",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/142f69a06db5bb26e4896da77e38044f/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/oakleigh-cannons-vs-hume-city"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bbb2ffa601f6e0dd",
+          "name": "Belmont Swansea United SC 3 - 3 Edgeworth Eagles FC vs Belmont Swansea United SC  🕐 13:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/30cf5b913802d071e58e5464daeab09d/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 13-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "eed86f7d0dfc89ee",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "652b56307e49ef51",
+                  "name": "Belmont Swansea United SC 3 - 3 Edgeworth Eagles FC vs Belmont Swansea United SC  🕐 13:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "e355537f9f0d4237",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "e0d096ef17f8c44e",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/belmont-swansea-united-sc-vs-edgeworth-eagles-fc"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1eb7cbff673b474b",
+          "name": "New Lambton FC Women 3 - 2 Newcastle Olympic FC Women vs New Lambton FC Women  🕐 13:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/f3fa15e0ecadd5b8a60ca4bd8c54d663/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 13-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "020115fd2593c4c3",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "e3c99cdfb770abec",
+                  "name": "New Lambton FC Women 3 - 2 Newcastle Olympic FC Women vs New Lambton FC Women  🕐 13:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "2b912c4868617726",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "b5294d63cbea858b",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/0af7d183110d9fafe117fa025372f237/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/new-lambton-fc-women-vs-newcastle-olympic-fc-women"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6323be722edc2f18",
+          "name": "East Perth FC 2 - 1 Stirling Macedonia vs East Perth FC  🕐 13:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/56ec7f36c766cb0a1397ec3e551843e9/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 13-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "af5e251bbcb0c5ee",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "e88bed4325c647b1",
+                  "name": "East Perth FC 2 - 1 Stirling Macedonia vs East Perth FC  🕐 13:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "a5ee7c34a8b8ece2",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "d8cddf8818ad99b6",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/east-perth-fc-vs-stirling-macedonia"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "24b235398840bfba",
+          "name": "Western Knights 4 - 1 Kalamunda City vs Western Knights  🕐 13:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/71bff9cb4262913370d38764986d59d0/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 13-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "0f50b3bc1afda18f",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "cee75637be9e631b",
+                  "name": "Western Knights 4 - 1 Kalamunda City vs Western Knights  🕐 13:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "bb89e67b89f4ad95",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "aa9f265f338ef3d5",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/western-knights-vs-kalamunda-city"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f826179512d0869c",
+          "name": "Shamrock Rovers SC 0 - 3 Fremantle City vs Shamrock Rovers SC  🕐 13:30 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/979654b32a110f1e41eca4fba7ac8977/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 13-30",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "79027c752a6b40d2",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "0eb5632a29a9eb1b",
+                  "name": "Shamrock Rovers SC 0 - 3 Fremantle City vs Shamrock Rovers SC  🕐 13:30 | 11/04",
+                  "streams": [
+                    {
+                      "id": "fe426b9a8a1090ce",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "ec1613e4e092d51d",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/shamrock-rovers-sc-vs-fremantle-city"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "90fa239073281e6f",
+          "name": "Clarence Zebras Reserves 1 - 1 Glenorchy Knights Reserves vs Clarence Zebras Reserves  🕐 13:45 | 11/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#000000",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/a55e2fe2b2e88bc1674fbb2d1ea933a3/image/small?v=1768601124",
+            "width": 1600,
+            "height": 1200
+          },
+          "labels": [
+            {
+              "text": "🕐 Sắp diễn ra",
+              "color": "#d54f1a",
+              "text_color": "#ffffff",
+              "position": "top-left"
+            },
+            {
+              "text": "KT 13-45",
+              "position": "bottom-right",
+              "color": "#444444",
+              "text_color": "#ffffff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "56e476356fa71a30",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "12023c18a17ec813",
+                  "name": "Clarence Zebras Reserves 1 - 1 Glenorchy Knights Reserves vs Clarence Zebras Reserves  🕐 13:45 | 11/04",
+                  "streams": [
+                    {
+                      "id": "6d47521224e4a54a",
+                      "name": "Nguồn 1",
+                      "stream_links": [
+                        {
+                          "id": "e4f246e976499f1f",
+                          "name": "Link 1",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://xemlaitrandau.live/",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/clarence-zebras-reserves-vs-glenorchy-knights-reserves"
                             },
                             {
                               "key": "User-Agent",
