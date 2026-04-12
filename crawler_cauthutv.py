@@ -258,8 +258,35 @@ def crawl_detail(detail_url, blv, scraper):
     if not html: return [], {}
     bs   = BeautifulSoup(html, "lxml")
 
-    # Cập nhật logo từ detail page (nếu có HTTP URL tốt hơn)
     info = {}
+
+    # ── 1. Ưu tiên: og:image / og:image:secure_url → thường là R2 URL thumbnail ──
+    for attr in [
+        {"property": "og:image:secure_url"},
+        {"property": "og:image"},
+        {"name":     "og:image"},
+        {"name":     "twitter:image"},
+    ]:
+        tag = bs.find("meta", attrs=attr)
+        if tag:
+            og_url = tag.get("content","").strip()
+            if og_url and og_url.startswith("http"):
+                # Lọc bỏ URL chung của site (favicon, logo)
+                _skip = ("favicon","logo","icon","default","placeholder")
+                if not any(s in og_url.lower() for s in _skip):
+                    info["thumb_url"] = og_url
+                    break
+
+    # ── 2. R2 URL trực tiếp trong HTML ──
+    if not info.get("thumb_url"):
+        r2_urls = re.findall(
+            r'https://pub-[a-f0-9]+\.r2\.dev/[^\s\'"<>]+\.(?:webp|jpg|jpeg|png)[^\s\'"<>]*',
+            html, re.I
+        )
+        if r2_urls:
+            info["thumb_url"] = r2_urls[0]
+
+    # ── 3. Logo teams từ img-lazy ──
     logos = []
     for img in bs.find_all("img", class_=lambda c: c and "img-lazy" in c):
         src = img.get("data-src") or img.get("src","")
@@ -425,15 +452,7 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
         l2, c2 = date_str or "",   (145, 155, 175)
         f1 = 44
 
-    # Gạch ngang trang trí
-    gx_l1 = LX + LMAX//2 + 10
-    gx_l2 = CX - 32
-    gx_r1 = CX + 32
-    gx_r2 = RX - LMAX//2 - 10
-    if gx_l1 < gx_l2:
-        draw.line([(gx_l1, LY), (gx_l2, LY)], fill=(255,255,255,35), width=1)
-    if gx_r1 < gx_r2:
-        draw.line([(gx_r1, LY), (gx_r2, LY)], fill=(255,255,255,35), width=1)
+    # Gạch ngang trang trí — BỎ (không vẽ)
 
     # Text giờ/LIVE (font lớn)
     draw.text((CX+1, LY+1), l1, fill=(0,0,0,140), font=_font(f1), anchor="mm")
@@ -521,7 +540,14 @@ def build_channel(m, all_streams, index):
         }]})
 
     la = m.get("home_logo",""); lb = m.get("away_logo","")
-    if _PIL and (la or lb or m.get("home_team")):
+    thumb_url = m.get("thumb_url","")
+
+    if thumb_url:
+        # ── Ưu tiên 1: R2/og:image URL trực tiếp từ detail page ──
+        img_obj = {"padding":0,"background_color":"#0a0e1a","display":"cover",
+                   "url":thumb_url,"width":700,"height":394}
+    elif _PIL and (la or lb or m.get("home_team")):
+        # ── Ưu tiên 2: Generate Pillow thumbnail ──
         uri = make_thumbnail(
             m.get("home_team",""), m.get("away_team",""),
             la, lb, m.get("time_str",""), m.get("date_str",""),
@@ -628,18 +654,22 @@ def main():
         if not args.no_stream:
             for src in m.get("blv_sources",[]):
                 streams, info = crawl_detail(src["detail_url"], src.get("blv",""), scraper)
+                # Ưu tiên R2/og:image URL từ detail page
+                if info.get("thumb_url") and not m.get("thumb_url"):
+                    m["thumb_url"] = info["thumb_url"]
                 # Cập nhật logo từ detail nếu tốt hơn
-                if info.get("home_logo") and not m["home_logo"]:
+                if info.get("home_logo") and not m.get("home_logo"):
                     m["home_logo"] = info["home_logo"]
-                if info.get("away_logo") and not m["away_logo"]:
+                if info.get("away_logo") and not m.get("away_logo"):
                     m["away_logo"] = info["away_logo"]
                 seen_u = {s["url"] for s in all_streams}
                 all_streams.extend(s for s in streams if s["url"] not in seen_u)
             time.sleep(0.3)
 
-        log(f"  [{i:03d}] {m.get('base_title','?')[:42]:42s} | "
+        has_thumb = bool(m.get("thumb_url"))
+        log(f"  [{i:03d}] {m.get('base_title','?')[:40]:40s} | "
             f"{'🔴' if m.get('status')=='live' else '🕐'} | "
-            f"logo={'✓' if m.get('home_logo') else '✗'}{'✓' if m.get('away_logo') else '✗'} | "
+            f"thumb={'R2' if has_thumb else ('PIL' if (m.get('home_logo') or m.get('away_logo')) else '✗')} | "
             f"streams={len(all_streams)}")
 
         channels.append(build_channel(m, all_streams, i))
