@@ -330,77 +330,123 @@ def fetch_logo(url, max_px=300):
 def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
                    time_str="", date_str="", status="upcoming", league=""):
     if not _PIL: return ""
-    W, H = 800, 450
+
+    # ── Kích thước: hẹp hơn (700×394 thay vì 800×450) ──
+    W, H = 700, 394
     canvas = Image.new("RGB", (W, H))
     draw   = ImageDraw.Draw(canvas)
 
-    # Gradient nền
+    # ── Nền: tối đậm, sang hơn — gradient xanh navy sâu ──
     for y in range(H):
-        t = y/H
-        draw.line([(0,y),(W,y)], fill=(int(8+12*t), int(16+20*t), int(40+35*t)))
+        t = y / H
+        # Từ #0a0e1a (trên) → #0d1829 (dưới) — xanh navy rất tối
+        r_ = int(10 + 5*t)
+        g_ = int(14 + 10*t)
+        b_ = int(26 + 15*t)
+        draw.line([(0,y),(W,y)], fill=(r_, g_, b_))
 
-    # Accent line trên
-    draw.rectangle([(0,0),(W,4)], fill=(255,140,0))
+    # ── Viền sáng bên trái (accent) ──
+    draw.rectangle([(0,0),(3,H)], fill=(255,140,0))
 
-    # Bar giải đấu
-    draw.rectangle([(0,4),(W,52)], fill=(0,0,0))
+    # ── Viền trên mỏng ──
+    draw.rectangle([(0,0),(W,3)], fill=(255,140,0))
+
+    # ── Bar giải đấu — nền trong suốt đậm hơn ──
+    BAR_H = 46
+    for y in range(BAR_H):
+        alpha_t = 1.0 - y/BAR_H * 0.3
+        bar_r = int(5 * alpha_t)
+        bar_g = int(8 * alpha_t)
+        bar_b = int(18 * alpha_t)
+        draw.line([(0,3+y),(W,3+y)], fill=(bar_r, bar_g, bar_b))
+
     if league:
-        draw.text((W//2, 28), league[:44], fill=(255,200,50),
-                  font=_font(20), anchor="mm")
-    draw.line([(0,52),(W,52)], fill=(255,140,0,80), width=1)
+        # Tên giải lớn hơn — font 22
+        draw.text((W//2, 3+BAR_H//2+1), league[:42],
+                  fill=(255, 195, 40), font=_font(22), anchor="mm")
+    # Đường kẻ dưới bar giải
+    draw.line([(0,3+BAR_H),(W,3+BAR_H)],
+              fill=(255,140,0), width=1)
 
-    CTOP = 60; CBOT = H-62
-    LMAX = min((CBOT-CTOP-28-4), 155)
-    CX=W//2; LX=145; RX=W-145
-    LY = CTOP + (CBOT-CTOP-28)//2 + 4
-    NY = CBOT - 4
+    # ── Layout chính ──
+    CTOP = 3 + BAR_H + 8      # bắt đầu vùng nội dung
+    CBOT = H - 52              # kết thúc vùng nội dung (trên footer)
+    AREA_H = CBOT - CTOP       # chiều cao vùng nội dung
+
+    # Logo: tối đa 130px, vừa với layout hẹp
+    LMAX = min(AREA_H - 36, 130)
+    CX   = W // 2
+    LX   = 115                 # tâm logo trái (gần hơn)
+    RX   = W - 115             # tâm logo phải
+    LY   = CTOP + (AREA_H - 32) // 2    # tâm Y logo
+    NY   = CBOT - 6            # Y tên đội
 
     def draw_logo(cx, cy, url, name):
-        logo = fetch_logo(url, LMAX*3) if url else None
+        logo = fetch_logo(url, LMAX * 3) if url else None
         if logo:
             if logo.mode != "RGBA": logo = logo.convert("RGBA")
-            lw,lh = logo.size
-            scale = min((LMAX-4)/lw, (LMAX-4)/lh, 1.0)
-            nw,nh = max(1,int(lw*scale)), max(1,int(lh*scale))
-            logo  = logo.resize((nw,nh), Image.LANCZOS)
-            ox,oy = cx-nw//2, cy-nh//2
-            canvas.paste(logo.convert("RGB"), (ox,oy), logo.split()[3])
+            lw, lh = logo.size
+            scale  = min((LMAX-4)/lw, (LMAX-4)/lh, 1.0)
+            nw     = max(1, int(lw * scale))
+            nh     = max(1, int(lh * scale))
+            logo   = logo.resize((nw, nh), Image.LANCZOS)
+            ox, oy = cx - nw//2, cy - nh//2
+            canvas.paste(logo.convert("RGB"), (ox, oy), logo.split()[3])
         else:
-            sz = LMAX*3//4
-            draw.rectangle([(cx-sz//2,cy-sz//2),(cx+sz//2,cy+sz//2)],
-                           fill=(20,40,80), outline=(80,120,200), width=2)
+            # Fallback: hình vuông bo góc nhẹ + chữ tắt
+            sz  = LMAX * 3 // 4
+            x0, y0 = cx - sz//2, cy - sz//2
+            x1, y1 = cx + sz//2, cy + sz//2
+            # Nền vuông tối
+            draw.rectangle([(x0,y0),(x1,y1)],
+                           fill=(15, 28, 58), outline=(70, 110, 190), width=2)
             init = "".join(w[0].upper() for w in (name or "?").split()[:2]) or "?"
-            draw.text((cx,cy), init, fill=(160,200,255), font=_font(44), anchor="mm")
+            draw.text((cx, cy), init,
+                      fill=(140, 185, 255), font=_font(40), anchor="mm")
 
+        # Tên đội — lớn hơn (font 19, bold)
         short = (name or "?")
-        if len(short) > 20: short = short[:19]+"…"
-        draw.text((cx+1,NY+1), short, fill=(0,0,0), font=_font(17), anchor="mm")
-        draw.text((cx,NY), short, fill=(240,240,240), font=_font(17), anchor="mm")
+        if len(short) > 18: short = short[:17] + "…"
+        # Shadow
+        draw.text((cx+1, NY+1), short, fill=(0,0,0),       font=_font(19), anchor="mm")
+        draw.text((cx,   NY),   short, fill=(235,235,235),  font=_font(19), anchor="mm")
 
+    # Vẽ 2 logo
     draw_logo(LX, LY, home_logo_url, home_team)
     draw_logo(RX, LY, away_logo_url, away_team)
 
-    # Giữa
+    # ── Vùng giữa: VS / Giờ / LIVE ──
     if status == "live":
-        l1,c1,l2,c2,f1 = "● LIVE",(255,70,70),"","",38
+        l1, c1 = "● LIVE", (255, 65, 65)
+        l2, c2 = "",       (255, 255, 255)
+        f1 = 36
     else:
-        l1,c1 = time_str or "VS",(255,255,255)
-        l2,c2 = date_str or "",(160,160,160)
-        f1 = 46
+        l1, c1 = time_str or "VS", (255, 255, 255)
+        l2, c2 = date_str or "",   (145, 155, 175)
+        f1 = 44
 
-    draw.line([(LX+LMAX//2+8,LY),(CX-36,LY)], fill=(255,255,255,40), width=1)
-    draw.line([(CX+36,LY),(RX-LMAX//2-8,LY)], fill=(255,255,255,40), width=1)
-    draw.text((CX+1,LY+1), l1, fill=(0,0,0,160), font=_font(f1), anchor="mm")
-    draw.text((CX,LY),     l1, fill=c1,           font=_font(f1), anchor="mm")
+    # Gạch ngang trang trí
+    gx_l1 = LX + LMAX//2 + 10
+    gx_l2 = CX - 32
+    gx_r1 = CX + 32
+    gx_r2 = RX - LMAX//2 - 10
+    if gx_l1 < gx_l2:
+        draw.line([(gx_l1, LY), (gx_l2, LY)], fill=(255,255,255,35), width=1)
+    if gx_r1 < gx_r2:
+        draw.line([(gx_r1, LY), (gx_r2, LY)], fill=(255,255,255,35), width=1)
+
+    # Text giờ/LIVE (font lớn)
+    draw.text((CX+1, LY+1), l1, fill=(0,0,0,140), font=_font(f1), anchor="mm")
+    draw.text((CX,   LY),   l1, fill=c1,           font=_font(f1), anchor="mm")
     if l2:
-        draw.text((CX,LY+38), l2, fill=c2, font=_font(16,False), anchor="mm")
+        draw.text((CX, LY+36), l2, fill=c2, font=_font(15, False), anchor="mm")
 
-    # Footer
-    draw.rectangle([(0,H-50),(W,H)], fill=(0,0,0))
-    draw.line([(0,H-50),(W,H-50)], fill=(255,140,0,100), width=1)
+    # ── Footer tối ──
+    draw.rectangle([(0, H-48),(W, H)], fill=(5, 8, 16))
+    draw.line([(0, H-48),(W, H-48)], fill=(255,140,0,90), width=1)
 
     buf = io.BytesIO()
-    canvas.save(buf, format="JPEG", quality=87, optimize=True)
+    canvas.save(buf, format="JPEG", quality=88, optimize=True)
     return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
 
 # ═══════════════════════════════════════════════════════
@@ -481,8 +527,8 @@ def build_channel(m, all_streams, index):
             la, lb, m.get("time_str",""), m.get("date_str",""),
             status, league,
         )
-        img_obj = ({"padding":0,"background_color":"#0f3460","display":"cover",
-                    "url":uri,"width":800,"height":450} if uri else PLACEHOLDER)
+        img_obj = ({"padding":0,"background_color":"#0a0e1a","display":"cover",
+                    "url":uri,"width":700,"height":394} if uri else PLACEHOLDER)
     else:
         img_obj = PLACEHOLDER
 
@@ -514,7 +560,7 @@ def build_json(channels, now_str):
         "id":          "cauthutv-live",
         "name":        "CauThu TV - Trực tiếp thể thao",
         "url":         BASE_URL + "/",
-        "description": f"Cập nhật lúc {now_str}",
+        "description": "Nền tảng xem thể thao trực tuyến hàng đầu Việt Nam. Trực tiếp bóng đá, bóng rổ, tennis, esports với bình luận tiếng Việt chất lượng cao.",
         "disable_ads": True,
         "color":       "#0f3460",
         "grid_number": 3,
