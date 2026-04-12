@@ -2,7 +2,7 @@
   "id": "cauthutv-live",
   "name": "CauThu TV - Trực tiếp thể thao",
   "url": "https://cauthutv.shop/",
-  "description": "Cập nhật lúc 12/04/2026 18:05 ICT (UTC+7)",
+  "description": "Cập nhật lúc 12/04/2026 18:56 ICT (UTC+7)",
   "disable_ads": true,
   "color": "#0f3460",
   "grid_number": 3,
@@ -371,40 +371,6 @@
                               "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
-                        },
-                        {
-                          "id": "64b0b658f8bd9981",
-                          "name": "HLS",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/6506ffbd6a02c05bf186016900abd616/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/ca-osasuna-vs-real-betis"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "3ce96a52e2d2ffe1",
-                          "name": "HLS",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/livehd/6506ffbd6a02c05bf186016900abd616/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/ca-osasuna-vs-real-betis"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
                         }
                       ]
                     }
@@ -461,6 +427,23 @@
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dua-hau/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/hanoi-fc-vs-hong-linh-ha-tinh"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "35c103ceffc7e803",
+                          "name": "HLS",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/d5cd980fa88d9ef9b696ad15f4147bb1/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -1819,6 +1802,23 @@
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/internacional-de-bogota-vs-alianza-futbol-club"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "2fb90fa6df19f9e8",
+                          "name": "HLS",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/ac6a7af68e9b53fc76d73c50198ce587/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
