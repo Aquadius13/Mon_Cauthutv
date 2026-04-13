@@ -17,7 +17,90 @@
       "image": null,
       "channels": [
         {
-          "id": "8a5930171fa4bd1e",
+          "id": "b96b46e305a6ec0b",
+          "name": "Internacional de Bogota vs Alianza Fútbol Club  🔴 LIVE",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#0a0e1a",
+            "display": "cover",
+            "url": "https://img.rapid-api.icu/football/team/569808a686e5b023cad249168bd1da1d/image/small?v=1768601124",
+            "width": 700,
+            "height": 394
+          },
+          "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 BLV",
+              "position": "top-right",
+              "color": "#00601f",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "87d6c2032e2ec198",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "0db0a1514486163f",
+                  "name": "Internacional de Bogota vs Alianza Fútbol Club  🔴 LIVE · Categoría Primera A",
+                  "streams": [
+                    {
+                      "id": "0abd265a71d6c497",
+                      "name": "🎙 BLV",
+                      "stream_links": [
+                        {
+                          "id": "009b534b009435aa",
+                          "name": "HLS",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/internacional-de-bogota-vs-alianza-futbol-club"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "7a025267b389c1fb",
+                          "name": "HLS",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/ac6a7af68e9b53fc76d73c50198ce587/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/internacional-de-bogota-vs-alianza-futbol-club"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "48b8b70ea89d558a",
           "name": "Boston Celtics vs Orlando Magic  🕐 05:00 | 13/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -46,19 +129,19 @@
           ],
           "sources": [
             {
-              "id": "3e8a30f8af1d1094",
+              "id": "126440f9e3f3ae26",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "24454ffb4c5eff8f",
+                  "id": "65c551395ebf80b5",
                   "name": "Boston Celtics vs Orlando Magic  🕐 05:00 | 13/04 · NBA (bóng rổ)",
                   "streams": [
                     {
-                      "id": "4459816255730cc8",
+                      "id": "be0364d57618df05",
                       "name": "🎙 BLV",
                       "stream_links": [
                         {
-                          "id": "f555e89d6ee2202c",
+                          "id": "0b1b2f174a4479cc",
                           "name": "HLS",
                           "type": "hls",
                           "default": true,
@@ -83,7 +166,7 @@
           ]
         },
         {
-          "id": "37197b6780702b63",
+          "id": "a512101097de176d",
           "name": "Los Angeles Lakers vs Utah Jazz  🕐 07:03 | 13/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -112,19 +195,19 @@
           ],
           "sources": [
             {
-              "id": "a516082ce270116d",
+              "id": "45323688745c9995",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "081734ec4e83d9ce",
+                  "id": "a3597e5ded3004bd",
                   "name": "Los Angeles Lakers vs Utah Jazz  🕐 07:03 | 13/04 · NBA (bóng rổ)",
                   "streams": [
                     {
-                      "id": "86125d31653ffbcc",
+                      "id": "6210b02809064f7b",
                       "name": "🎙 BLV",
                       "stream_links": [
                         {
-                          "id": "327458860767563d",
+                          "id": "99b499758d5c8cf3",
                           "name": "HLS",
                           "type": "hls",
                           "default": true,
@@ -133,72 +216,6 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/los-angeles-lakers-utah-jazz-1775934200246-155"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "69b65186ad6539e3",
-          "name": "Internacional de Bogota vs Alianza Fútbol Club  🕐 08:30 | 13/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#0a0e1a",
-            "display": "cover",
-            "url": "https://img.rapid-api.icu/football/team/569808a686e5b023cad249168bd1da1d/image/small?v=1768601124",
-            "width": 700,
-            "height": 394
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 BLV",
-              "position": "top-right",
-              "color": "#00601f",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "ee02691051a4e1ea",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "ea76e2c1e801a66c",
-                  "name": "Internacional de Bogota vs Alianza Fútbol Club  🕐 08:30 | 13/04 · Categoría Primera A",
-                  "streams": [
-                    {
-                      "id": "c7d0e03bfa2dfd7f",
-                      "name": "🎙 BLV",
-                      "stream_links": [
-                        {
-                          "id": "0b543dabcf34c5ac",
-                          "name": "HLS",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/internacional-de-bogota-vs-alianza-futbol-club"
                             },
                             {
                               "key": "User-Agent",
