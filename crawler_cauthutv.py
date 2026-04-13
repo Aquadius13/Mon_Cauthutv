@@ -156,23 +156,41 @@ def parse_card(card_div):
 
     # ── Logo ─────────────────────────────────────────
     # <img class="...img-lazy..." data-src="URL_hoặc_base64">
+    # Lọc: bỏ ảnh background (/bgs/, /bg_) và sport icon (/icon-sports/)
+    _SKIP_LOGO = ("/bgs/", "/bg_", "/bg-", "bg-soccer", "bg-volleyball",
+                  "/icon-sports/", "icon_sport_", "/background", "opacity-20")
     logos = []
     for img in card_div.find_all("img", class_=lambda c: c and "img-lazy" in c):
         src = img.get("data-src") or img.get("src","")
-        if src:
-            # Chỉ lấy HTTP URL (bỏ base64 — quá nặng, không ổn định)
-            if src.startswith("http"):
-                logos.append(src)
-            # base64 → bỏ qua, sẽ dùng fallback chữ tắt
+        if not src: continue
+        if not src.startswith("http"): continue   # bỏ base64
+        if any(s in src for s in _SKIP_LOGO): continue
+        # Đảm bảo URL đầy đủ (rapid-api.icu bị cắt ngắn trong data-src)
+        # /image/s → /image/small
+        if src.endswith("/image/s"):
+            src = src + "mall"
+        logos.append(src)
 
     home_logo = logos[0] if len(logos) >= 1 else ""
     away_logo = logos[1] if len(logos) >= 2 else ""
 
-    # ── BLV ───────────────────────────────────────────
+    # ── BLV — lấy tên đầy đủ từ div flex ──────────────
+    # Cấu trúc HTML: <div class="flex items-center gap-2">BLV<span>Tên Đầy Đủ</span></div>
     blv = ""
-    blv_m = re.search(r'BLV\s+(\S+)', raw_text)
-    if blv_m:
-        blv = blv_m.group(1)
+    blv_container = card_div.find(
+        "div", class_=lambda c: c and "flex" in c and "items-center" in c and "gap-2" in c
+    )
+    if blv_container:
+        txt = blv_container.get_text(" ", strip=True)
+        # txt dạng: "BLV Mèo Béo" hoặc "BLV Thây Ma (Neymar)"
+        m = re.match(r'BLV\s+(.+)', txt)
+        if m:
+            blv = m.group(1).strip()
+    if not blv:
+        # Fallback: lấy từ raw text — nhưng lấy đủ đến hết tên (trước FB88/DEBET)
+        m2 = re.search(r'BLV\s+([\w\s\(\)\.]+?)(?:\s*FB88|\s*DEBET|\s*XEM)', raw_text)
+        if m2:
+            blv = m2.group(1).strip()
 
     # ── data-type (sport) ─────────────────────────────
     sport = card_div.get("data-type","")
@@ -260,38 +278,24 @@ def crawl_detail(detail_url, blv, scraper):
 
     info = {}
 
-    # ── 1. Ưu tiên: og:image / og:image:secure_url → thường là R2 URL thumbnail ──
-    for attr in [
-        {"property": "og:image:secure_url"},
-        {"property": "og:image"},
-        {"name":     "og:image"},
-        {"name":     "twitter:image"},
-    ]:
-        tag = bs.find("meta", attrs=attr)
-        if tag:
-            og_url = tag.get("content","").strip()
-            if og_url and og_url.startswith("http"):
-                # Lọc bỏ URL chung của site (favicon, logo)
-                _skip = ("favicon","logo","icon","default","placeholder")
-                if not any(s in og_url.lower() for s in _skip):
-                    info["thumb_url"] = og_url
-                    break
+    # ── Chỉ lấy R2 URL thực sự (pub-xxx.r2.dev) làm thumbnail ──
+    # KHÔNG dùng og:image vì trang trả về logo 1 đội, không phải thumbnail trận
+    r2_urls = re.findall(
+        r'https://pub-[a-f0-9]+\.r2\.dev/[^\s\'"<>]+\.(?:webp|jpg|jpeg|png)[^\s\'"<>]*',
+        html, re.I
+    )
+    if r2_urls:
+        info["thumb_url"] = r2_urls[0]
 
-    # ── 2. R2 URL trực tiếp trong HTML ──
-    if not info.get("thumb_url"):
-        r2_urls = re.findall(
-            r'https://pub-[a-f0-9]+\.r2\.dev/[^\s\'"<>]+\.(?:webp|jpg|jpeg|png)[^\s\'"<>]*',
-            html, re.I
-        )
-        if r2_urls:
-            info["thumb_url"] = r2_urls[0]
-
-    # ── 3. Logo teams từ img-lazy ──
+    # ── Logo 2 đội từ img-lazy ──
     logos = []
     for img in bs.find_all("img", class_=lambda c: c and "img-lazy" in c):
         src = img.get("data-src") or img.get("src","")
         if src and src.startswith("http"):
-            logos.append(src)
+            # Bỏ ảnh background/sport icon
+            _skip = ("/bgs/", "/icon-sports/", "icon_sport_", "/bg_", "/background")
+            if not any(s in src for s in _skip):
+                logos.append(src)
     if len(logos) >= 1: info["home_logo"] = logos[0]
     if len(logos) >= 2: info["away_logo"] = logos[1]
 
@@ -304,23 +308,94 @@ def crawl_detail(detail_url, blv, scraper):
             streams.append({"name":name,"url":url,"type":kind,
                             "referer":detail_url,"blv":blv})
 
+    # ── 1. iframe embed (player embed) ──────────────────
     for fr in bs.find_all("iframe", src=True):
-        if re.search(r"live|stream|embed|player|sport|watch", fr["src"], re.I):
-            add("embed", fr["src"], "iframe")
+        src = fr["src"]
+        if re.search(r"live|stream|embed|player|sport|watch|truc.?tiep", src, re.I):
+            add("📺 Xem trực tiếp", src, "iframe")
+
+    # ── 2. m3u8 HLS trực tiếp ───────────────────────────
     for m in re.finditer(r'(https?://[^\s\'"<>\]\\]+\.m3u8(?:[?#][^\s\'"<>\]\\]*)?)', html):
         add("HLS", m.group(1), "hls")
+
+    # ── 3. DASH ─────────────────────────────────────────
     for m in re.finditer(r'(https?://[^\s\'"<>\]\\]+\.mpd(?:[?#][^\s\'"<>\]\\]*)?)', html):
         add("DASH", m.group(1), "dash")
+
+    # ── 4. JSON config trong script tags ────────────────
     for sc in bs.find_all("script"):
         c = sc.string or ""
+
+        # JSON player sources: "file":"url", "src":"url", "url":"url"
         for m in re.finditer(
-                r'"(?:file|src|source|stream|url|hls|videoUrl|streamUrl)"\s*:\s*"(https?://[^"]+)"', c):
+                r'"(?:file|src|source|url|hls|playlist|videoUrl|streamUrl|hlsUrl|hlssrc)"\s*:\s*"(https?://[^"]+)"', c):
             u = m.group(1)
-            if re.search(r"m3u8|stream|live|video|play", u, re.I):
-                add("config", u, "hls")
+            if re.search(r"m3u8|stream|live|video|play|hls", u, re.I):
+                add("HLS stream", u, "hls")
+
+        # playerConfig / player_config JSON object
+        for m in re.finditer(r'(?:playerConfig|player_config|PLAYER_CONFIG)\s*=\s*(\{[^;]+\})', c, re.S):
+            try:
+                import json as _json
+                cfg = _json.loads(m.group(1))
+                # sources array
+                srcs = cfg.get("sources", cfg.get("source", []))
+                if isinstance(srcs, str): srcs = [{"src": srcs}]
+                for s in (srcs if isinstance(srcs, list) else []):
+                    u = s.get("src","") or s.get("file","") or s.get("url","")
+                    lbl = s.get("label","") or s.get("quality","") or "Auto"
+                    if u and u.startswith("http"):
+                        add(f"🎬 {lbl}", u, "hls")
+            except Exception:
+                pass
+
+        # Mảng sources dạng: sources:[{src:...,label:...}]
+        for m in re.finditer(r'sources\s*:\s*\[([^\]]+)\]', c, re.S):
+            inner = m.group(1)
+            for sm in re.finditer(r'src\s*:\s*["\']([^"\']+)["\'].*?label\s*:\s*["\']([^"\']+)["\']', inner, re.S):
+                add(f"🎬 {sm.group(2)}", sm.group(1), "hls")
+            for sm in re.finditer(r'label\s*:\s*["\']([^"\']+)["\'].*?src\s*:\s*["\']([^"\']+)["\']', inner, re.S):
+                add(f"🎬 {sm.group(1)}", sm.group(2), "hls")
+
+        # window.streamUrl = "..." hoặc window.hlsUrl = "..."
+        for m in re.finditer(r'(?:streamUrl|videoUrl|hlsUrl|playerUrl|src)\s*[=:]\s*["\']([^"\']+)["\']', c):
+            u = m.group(1)
+            if u.startswith("http") and re.search(r"m3u8|stream|live|cdn", u, re.I):
+                add("Live stream", u, "hls")
+
+    # ── 5. data-src / data-stream attributes ────────────
+    for tag in bs.find_all(attrs={"data-src": True}):
+        u = tag.get("data-src","")
+        if u and u.startswith("http") and re.search(r"m3u8|stream|live", u, re.I):
+            add("data-src stream", u, "hls")
+    for tag in bs.find_all(attrs={"data-stream": True}):
+        add("data-stream", tag["data-stream"], "hls")
+    for tag in bs.find_all(attrs={"data-url": True}):
+        u = tag.get("data-url","")
+        if u and re.search(r"m3u8|stream", u, re.I):
+            add("data-url", u, "hls")
+
+    # ── 6. Phân loại chất lượng từ URL ──────────────────
+    # Áp nhãn HD/FHD/SD dựa trên URL pattern
+    _QUAL_MAP = [
+        (re.compile(r'1080|fhd|fullhd|full.hd', re.I), "📺 Full HD 1080p"),
+        (re.compile(r'720|hd(?!c)',              re.I), "🔵 HD 720p"),
+        (re.compile(r'480|sd',                   re.I), "⚪ SD 480p"),
+        (re.compile(r'360',                      re.I), "⚪ SD 360p"),
+    ]
+    for s in streams:
+        if s["name"] in ("HLS", "HLS stream", "data-src stream", "Live stream"):
+            url_l = s["url"].lower()
+            for pat, label in _QUAL_MAP:
+                if pat.search(url_l):
+                    s["name"] = label
+                    break
+            else:
+                if s["name"] == "HLS":
+                    s["name"] = "🔵 HD Nhanh"
 
     if not streams:
-        streams.append({"name":"Trực tiếp","url":detail_url,"type":"iframe",
+        streams.append({"name":"📺 Xem trực tiếp","url":detail_url,"type":"iframe",
                         "referer":detail_url,"blv":blv})
     return streams, info
 
@@ -540,14 +615,15 @@ def build_channel(m, all_streams, index):
         }]})
 
     la = m.get("home_logo",""); lb = m.get("away_logo","")
-    thumb_url = m.get("thumb_url","")
+    thumb_url = m.get("thumb_url","")  # chỉ có nếu tìm được R2 URL thực
 
     if thumb_url:
-        # ── Ưu tiên 1: R2/og:image URL trực tiếp từ detail page ──
+        # R2 thumbnail thực sự (pub-xxx.r2.dev) từ detail page
         img_obj = {"padding":0,"background_color":"#0a0e1a","display":"cover",
                    "url":thumb_url,"width":700,"height":394}
-    elif _PIL and (la or lb or m.get("home_team")):
-        # ── Ưu tiên 2: Generate Pillow thumbnail ──
+    elif _PIL:
+        # Luôn generate Pillow thumbnail ghép 2 logo — kể cả khi không có logo URL
+        # (sẽ hiển thị chữ tắt tên đội thay thế)
         uri = make_thumbnail(
             m.get("home_team",""), m.get("away_team",""),
             la, lb, m.get("time_str",""), m.get("date_str",""),
