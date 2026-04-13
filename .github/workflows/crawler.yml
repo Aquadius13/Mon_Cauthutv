@@ -27,7 +27,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'crawler_hoadaotv.py'
+      - 'crawler_cauthutv.py'
       - '.github/workflows/crawler.yml'
 
 jobs:
@@ -67,10 +67,10 @@ jobs:
           MODE="${{ github.event.inputs.mode || 'default' }}"
 
           case "$MODE" in
-            all)       python crawler_hoadaotv.py --all      --output "$OUTPUT" ;;
-            no-stream) python crawler_hoadaotv.py --no-stream --output "$OUTPUT" ;;
-            debug)     python crawler_hoadaotv.py --debug    --output "$OUTPUT" ;;
-            *)         python crawler_hoadaotv.py             --output "$OUTPUT" ;;
+            all)       python crawler_cauthutv.py --all      --output "$OUTPUT" ;;
+            no-stream) python crawler_cauthutv.py --no-stream --output "$OUTPUT" ;;
+            debug)     python crawler_cauthutv.py --debug    --output "$OUTPUT" ;;
+            *)         python crawler_cauthutv.py             --output "$OUTPUT" ;;
           esac
 
       # ── 5. Kiểm tra output ───────────────────────────────────
