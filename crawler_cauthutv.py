@@ -482,115 +482,342 @@ def fetch_logo(url, max_px=300):
             continue
     return None
 
+# ═══════════════════════════════════════════════════════
+#  Sport theme definitions
+# ═══════════════════════════════════════════════════════
+
+def _sport_key(sport: str, league: str) -> str:
+    """Chuẩn hóa tên môn → key theme."""
+    raw = (sport + " " + league).lower()
+    if re.search(r'soccer|football|bóng.?đá|futsal|v\.?league|laliga|premier|bundesliga|serie|ligue|champion|world.?cup|euro|afc|asean|cup', raw):
+        return "soccer"
+    if re.search(r'basketball|bóng.?rổ|nba|euroleague', raw):
+        return "basketball"
+    if re.search(r'tennis|atp|wta|grand.?slam|wimbledon|roland', raw):
+        return "tennis"
+    if re.search(r'volleyball|bóng.?chuyền|vnl', raw):
+        return "volleyball"
+    if re.search(r'esport|e.sport|lol|dota|csgo|valorant|mobile.?legend|pubg|gaming', raw):
+        return "esports"
+    if re.search(r'boxing|box|mma|ufc|muay|kickbox|wrestling', raw):
+        return "boxing"
+    if re.search(r'baseball|softball', raw):
+        return "baseball"
+    if re.search(r'badminton|cầu.?lông', raw):
+        return "badminton"
+    if re.search(r'golf|pga|masters', raw):
+        return "golf"
+    if re.search(r'formula|f1|motogp|nascar|racing', raw):
+        return "racing"
+    return "default"
+
+# Theme: (bg_top, bg_bot, bar_color, bar_text, accent, name_color, name_shadow, vs_color)
+SPORT_THEMES = {
+    #           bg_top           bg_bot          bar          bar_txt       accent         name_fg        name_sh       vs_fg
+    "soccer":   ((232,245,232),  (210,235,210),  (27,122,27), (255,255,255),(27,122,27),  (20, 60, 20),  (200,230,200),(27,122,27)),
+    "basketball":((255,244,224), (255,228,188),  (200,85,0),  (255,255,255),(200,85,0),   (100,40, 0),   (255,220,160),(200,85,0)),
+    "tennis":   ((245,240,210),  (228,220,175),  (60,130,60), (255,255,255),(60,130,60),  (50, 80, 20),  (210,200,140),(60,130,60)),
+    "volleyball":((224,238,255), (195,220,255),  (20,90,180), (255,255,255),(20,90,180),  (10, 40,120),  (180,210,255),(20,90,180)),
+    "esports":  ((18, 18, 32),   (10, 10, 22),   (90,20,160), (255,255,255),(130,60,220), (200,160,255), (30, 10, 60), (130,60,220)),
+    "boxing":   ((255,235,235),  (245,210,210),  (180,20,20), (255,255,255),(180,20,20),  (100, 10, 10), (240,180,180),(180,20,20)),
+    "baseball": ((240,248,240),  (220,238,220),  (30,80,170), (255,255,255),(30,80,170),  (20, 50,120),  (180,210,200),(30,80,170)),
+    "badminton":((240,250,255),  (215,238,252),  (0,140,180), (255,255,255),(0,140,180),  (0,  70,110),  (170,220,245),(0,140,180)),
+    "golf":     ((240,248,224),  (218,238,195),  (30,100,30), (255,255,255),(30,100,30),  (20, 60, 10),  (190,225,160),(30,100,30)),
+    "racing":   ((240,240,240),  (220,220,225),  (180,0,0),   (255,255,255),(180,0,0),    (60, 10, 10),  (210,200,200),(180,0,0)),
+    "default":  ((240,244,252),  (218,228,248),  (30,70,160), (255,255,255),(30,70,160),  (15, 35,100),  (190,205,240),(30,70,160)),
+}
+
+def _draw_sport_pattern(draw, canvas, key, W, H, CTOP, CBOT):
+    """Vẽ họa tiết nền nhẹ đặc trưng của từng môn."""
+    c = {
+        "soccer":    (100,180,100, 28),
+        "basketball":(210,120, 30, 30),
+        "tennis":    (140,160, 60, 28),
+        "volleyball":(60, 120,210, 28),
+        "esports":   (100, 40,200, 40),
+        "boxing":    (200, 60, 60, 28),
+        "baseball":  (60, 100,200, 28),
+        "badminton": (30, 150,200, 28),
+        "golf":      (80, 160, 50, 28),
+        "racing":    (160, 20, 20, 28),
+        "default":   (60, 100,200, 22),
+    }.get(key, (60,100,200,22))
+
+    rgba = c[:3] + (c[3],)
+    overlay = Image.new("RGBA", (W, H), (0,0,0,0))
+    od = ImageDraw.Draw(overlay)
+
+    MID_Y = (CTOP + CBOT) // 2
+
+    if key == "soccer":
+        # Đường kẻ dọc sân cỏ
+        for x in range(0, W+1, 70):
+            od.line([(x, CTOP),(x, CBOT)], fill=rgba, width=1)
+        # Vòng tròn giữa sân
+        r = 62
+        od.ellipse([(W//2-r, MID_Y-r),(W//2+r, MID_Y+r)], outline=rgba, width=2)
+        # Điểm giữa sân
+        od.ellipse([(W//2-4, MID_Y-4),(W//2+4, MID_Y+4)], fill=rgba)
+        # Đường giữa ngang
+        od.line([(0, MID_Y),(W, MID_Y)], fill=rgba, width=1)
+
+    elif key == "basketball":
+        # Đường cong arc bóng rổ
+        for offset, w in [(0,2),(40,1),(-40,1)]:
+            r = 130 + offset
+            cx, cy = W//2, CBOT + 40
+            od.arc([(cx-r, cy-r),(cx+r, cy+r)], 200, 340, fill=rgba, width=w)
+        # Đường free-throw
+        od.line([(0, CTOP+50),(W, CTOP+50)], fill=rgba, width=1)
+        # Vạch giữa
+        od.line([(W//2, CTOP),(W//2, CBOT)], fill=rgba, width=1)
+
+    elif key == "tennis":
+        # Đường kẻ ngang sân tennis
+        for y in [CTOP+20, MID_Y, CBOT-20]:
+            od.line([(30, y),(W-30, y)], fill=rgba, width=2)
+        # Đường dọc giữa
+        od.line([(W//2, CTOP+20),(W//2, CBOT-20)], fill=rgba, width=2)
+        # Đường biên
+        od.rectangle([(30, CTOP+20),(W-30, CBOT-20)], outline=rgba, width=2)
+
+    elif key == "volleyball":
+        # Lưới giữa sân
+        NET_Y1, NET_Y2 = CTOP+10, CBOT-10
+        od.line([(W//2, NET_Y1),(W//2, NET_Y2)], fill=rgba, width=3)
+        for y in range(NET_Y1, NET_Y2, 12):
+            od.line([(W//2-4, y),(W//2+4, y)], fill=rgba, width=1)
+        # Đường biên sân
+        od.rectangle([(20, CTOP+10),(W-20, CBOT-10)], outline=rgba, width=1)
+        od.line([(0, MID_Y),(W, MID_Y)], fill=rgba, width=1)
+
+    elif key == "esports":
+        # Họa tiết circuit board
+        import random as _rnd; _rnd.seed(42)
+        for _ in range(18):
+            x1 = _rnd.randint(10, W-10)
+            y1 = _rnd.randint(CTOP, CBOT)
+            length = _rnd.choice([30,50,70,90])
+            hor = _rnd.choice([True,False])
+            x2, y2 = (x1+length, y1) if hor else (x1, y1+length)
+            od.line([(x1,y1),(x2,y2)], fill=rgba, width=1)
+            # Dot cuối
+            od.ellipse([(x2-3,y2-3),(x2+3,y2+3)], fill=rgba)
+        # Hex grid nhẹ
+        for gx in range(0, W, 90):
+            for gy in range(CTOP, CBOT, 52):
+                r2 = 22
+                pts = [(gx+r2*0.5, gy),(gx+r2,gy+r2*0.87),
+                       (gx+r2*0.5,gy+r2*1.73),(gx-r2*0.5,gy+r2*1.73),
+                       (gx-r2,gy+r2*0.87),(gx-r2*0.5,gy)]
+                od.polygon(pts, outline=rgba)
+
+    elif key == "boxing":
+        # Góc ring
+        PAD = 40
+        od.rectangle([(PAD,CTOP+10),(W-PAD,CBOT-10)], outline=rgba, width=2)
+        # Dây ring (3 đường ngang)
+        for i in range(1,4):
+            y = CTOP+10 + (CBOT-CTOP-20)*i//4
+            od.line([(PAD, y),(W-PAD, y)], fill=rgba, width=1)
+        # Điểm góc ring
+        for px,py in [(PAD,CTOP+10),(W-PAD,CTOP+10),(PAD,CBOT-10),(W-PAD,CBOT-10)]:
+            od.ellipse([(px-6,py-6),(px+6,py+6)], fill=rgba)
+
+    elif key == "baseball":
+        # Kim cương diamond
+        cx, cy = W//2, MID_Y + 20
+        sz = 70
+        pts = [(cx, cy-sz),(cx+sz, cy),(cx, cy+sz),(cx-sz, cy)]
+        od.polygon(pts, outline=rgba, width=2)
+        # Mound
+        od.ellipse([(cx-8,cy-8),(cx+8,cy+8)], fill=rgba)
+        # Foul lines
+        od.line([(0, CBOT),(cx-sz, cy)], fill=rgba, width=1)
+        od.line([(W, CBOT),(cx+sz, cy)], fill=rgba, width=1)
+
+    elif key == "badminton":
+        # Đường kẻ sân cầu lông
+        od.rectangle([(30, CTOP+15),(W-30, CBOT-15)], outline=rgba, width=2)
+        od.line([(W//2, CTOP+15),(W//2, CBOT-15)], fill=rgba, width=2)
+        od.line([(30, MID_Y),(W-30, MID_Y)], fill=rgba, width=1)
+        # Service box
+        od.line([(30, CTOP+50),(W-30, CTOP+50)], fill=rgba, width=1)
+        od.line([(30, CBOT-50),(W-30, CBOT-50)], fill=rgba, width=1)
+
+    elif key == "golf":
+        # Đường cong fairway
+        for i, offset in enumerate([-60, 0, 60]):
+            pts = [(0+offset, CTOP), (W//4, MID_Y+offset//2), (W, CBOT+offset//3)]
+            od.line(pts, fill=rgba, width=1)
+        # Hole + flag
+        od.ellipse([(W//2-5, MID_Y+30),(W//2+5, MID_Y+40)], fill=rgba)
+        od.line([(W//2, MID_Y-20),(W//2, MID_Y+35)], fill=rgba, width=2)
+        od.polygon([(W//2,MID_Y-20),(W//2+20,MID_Y-8),(W//2,MID_Y+3)], fill=rgba)
+
+    elif key == "racing":
+        # Đường đua checkerboard nhẹ
+        SZ = 18
+        for gx in range(0, W, SZ*2):
+            for gy in range(CTOP, CBOT, SZ*2):
+                od.rectangle([(gx,gy),(gx+SZ,gy+SZ)], fill=rgba)
+        # Đường racing line cong
+        pts = [(0, CBOT-30),(W//4, CTOP+30),(W//2, MID_Y),(3*W//4, CTOP+60),(W, CBOT-20)]
+        od.line(pts, fill=(c[0],c[1],c[2],50), width=3)
+
+    else:  # default
+        # Đường chéo nhẹ
+        for x in range(-H, W+H, 55):
+            od.line([(x, CTOP),(x+H, CBOT)], fill=rgba, width=1)
+
+    canvas.paste(overlay, mask=overlay.split()[3])
+
+
 def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
-                   time_str="", date_str="", status="upcoming", league=""):
+                   time_str="", date_str="", status="upcoming", league="", sport=""):
     """
-    Tạo thumbnail WebP base64.
-    - Logo to hơn (LMAX 155px)
-    - Tên đội sát logo (NY = tâm logo + bán kính + gap nhỏ)
+    Tạo thumbnail WebP base64 với nền trắng theo từng môn thể thao.
+    - Nền sáng + họa tiết đặc trưng từng môn
+    - Logo to (LMAX 155px), tên đội sát logo
     - Font tên đội 23px, VS 50px, LIVE 42px
-    - Output: data:image/webp;base64,...
     """
     if not _PIL: return ""
 
     W, H = 700, 394
-    canvas = Image.new("RGB", (W, H))
+    canvas = Image.new("RGBA", (W, H), (255,255,255,255))
     draw   = ImageDraw.Draw(canvas)
 
-    # ── Nền gradient navy ──
+    # ── Chọn theme theo môn ──
+    key = _sport_key(sport, league)
+    (bg_top, bg_bot, bar_col, bar_txt,
+     accent, name_fg, name_sh, vs_col) = SPORT_THEMES.get(key, SPORT_THEMES["default"])
+
+    # ── Nền gradient sáng theo môn ──
     for y in range(H):
         t = y / H
-        r_ = int(10 + 5*t)
-        g_ = int(14 + 10*t)
-        b_ = int(26 + 15*t)
-        draw.line([(0,y),(W,y)], fill=(r_, g_, b_))
+        r_ = int(bg_top[0] + (bg_bot[0]-bg_top[0])*t)
+        g_ = int(bg_top[1] + (bg_bot[1]-bg_top[1])*t)
+        b_ = int(bg_top[2] + (bg_bot[2]-bg_top[2])*t)
+        draw.line([(0,y),(W,y)], fill=(r_,g_,b_))
 
-    # ── Viền accent ──
-    draw.rectangle([(0,0),(3,H)],   fill=(255,140,0))
-    draw.rectangle([(0,0),(W,3)],   fill=(255,140,0))
-
-    # ── Bar giải đấu ──
+    # ── Bar header giải đấu ──
     BAR_H = 48
     for y in range(BAR_H):
-        alpha_t = 1.0 - y/BAR_H * 0.3
-        draw.line([(0,3+y),(W,3+y)],
-                  fill=(int(5*alpha_t), int(8*alpha_t), int(18*alpha_t)))
+        t2 = y / BAR_H
+        r_ = int(bar_col[0] * (1-t2*0.25))
+        g_ = int(bar_col[1] * (1-t2*0.25))
+        b_ = int(bar_col[2] * (1-t2*0.25))
+        draw.line([(0,y),(W,y)], fill=(r_,g_,b_))
 
     if league:
-        draw.text((W//2, 3+BAR_H//2+1), league[:42],
-                  fill=(255, 195, 40), font=_font(24), anchor="mm")
-    draw.line([(0,3+BAR_H),(W,3+BAR_H)], fill=(255,140,0), width=1)
+        draw.text((W//2, BAR_H//2+1), league[:42],
+                  fill=bar_txt, font=_font(22), anchor="mm")
+
+    # ── Đường kẻ dưới bar ──
+    draw.line([(0, BAR_H),(W, BAR_H)], fill=accent, width=2)
 
     # ── Layout chính ──
-    CTOP  = 3 + BAR_H + 10
-    CBOT  = H - 48
+    CTOP   = BAR_H + 10
+    CBOT   = H - 48
     AREA_H = CBOT - CTOP
 
-    # ── Logo: lớn hơn (tối đa 155px) ──
-    LMAX = min(AREA_H - 20, 155)       # tăng từ 130 → 155
+    # ── Họa tiết nền theo môn ──
+    _draw_sport_pattern(draw, canvas, key, W, H, CTOP, CBOT)
+
+    # ── Logo ──
+    LMAX = min(AREA_H - 20, 155)
     CX   = W // 2
     LX   = 130
     RX   = W - 130
-    # Tâm Y logo: căn giữa vùng, dịch lên một chút để nhường chỗ tên đội
     LY   = CTOP + (AREA_H - LMAX//2 - 18) // 2
-
-    # Tên đội: sát ngay dưới logo (LY + bán kính logo + gap nhỏ)
-    NY   = LY + LMAX // 2 + 18        # sát logo, không kéo xuống footer
+    NY   = LY + LMAX // 2 + 18
 
     def draw_logo(cx, cy, url, name):
         logo = fetch_logo(url, LMAX * 3) if url else None
         if logo:
             if logo.mode != "RGBA": logo = logo.convert("RGBA")
+            # Drop shadow nhẹ dưới logo
+            sh = Image.new("RGBA", canvas.size, (0,0,0,0))
+            sh_draw = ImageDraw.Draw(sh)
             lw, lh = logo.size
-            scale  = min((LMAX-4)/lw, (LMAX-4)/lh, 1.0)
-            nw     = max(1, int(lw * scale))
-            nh     = max(1, int(lh * scale))
-            logo   = logo.resize((nw, nh), Image.LANCZOS)
-            ox, oy = cx - nw//2, cy - nh//2
+            scale = min((LMAX-4)/lw, (LMAX-4)/lh, 1.0)
+            nw = max(1, int(lw*scale)); nh = max(1, int(lh*scale))
+            logo = logo.resize((nw, nh), Image.LANCZOS)
+            ox, oy = cx-nw//2, cy-nh//2
+            # Shadow
+            sh_draw.ellipse([(ox+4, oy+nh-6),(ox+nw+4, oy+nh+10)],
+                             fill=(0,0,0,40))
+            canvas.paste(sh, mask=sh.split()[3])
             canvas.paste(logo.convert("RGB"), (ox, oy), logo.split()[3])
         else:
-            # Fallback: khung chữ tắt
             sz  = LMAX * 3 // 4
-            x0, y0 = cx - sz//2, cy - sz//2
-            x1, y1 = cx + sz//2, cy + sz//2
+            x0, y0 = cx-sz//2, cy-sz//2
+            x1, y1 = cx+sz//2, cy+sz//2
             draw.rectangle([(x0,y0),(x1,y1)],
-                           fill=(15, 28, 58), outline=(70, 110, 190), width=2)
+                           fill=(bar_col[0],bar_col[1],bar_col[2]),
+                           outline=accent, width=2)
             init = "".join(w[0].upper() for w in (name or "?").split()[:2]) or "?"
             draw.text((cx, cy), init,
-                      fill=(140, 185, 255), font=_font(44), anchor="mm")
+                      fill=(255,255,255), font=_font(44), anchor="mm")
 
-        # ── Tên đội — font 23, sát logo ──
+        # ── Tên đội — màu tối trên nền sáng ──
         short = (name or "?")
         if len(short) > 18: short = short[:17] + "…"
-        # Shadow
-        draw.text((cx+1, NY+1), short, fill=(0,0,0),      font=_font(23), anchor="mm")
-        draw.text((cx,   NY),   short, fill=(240,240,240), font=_font(23), anchor="mm")
+        # Shadow mờ nhẹ
+        draw.text((cx+1, NY+1), short, fill=name_sh,  font=_font(23), anchor="mm")
+        draw.text((cx,   NY),   short, fill=name_fg,  font=_font(23), anchor="mm")
 
     draw_logo(LX, LY, home_logo_url, home_team)
     draw_logo(RX, LY, away_logo_url, away_team)
 
-    # ── Vùng giữa: VS / Giờ / LIVE ──
-    if status == "live":
-        l1, c1 = "● LIVE", (255, 65, 65)
-        l2, c2 = "",       (255, 255, 255)
-        f1 = 42                         # tăng từ 36 → 42
-    else:
-        l1, c1 = time_str or "VS", (255, 255, 255)
-        l2, c2 = date_str or "",   (145, 155, 175)
-        f1 = 50                         # tăng từ 44 → 50
+    # ── Đường kẻ ngăn giữa 2 đội ──
+    sep_col = (accent[0], accent[1], accent[2], 80)
+    ov2 = Image.new("RGBA", (W,H), (0,0,0,0))
+    ov2_d = ImageDraw.Draw(ov2)
+    ov2_d.line([(CX, CTOP+10),(CX, CBOT-10)], fill=sep_col, width=1)
+    canvas.paste(ov2, mask=ov2.split()[3])
+    draw = ImageDraw.Draw(canvas)   # refresh draw after paste
 
-    draw.text((CX+1, LY+1), l1, fill=(0,0,0,140), font=_font(f1), anchor="mm")
-    draw.text((CX,   LY),   l1, fill=c1,           font=_font(f1), anchor="mm")
+    # ── Giờ / VS / LIVE ở giữa ──
+    if status == "live":
+        l1, c1 = "● LIVE", (220, 30, 30)
+        l2, c2 = "",       vs_col
+        f1 = 42
+    else:
+        l1, c1 = time_str or "VS", vs_col
+        l2, c2 = date_str or "",   (accent[0], accent[1], accent[2])
+        f1 = 50
+
+    # Hộp nền nhỏ sau chữ VS/LIVE
+    if l1:
+        bbox_w, bbox_h = f1*len(l1)//2 + 24, f1 + 10
+        bx0, by0 = CX - bbox_w//2, LY - bbox_h//2
+        bx1, by1 = CX + bbox_w//2, LY + bbox_h//2
+        box_ov = Image.new("RGBA", (W,H), (0,0,0,0))
+        box_d  = ImageDraw.Draw(box_ov)
+        box_col = (bar_col[0], bar_col[1], bar_col[2], 200) if status=="live" else (255,255,255,180)
+        box_d.rounded_rectangle([(bx0,by0),(bx1,by1)], radius=8, fill=box_col,
+                                 outline=(accent[0],accent[1],accent[2],200), width=2)
+        canvas.paste(box_ov, mask=box_ov.split()[3])
+        draw = ImageDraw.Draw(canvas)
+
+    draw.text((CX+1, LY+1), l1, fill=(0,0,0,80), font=_font(f1), anchor="mm")
+    draw.text((CX,   LY),   l1, fill=c1,          font=_font(f1), anchor="mm")
     if l2:
         draw.text((CX, LY+40), l2, fill=c2, font=_font(16, False), anchor="mm")
 
     # ── Footer ──
-    draw.rectangle([(0, H-44),(W, H)], fill=(5, 8, 16))
-    draw.line([(0, H-44),(W, H-44)], fill=(255,140,0,90), width=1)
+    for y in range(H-44, H):
+        t3 = (y-(H-44))/44
+        r_ = int(bar_col[0]*(1-t3) + 20*t3)
+        g_ = int(bar_col[1]*(1-t3) + 20*t3)
+        b_ = int(bar_col[2]*(1-t3) + 20*t3)
+        draw.line([(0,y),(W,y)], fill=(r_,g_,b_))
+    draw.line([(0, H-44),(W, H-44)], fill=accent, width=2)
 
-    # ── Lưu WebP (thay JPEG) ──
+    # ── Lưu WebP ──
     buf = io.BytesIO()
-    canvas.save(buf, format="WEBP", quality=88, method=4)
+    canvas.convert("RGB").save(buf, format="WEBP", quality=88, method=4)
     return "data:image/webp;base64," + base64.b64encode(buf.getvalue()).decode()
 
 # ═══════════════════════════════════════════════════════
@@ -674,7 +901,7 @@ def build_channel(m, all_streams, index):
         uri = make_thumbnail(
             m.get("home_team",""), m.get("away_team",""),
             la, lb, m.get("time_str",""), m.get("date_str",""),
-            status, league,
+            status, league, m.get("sport",""),
         )
         img_obj = ({"padding":0,"background_color":"#0a0e1a","display":"cover",
                     "url":uri,"width":700,"height":394} if uri else PLACEHOLDER)
