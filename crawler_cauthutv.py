@@ -673,6 +673,173 @@ def _draw_sport_pattern(draw, canvas, key, W, H, CTOP, CBOT):
     canvas.paste(overlay, mask=overlay.split()[3])
 
 
+def _draw_sport_icon(canvas, key, accent, CX, MID_Y, alpha=38):
+    """
+    Vẽ icon tượng trưng lớn, mờ, căn giữa card — làm watermark nền.
+    Dùng màu accent với độ trong suốt thấp (alpha ~38).
+    """
+    ic = Image.new("RGBA", canvas.size, (0,0,0,0))
+    d  = ImageDraw.Draw(ic)
+    ac = (accent[0], accent[1], accent[2], alpha)
+    ac2 = (accent[0], accent[1], accent[2], alpha+15)
+    R  = 72   # bán kính icon chính
+    cx, cy = CX, MID_Y
+
+    if key == "soccer":
+        # Quả bóng tròn + ngũ giác giữa
+        d.ellipse([(cx-R, cy-R),(cx+R, cy+R)], outline=ac, width=4)
+        # 5 cạnh của mảnh ngũ giác giữa
+        import math as _m
+        for i in range(5):
+            a1 = _m.radians(i*72 - 90)
+            a2 = _m.radians((i+1)*72 - 90)
+            r2 = R * 0.42
+            x1,y1 = cx + r2*_m.cos(a1), cy + r2*_m.sin(a1)
+            x2,y2 = cx + r2*_m.cos(a2), cy + r2*_m.sin(a2)
+            d.line([(x1,y1),(x2,y2)], fill=ac2, width=3)
+            # Đường từ ngũ giác ra viền
+            x3,y3 = cx + R*_m.cos((a1+a2)/2), cy + R*_m.sin((a1+a2)/2)
+            d.line([(x1,y1),(x3,y3)], fill=ac, width=2)
+
+    elif key == "basketball":
+        # Quả bóng rổ: vòng tròn + 3 đường cong dọc + 1 ngang
+        import math as _m
+        d.ellipse([(cx-R, cy-R),(cx+R, cy+R)], outline=ac, width=4)
+        # Đường ngang
+        d.line([(cx-R, cy),(cx+R, cy)], fill=ac, width=3)
+        # 2 đường cong dọc (arc)
+        for rx in [-R//2, R//2]:
+            d.arc([(cx+rx-R//2, cy-R),(cx+rx+R//2, cy+R)], 270, 90, fill=ac, width=3)
+
+    elif key == "tennis":
+        # Vợt tennis: oval + tay cầm + lưới
+        import math as _m
+        RW, RH = R, int(R*0.72)
+        d.ellipse([(cx-RW, cy-RH),(cx+RW, cy+RH)], outline=ac, width=4)
+        # Lưới ngang
+        for dy in range(-RH+14, RH, 18):
+            angle = _m.acos(max(-1,min(1,dy/RH))) if RH else 0
+            half_w = int(RW * _m.sin(angle))
+            d.line([(cx-half_w, cy+dy),(cx+half_w, cy+dy)], fill=ac, width=1)
+        # Lưới dọc
+        for dx in range(-RW+16, RW, 20):
+            angle = _m.acos(max(-1,min(1,dx/RW))) if RW else 0
+            half_h = int(RH * _m.sin(angle))
+            d.line([(cx+dx, cy-half_h),(cx+dx, cy+half_h)], fill=ac, width=1)
+        # Tay cầm
+        d.line([(cx, cy+RH),(cx, cy+RH+30)], fill=ac2, width=6)
+
+    elif key == "volleyball":
+        # Bóng chuyền: vòng tròn + 3 đường cong bên trong
+        import math as _m
+        d.ellipse([(cx-R, cy-R),(cx+R, cy+R)], outline=ac, width=4)
+        for angle_deg in [30, 150, 270]:
+            a = _m.radians(angle_deg)
+            x1 = cx + R*0.15*_m.cos(a+_m.pi)
+            y1 = cy + R*0.15*_m.sin(a+_m.pi)
+            x2 = cx + R*_m.cos(a)
+            y2 = cy + R*_m.sin(a)
+            d.arc([(min(x1,x2)-8,min(y1,y2)-8),(max(x1,x2)+8,max(y1,y2)+8)],
+                  int(_m.degrees(a))+60, int(_m.degrees(a))+240, fill=ac, width=3)
+
+    elif key == "esports":
+        # Tay cầm game controller
+        BW, BH = int(R*1.5), int(R*1.0)
+        bx0,by0 = cx-BW, cy-BH//2
+        bx1,by1 = cx+BW, cy+BH//2
+        # Body
+        d.rounded_rectangle([(bx0,by0),(bx1,by1)], radius=BH//3, outline=ac, width=4)
+        # D-pad trái
+        px, py = cx - BW//2, cy
+        ps = 12
+        d.line([(px-ps,py),(px+ps,py)], fill=ac2, width=4)
+        d.line([(px,py-ps),(px,py+ps)], fill=ac2, width=4)
+        # Nút phải (4 vòng)
+        for nx,ny in [(cx+BW//2-10,cy-8),(cx+BW//2+6,cy),(cx+BW//2-10,cy+8),(cx+BW//2-24,cy)]:
+            d.ellipse([(nx-5,ny-5),(nx+5,ny+5)], outline=ac2, width=2)
+
+    elif key == "boxing":
+        # Găng tay boxing đơn giản
+        GW, GH = int(R*0.85), int(R*1.2)
+        for side in [-1, 1]:
+            ox = cx + side * int(R*0.55)
+            oy = cy
+            # Thân găng
+            d.rounded_rectangle([(ox-GW//2, oy-GH//2),(ox+GW//2, oy+GH//2)],
+                                  radius=GW//3, outline=ac, width=4)
+            # Khớp ngón
+            d.line([(ox-GW//2+4, oy-GH//2+GH//4),(ox+GW//2-4, oy-GH//2+GH//4)],
+                   fill=ac, width=2)
+
+    elif key == "baseball":
+        # Quả bóng baseball: vòng tròn + đường may
+        d.ellipse([(cx-R, cy-R),(cx+R, cy+R)], outline=ac, width=4)
+        # Đường may chữ C
+        import math as _m
+        d.arc([(cx-R//2, cy-R+10),(cx+R//2, cy+R-10)], 300, 60, fill=ac2, width=3)
+        d.arc([(cx-R//2, cy-R+10),(cx+R//2, cy+R-10)], 120, 240, fill=ac2, width=3)
+
+    elif key == "badminton":
+        # Cầu lông: phần lông (nón) + thân
+        import math as _m
+        TIP = (cx, cy - R)       # đỉnh cầu
+        BASE_Y = cy + int(R*0.3) # đáy nón
+        BASE_R = int(R*0.55)
+        # Các lông tỏa ra từ đỉnh
+        for i in range(8):
+            a = _m.radians(i*45)
+            ex = cx + BASE_R*_m.sin(a)
+            ey = BASE_Y + int(BASE_R*0.3*_m.cos(a))
+            d.line([(cx, TIP[1]),(int(ex),int(ey))], fill=ac, width=2)
+        # Vành đáy nón
+        d.ellipse([(cx-BASE_R, BASE_Y-int(BASE_R*0.3)),
+                   (cx+BASE_R, BASE_Y+int(BASE_R*0.3))], outline=ac2, width=3)
+        # Thân cầu
+        d.line([(cx, BASE_Y),(cx, cy+R)], fill=ac2, width=5)
+        # Đầu cầu
+        d.ellipse([(cx-9, cy+R-9),(cx+9, cy+R+9)], fill=ac2)
+
+    elif key == "golf":
+        # Gậy golf + lỗ hố + bóng
+        FLAG_X, FLAG_Y = cx + 20, cy - R + 10
+        # Cán gậy
+        d.line([(cx - R//2 + 10, cy + R - 10),(cx+10, cy - R//2)],
+               fill=ac, width=5)
+        # Đầu gậy
+        d.ellipse([(cx-R//2, cy+R-20),(cx-R//2+22, cy+R)], fill=ac2)
+        # Cột cờ
+        d.line([(FLAG_X, FLAG_Y),(FLAG_X, cy+20)], fill=ac, width=3)
+        # Cờ
+        d.polygon([(FLAG_X,FLAG_Y),(FLAG_X+22,FLAG_Y+8),(FLAG_X,FLAG_Y+18)], fill=ac2)
+        # Lỗ hố
+        d.ellipse([(cx+R//2-12, cy+R-10),(cx+R//2+12, cy+R+6)], fill=ac)
+        # Bóng
+        d.ellipse([(cx-8, cy+R//2-8),(cx+8, cy+R//2+8)], fill=ac2)
+
+    elif key == "racing":
+        # Vô lăng (steering wheel)
+        d.ellipse([(cx-R, cy-R),(cx+R, cy+R)], outline=ac, width=5)
+        d.ellipse([(cx-R//3, cy-R//3),(cx+R//3, cy+R//3)], outline=ac, width=3)
+        # 3 căm
+        import math as _m
+        for deg in [90, 210, 330]:
+            a = _m.radians(deg)
+            x1,y1 = cx+int(R//3*_m.cos(a)), cy+int(R//3*_m.sin(a))
+            x2,y2 = cx+int(R*_m.cos(a)),    cy+int(R*_m.sin(a))
+            d.line([(x1,y1),(x2,y2)], fill=ac, width=5)
+
+    else:  # default — ngôi sao 5 cánh
+        import math as _m
+        pts = []
+        for i in range(10):
+            r2 = R if i%2==0 else R//2
+            a = _m.radians(i*36 - 90)
+            pts.append((cx + r2*_m.cos(a), cy + r2*_m.sin(a)))
+        d.polygon(pts, outline=ac, width=3)
+
+    canvas.paste(ic, mask=ic.split()[3])
+
+
 def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
                    time_str="", date_str="", status="upcoming", league="", sport=""):
     """
@@ -720,13 +887,17 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     CTOP   = BAR_H + 10
     CBOT   = H - 48
     AREA_H = CBOT - CTOP
+    CX     = W // 2
+    MID_Y  = (CTOP + CBOT) // 2
 
     # ── Họa tiết nền theo môn ──
     _draw_sport_pattern(draw, canvas, key, W, H, CTOP, CBOT)
 
+    # ── Icon tượng trưng lớn mờ giữa card (watermark) ──
+    _draw_sport_icon(canvas, key, accent, CX, MID_Y, alpha=32)
+
     # ── Logo ──
     LMAX = min(AREA_H - 20, 155)
-    CX   = W // 2
     LX   = 130
     RX   = W - 130
     LY   = CTOP + (AREA_H - LMAX//2 - 18) // 2
@@ -778,33 +949,48 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     canvas.paste(ov2, mask=ov2.split()[3])
     draw = ImageDraw.Draw(canvas)   # refresh draw after paste
 
-    # ── Giờ / VS / LIVE ở giữa ──
+    # ── Giờ / VS / LIVE ở giữa — time & date cùng cỡ chữ ──
+    TIME_FONT = 26      # cỡ chữ giờ
+    DATE_FONT = 26      # cỡ chữ ngày — bằng giờ
+    LIVE_FONT = 30      # cỡ chữ LIVE
+
     if status == "live":
-        l1, c1 = "● LIVE", (220, 30, 30)
-        l2, c2 = "",       vs_col
-        f1 = 42
+        lines   = [("● LIVE", (220, 30, 30), LIVE_FONT)]
+        box_col_rgba = (bar_col[0], bar_col[1], bar_col[2], 210)
     else:
-        l1, c1 = time_str or "VS", vs_col
-        l2, c2 = date_str or "",   (accent[0], accent[1], accent[2])
-        f1 = 50
+        lines = []
+        if time_str:
+            lines.append((time_str, vs_col, TIME_FONT))
+        if date_str:
+            lines.append((date_str, (accent[0], accent[1], accent[2]), DATE_FONT))
+        if not lines:
+            lines = [("VS", vs_col, TIME_FONT)]
+        box_col_rgba = (255, 255, 255, 190)
 
-    # Hộp nền nhỏ sau chữ VS/LIVE
-    if l1:
-        bbox_w, bbox_h = f1*len(l1)//2 + 24, f1 + 10
-        bx0, by0 = CX - bbox_w//2, LY - bbox_h//2
-        bx1, by1 = CX + bbox_w//2, LY + bbox_h//2
-        box_ov = Image.new("RGBA", (W,H), (0,0,0,0))
-        box_d  = ImageDraw.Draw(box_ov)
-        box_col = (bar_col[0], bar_col[1], bar_col[2], 200) if status=="live" else (255,255,255,180)
-        box_d.rounded_rectangle([(bx0,by0),(bx1,by1)], radius=8, fill=box_col,
-                                 outline=(accent[0],accent[1],accent[2],200), width=2)
-        canvas.paste(box_ov, mask=box_ov.split()[3])
-        draw = ImageDraw.Draw(canvas)
+    # Tính chiều cao tổng của hộp
+    LINE_GAP = 6
+    total_h = sum(f for _,_,f in lines) + LINE_GAP*(len(lines)-1) + 20
+    max_text_w = max(len(txt)*f//2 for txt,_,f in lines) + 28
+    bx0 = CX - max_text_w//2
+    bx1 = CX + max_text_w//2
+    by0 = LY - total_h//2
+    by1 = LY + total_h//2
 
-    draw.text((CX+1, LY+1), l1, fill=(0,0,0,80), font=_font(f1), anchor="mm")
-    draw.text((CX,   LY),   l1, fill=c1,          font=_font(f1), anchor="mm")
-    if l2:
-        draw.text((CX, LY+40), l2, fill=c2, font=_font(16, False), anchor="mm")
+    # Vẽ hộp nền
+    box_ov = Image.new("RGBA", (W,H), (0,0,0,0))
+    box_d  = ImageDraw.Draw(box_ov)
+    box_d.rounded_rectangle([(bx0,by0),(bx1,by1)], radius=10,
+                              fill=box_col_rgba,
+                              outline=(accent[0],accent[1],accent[2],220), width=2)
+    canvas.paste(box_ov, mask=box_ov.split()[3])
+    draw = ImageDraw.Draw(canvas)
+
+    # Vẽ từng dòng chữ căn giữa hộp
+    cur_y = by0 + 10 + lines[0][2]//2
+    for txt, col, fsize in lines:
+        draw.text((CX+1, cur_y+1), txt, fill=(0,0,0,70), font=_font(fsize), anchor="mm")
+        draw.text((CX,   cur_y),   txt, fill=col,         font=_font(fsize), anchor="mm")
+        cur_y += fsize + LINE_GAP
 
     # ── Footer ──
     for y in range(H-44, H):
@@ -940,7 +1126,7 @@ def build_json(channels, now_str):
         "description": "Nền tảng xem thể thao trực tuyến hàng đầu Việt Nam. Trực tiếp bóng đá, bóng rổ, tennis, esports với bình luận tiếng Việt chất lượng cao.",
         "disable_ads": True,
         "color":       "#0f3460",
-        "grid_number": 3,
+        "grid_number": 2,
         "image":       {"type":"cover","url":SITE_ICON},
         "groups": [{
             "id":       "tran-hot",
