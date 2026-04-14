@@ -529,8 +529,8 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     # ── Logo: lớn hơn (tối đa 155px) ──
     LMAX = min(AREA_H - 20, 155)       # tăng từ 130 → 155
     CX   = W // 2
-    LX   = 110
-    RX   = W - 110
+    LX   = 130
+    RX   = W - 130
     # Tâm Y logo: căn giữa vùng, dịch lên một chút để nhường chỗ tên đội
     LY   = CTOP + (AREA_H - LMAX//2 - 18) // 2
 
@@ -640,7 +640,7 @@ def build_channel(m, all_streams, index):
     stream_objs = []
     for idx,(bkey,raw_s) in enumerate(blv_groups.items()):
         if not raw_s: continue
-        slabel = f"🎙 BLV {bkey}" if bkey != "__" else f"Nguồn {idx+1}"
+        slabel = f"🎙 {bkey}" if bkey != "__" else f"Nguồn {idx+1}"
         slinks = []
         for li,s in enumerate(raw_s):
             ref = s.get("referer", BASE_URL+"/")
@@ -684,14 +684,14 @@ def build_channel(m, all_streams, index):
     content_name = name
     if league and len(league) < 50: content_name += f" · {league.strip()}"
 
-    # ── Luôn bật enable_detail để người dùng chọn đường dẫn / BLV ──
+    # ── 1 BLV → phát thẳng; ≥2 BLV → vào trang thông tin chọn BLV ──
     has_multi = len(stream_objs) > 1
     return {
         "id":            ch_id,
         "name":          name,
         "type":          "multi" if has_multi else "single",
         "display":       "thumbnail-only",
-        "enable_detail": True,          # ← luôn True (trang thông tin chọn BLV)
+        "enable_detail": has_multi,     # True chỉ khi ≥2 BLV
         "image":         img_obj,
         "labels":        labels,
         "sources": [{
