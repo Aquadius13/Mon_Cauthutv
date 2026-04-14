@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ╔══════════════════════════════════════════════════════════════╗
-║   Crawler cauthutv.shop  v6  — PRODUCTION                   ║
+║   Crawler cauthutv.shop  v7  — PRODUCTION                   ║
 ║   Cấu trúc thực tế (từ HTML debug):                         ║
 ║     Section HOT: <div id="live-score-game-hot">             ║
 ║     Card:        <div class="card-single">                   ║
@@ -10,6 +10,11 @@
 ║     League:      <span class="...tracking-wider...">         ║
 ║     Time:        <span class="...tracking-widest...">        ║
 ║     BLV:         text "BLV Tên" trong card                   ║
+║   v7 changes:                                                ║
+║     - Thumbnail xuất WebP (CDN webp), logo ưu tiên .webp    ║
+║     - Tên đội sát logo hơn, logo + chữ to hơn               ║
+║     - Gộp trận giống nhau (merge blv_sources)               ║
+║     - enable_detail luôn bật để chọn BLV                    ║
 ╚══════════════════════════════════════════════════════════════╝
 pip install cloudscraper beautifulsoup4 lxml requests pillow
 """
@@ -75,19 +80,43 @@ def fetch_html(url, scraper, retries=3):
     return None
 
 # ═══════════════════════════════════════════════════════
+#  CDN WebP URL helper
+# ═══════════════════════════════════════════════════════
+
+def to_webp_url(url: str) -> str:
+    """
+    Cố gắng chuyển URL ảnh sang phiên bản WebP của CDN.
+    Hỗ trợ các pattern phổ biến:
+      • pub-xxx.r2.dev  — đã là webp, giữ nguyên
+      • img-cdn/...jpg?  → thêm &format=webp
+      • sofascore / rapid-api / cdn thông thường → thêm ?format=webp
+      • URL không có query → đổi extension .png/.jpg → .webp
+    """
+    if not url:
+        return url
+    # Đã là webp
+    if re.search(r'\.webp(\?|$)', url, re.I):
+        return url
+    # R2 cloudflare — giữ nguyên
+    if re.search(r'pub-[a-f0-9]+\.r2\.dev', url):
+        return url
+    # Thêm format=webp vào query string
+    sep = "&" if "?" in url else "?"
+    return url + sep + "format=webp"
+
+
+# ═══════════════════════════════════════════════════════
 #  Parse datetime
 # ═══════════════════════════════════════════════════════
 
 def parse_datetime(time_str, date_str):
     """Ghép time + date → (time_str, date_str, sort_key)."""
     if not time_str: return "", "", ""
-    # Chuẩn hóa time
     tm = re.match(r'(\d{1,2}):(\d{2})', time_str.strip())
     if not tm: return "", "", ""
     hh, mm = tm.group(1).zfill(2), tm.group(2)
     if not (int(hh) <= 23 and int(mm) <= 59): return "", "", ""
 
-    # Chuẩn hóa date
     dm = re.match(r'(\d{1,2})/(\d{2})', (date_str or "").strip())
     if dm:
         day, mon = dm.group(1).zfill(2), dm.group(2).zfill(2)
@@ -103,9 +132,7 @@ def parse_datetime(time_str, date_str):
 def parse_card(card_div):
     """
     Parse <div class="card-single"> → dict trận đấu.
-    Dựa trên cấu trúc HTML thực tế của cauthutv.shop.
     """
-    # ── Link + tên đội từ aria-label ──────────────────
     a = card_div.find("a", href=True)
     if not a: return None
 
@@ -113,7 +140,6 @@ def parse_card(card_div):
     if not href: return None
     detail_url = href if href.startswith("http") else urljoin(BASE_URL, href)
 
-    # aria-label chứa "TeamA vs TeamB" — nguồn chính xác nhất
     aria = a.get("aria-label","").strip()
     home = away = ""
     if " vs " in aria:
@@ -122,20 +148,14 @@ def parse_card(card_div):
         away = parts[1].strip()
 
     if not home or not away:
-        return None  # bỏ qua card không có tên đội
+        return None
 
-    # ── Giải đấu ──────────────────────────────────────
-    # <span class="...tracking-wider...">
     league_el = card_div.find("span", class_=lambda c: c and "tracking-wider" in c)
     league = league_el.get_text(strip=True) if league_el else ""
 
-    # ── Giờ thi đấu ───────────────────────────────────
-    # <span class="...tracking-widest...text-white...">12:30</span>
     time_el = card_div.find("span", class_=lambda c: c and "tracking-widest" in c)
     time_raw = time_el.get_text(strip=True) if time_el else ""
 
-    # ── Ngày ─────────────────────────────────────────
-    # <span class="...text-gray-400...">12/04</span>
     date_raw = ""
     for span in card_div.find_all("span", class_=lambda c: c and "text-gray-400" in c):
         t = span.get_text(strip=True)
@@ -145,7 +165,6 @@ def parse_card(card_div):
 
     t_str, d_str, sort_k = parse_datetime(time_raw, date_raw)
 
-    # ── Trạng thái ────────────────────────────────────
     raw_text = card_div.get_text(" ", strip=True)
     if re.search(r'\bLIVE\b|\bĐang Live\b|\bHiệp\s+\d|\bPT\s+\d', raw_text, re.I):
         status = "live"
@@ -154,45 +173,37 @@ def parse_card(card_div):
     else:
         status = "upcoming"
 
-    # ── Logo ─────────────────────────────────────────
-    # <img class="...img-lazy..." data-src="URL_hoặc_base64">
-    # Lọc: bỏ ảnh background (/bgs/, /bg_) và sport icon (/icon-sports/)
+    # ── Logo — chuyển sang WebP CDN URL ──────────────
     _SKIP_LOGO = ("/bgs/", "/bg_", "/bg-", "bg-soccer", "bg-volleyball",
                   "/icon-sports/", "icon_sport_", "/background", "opacity-20")
     logos = []
     for img in card_div.find_all("img", class_=lambda c: c and "img-lazy" in c):
         src = img.get("data-src") or img.get("src","")
         if not src: continue
-        if not src.startswith("http"): continue   # bỏ base64
+        if not src.startswith("http"): continue
         if any(s in src for s in _SKIP_LOGO): continue
-        # Đảm bảo URL đầy đủ (rapid-api.icu bị cắt ngắn trong data-src)
-        # /image/s → /image/small
         if src.endswith("/image/s"):
             src = src + "mall"
-        logos.append(src)
+        logos.append(to_webp_url(src))   # ← chuyển sang webp CDN
 
     home_logo = logos[0] if len(logos) >= 1 else ""
     away_logo = logos[1] if len(logos) >= 2 else ""
 
-    # ── BLV — lấy tên đầy đủ từ div flex ──────────────
-    # Cấu trúc HTML: <div class="flex items-center gap-2">BLV<span>Tên Đầy Đủ</span></div>
+    # ── BLV ──────────────────────────────────────────
     blv = ""
     blv_container = card_div.find(
         "div", class_=lambda c: c and "flex" in c and "items-center" in c and "gap-2" in c
     )
     if blv_container:
         txt = blv_container.get_text(" ", strip=True)
-        # txt dạng: "BLV Mèo Béo" hoặc "BLV Thây Ma (Neymar)"
         m = re.match(r'BLV\s+(.+)', txt)
         if m:
             blv = m.group(1).strip()
     if not blv:
-        # Fallback: lấy từ raw text — nhưng lấy đủ đến hết tên (trước FB88/DEBET)
         m2 = re.search(r'BLV\s+([\w\s\(\)\.]+?)(?:\s*FB88|\s*DEBET|\s*XEM)', raw_text)
         if m2:
             blv = m2.group(1).strip()
 
-    # ── data-type (sport) ─────────────────────────────
     sport = card_div.get("data-type","")
 
     return {
@@ -213,6 +224,45 @@ def parse_card(card_div):
     }
 
 # ═══════════════════════════════════════════════════════
+#  Gộp trận giống nhau (merge duplicate matches)
+# ═══════════════════════════════════════════════════════
+
+def merge_duplicate_matches(matches):
+    """
+    Gộp các trận có cùng base_title (home vs away) thành một entry,
+    hợp nhất blv_sources và lấy thông tin tốt nhất (logo, league, v.v.).
+    """
+    seen = {}   # base_title → index trong result
+    result = []
+    for m in matches:
+        key = m["base_title"].strip().lower()
+        if key in seen:
+            # Trận đã có — merge blv_sources
+            existing = result[seen[key]]
+            # Thêm blv_source nếu chưa có (tránh trùng detail_url)
+            existing_urls = {s["detail_url"] for s in existing["blv_sources"]}
+            for src in m["blv_sources"]:
+                if src["detail_url"] not in existing_urls:
+                    existing["blv_sources"].append(src)
+                    existing_urls.add(src["detail_url"])
+            # Cập nhật logo nếu bản trước chưa có
+            if not existing.get("home_logo") and m.get("home_logo"):
+                existing["home_logo"] = m["home_logo"]
+            if not existing.get("away_logo") and m.get("away_logo"):
+                existing["away_logo"] = m["away_logo"]
+            # Ưu tiên trạng thái live
+            if m.get("status") == "live":
+                existing["status"] = "live"
+        else:
+            seen[key] = len(result)
+            result.append(m)
+
+    merged = len(matches) - len(result)
+    if merged:
+        log(f"  🔀 Gộp {merged} trận trùng → còn {len(result)} trận")
+    return result
+
+# ═══════════════════════════════════════════════════════
 #  Tìm và parse section HOT
 # ═══════════════════════════════════════════════════════
 
@@ -220,11 +270,9 @@ def extract_hot_matches(html, bs, debug=False):
     """
     Tìm <div id="live-score-game-hot"> và parse tất cả card-single bên trong.
     """
-    # Cách 1: id chính xác
     hot_section = bs.find(id="live-score-game-hot")
 
     if not hot_section:
-        # Cách 2: tìm theo text "Các Trận Hot"
         log("  ⚠ Không tìm thấy #live-score-game-hot, tìm theo text...")
         for node in bs.find_all(string=lambda t: t and "Các Trận Hot" in t):
             parent = node.parent
@@ -246,12 +294,10 @@ def extract_hot_matches(html, bs, debug=False):
                 log(f"    #{tag['id']} <{tag.name}>")
         return []
 
-    # Parse tất cả card-single
     cards = hot_section.find_all("div", class_="card-single")
     log(f"  ✅ Tìm thấy {len(cards)} card-single trong HOT section")
 
     if debug:
-        # In class của section
         log(f"  Section: <{hot_section.name} id='{hot_section.get('id','')}' "
             f"class='{' '.join(hot_section.get('class',[]))[:60]}'>")
 
@@ -265,6 +311,9 @@ def extract_hot_matches(html, bs, debug=False):
             log(f"  ⚠ Card {i+1} bỏ qua: aria='{a.get('aria-label','?') if a else '?'}'")
 
     log(f"  → Parse được {len(matches)}/{len(cards)} trận hợp lệ")
+
+    # ── Gộp trận giống nhau ──
+    matches = merge_duplicate_matches(matches)
     return matches
 
 # ═══════════════════════════════════════════════════════
@@ -278,8 +327,7 @@ def crawl_detail(detail_url, blv, scraper):
 
     info = {}
 
-    # ── Chỉ lấy R2 URL thực sự (pub-xxx.r2.dev) làm thumbnail ──
-    # KHÔNG dùng og:image vì trang trả về logo 1 đội, không phải thumbnail trận
+    # ── R2 thumbnail (pub-xxx.r2.dev) ──
     r2_urls = re.findall(
         r'https://pub-[a-f0-9]+\.r2\.dev/[^\s\'"<>]+\.(?:webp|jpg|jpeg|png)[^\s\'"<>]*',
         html, re.I
@@ -287,19 +335,17 @@ def crawl_detail(detail_url, blv, scraper):
     if r2_urls:
         info["thumb_url"] = r2_urls[0]
 
-    # ── Logo 2 đội từ img-lazy ──
+    # ── Logo 2 đội — chuyển sang WebP CDN URL ──
     logos = []
     for img in bs.find_all("img", class_=lambda c: c and "img-lazy" in c):
         src = img.get("data-src") or img.get("src","")
         if src and src.startswith("http"):
-            # Bỏ ảnh background/sport icon
             _skip = ("/bgs/", "/icon-sports/", "icon_sport_", "/bg_", "/background")
             if not any(s in src for s in _skip):
-                logos.append(src)
+                logos.append(to_webp_url(src))   # ← webp CDN
     if len(logos) >= 1: info["home_logo"] = logos[0]
     if len(logos) >= 2: info["away_logo"] = logos[1]
 
-    # Streams
     seen, streams = set(), []
     def add(name, url, kind):
         url = url.strip()
@@ -308,37 +354,34 @@ def crawl_detail(detail_url, blv, scraper):
             streams.append({"name":name,"url":url,"type":kind,
                             "referer":detail_url,"blv":blv})
 
-    # ── 1. iframe embed (player embed) ──────────────────
+    # ── 1. iframe embed ──
     for fr in bs.find_all("iframe", src=True):
         src = fr["src"]
         if re.search(r"live|stream|embed|player|sport|watch|truc.?tiep", src, re.I):
             add("📺 Xem trực tiếp", src, "iframe")
 
-    # ── 2. m3u8 HLS trực tiếp ───────────────────────────
+    # ── 2. m3u8 HLS ──
     for m in re.finditer(r'(https?://[^\s\'"<>\]\\]+\.m3u8(?:[?#][^\s\'"<>\]\\]*)?)', html):
         add("HLS", m.group(1), "hls")
 
-    # ── 3. DASH ─────────────────────────────────────────
+    # ── 3. DASH ──
     for m in re.finditer(r'(https?://[^\s\'"<>\]\\]+\.mpd(?:[?#][^\s\'"<>\]\\]*)?)', html):
         add("DASH", m.group(1), "dash")
 
-    # ── 4. JSON config trong script tags ────────────────
+    # ── 4. JSON config trong script ──
     for sc in bs.find_all("script"):
         c = sc.string or ""
 
-        # JSON player sources: "file":"url", "src":"url", "url":"url"
         for m in re.finditer(
                 r'"(?:file|src|source|url|hls|playlist|videoUrl|streamUrl|hlsUrl|hlssrc)"\s*:\s*"(https?://[^"]+)"', c):
             u = m.group(1)
             if re.search(r"m3u8|stream|live|video|play|hls", u, re.I):
                 add("HLS stream", u, "hls")
 
-        # playerConfig / player_config JSON object
         for m in re.finditer(r'(?:playerConfig|player_config|PLAYER_CONFIG)\s*=\s*(\{[^;]+\})', c, re.S):
             try:
                 import json as _json
                 cfg = _json.loads(m.group(1))
-                # sources array
                 srcs = cfg.get("sources", cfg.get("source", []))
                 if isinstance(srcs, str): srcs = [{"src": srcs}]
                 for s in (srcs if isinstance(srcs, list) else []):
@@ -349,7 +392,6 @@ def crawl_detail(detail_url, blv, scraper):
             except Exception:
                 pass
 
-        # Mảng sources dạng: sources:[{src:...,label:...}]
         for m in re.finditer(r'sources\s*:\s*\[([^\]]+)\]', c, re.S):
             inner = m.group(1)
             for sm in re.finditer(r'src\s*:\s*["\']([^"\']+)["\'].*?label\s*:\s*["\']([^"\']+)["\']', inner, re.S):
@@ -357,13 +399,12 @@ def crawl_detail(detail_url, blv, scraper):
             for sm in re.finditer(r'label\s*:\s*["\']([^"\']+)["\'].*?src\s*:\s*["\']([^"\']+)["\']', inner, re.S):
                 add(f"🎬 {sm.group(1)}", sm.group(2), "hls")
 
-        # window.streamUrl = "..." hoặc window.hlsUrl = "..."
         for m in re.finditer(r'(?:streamUrl|videoUrl|hlsUrl|playerUrl|src)\s*[=:]\s*["\']([^"\']+)["\']', c):
             u = m.group(1)
             if u.startswith("http") and re.search(r"m3u8|stream|live|cdn", u, re.I):
                 add("Live stream", u, "hls")
 
-    # ── 5. data-src / data-stream attributes ────────────
+    # ── 5. data attributes ──
     for tag in bs.find_all(attrs={"data-src": True}):
         u = tag.get("data-src","")
         if u and u.startswith("http") and re.search(r"m3u8|stream|live", u, re.I):
@@ -375,8 +416,7 @@ def crawl_detail(detail_url, blv, scraper):
         if u and re.search(r"m3u8|stream", u, re.I):
             add("data-url", u, "hls")
 
-    # ── 6. Phân loại chất lượng từ URL ──────────────────
-    # Áp nhãn HD/FHD/SD dựa trên URL pattern
+    # ── 6. Gán nhãn chất lượng ──
     _QUAL_MAP = [
         (re.compile(r'1080|fhd|fullhd|full.hd', re.I), "📺 Full HD 1080p"),
         (re.compile(r'720|hd(?!c)',              re.I), "🔵 HD 720p"),
@@ -400,7 +440,7 @@ def crawl_detail(detail_url, blv, scraper):
     return streams, info
 
 # ═══════════════════════════════════════════════════════
-#  Thumbnail
+#  Thumbnail — WebP, logo to hơn, tên đội sát logo
 # ═══════════════════════════════════════════════════════
 
 def _font(size, bold=True):
@@ -414,74 +454,88 @@ def _font(size, bold=True):
     return ImageFont.load_default()
 
 def fetch_logo(url, max_px=300):
+    """
+    Tải logo từ URL — thử phiên bản webp trước, fallback về URL gốc.
+    """
     if not url or not _PIL: return None
-    try:
-        r = requests.get(url.strip(), timeout=8,
-                        headers={"User-Agent":"Mozilla/5.0"}, stream=True)
-        r.raise_for_status()
-        if "html" in r.headers.get("content-type",""): return None
-        data = b""
-        for chunk in r.iter_content(65536):
-            data += chunk
-            if len(data) > 3_000_000: return None
-        img = Image.open(io.BytesIO(data)).convert("RGBA")
-        img.thumbnail((max_px, max_px), Image.LANCZOS)
-        return img
-    except: return None
+    candidates = [url]
+    # Thêm webp fallback nếu URL gốc chưa phải webp
+    webp_url = to_webp_url(url)
+    if webp_url != url:
+        candidates = [webp_url, url]   # ưu tiên webp
+
+    for try_url in candidates:
+        try:
+            r = requests.get(try_url.strip(), timeout=8,
+                            headers={"User-Agent": "Mozilla/5.0",
+                                     "Accept": "image/webp,image/*,*/*"}, stream=True)
+            r.raise_for_status()
+            if "html" in r.headers.get("content-type",""): continue
+            data = b""
+            for chunk in r.iter_content(65536):
+                data += chunk
+                if len(data) > 3_000_000: break
+            img = Image.open(io.BytesIO(data)).convert("RGBA")
+            img.thumbnail((max_px, max_px), Image.LANCZOS)
+            return img
+        except:
+            continue
+    return None
 
 def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
                    time_str="", date_str="", status="upcoming", league=""):
+    """
+    Tạo thumbnail WebP base64.
+    - Logo to hơn (LMAX 155px)
+    - Tên đội sát logo (NY = tâm logo + bán kính + gap nhỏ)
+    - Font tên đội 23px, VS 50px, LIVE 42px
+    - Output: data:image/webp;base64,...
+    """
     if not _PIL: return ""
 
-    # ── Kích thước: hẹp hơn (700×394 thay vì 800×450) ──
     W, H = 700, 394
     canvas = Image.new("RGB", (W, H))
     draw   = ImageDraw.Draw(canvas)
 
-    # ── Nền: tối đậm, sang hơn — gradient xanh navy sâu ──
+    # ── Nền gradient navy ──
     for y in range(H):
         t = y / H
-        # Từ #0a0e1a (trên) → #0d1829 (dưới) — xanh navy rất tối
         r_ = int(10 + 5*t)
         g_ = int(14 + 10*t)
         b_ = int(26 + 15*t)
         draw.line([(0,y),(W,y)], fill=(r_, g_, b_))
 
-    # ── Viền sáng bên trái (accent) ──
-    draw.rectangle([(0,0),(3,H)], fill=(255,140,0))
+    # ── Viền accent ──
+    draw.rectangle([(0,0),(3,H)],   fill=(255,140,0))
+    draw.rectangle([(0,0),(W,3)],   fill=(255,140,0))
 
-    # ── Viền trên mỏng ──
-    draw.rectangle([(0,0),(W,3)], fill=(255,140,0))
-
-    # ── Bar giải đấu — nền trong suốt đậm hơn ──
-    BAR_H = 46
+    # ── Bar giải đấu ──
+    BAR_H = 48
     for y in range(BAR_H):
         alpha_t = 1.0 - y/BAR_H * 0.3
-        bar_r = int(5 * alpha_t)
-        bar_g = int(8 * alpha_t)
-        bar_b = int(18 * alpha_t)
-        draw.line([(0,3+y),(W,3+y)], fill=(bar_r, bar_g, bar_b))
+        draw.line([(0,3+y),(W,3+y)],
+                  fill=(int(5*alpha_t), int(8*alpha_t), int(18*alpha_t)))
 
     if league:
-        # Tên giải lớn hơn — font 22
         draw.text((W//2, 3+BAR_H//2+1), league[:42],
-                  fill=(255, 195, 40), font=_font(22), anchor="mm")
-    # Đường kẻ dưới bar giải
-    draw.line([(0,3+BAR_H),(W,3+BAR_H)],
-              fill=(255,140,0), width=1)
+                  fill=(255, 195, 40), font=_font(24), anchor="mm")
+    draw.line([(0,3+BAR_H),(W,3+BAR_H)], fill=(255,140,0), width=1)
 
     # ── Layout chính ──
-    CTOP = 3 + BAR_H + 8      # bắt đầu vùng nội dung
-    CBOT = H - 52              # kết thúc vùng nội dung (trên footer)
-    AREA_H = CBOT - CTOP       # chiều cao vùng nội dung
+    CTOP  = 3 + BAR_H + 10
+    CBOT  = H - 48
+    AREA_H = CBOT - CTOP
 
-    # Logo: tối đa 130px, vừa với layout hẹp
-    LMAX = min(AREA_H - 36, 130)
+    # ── Logo: lớn hơn (tối đa 155px) ──
+    LMAX = min(AREA_H - 20, 155)       # tăng từ 130 → 155
     CX   = W // 2
-    LX   = 115                 # tâm logo trái (gần hơn)
-    RX   = W - 115             # tâm logo phải
-    LY   = CTOP + (AREA_H - 32) // 2    # tâm Y logo
-    NY   = CBOT - 6            # Y tên đội
+    LX   = 110
+    RX   = W - 110
+    # Tâm Y logo: căn giữa vùng, dịch lên một chút để nhường chỗ tên đội
+    LY   = CTOP + (AREA_H - LMAX//2 - 18) // 2
+
+    # Tên đội: sát ngay dưới logo (LY + bán kính logo + gap nhỏ)
+    NY   = LY + LMAX // 2 + 18        # sát logo, không kéo xuống footer
 
     def draw_logo(cx, cy, url, name):
         logo = fetch_logo(url, LMAX * 3) if url else None
@@ -495,25 +549,23 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
             ox, oy = cx - nw//2, cy - nh//2
             canvas.paste(logo.convert("RGB"), (ox, oy), logo.split()[3])
         else:
-            # Fallback: hình vuông bo góc nhẹ + chữ tắt
+            # Fallback: khung chữ tắt
             sz  = LMAX * 3 // 4
             x0, y0 = cx - sz//2, cy - sz//2
             x1, y1 = cx + sz//2, cy + sz//2
-            # Nền vuông tối
             draw.rectangle([(x0,y0),(x1,y1)],
                            fill=(15, 28, 58), outline=(70, 110, 190), width=2)
             init = "".join(w[0].upper() for w in (name or "?").split()[:2]) or "?"
             draw.text((cx, cy), init,
-                      fill=(140, 185, 255), font=_font(40), anchor="mm")
+                      fill=(140, 185, 255), font=_font(44), anchor="mm")
 
-        # Tên đội — lớn hơn (font 19, bold)
+        # ── Tên đội — font 23, sát logo ──
         short = (name or "?")
         if len(short) > 18: short = short[:17] + "…"
         # Shadow
-        draw.text((cx+1, NY+1), short, fill=(0,0,0),       font=_font(19), anchor="mm")
-        draw.text((cx,   NY),   short, fill=(235,235,235),  font=_font(19), anchor="mm")
+        draw.text((cx+1, NY+1), short, fill=(0,0,0),      font=_font(23), anchor="mm")
+        draw.text((cx,   NY),   short, fill=(240,240,240), font=_font(23), anchor="mm")
 
-    # Vẽ 2 logo
     draw_logo(LX, LY, home_logo_url, home_team)
     draw_logo(RX, LY, away_logo_url, away_team)
 
@@ -521,27 +573,25 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     if status == "live":
         l1, c1 = "● LIVE", (255, 65, 65)
         l2, c2 = "",       (255, 255, 255)
-        f1 = 36
+        f1 = 42                         # tăng từ 36 → 42
     else:
         l1, c1 = time_str or "VS", (255, 255, 255)
         l2, c2 = date_str or "",   (145, 155, 175)
-        f1 = 44
+        f1 = 50                         # tăng từ 44 → 50
 
-    # Gạch ngang trang trí — BỎ (không vẽ)
-
-    # Text giờ/LIVE (font lớn)
     draw.text((CX+1, LY+1), l1, fill=(0,0,0,140), font=_font(f1), anchor="mm")
     draw.text((CX,   LY),   l1, fill=c1,           font=_font(f1), anchor="mm")
     if l2:
-        draw.text((CX, LY+36), l2, fill=c2, font=_font(15, False), anchor="mm")
+        draw.text((CX, LY+40), l2, fill=c2, font=_font(16, False), anchor="mm")
 
-    # ── Footer tối ──
-    draw.rectangle([(0, H-48),(W, H)], fill=(5, 8, 16))
-    draw.line([(0, H-48),(W, H-48)], fill=(255,140,0,90), width=1)
+    # ── Footer ──
+    draw.rectangle([(0, H-44),(W, H)], fill=(5, 8, 16))
+    draw.line([(0, H-44),(W, H-44)], fill=(255,140,0,90), width=1)
 
+    # ── Lưu WebP (thay JPEG) ──
     buf = io.BytesIO()
-    canvas.save(buf, format="JPEG", quality=88, optimize=True)
-    return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
+    canvas.save(buf, format="WEBP", quality=88, method=4)
+    return "data:image/webp;base64," + base64.b64encode(buf.getvalue()).decode()
 
 # ═══════════════════════════════════════════════════════
 #  Build channel + JSON
@@ -582,7 +632,7 @@ def build_channel(m, all_streams, index):
         labels.append({"text":f"🎙 {blv_names[0]}","position":"top-right",
                        "color":"#00601f","text_color":"#fff"})
 
-    # Streams
+    # ── Stream theo BLV ──────────────────────────────
     blv_groups = {}
     for s in all_streams:
         blv_groups.setdefault(s.get("blv") or "__", []).append(s)
@@ -590,7 +640,7 @@ def build_channel(m, all_streams, index):
     stream_objs = []
     for idx,(bkey,raw_s) in enumerate(blv_groups.items()):
         if not raw_s: continue
-        slabel = f"🎙 {bkey}" if bkey != "__" else f"Nguồn {idx+1}"
+        slabel = f"🎙 BLV {bkey}" if bkey != "__" else f"Nguồn {idx+1}"
         slinks = []
         for li,s in enumerate(raw_s):
             ref = s.get("referer", BASE_URL+"/")
@@ -615,15 +665,12 @@ def build_channel(m, all_streams, index):
         }]})
 
     la = m.get("home_logo",""); lb = m.get("away_logo","")
-    thumb_url = m.get("thumb_url","")  # chỉ có nếu tìm được R2 URL thực
+    thumb_url = m.get("thumb_url","")
 
     if thumb_url:
-        # R2 thumbnail thực sự (pub-xxx.r2.dev) từ detail page
         img_obj = {"padding":0,"background_color":"#0a0e1a","display":"cover",
                    "url":thumb_url,"width":700,"height":394}
     elif _PIL:
-        # Luôn generate Pillow thumbnail ghép 2 logo — kể cả khi không có logo URL
-        # (sẽ hiển thị chữ tắt tên đội thay thế)
         uri = make_thumbnail(
             m.get("home_team",""), m.get("away_team",""),
             la, lb, m.get("time_str",""), m.get("date_str",""),
@@ -637,13 +684,14 @@ def build_channel(m, all_streams, index):
     content_name = name
     if league and len(league) < 50: content_name += f" · {league.strip()}"
 
+    # ── Luôn bật enable_detail để người dùng chọn đường dẫn / BLV ──
     has_multi = len(stream_objs) > 1
     return {
         "id":            ch_id,
         "name":          name,
         "type":          "multi" if has_multi else "single",
         "display":       "thumbnail-only",
-        "enable_detail": has_multi,
+        "enable_detail": True,          # ← luôn True (trang thông tin chọn BLV)
         "image":         img_obj,
         "labels":        labels,
         "sources": [{
@@ -687,8 +735,10 @@ def main():
     args = ap.parse_args()
 
     log("\n" + "═"*62)
-    log("  🔥  CRAWLER cauthutv.shop  v6  — PRODUCTION")
+    log("  🔥  CRAWLER cauthutv.shop  v7  — PRODUCTION")
     log("  📌  id='live-score-game-hot' → card-single → aria-label")
+    log("  🖼   Thumbnail: WebP CDN | Logo to | Tên sát logo")
+    log("  🔀  Merge trận trùng | enable_detail luôn bật")
     log("═"*62 + "\n")
 
     now_vn  = datetime.now(VN_TZ)
@@ -719,10 +769,10 @@ def main():
     # Sort: live → upcoming → finished, rồi theo giờ
     pri = {"live":0,"upcoming":1,"finished":2}
     matches.sort(key=lambda x: (pri.get(x.get("status","upcoming"),9), x.get("sort_key","")))
-    log(f"\n  ✅ {len(matches)} trận HOT\n")
+    log(f"\n  ✅ {len(matches)} trận HOT (sau merge)\n")
 
     # Crawl detail
-    log("🖼  Crawl detail + tạo thumbnail...")
+    log("🖼  Crawl detail + tạo thumbnail WebP...")
     channels = []
     for i, m in enumerate(matches, 1):
         all_streams = []
@@ -730,10 +780,8 @@ def main():
         if not args.no_stream:
             for src in m.get("blv_sources",[]):
                 streams, info = crawl_detail(src["detail_url"], src.get("blv",""), scraper)
-                # Ưu tiên R2/og:image URL từ detail page
                 if info.get("thumb_url") and not m.get("thumb_url"):
                     m["thumb_url"] = info["thumb_url"]
-                # Cập nhật logo từ detail nếu tốt hơn
                 if info.get("home_logo") and not m.get("home_logo"):
                     m["home_logo"] = info["home_logo"]
                 if info.get("away_logo") and not m.get("away_logo"):
@@ -743,10 +791,11 @@ def main():
             time.sleep(0.3)
 
         has_thumb = bool(m.get("thumb_url"))
+        blv_count = len(m.get("blv_sources",[]))
         log(f"  [{i:03d}] {m.get('base_title','?')[:40]:40s} | "
             f"{'🔴' if m.get('status')=='live' else '🕐'} | "
-            f"thumb={'R2' if has_thumb else ('PIL' if (m.get('home_logo') or m.get('away_logo')) else '✗')} | "
-            f"streams={len(all_streams)}")
+            f"thumb={'R2' if has_thumb else ('WebP' if (m.get('home_logo') or m.get('away_logo')) else '✗')} | "
+            f"BLV={blv_count} | streams={len(all_streams)}")
 
         channels.append(build_channel(m, all_streams, i))
 
