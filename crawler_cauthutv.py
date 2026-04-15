@@ -968,7 +968,7 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     """
     if not _PIL: return ""
 
-    W, H = 700, 394
+    W, H = 820, 540
     canvas = Image.new("RGBA", (W, H), (255,255,255,255))
     draw   = ImageDraw.Draw(canvas)
 
@@ -1160,10 +1160,14 @@ def build_channel(m, all_streams, index):
         labels.append({"text":f"🎙 {blv_names[0]}","position":"top-right",
                        "color":"#00601f","text_color":"#fff"})
 
-    # ── Stream theo BLV ──────────────────────────────
+    # ── Stream theo BLV — dedup URL chỉ trong cùng group ──
     blv_groups = {}
     for s in all_streams:
-        blv_groups.setdefault(s.get("blv") or "__", []).append(s)
+        bkey = s.get("blv") or "__"
+        grp  = blv_groups.setdefault(bkey, [])
+        # Bỏ trùng URL trong cùng BLV group; BLV khác được giữ nguyên dù URL giống
+        if s["url"] not in {x["url"] for x in grp}:
+            grp.append(s)
 
     stream_objs = []
     for idx,(bkey,raw_s) in enumerate(blv_groups.items()):
@@ -1197,7 +1201,7 @@ def build_channel(m, all_streams, index):
 
     if thumb_url:
         img_obj = {"padding":0,"background_color":"#0a0e1a","display":"cover",
-                   "url":thumb_url,"width":700,"height":394}
+                   "url":thumb_url,"width":820,"height":540}
     elif _PIL:
         uri = make_thumbnail(
             m.get("home_team",""), m.get("away_team",""),
@@ -1205,7 +1209,7 @@ def build_channel(m, all_streams, index):
             status, league, m.get("sport",""),
         )
         img_obj = ({"padding":0,"background_color":"#0a0e1a","display":"cover",
-                    "url":uri,"width":700,"height":394} if uri else PLACEHOLDER)
+                    "url":uri,"width":820,"height":540} if uri else PLACEHOLDER)
     else:
         img_obj = PLACEHOLDER
 
@@ -1244,10 +1248,13 @@ def build_json(channels, now_str):
         "grid_number": 2,
         "image":       {"type":"cover","url":SITE_ICON},
         "groups": [{
-            "id":       "tran-hot",
-            "name":     "🔥 Các Trận Hot",
-            "image":    None,
-            "channels": channels,
+            "id":            "tran-hot",
+            "name":          "🔥 Các Trận Hot",
+            "display":       "vertical",
+            "grid_number":   2,
+            "enable_detail": False,
+            "image":         None,
+            "channels":      channels,
         }],
     }
 
@@ -1314,8 +1321,10 @@ def main():
                     m["home_logo"] = info["home_logo"]
                 if info.get("away_logo") and not m.get("away_logo"):
                     m["away_logo"] = info["away_logo"]
-                seen_u = {s["url"] for s in all_streams}
-                all_streams.extend(s for s in streams if s["url"] not in seen_u)
+                # Dedup CHỈ trong cùng BLV — KHÔNG loại stream của BLV khác dù trùng URL
+                blv_key = src.get("blv") or "__"
+                seen_per_blv = {s["url"] for s in all_streams if (s.get("blv") or "__") == blv_key}
+                all_streams.extend(s for s in streams if s["url"] not in seen_per_blv)
             time.sleep(0.3)
 
         has_thumb = bool(m.get("thumb_url"))
