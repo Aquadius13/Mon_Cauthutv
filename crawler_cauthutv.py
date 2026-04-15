@@ -550,27 +550,122 @@ def _draw_sport_pattern(draw, canvas, key, W, H, CTOP, CBOT):
     MID_Y = (CTOP + CBOT) // 2
 
     if key == "soccer":
-        # Đường kẻ dọc sân cỏ
-        for x in range(0, W+1, 70):
-            od.line([(x, CTOP),(x, CBOT)], fill=rgba, width=1)
-        # Vòng tròn giữa sân
-        r = 62
-        od.ellipse([(W//2-r, MID_Y-r),(W//2+r, MID_Y+r)], outline=rgba, width=2)
-        # Điểm giữa sân
-        od.ellipse([(W//2-4, MID_Y-4),(W//2+4, MID_Y+4)], fill=rgba)
-        # Đường giữa ngang
-        od.line([(0, MID_Y),(W, MID_Y)], fill=rgba, width=1)
+        # ── Sân bóng đá đầy đủ (nhìn từ trên) ──
+        # Toàn bộ sân nằm trong vùng CTOP→CBOT, padding 18px hai bên
+        PAD  = 18
+        SL   = PAD        # left
+        SR   = W - PAD    # right
+        ST   = CTOP + 6   # top
+        SB   = CBOT - 6   # bottom
+        CX_s = W // 2
+        CY_s = MID_Y
+
+        # Viền sân
+        od.rectangle([(SL,ST),(SR,SB)], outline=rgba, width=2)
+
+        # Đường giữa sân (ngang)
+        od.line([(SL, CY_s),(SR, CY_s)], fill=rgba, width=2)
+
+        # Vòng tròn giữa + điểm giữa
+        RC = int((SB-ST) * 0.28)
+        od.ellipse([(CX_s-RC, CY_s-RC),(CX_s+RC, CY_s+RC)], outline=rgba, width=2)
+        od.ellipse([(CX_s-4, CY_s-4),(CX_s+4, CY_s+4)], fill=rgba)
+
+        # Khu vực phạt đền trái (penalty area)
+        PW = int((SR-SL) * 0.14)   # chiều rộng
+        PH = int((SB-ST) * 0.55)   # chiều cao
+        od.rectangle([(SL, CY_s-PH//2),(SL+PW, CY_s+PH//2)], outline=rgba, width=2)
+        # Khu vực cấm địa trái (goal area)
+        GW = int(PW * 0.45)
+        GH = int(PH * 0.4)
+        od.rectangle([(SL, CY_s-GH//2),(SL+GW, CY_s+GH//2)], outline=rgba, width=2)
+        # Điểm penalty trái
+        PPX = SL + int(PW * 0.75)
+        od.ellipse([(PPX-3, CY_s-3),(PPX+3, CY_s+3)], fill=rgba)
+        # Arc penalty trái
+        od.arc([(PPX-RC//2, CY_s-RC//2),(PPX+RC//2, CY_s+RC//2)],
+               300, 60, fill=rgba, width=2)
+
+        # Khu vực phạt đền phải
+        od.rectangle([(SR-PW, CY_s-PH//2),(SR, CY_s+PH//2)], outline=rgba, width=2)
+        od.rectangle([(SR-GW, CY_s-GH//2),(SR, CY_s+GH//2)], outline=rgba, width=2)
+        PPX2 = SR - int(PW * 0.75)
+        od.ellipse([(PPX2-3, CY_s-3),(PPX2+3, CY_s+3)], fill=rgba)
+        od.arc([(PPX2-RC//2, CY_s-RC//2),(PPX2+RC//2, CY_s+RC//2)],
+               120, 240, fill=rgba, width=2)
+
+        # Góc sân (corner arc nhỏ)
+        CR = 10
+        od.arc([(SL, ST),(SL+CR*2, ST+CR*2)],       0, 90,  fill=rgba, width=2)
+        od.arc([(SR-CR*2, ST),(SR, ST+CR*2)],        90, 180, fill=rgba, width=2)
+        od.arc([(SL, SB-CR*2),(SL+CR*2, SB)],       270, 360, fill=rgba, width=2)
+        od.arc([(SR-CR*2, SB-CR*2),(SR, SB)],        180, 270, fill=rgba, width=2)
 
     elif key == "basketball":
-        # Đường cong arc bóng rổ
-        for offset, w in [(0,2),(40,1),(-40,1)]:
-            r = 130 + offset
-            cx, cy = W//2, CBOT + 40
-            od.arc([(cx-r, cy-r),(cx+r, cy+r)], 200, 340, fill=rgba, width=w)
-        # Đường free-throw
-        od.line([(0, CTOP+50),(W, CTOP+50)], fill=rgba, width=1)
-        # Vạch giữa
-        od.line([(W//2, CTOP),(W//2, CBOT)], fill=rgba, width=1)
+        # ── Sân bóng rổ đầy đủ (nhìn từ trên) ──
+        PAD  = 18
+        SL   = PAD
+        SR   = W - PAD
+        ST   = CTOP + 6
+        SB   = CBOT - 6
+        CX_b = W // 2
+        CY_b = MID_Y
+        SW   = SR - SL
+        SH   = SB - ST
+
+        # Viền sân
+        od.rectangle([(SL,ST),(SR,SB)], outline=rgba, width=2)
+
+        # Đường giữa sân
+        od.line([(CX_b, ST),(CX_b, SB)], fill=rgba, width=2)
+
+        # Vòng tròn giữa sân
+        RC = int(SH * 0.20)
+        od.ellipse([(CX_b-RC, CY_b-RC),(CX_b+RC, CY_b+RC)], outline=rgba, width=2)
+
+        # ── Key (vùng sơn) trái ──
+        KW = int(SW * 0.19)   # chiều rộng key
+        KH = int(SH * 0.50)   # chiều cao key
+        od.rectangle([(SL, CY_b-KH//2),(SL+KW, CY_b+KH//2)], outline=rgba, width=2)
+        # Free-throw circle trái
+        FTR = int(KH * 0.38)
+        FTX = SL + KW
+        od.arc([(FTX-FTR, CY_b-FTR),(FTX+FTR, CY_b+FTR)], 270, 90, fill=rgba, width=2)  # phần trong sân
+        od.arc([(FTX-FTR, CY_b-FTR),(FTX+FTR, CY_b+FTR)], 90, 270, fill=rgba, width=2)  # phần ngoài (đứt)
+
+        # Rổ + backboard trái
+        RIM_R = 10
+        RIM_X = SL + int(KW * 0.22)
+        od.ellipse([(RIM_X-RIM_R, CY_b-RIM_R),(RIM_X+RIM_R, CY_b+RIM_R)],
+                   outline=rgba, width=2)
+        od.line([(SL, CY_b-RIM_R*2),(SL, CY_b+RIM_R*2)], fill=rgba, width=4)
+
+        # 3-point arc trái
+        ARC_R = int(SH * 0.44)
+        ARC_X = SL + int(KW * 0.22)
+        od.arc([(ARC_X-ARC_R, CY_b-ARC_R),(ARC_X+ARC_R, CY_b+ARC_R)],
+               300, 60, fill=rgba, width=2)
+        # Đường thẳng 3-point (corner 3)
+        C3_Y = int(SH * 0.14)
+        od.line([(SL, CY_b-C3_Y),(SL+int(KW*0.6), CY_b-C3_Y)], fill=rgba, width=2)
+        od.line([(SL, CY_b+C3_Y),(SL+int(KW*0.6), CY_b+C3_Y)], fill=rgba, width=2)
+
+        # ── Key phải (đối xứng) ──
+        od.rectangle([(SR-KW, CY_b-KH//2),(SR, CY_b+KH//2)], outline=rgba, width=2)
+        FTX2 = SR - KW
+        od.arc([(FTX2-FTR, CY_b-FTR),(FTX2+FTR, CY_b+FTR)], 90, 270, fill=rgba, width=2)
+        od.arc([(FTX2-FTR, CY_b-FTR),(FTX2+FTR, CY_b+FTR)], 270, 90, fill=rgba, width=2)
+
+        RIM_X2 = SR - int(KW * 0.22)
+        od.ellipse([(RIM_X2-RIM_R, CY_b-RIM_R),(RIM_X2+RIM_R, CY_b+RIM_R)],
+                   outline=rgba, width=2)
+        od.line([(SR, CY_b-RIM_R*2),(SR, CY_b+RIM_R*2)], fill=rgba, width=4)
+
+        ARC_X2 = SR - int(KW * 0.22)
+        od.arc([(ARC_X2-ARC_R, CY_b-ARC_R),(ARC_X2+ARC_R, CY_b+ARC_R)],
+               120, 240, fill=rgba, width=2)
+        od.line([(SR, CY_b-C3_Y),(SR-int(KW*0.6), CY_b-C3_Y)], fill=rgba, width=2)
+        od.line([(SR, CY_b+C3_Y),(SR-int(KW*0.6), CY_b+C3_Y)], fill=rgba, width=2)
 
     elif key == "tennis":
         # Đường kẻ ngang sân tennis
@@ -665,10 +760,8 @@ def _draw_sport_pattern(draw, canvas, key, W, H, CTOP, CBOT):
         pts = [(0, CBOT-30),(W//4, CTOP+30),(W//2, MID_Y),(3*W//4, CTOP+60),(W, CBOT-20)]
         od.line(pts, fill=(c[0],c[1],c[2],50), width=3)
 
-    else:  # default
-        # Đường chéo nhẹ
-        for x in range(-H, W+H, 55):
-            od.line([(x, CTOP),(x+H, CBOT)], fill=rgba, width=1)
+    else:  # default — không có họa tiết
+        pass
 
     canvas.paste(overlay, mask=overlay.split()[3])
 
