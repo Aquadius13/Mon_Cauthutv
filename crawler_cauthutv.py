@@ -933,13 +933,38 @@ def _draw_sport_icon(canvas, key, accent, CX, MID_Y, alpha=38):
     canvas.paste(ic, mask=ic.split()[3])
 
 
+def _team_palette(home: str, away: str, base_top, base_bot, accent):
+    """
+    Sinh bộ màu nền độc nhất cho từng cặp đội dựa trên hash tên đội.
+    Giữ nguyên sắc tổng thể của môn (base_top/bot), chỉ shift hue ±15
+    và thay đổi độ sáng / saturation nhẹ để mỗi trận có màu riêng.
+    """
+    seed = int(hashlib.md5((home + "|" + away).lower().encode()).hexdigest(), 16)
+
+    # Shift riêng biệt 3 kênh RGB, mỗi kênh ±20
+    def shift(val, delta): return max(0, min(255, val + delta))
+
+    dr = ((seed >> 0)  & 0xFF) % 41 - 20   # -20 … +20
+    dg = ((seed >> 8)  & 0xFF) % 41 - 20
+    db = ((seed >> 16) & 0xFF) % 41 - 20
+
+    top = (shift(base_top[0], dr), shift(base_top[1], dg), shift(base_top[2], db))
+    bot = (shift(base_bot[0], dr), shift(base_bot[1], dg), shift(base_bot[2], db))
+
+    # Accent: shift nhẹ hơn (±10) để vẫn nhận ra môn thể thao
+    da = ((seed >> 24) & 0xFF) % 21 - 10
+    acc = (shift(accent[0], da), shift(accent[1], da//2), shift(accent[2], -da//2))
+
+    return top, bot, acc
+
+
 def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
                    time_str="", date_str="", status="upcoming", league="", sport=""):
     """
-    Tạo thumbnail WebP base64 với nền trắng theo từng môn thể thao.
-    - Nền sáng + họa tiết đặc trưng từng môn
-    - Logo to (LMAX 155px), tên đội sát logo
-    - Font tên đội 23px, VS 50px, LIVE 42px
+    Tạo thumbnail WebP base64.
+    - Màu nền độc nhất mỗi trận (hash từ tên 2 đội)
+    - Họa tiết + icon tượng trưng theo môn thể thao
+    - Logo xích vào giữa, tên đội sát logo
     """
     if not _PIL: return ""
 
@@ -947,12 +972,19 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     canvas = Image.new("RGBA", (W, H), (255,255,255,255))
     draw   = ImageDraw.Draw(canvas)
 
-    # ── Chọn theme theo môn ──
+    # ── Theme theo môn ──
     key = _sport_key(sport, league)
     (bg_top, bg_bot, bar_col, bar_txt,
      accent, name_fg, name_sh, vs_col) = SPORT_THEMES.get(key, SPORT_THEMES["default"])
 
-    # ── Nền gradient sáng theo môn ──
+    # ── Màu nền riêng mỗi trận ──
+    bg_top, bg_bot, accent = _team_palette(home_team, away_team, bg_top, bg_bot, accent)
+    # Tính lại vs_col và name_fg từ accent mới
+    vs_col  = accent
+    name_fg = (max(0, accent[0]-60), max(0, accent[1]-60), max(0, accent[2]-60))
+    name_sh_rgba = (max(0,bg_bot[0]-30), max(0,bg_bot[1]-30), max(0,bg_bot[2]-30))
+
+    # ── Nền gradient sáng ──
     for y in range(H):
         t = y / H
         r_ = int(bg_top[0] + (bg_bot[0]-bg_top[0])*t)
@@ -983,16 +1015,16 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     CX     = W // 2
     MID_Y  = (CTOP + CBOT) // 2
 
-    # ── Họa tiết nền theo môn ──
+    # ── Họa tiết sân theo môn ──
     _draw_sport_pattern(draw, canvas, key, W, H, CTOP, CBOT)
 
-    # ── Icon tượng trưng lớn mờ giữa card (watermark) ──
+    # ── Icon watermark mờ ──
     _draw_sport_icon(canvas, key, accent, CX, MID_Y, alpha=32)
 
-    # ── Logo ──
+    # ── Logo — xích vào giữa: LX/RX dịch thêm 35px so với trước ──
     LMAX = min(AREA_H - 20, 155)
-    LX   = 130
-    RX   = W - 130
+    LX   = 165          # ← vào thêm (trước: 130)
+    RX   = W - 165      # ← vào thêm (trước: W-130)
     LY   = CTOP + (AREA_H - LMAX//2 - 18) // 2
     NY   = LY + LMAX // 2 + 18
 
@@ -1000,7 +1032,6 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
         logo = fetch_logo(url, LMAX * 3) if url else None
         if logo:
             if logo.mode != "RGBA": logo = logo.convert("RGBA")
-            # Drop shadow nhẹ dưới logo
             sh = Image.new("RGBA", canvas.size, (0,0,0,0))
             sh_draw = ImageDraw.Draw(sh)
             lw, lh = logo.size
@@ -1008,9 +1039,7 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
             nw = max(1, int(lw*scale)); nh = max(1, int(lh*scale))
             logo = logo.resize((nw, nh), Image.LANCZOS)
             ox, oy = cx-nw//2, cy-nh//2
-            # Shadow
-            sh_draw.ellipse([(ox+4, oy+nh-6),(ox+nw+4, oy+nh+10)],
-                             fill=(0,0,0,40))
+            sh_draw.ellipse([(ox+4, oy+nh-6),(ox+nw+4, oy+nh+10)], fill=(0,0,0,40))
             canvas.paste(sh, mask=sh.split()[3])
             canvas.paste(logo.convert("RGB"), (ox, oy), logo.split()[3])
         else:
@@ -1021,31 +1050,28 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
                            fill=(bar_col[0],bar_col[1],bar_col[2]),
                            outline=accent, width=2)
             init = "".join(w[0].upper() for w in (name or "?").split()[:2]) or "?"
-            draw.text((cx, cy), init,
-                      fill=(255,255,255), font=_font(44), anchor="mm")
+            draw.text((cx, cy), init, fill=(255,255,255), font=_font(44), anchor="mm")
 
-        # ── Tên đội — màu tối trên nền sáng ──
         short = (name or "?")
         if len(short) > 18: short = short[:17] + "…"
-        # Shadow mờ nhẹ
-        draw.text((cx+1, NY+1), short, fill=name_sh,  font=_font(23), anchor="mm")
-        draw.text((cx,   NY),   short, fill=name_fg,  font=_font(23), anchor="mm")
+        draw.text((cx+1, NY+1), short, fill=name_sh_rgba, font=_font(23), anchor="mm")
+        draw.text((cx,   NY),   short, fill=name_fg,      font=_font(23), anchor="mm")
 
     draw_logo(LX, LY, home_logo_url, home_team)
     draw_logo(RX, LY, away_logo_url, away_team)
 
-    # ── Đường kẻ ngăn giữa 2 đội ──
+    # ── Đường kẻ ngăn giữa ──
     sep_col = (accent[0], accent[1], accent[2], 80)
     ov2 = Image.new("RGBA", (W,H), (0,0,0,0))
     ov2_d = ImageDraw.Draw(ov2)
     ov2_d.line([(CX, CTOP+10),(CX, CBOT-10)], fill=sep_col, width=1)
     canvas.paste(ov2, mask=ov2.split()[3])
-    draw = ImageDraw.Draw(canvas)   # refresh draw after paste
+    draw = ImageDraw.Draw(canvas)
 
-    # ── Giờ / VS / LIVE ở giữa — time & date cùng cỡ chữ ──
-    TIME_FONT = 26      # cỡ chữ giờ
-    DATE_FONT = 26      # cỡ chữ ngày — bằng giờ
-    LIVE_FONT = 30      # cỡ chữ LIVE
+    # ── Giờ / VS / LIVE ── cùng cỡ chữ ──
+    TIME_FONT = 26
+    DATE_FONT = 26
+    LIVE_FONT = 30
 
     if status == "live":
         lines   = [("● LIVE", (220, 30, 30), LIVE_FONT)]
@@ -1055,21 +1081,19 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
         if time_str:
             lines.append((time_str, vs_col, TIME_FONT))
         if date_str:
-            lines.append((date_str, (accent[0], accent[1], accent[2]), DATE_FONT))
+            lines.append((date_str, accent, DATE_FONT))
         if not lines:
             lines = [("VS", vs_col, TIME_FONT)]
         box_col_rgba = (255, 255, 255, 190)
 
-    # Tính chiều cao tổng của hộp
     LINE_GAP = 6
-    total_h = sum(f for _,_,f in lines) + LINE_GAP*(len(lines)-1) + 20
+    total_h  = sum(f for _,_,f in lines) + LINE_GAP*(len(lines)-1) + 20
     max_text_w = max(len(txt)*f//2 for txt,_,f in lines) + 28
     bx0 = CX - max_text_w//2
     bx1 = CX + max_text_w//2
     by0 = LY - total_h//2
     by1 = LY + total_h//2
 
-    # Vẽ hộp nền
     box_ov = Image.new("RGBA", (W,H), (0,0,0,0))
     box_d  = ImageDraw.Draw(box_ov)
     box_d.rounded_rectangle([(bx0,by0),(bx1,by1)], radius=10,
@@ -1078,7 +1102,6 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     canvas.paste(box_ov, mask=box_ov.split()[3])
     draw = ImageDraw.Draw(canvas)
 
-    # Vẽ từng dòng chữ căn giữa hộp
     cur_y = by0 + 10 + lines[0][2]//2
     for txt, col, fsize in lines:
         draw.text((CX+1, cur_y+1), txt, fill=(0,0,0,70), font=_font(fsize), anchor="mm")
@@ -1094,7 +1117,6 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
         draw.line([(0,y),(W,y)], fill=(r_,g_,b_))
     draw.line([(0, H-44),(W, H-44)], fill=accent, width=2)
 
-    # ── Lưu WebP ──
     buf = io.BytesIO()
     canvas.convert("RGB").save(buf, format="WEBP", quality=88, method=4)
     return "data:image/webp;base64," + base64.b64encode(buf.getvalue()).decode()
