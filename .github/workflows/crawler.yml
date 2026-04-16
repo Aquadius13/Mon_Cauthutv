@@ -15,7 +15,6 @@ on:
         type: choice
         options:
           - default      # chỉ trận chính (phân theo môn)
-          - all          # tất cả trận, 1 group
           - no-stream    # không crawl stream (nhanh)
           - debug        # lưu HTML để kiểm tra
       output:
@@ -33,10 +32,10 @@ on:
 jobs:
   crawl:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
 
     permissions:
-      contents: write   # cần để commit file JSON
+      contents: write   # cần để commit JSON + thumbnails/
 
     steps:
       # ── 1. Checkout repo ─────────────────────────────────────
@@ -62,12 +61,13 @@ jobs:
       - name: 🕷️ Chạy crawler
         env:
           TZ: Asia/Ho_Chi_Minh
+          # Tự động nhận GITHUB_REPOSITORY & GITHUB_REF_NAME từ GitHub Actions
+          # → crawler dùng để xây raw.githubusercontent.com CDN URL cho thumbnail
         run: |
           OUTPUT="${{ github.event.inputs.output || 'cauthutv_iptv.json' }}"
           MODE="${{ github.event.inputs.mode || 'default' }}"
 
           case "$MODE" in
-            all)       python crawler_cauthutv.py --all      --output "$OUTPUT" ;;
             no-stream) python crawler_cauthutv.py --no-stream --output "$OUTPUT" ;;
             debug)     python crawler_cauthutv.py --debug    --output "$OUTPUT" ;;
             *)         python crawler_cauthutv.py             --output "$OUTPUT" ;;
@@ -94,6 +94,10 @@ jobs:
             exit 1
           fi
 
+          # Kiểm tra thumbnails/
+          THUMB_COUNT=$(ls thumbnails/*.webp 2>/dev/null | wc -l)
+          echo "🖼  $THUMB_COUNT thumbnail WebP trong thumbnails/"
+
       # ── 6. Upload artifact (luôn lưu kể cả khi fail) ─────────
       - name: 📤 Upload artifact
         uses: actions/upload-artifact@v4
@@ -102,24 +106,29 @@ jobs:
           name: cauthutv-iptv-${{ github.run_number }}
           path: |
             cauthutv_iptv.json
+            thumbnails/
             debug_cauthutv.html
           retention-days: 7
           if-no-files-found: warn
 
-      # ── 7. Commit & push JSON về repo ────────────────────────
-      - name: 💾 Commit & Push JSON
+      # ── 7. Commit & push JSON + thumbnails/ về repo ───────────
+      - name: 💾 Commit & Push JSON + Thumbnails
         if: success()
         run: |
           OUTPUT="${{ github.event.inputs.output || 'cauthutv_iptv.json' }}"
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          # Thêm JSON + toàn bộ thư mục thumbnails/
           git add "$OUTPUT" || true
+          git add thumbnails/ || true
+
           # Chỉ commit nếu có thay đổi
           if git diff --staged --quiet; then
             echo "⚡ Không có thay đổi, bỏ qua commit."
           else
+            THUMB_COUNT=$(ls thumbnails/*.webp 2>/dev/null | wc -l || echo 0)
             NOW=$(TZ=Asia/Ho_Chi_Minh date '+%d/%m/%Y %H:%M ICT')
-            git commit -m "🏟 Auto-update $OUTPUT [$NOW]"
+            git commit -m "🏟 Auto-update $OUTPUT + ${THUMB_COUNT} thumbnails [$NOW]"
             git push
           fi
