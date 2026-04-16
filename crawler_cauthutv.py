@@ -1216,14 +1216,14 @@ def build_channel(m, all_streams, index):
     content_name = name
     if league and len(league) < 50: content_name += f" · {league.strip()}"
 
-    # ── 1 BLV → phát thẳng; ≥2 BLV → vào trang thông tin chọn BLV ──
-    has_multi = len(stream_objs) > 1
+    # ── Luôn phát thẳng vào player, không mở trang thông tin ──
+    # Tất cả stream (nhiều BLV) đều nằm trong stream_objs → player nội bộ tự chọn
     return {
         "id":            ch_id,
         "name":          name,
-        "type":          "multi" if has_multi else "single",
+        "type":          "single",
         "display":       "thumbnail-only",
-        "enable_detail": has_multi,     # True chỉ khi ≥2 BLV
+        "enable_detail": False,
         "image":         img_obj,
         "labels":        labels,
         "sources": [{
