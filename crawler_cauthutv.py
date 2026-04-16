@@ -19,8 +19,9 @@
 pip install cloudscraper beautifulsoup4 lxml requests pillow
 """
 
-import argparse, base64, hashlib, io, json, re, sys, time
+import argparse, base64, hashlib, io, json, os, re, sys, time
 from datetime import datetime, timezone, timedelta
+from pathlib import Path
 from urllib.parse import urljoin
 
 try:
@@ -41,6 +42,7 @@ except ImportError:
 BASE_URL    = "https://cauthutv.shop"
 OUTPUT_FILE = "cauthutv_iptv.json"
 DEBUG_HTML  = "debug_cauthutv.html"
+THUMB_DIR   = "thumbnails"          # thư mục lưu file .webp (commit vào repo)
 CHROME_UA   = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                "AppleWebKit/537.36 (KHTML, like Gecko) "
                "Chrome/124.0.0.0 Safari/537.36")
@@ -48,6 +50,22 @@ VN_TZ       = timezone(timedelta(hours=7))
 SITE_ICON   = f"{BASE_URL}/assets/image/favicon64.png"
 PLACEHOLDER  = {"padding":0,"background_color":"#0f3460","display":"cover",
                 "url":SITE_ICON,"width":512,"height":512}
+
+def _cdn_base() -> str:
+    """
+    Trả về base URL CDN cho thư mục thumbnails.
+    Ưu tiên: biến môi trường THUMB_CDN_BASE (override thủ công).
+    Fallback: tự động tính từ GITHUB_REPOSITORY + GITHUB_REF_NAME.
+    Local: trả về chuỗi rỗng → dùng base64 fallback.
+    """
+    override = os.environ.get("THUMB_CDN_BASE","").rstrip("/")
+    if override:
+        return override
+    repo   = os.environ.get("GITHUB_REPOSITORY","")   # e.g. "user/repo"
+    branch = os.environ.get("GITHUB_REF_NAME","main")
+    if repo:
+        return f"https://raw.githubusercontent.com/{repo}/{branch}/{THUMB_DIR}"
+    return ""
 
 def log(*a, **kw): print(*a, **kw, flush=True)
 
@@ -1119,7 +1137,30 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
 
     buf = io.BytesIO()
     canvas.convert("RGB").save(buf, format="WEBP", quality=88, method=4)
-    return "data:image/webp;base64," + base64.b64encode(buf.getvalue()).decode()
+    return buf.getvalue()   # raw bytes — gọi nơi khác quyết định base64 hay file
+
+
+def save_thumbnail(raw_bytes: bytes, ch_id: str) -> str:
+    """
+    Lưu thumbnail WebP vào thumbnails/{ch_id}.webp.
+    Trả về URL CDN nếu đang chạy trên GitHub Actions,
+    ngược lại trả về data URI base64 (local dev).
+    """
+    if not raw_bytes:
+        return ""
+
+    cdn = _cdn_base()
+
+    if cdn:
+        # ── GitHub Actions: lưu file, dùng raw.githubusercontent.com ──
+        thumb_dir = Path(THUMB_DIR)
+        thumb_dir.mkdir(exist_ok=True)
+        fpath = thumb_dir / f"{ch_id}.webp"
+        fpath.write_bytes(raw_bytes)
+        return f"{cdn}/{ch_id}.webp"
+    else:
+        # ── Local dev: trả về data URI để xem ngay không cần server ──
+        return "data:image/webp;base64," + base64.b64encode(raw_bytes).decode()
 
 # ═══════════════════════════════════════════════════════
 #  Build channel + JSON
@@ -1203,13 +1244,14 @@ def build_channel(m, all_streams, index):
         img_obj = {"padding":0,"background_color":"#0a0e1a","display":"cover",
                    "url":thumb_url,"width":820,"height":540}
     elif _PIL:
-        uri = make_thumbnail(
+        raw = make_thumbnail(
             m.get("home_team",""), m.get("away_team",""),
             la, lb, m.get("time_str",""), m.get("date_str",""),
             status, league, m.get("sport",""),
         )
+        cdn_url = save_thumbnail(raw, ch_id)
         img_obj = ({"padding":0,"background_color":"#0a0e1a","display":"cover",
-                    "url":uri,"width":820,"height":540} if uri else PLACEHOLDER)
+                    "url":cdn_url,"width":820,"height":540} if cdn_url else PLACEHOLDER)
     else:
         img_obj = PLACEHOLDER
 
@@ -1270,10 +1312,15 @@ def main():
     args = ap.parse_args()
 
     log("\n" + "═"*62)
-    log("  🔥  CRAWLER cauthutv.shop  v7  — PRODUCTION")
+    log("  🔥  CRAWLER cauthutv.shop  v8  — PRODUCTION")
     log("  📌  id='live-score-game-hot' → card-single → aria-label")
-    log("  🖼   Thumbnail: WebP CDN | Logo to | Tên sát logo")
-    log("  🔀  Merge trận trùng | enable_detail luôn bật")
+    log("  🖼   Thumbnail: CDN WebP (raw.githubusercontent.com)")
+    log("  🔀  Merge trận trùng | stream dedup per-BLV")
+    cdn = _cdn_base()
+    if cdn:
+        log(f"  📡  CDN base: {cdn}")
+    else:
+        log("  💻  Local mode: thumbnail → base64 data URI")
     log("═"*62 + "\n")
 
     now_vn  = datetime.now(VN_TZ)
@@ -1339,6 +1386,20 @@ def main():
     result = build_json(channels, now_str)
     with open(args.output,"w",encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
+
+    # ── Dọn thumbnail cũ không còn dùng ──
+    if _cdn_base():
+        thumb_dir = Path(THUMB_DIR)
+        if thumb_dir.exists():
+            active_ids = {ch["id"] for ch in channels}
+            removed = 0
+            for f_old in thumb_dir.glob("*.webp"):
+                if f_old.stem not in active_ids:
+                    f_old.unlink()
+                    removed += 1
+            if removed:
+                log(f"  🗑  Xóa {removed} thumbnail cũ")
+            log(f"  🖼  {len(active_ids)} thumbnail CDN WebP trong {THUMB_DIR}/")
 
     log(f"\n{'═'*62}")
     log(f"  ✅ {args.output}  —  {len(channels)} trận HOT")
