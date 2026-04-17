@@ -121,7 +121,7 @@
         },
         {
           "id": "a148d651756fc674",
-          "name": "Fenerbahce vs Caykur Rizespor  🕐 00:00 | 18/04",
+          "name": "Fenerbahce vs Caykur Rizespor  🔴 LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -135,8 +135,8 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
+              "text": "● Live",
+              "color": "#E73131",
               "text_color": "#fff",
               "position": "top-left"
             },
@@ -154,7 +154,7 @@
               "contents": [
                 {
                   "id": "d78ce39b0c40979e",
-                  "name": "Fenerbahce vs Caykur Rizespor  🕐 00:00 | 18/04 · Turkish Super League",
+                  "name": "Fenerbahce vs Caykur Rizespor  🔴 LIVE · Turkish Super League",
                   "streams": [
                     {
                       "id": "d3c99b1815647c3e",
@@ -166,6 +166,40 @@
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-gio-tai/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/fenerbahce-vs-caykur-rizespor"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "5de358f272785782",
+                          "name": "🔵 HD Nhanh",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/62ffd1b98310be75fbbea9658f82dbc6/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/fenerbahce-vs-caykur-rizespor"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "5cbb8e0f2fc8909d",
+                          "name": "🔵 HD 720p",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/livehd/62ffd1b98310be75fbbea9658f82dbc6/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
