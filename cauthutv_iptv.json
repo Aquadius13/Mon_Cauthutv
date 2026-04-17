@@ -20,8 +20,8 @@
       "image": null,
       "channels": [
         {
-          "id": "eaa036d2a5ce25a5",
-          "name": "Hanoi FC vs Becamex Ho Chi Minh City  🔴 LIVE",
+          "id": "3492d352c38c8695",
+          "name": "HNK Gorica vs NK Lokomotiva Zagreb  🔴 LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -29,7 +29,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/eaa036d2a5ce25a5.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/3492d352c38c8695.webp",
             "width": 820,
             "height": 540
           },
@@ -41,7 +41,7 @@
               "position": "top-left"
             },
             {
-              "text": "🎙 2 BLV",
+              "text": "🎙 Thây Ma (Neymar)",
               "position": "top-right",
               "color": "#00601f",
               "text_color": "#fff"
@@ -49,50 +49,27 @@
           ],
           "sources": [
             {
-              "id": "2ed4adcd20ecfe89",
+              "id": "e5739e63167741ac",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "cf4b0c7941796501",
-                  "name": "Hanoi FC vs Becamex Ho Chi Minh City  🔴 LIVE · V.League 1",
+                  "id": "87e03da70ba39fa3",
+                  "name": "HNK Gorica vs NK Lokomotiva Zagreb  🔴 LIVE · Croatian Football League",
                   "streams": [
                     {
-                      "id": "f3e2f903b2cbd1b9",
-                      "name": "🎙 Người Kiến",
+                      "id": "8bc90bc69f71c38e",
+                      "name": "🎙 Thây Ma (Neymar)",
                       "stream_links": [
                         {
-                          "id": "d9baaa3b2b1377b3",
+                          "id": "8ca40b70a1b3052a",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-nguoi-kien/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-thay-ma/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/hanoi-fc-vs-becamex-ho-chi-minh-city-kien-1776418726142-836"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "id": "4939eb655bedced9",
-                      "name": "🎙 Cháo Quẩy",
-                      "stream_links": [
-                        {
-                          "id": "0c5046c664f4dbdb",
-                          "name": "🔵 HD Nhanh",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/hanoi-fc-vs-becamex-ho-chi-minh-city"
+                              "value": "https://cauthutv.shop/hnk-gorica-vs-nk-lokomotiva-zagreb"
                             },
                             {
                               "key": "User-Agent",
@@ -101,15 +78,15 @@
                           ]
                         },
                         {
-                          "id": "b2c50baa5eab1673",
+                          "id": "ad9dac69a11627fa",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": false,
-                          "url": "https://live.alilicloud.com/live/9940e1a82cd4cbb425ef35962e4c8458/playlist.m3u8",
+                          "url": "https://live.alilicloud.com/live/ba2f99303528531d7244ae0491591967/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/hanoi-fc-vs-becamex-ho-chi-minh-city"
+                              "value": "https://cauthutv.shop/hnk-gorica-vs-nk-lokomotiva-zagreb"
                             },
                             {
                               "key": "User-Agent",
@@ -192,73 +169,7 @@
           ]
         },
         {
-          "id": "8dda421a487b6def",
-          "name": "HNK Gorica vs NK Lokomotiva Zagreb  🕐 20:30 | 17/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#0a0e1a",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8dda421a487b6def.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Thây Ma (Neymar)",
-              "position": "top-right",
-              "color": "#00601f",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "00a2c937aae657c2",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "2a8c6c10a9b6e06d",
-                  "name": "HNK Gorica vs NK Lokomotiva Zagreb  🕐 20:30 | 17/04 · Croatian Football League",
-                  "streams": [
-                    {
-                      "id": "f44fe01d118e5d20",
-                      "name": "🎙 Thây Ma (Neymar)",
-                      "stream_links": [
-                        {
-                          "id": "19f1c91dbbb05cdf",
-                          "name": "🔵 HD Nhanh",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-thay-ma/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/hnk-gorica-vs-nk-lokomotiva-zagreb"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "26378e3e40f211d7",
+          "id": "ddd7dcd3ed509191",
           "name": "Al-Ahli SFC vs Johor Darul Ta'zim FC  🕐 21:45 | 17/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -267,7 +178,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/26378e3e40f211d7.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/ddd7dcd3ed509191.webp",
             "width": 820,
             "height": 540
           },
@@ -287,23 +198,57 @@
           ],
           "sources": [
             {
-              "id": "0cb79174a4418411",
+              "id": "42ba795fa8ce9010",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "3dabc5fcace2ccd2",
+                  "id": "0c656006ce37f9d6",
                   "name": "Al-Ahli SFC vs Johor Darul Ta'zim FC  🕐 21:45 | 17/04 · AFC Champions League Elite",
                   "streams": [
                     {
-                      "id": "93e34b21006a7cc2",
+                      "id": "d86f5d85e3979733",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "cf980e2b5c64d8a2",
+                          "id": "de29c6cbe5d4e279",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/al-ahli-sfc-vs-johor-darul-tazim-fc"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "4405e17c62dccceb",
+                          "name": "🔵 HD Nhanh",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/bc1317de7321786c6dc71cd6a97f4e19/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/al-ahli-sfc-vs-johor-darul-tazim-fc"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "5b19996ac468cc6e",
+                          "name": "🔵 HD 720p",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/livehd/bc1317de7321786c6dc71cd6a97f4e19/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -324,7 +269,7 @@
           ]
         },
         {
-          "id": "c51773144e6ca328",
+          "id": "b079dfb818294ce8",
           "name": "Sassuolo vs Como  🕐 23:30 | 17/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -333,7 +278,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c51773144e6ca328.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b079dfb818294ce8.webp",
             "width": 820,
             "height": 540
           },
@@ -353,23 +298,57 @@
           ],
           "sources": [
             {
-              "id": "35e99122f78d1f52",
+              "id": "31bdd1ab06fc374c",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "0a4c1372670e111d",
+                  "id": "321762d5719faaff",
                   "name": "Sassuolo vs Como  🕐 23:30 | 17/04 · Italian Serie A",
                   "streams": [
                     {
-                      "id": "3fb5c996488203f2",
+                      "id": "f81447cec1d5a83f",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "186ef8eebe589daf",
+                          "id": "e5169bb64a357303",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-phao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/sassuolo-vs-como"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "80807f60da47a913",
+                          "name": "🔵 HD Nhanh",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/2ed35c185fe814fdc221c7ae8d4d2fdc/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/sassuolo-vs-como"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "81618e8924696e1d",
+                          "name": "🔵 HD 720p",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/livehd/2ed35c185fe814fdc221c7ae8d4d2fdc/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -390,7 +369,7 @@
           ]
         },
         {
-          "id": "edb710f8f27c2f2c",
+          "id": "e2a851ad9ebd0f04",
           "name": "Fenerbahce vs Caykur Rizespor  🕐 00:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -399,7 +378,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/edb710f8f27c2f2c.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e2a851ad9ebd0f04.webp",
             "width": 820,
             "height": 540
           },
@@ -419,19 +398,19 @@
           ],
           "sources": [
             {
-              "id": "fdb08cff2c9dc690",
+              "id": "523e18054f279196",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "7daf48e606d3fc56",
+                  "id": "80e3be0b7491d9b8",
                   "name": "Fenerbahce vs Caykur Rizespor  🕐 00:00 | 18/04 · Turkish Super League",
                   "streams": [
                     {
-                      "id": "efc3c5e991f082df",
+                      "id": "b6d691237c19659e",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "55e5af5902618390",
+                          "id": "89b9f1fd4242bc7a",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -456,7 +435,7 @@
           ]
         },
         {
-          "id": "c13315da889d0a72",
+          "id": "27528a6daab64669",
           "name": "FC St. Pauli vs FC Köln  🕐 01:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -465,7 +444,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c13315da889d0a72.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/27528a6daab64669.webp",
             "width": 820,
             "height": 540
           },
@@ -485,19 +464,19 @@
           ],
           "sources": [
             {
-              "id": "a5adbfa6a43c46e3",
+              "id": "5d964d862c785140",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "50001706a67972be",
+                  "id": "2282d06a73b07925",
                   "name": "FC St. Pauli vs FC Köln  🕐 01:30 | 18/04 · Bundesliga",
                   "streams": [
                     {
-                      "id": "d14bc7b44708709e",
+                      "id": "63eb0899ba000fb1",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "413d7d30de562a52",
+                          "id": "3c4b27a07d145b3f",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -522,7 +501,7 @@
           ]
         },
         {
-          "id": "2e0065311dd775ea",
+          "id": "12292d49c8a512af",
           "name": "Inter Milan vs Cagliari  🕐 01:45 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -531,7 +510,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2e0065311dd775ea.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/12292d49c8a512af.webp",
             "width": 820,
             "height": 540
           },
@@ -551,19 +530,19 @@
           ],
           "sources": [
             {
-              "id": "2e336c5462d8cb94",
+              "id": "898d498d8bf353c6",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "704f95fc170635f7",
+                  "id": "fe484a179fd193ee",
                   "name": "Inter Milan vs Cagliari  🕐 01:45 | 18/04 · Italian Serie A",
                   "streams": [
                     {
-                      "id": "11d6d010e8686f0a",
+                      "id": "346defad89ab9b20",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "7303ae0a99c70247",
+                          "id": "50d206ad2c772df0",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -582,11 +561,11 @@
                       ]
                     },
                     {
-                      "id": "b7a5f0330927019e",
+                      "id": "a70c11322df96312",
                       "name": "🎙 Cháo Quẩy",
                       "stream_links": [
                         {
-                          "id": "5e4740c37d5f37e4",
+                          "id": "56a58926ee893e3b",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -611,7 +590,7 @@
           ]
         },
         {
-          "id": "c8460ada6b76a947",
+          "id": "93e0d064690ff47f",
           "name": "RC Lens vs Toulouse FC  🕐 01:45 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -620,7 +599,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c8460ada6b76a947.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/93e0d064690ff47f.webp",
             "width": 820,
             "height": 540
           },
@@ -640,19 +619,19 @@
           ],
           "sources": [
             {
-              "id": "3a2369fec21ab4ce",
+              "id": "cdfd24a98154ccbe",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "79d91c0bc24f4f4e",
+                  "id": "a9d4e22d5f783b97",
                   "name": "RC Lens vs Toulouse FC  🕐 01:45 | 18/04 · French Ligue 1",
                   "streams": [
                     {
-                      "id": "d8697ebd62879311",
+                      "id": "eed8e7ddc031d0b6",
                       "name": "🎙 Dylan",
                       "stream_links": [
                         {
-                          "id": "5dcc9e32697f07ef",
+                          "id": "3b54faa57bfe97ec",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -677,7 +656,7 @@
           ]
         },
         {
-          "id": "774b3430de866aa7",
+          "id": "65e17d80849ece80",
           "name": "Rio Ave vs AVS Futebol SAD  🕐 02:45 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -686,7 +665,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/774b3430de866aa7.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/65e17d80849ece80.webp",
             "width": 820,
             "height": 540
           },
@@ -706,19 +685,19 @@
           ],
           "sources": [
             {
-              "id": "383b6ee6430a26b6",
+              "id": "ae18e1f98e1d5306",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "509632be8b413e01",
+                  "id": "5af6bbb435e9aee5",
                   "name": "Rio Ave vs AVS Futebol SAD  🕐 02:45 | 18/04 · Portuguese Primera Liga",
                   "streams": [
                     {
-                      "id": "5dc71a56de86f918",
+                      "id": "aa3c976a930b82aa",
                       "name": "🎙 Táo",
                       "stream_links": [
                         {
-                          "id": "b14420ea046d7c0c",
+                          "id": "57e0be70d41f823a",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -743,7 +722,7 @@
           ]
         },
         {
-          "id": "104cf47ee1e09f0a",
+          "id": "b5a07e1ee7aa2c12",
           "name": "Club Atlético Unión vs Club Atlético Newell's Old Boys  🕐 06:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -752,7 +731,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/104cf47ee1e09f0a.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b5a07e1ee7aa2c12.webp",
             "width": 820,
             "height": 540
           },
@@ -772,19 +751,19 @@
           ],
           "sources": [
             {
-              "id": "fb104fe6c80406d1",
+              "id": "59155c22b9259623",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "455faef9ec51d5a7",
+                  "id": "17ce5a684dd617d8",
                   "name": "Club Atlético Unión vs Club Atlético Newell's Old Boys  🕐 06:30 | 18/04 · Argentine Division 1",
                   "streams": [
                     {
-                      "id": "b06096fd77a9110b",
+                      "id": "730a2b847be41e6c",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "cd1c16961fa1768e",
+                          "id": "e57a7bead145af77",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -809,7 +788,7 @@
           ]
         },
         {
-          "id": "f6352c65efe6d4dc",
+          "id": "3b7fe319ae9e008b",
           "name": "SmackDown vs SmackDown  🕐 07:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -818,7 +797,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/f6352c65efe6d4dc.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/3b7fe319ae9e008b.webp",
             "width": 820,
             "height": 540
           },
@@ -838,19 +817,19 @@
           ],
           "sources": [
             {
-              "id": "16553e05b88e7bda",
+              "id": "015a5b4c8035eedf",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "d7106ac5905829c9",
+                  "id": "4f8e916efb9575d7",
                   "name": "SmackDown vs SmackDown  🕐 07:00 | 18/04 · WWE",
                   "streams": [
                     {
-                      "id": "119ba690126a7877",
+                      "id": "67e6e4ae9072b3d1",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "c19da64762c0983e",
+                          "id": "1e23ad4e95dfdcec",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -875,7 +854,7 @@
           ]
         },
         {
-          "id": "3dd740d9db68e93a",
+          "id": "c280d6b15fd05385",
           "name": "Atletico San Luis vs Pumas U.N.A.M.  🕐 08:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -884,7 +863,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/3dd740d9db68e93a.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c280d6b15fd05385.webp",
             "width": 820,
             "height": 540
           },
@@ -904,19 +883,19 @@
           ],
           "sources": [
             {
-              "id": "ee3d650bfe5c2a04",
+              "id": "e8ec387e903f7835",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "12e9bd18ee50372f",
+                  "id": "6a2b6f7ba313416b",
                   "name": "Atletico San Luis vs Pumas U.N.A.M.  🕐 08:00 | 18/04 · Mexico Liga MX",
                   "streams": [
                     {
-                      "id": "a909bbe210a97f3e",
+                      "id": "2bea21f1887d40ea",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "27f7d30442da3ce8",
+                          "id": "71abc1f349ca5396",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -941,7 +920,7 @@
           ]
         },
         {
-          "id": "a427db72df94d62e",
+          "id": "5c3e3d23431ec4ed",
           "name": "Vancouver Whitecaps vs Sporting Kansas City  🕐 09:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -950,7 +929,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a427db72df94d62e.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5c3e3d23431ec4ed.webp",
             "width": 820,
             "height": 540
           },
@@ -970,19 +949,19 @@
           ],
           "sources": [
             {
-              "id": "e08f0adce5b8fe85",
+              "id": "4d87f6a334237535",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "a57595c8a4bf293c",
+                  "id": "06ef83cc644d1900",
                   "name": "Vancouver Whitecaps vs Sporting Kansas City  🕐 09:30 | 18/04 · United States Major League Soccer",
                   "streams": [
                     {
-                      "id": "b3685b82d116cf1d",
+                      "id": "ffc075c5d3fa134c",
                       "name": "🎙 Cháo Quẩy",
                       "stream_links": [
                         {
-                          "id": "85613373bed992a4",
+                          "id": "642284986f2bc9c8",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1007,7 +986,7 @@
           ]
         },
         {
-          "id": "9f1d2e518b88fd94",
+          "id": "9c2cac2c45e21587",
           "name": "Club Deportivo Dorados de Sinaloa vs Club Deportivo Tapatío  🕐 10:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1016,7 +995,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/9f1d2e518b88fd94.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/9c2cac2c45e21587.webp",
             "width": 820,
             "height": 540
           },
@@ -1036,19 +1015,19 @@
           ],
           "sources": [
             {
-              "id": "5a706513281c55a2",
+              "id": "047f776b3a0f5c55",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "f8ebadfbf9fdf0d4",
+                  "id": "95e582be1cf60bf4",
                   "name": "Club Deportivo Dorados de Sinaloa vs Club Deportivo Tapatío  🕐 10:00 | 18/04 · Mexico Ascenso MX",
                   "streams": [
                     {
-                      "id": "78bcf28193e4c783",
+                      "id": "dab2ab8494868e96",
                       "name": "🎙 Nhà Đài",
                       "stream_links": [
                         {
-                          "id": "3d8fe1b876a0d94a",
+                          "id": "f9e42ffde1303d58",
                           "name": "📺 Xem trực tiếp",
                           "type": "iframe",
                           "default": true,
@@ -1073,7 +1052,7 @@
           ]
         },
         {
-          "id": "9eb82f539cf878ba",
+          "id": "791ab842dd3ddbd9",
           "name": "Hall Of Fame 2026 vs Hall Of Fame 2026  🕐 11:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1082,7 +1061,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/9eb82f539cf878ba.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/791ab842dd3ddbd9.webp",
             "width": 820,
             "height": 540
           },
@@ -1102,19 +1081,19 @@
           ],
           "sources": [
             {
-              "id": "3f172794686699ac",
+              "id": "678d09aa9d88cd9c",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "63784e4d8e6cadb0",
+                  "id": "c41cdcd99c3e16a7",
                   "name": "Hall Of Fame 2026 vs Hall Of Fame 2026  🕐 11:00 | 18/04 · WWE",
                   "streams": [
                     {
-                      "id": "765d314141cea910",
+                      "id": "db65b9df123597b3",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "b7db442951e52dcd",
+                          "id": "bd884686173bf8b4",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1139,7 +1118,7 @@
           ]
         },
         {
-          "id": "762d8aad486f180c",
+          "id": "4298d7974e1ae490",
           "name": "Hà Nội Nữ vs Hưng Yên Nữ  🕐 12:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1148,7 +1127,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/762d8aad486f180c.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/4298d7974e1ae490.webp",
             "width": 820,
             "height": 540
           },
@@ -1168,19 +1147,19 @@
           ],
           "sources": [
             {
-              "id": "909ef3069d6fb338",
+              "id": "67f0be6e14c3cd65",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "3f204b439377cd81",
+                  "id": "badd5862592b2652",
                   "name": "Hà Nội Nữ vs Hưng Yên Nữ  🕐 12:00 | 18/04 · Giải Bóng Chuyền VĐQG 2026",
                   "streams": [
                     {
-                      "id": "2c4c0a3903e1d33d",
+                      "id": "966077eae8fbe1c4",
                       "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "24b44bb6f18affae",
+                          "id": "7532fc684fa7736f",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1205,7 +1184,7 @@
           ]
         },
         {
-          "id": "08b94b1d9feb784e",
+          "id": "e4e2c6f92da7786e",
           "name": "Brisbane Roar vs Melbourne City  🕐 14:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1214,7 +1193,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/08b94b1d9feb784e.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e4e2c6f92da7786e.webp",
             "width": 820,
             "height": 540
           },
@@ -1234,19 +1213,19 @@
           ],
           "sources": [
             {
-              "id": "40cc6db50d6a18f4",
+              "id": "7c3b634b8731a159",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "af6eab92a2f3a984",
+                  "id": "925759262efdd68f",
                   "name": "Brisbane Roar vs Melbourne City  🕐 14:00 | 18/04 · Australia A-League",
                   "streams": [
                     {
-                      "id": "0900b9425df4a374",
+                      "id": "675471c1b565b9eb",
                       "name": "🎙 Táo",
                       "stream_links": [
                         {
-                          "id": "12d0969232e20d9c",
+                          "id": "e1c3fe454746c32a",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1271,7 +1250,7 @@
           ]
         },
         {
-          "id": "6cdad3ee3898639a",
+          "id": "d3f9224e86fe9161",
           "name": "Thể Công Tân Cảng vs Khánh Hòa  🕐 14:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1280,7 +1259,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6cdad3ee3898639a.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d3f9224e86fe9161.webp",
             "width": 820,
             "height": 540
           },
@@ -1300,19 +1279,19 @@
           ],
           "sources": [
             {
-              "id": "9da8588e521a7fbf",
+              "id": "2d847960a0814b47",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "22ad28ab5fafe977",
+                  "id": "01924f02f7f31fe6",
                   "name": "Thể Công Tân Cảng vs Khánh Hòa  🕐 14:30 | 18/04 · Giải Bóng Chuyền VĐQG 2026",
                   "streams": [
                     {
-                      "id": "d64ac4f178e26256",
+                      "id": "0085556bb5f062ea",
                       "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "fc56e21a1db80499",
+                          "id": "39f77e9b85a52c6b",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1337,7 +1316,7 @@
           ]
         },
         {
-          "id": "7bdcdf56fd2f0c31",
+          "id": "90e2c0776e6e8d6e",
           "name": "HLE vs GEN  🕐 15:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1346,7 +1325,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7bdcdf56fd2f0c31.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/90e2c0776e6e8d6e.webp",
             "width": 820,
             "height": 540
           },
@@ -1366,19 +1345,19 @@
           ],
           "sources": [
             {
-              "id": "be1d808ccadbbc2a",
+              "id": "e6640efe2178c19d",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "d530540167deaa37",
+                  "id": "fa4436bff0da1b8b",
                   "name": "HLE vs GEN  🕐 15:00 | 18/04 · Liên Minh Huyền Thoại",
                   "streams": [
                     {
-                      "id": "c5cf18b0d149d29a",
+                      "id": "d2a24c0ada404ebf",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "eeaba6d42f586952",
+                          "id": "08935ff777c20891",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1403,7 +1382,7 @@
           ]
         },
         {
-          "id": "06db7d65f4c995b3",
+          "id": "8306fea61538ca16",
           "name": "Sydney FC vs Perth Glory  🕐 16:35 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1412,7 +1391,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/06db7d65f4c995b3.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8306fea61538ca16.webp",
             "width": 820,
             "height": 540
           },
@@ -1432,19 +1411,19 @@
           ],
           "sources": [
             {
-              "id": "08b85cd4a699c78a",
+              "id": "67433975bd4bacde",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "95c0ab00466cdaaf",
+                  "id": "16e8658b77387ab3",
                   "name": "Sydney FC vs Perth Glory  🕐 16:35 | 18/04 · Australia A-League",
                   "streams": [
                     {
-                      "id": "5ec9ec91f4acaeee",
+                      "id": "1df30c03f9794471",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "f705a891734a8561",
+                          "id": "96586cb361cdb365",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1469,7 +1448,7 @@
           ]
         },
         {
-          "id": "8e5394a0953451c0",
+          "id": "f023c2a1ab1c0ad1",
           "name": "DNS vs KT  🕐 17:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1478,7 +1457,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8e5394a0953451c0.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/f023c2a1ab1c0ad1.webp",
             "width": 820,
             "height": 540
           },
@@ -1498,19 +1477,19 @@
           ],
           "sources": [
             {
-              "id": "e2cd051cc3e647bb",
+              "id": "0f11100de9381d2d",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "ccf57ee6984dd1e6",
+                  "id": "4f60284f81a8ecc5",
                   "name": "DNS vs KT  🕐 17:00 | 18/04 · Liên Minh Huyền Thoại",
                   "streams": [
                     {
-                      "id": "0d095ead5c5b975f",
+                      "id": "a09a1eb7facc90b8",
                       "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "a5e0e7fb3b28b445",
+                          "id": "105f62f4e2185cf1",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1535,7 +1514,7 @@
           ]
         },
         {
-          "id": "8085994936b98ef1",
+          "id": "a82a7d5af8075188",
           "name": "Long An Nữ vs Thông Tin Nữ  🕐 17:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1544,7 +1523,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8085994936b98ef1.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a82a7d5af8075188.webp",
             "width": 820,
             "height": 540
           },
@@ -1564,19 +1543,19 @@
           ],
           "sources": [
             {
-              "id": "90aa75378689d849",
+              "id": "321096924fa9e1de",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "5661e1f65d858ca5",
+                  "id": "e1f61512f58dbc88",
                   "name": "Long An Nữ vs Thông Tin Nữ  🕐 17:00 | 18/04 · Giải Bóng Chuyền VĐQG 2026",
                   "streams": [
                     {
-                      "id": "d93b4b436bed4ecb",
+                      "id": "832d191600171447",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "9c9a85f2c316b20a",
+                          "id": "127924bea2fbba70",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1601,7 +1580,7 @@
           ]
         },
         {
-          "id": "850674213341bc9a",
+          "id": "22bb5efdb60d976a",
           "name": "Hong Linh Ha Tinh vs XM Hai Phong FC  🕐 18:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1610,7 +1589,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/850674213341bc9a.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/22bb5efdb60d976a.webp",
             "width": 820,
             "height": 540
           },
@@ -1630,19 +1609,19 @@
           ],
           "sources": [
             {
-              "id": "37fecb37f3c65194",
+              "id": "343df23ca19825d2",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "77b975ee6a574c35",
+                  "id": "c7cbed0c6bcbc8d1",
                   "name": "Hong Linh Ha Tinh vs XM Hai Phong FC  🕐 18:00 | 18/04 · Vietnam National Champion League",
                   "streams": [
                     {
-                      "id": "e72db623d5fc1593",
+                      "id": "8837c7cc88a12ea6",
                       "name": "🎙 Dylan",
                       "stream_links": [
                         {
-                          "id": "a78d036484f9b487",
+                          "id": "dc9aff66df66f891",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1667,7 +1646,7 @@
           ]
         },
         {
-          "id": "339e543741db0f0f",
+          "id": "58cada2a46d49adc",
           "name": "Ninh Binh FC vs PVF CAND  🕐 18:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1676,7 +1655,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/339e543741db0f0f.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/58cada2a46d49adc.webp",
             "width": 820,
             "height": 540
           },
@@ -1696,19 +1675,19 @@
           ],
           "sources": [
             {
-              "id": "cf26eb0bbda75854",
+              "id": "c676b9d9647f3e14",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "3f1042a4c90bae4d",
+                  "id": "08a39aeb58d4734c",
                   "name": "Ninh Binh FC vs PVF CAND  🕐 18:00 | 18/04 · Vietnam National Champion League",
                   "streams": [
                     {
-                      "id": "13e56ef12d1a5268",
+                      "id": "b32d214bad08c90e",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "3984b5164675b073",
+                          "id": "4fc65fc3d98858ac",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1733,7 +1712,7 @@
           ]
         },
         {
-          "id": "320c860d516f2ee3",
+          "id": "e7bdd7debe5753d7",
           "name": "Brentford vs Fulham  🕐 18:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1742,7 +1721,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/320c860d516f2ee3.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e7bdd7debe5753d7.webp",
             "width": 820,
             "height": 540
           },
@@ -1762,19 +1741,19 @@
           ],
           "sources": [
             {
-              "id": "9d0127a565be92c8",
+              "id": "db23afd3f21aeb43",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "12271abfd3cb6afa",
+                  "id": "11f12e3e44067895",
                   "name": "Brentford vs Fulham  🕐 18:30 | 18/04 · English Premier League",
                   "streams": [
                     {
-                      "id": "bbb0c24f1b583bb5",
+                      "id": "88a16a06027d619f",
                       "name": "🎙 Thây Ma (Neymar)",
                       "stream_links": [
                         {
-                          "id": "0e16fe961d3bc5b3",
+                          "id": "489ffb5424907e9e",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1791,7 +1770,7 @@
                           ]
                         },
                         {
-                          "id": "0200f25c03da55dd",
+                          "id": "a1ee2c5e186ff4b0",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": false,
@@ -1808,7 +1787,7 @@
                           ]
                         },
                         {
-                          "id": "88a7b91c2fd6cc0d",
+                          "id": "93f85643db4b5d75",
                           "name": "🔵 HD 720p",
                           "type": "hls",
                           "default": false,
@@ -1833,7 +1812,7 @@
           ]
         },
         {
-          "id": "9033cead5cca9688",
+          "id": "0277fa536d42cceb",
           "name": "Biên Phòng vs Ninh Bình  🕐 19:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1842,7 +1821,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/9033cead5cca9688.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/0277fa536d42cceb.webp",
             "width": 820,
             "height": 540
           },
@@ -1862,19 +1841,19 @@
           ],
           "sources": [
             {
-              "id": "c9caf751ea4a33c5",
+              "id": "5ea2196f89ee17ae",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "58205d1ad43d5053",
+                  "id": "9c150cee40543bb6",
                   "name": "Biên Phòng vs Ninh Bình  🕐 19:30 | 18/04 · Giải Bóng Chuyền VĐQG 2026",
                   "streams": [
                     {
-                      "id": "441a4cc6c7bea4e6",
+                      "id": "bff963f641562189",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "61183500060d0c0a",
+                          "id": "4b390bdab3110812",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1899,7 +1878,7 @@
           ]
         },
         {
-          "id": "69f66cbef05f4ab0",
+          "id": "db15bdf47551252d",
           "name": "Udinese vs Parma  🕐 20:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1908,7 +1887,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/69f66cbef05f4ab0.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/db15bdf47551252d.webp",
             "width": 820,
             "height": 540
           },
@@ -1928,19 +1907,19 @@
           ],
           "sources": [
             {
-              "id": "ce183ab856ae3561",
+              "id": "7a95e57f56f07f4e",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "31d50812b839b807",
+                  "id": "470c4cff639fe8c3",
                   "name": "Udinese vs Parma  🕐 20:00 | 18/04 · Italian Serie A",
                   "streams": [
                     {
-                      "id": "7830c78c5bfb835e",
+                      "id": "b36ef19515a42dd5",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "c1c24e630a13e1f6",
+                          "id": "421284580990d689",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -1957,7 +1936,7 @@
                           ]
                         },
                         {
-                          "id": "680cc0c4539a4658",
+                          "id": "feeaf964e8d6dc78",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": false,
@@ -1974,7 +1953,7 @@
                           ]
                         },
                         {
-                          "id": "e669ed0409ee47b2",
+                          "id": "1a20a0cdb1ef20c1",
                           "name": "🔵 HD 720p",
                           "type": "hls",
                           "default": false,
@@ -1999,7 +1978,7 @@
           ]
         },
         {
-          "id": "54b85375cfd26e5e",
+          "id": "6b9cbe715eeeffa9",
           "name": "Bayer 04 Leverkusen vs FC Augsburg  🕐 20:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -2008,7 +1987,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/54b85375cfd26e5e.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6b9cbe715eeeffa9.webp",
             "width": 820,
             "height": 540
           },
@@ -2028,19 +2007,19 @@
           ],
           "sources": [
             {
-              "id": "ae7f6f74f8e68c93",
+              "id": "2cff92b1503036b9",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "1484934eb44a8bca",
+                  "id": "8bea85ed13480f75",
                   "name": "Bayer 04 Leverkusen vs FC Augsburg  🕐 20:30 | 18/04 · Bundesliga",
                   "streams": [
                     {
-                      "id": "0443b32c35e876d7",
+                      "id": "93740f4fc05c8b1c",
                       "name": "🎙 Nhà Đài",
                       "stream_links": [
                         {
-                          "id": "5000aab78e49aefe",
+                          "id": "46464d9c766fb711",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -2057,7 +2036,7 @@
                           ]
                         },
                         {
-                          "id": "cb2b1ad9d7ee7172",
+                          "id": "d25c2a53600386dc",
                           "name": "🔵 HD 720p",
                           "type": "hls",
                           "default": false,
@@ -2082,7 +2061,7 @@
           ]
         },
         {
-          "id": "604f12cd5fb33cf5",
+          "id": "e731c05070d649c0",
           "name": "TSG Hoffenheim vs Borussia Dortmund  🕐 20:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -2091,7 +2070,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/604f12cd5fb33cf5.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e731c05070d649c0.webp",
             "width": 820,
             "height": 540
           },
@@ -2111,19 +2090,19 @@
           ],
           "sources": [
             {
-              "id": "7169a09b09f29ccf",
+              "id": "73669a8f23120191",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "02a43f413d7cf104",
+                  "id": "7f5076a33234e7f2",
                   "name": "TSG Hoffenheim vs Borussia Dortmund  🕐 20:30 | 18/04 · Bundesliga",
                   "streams": [
                     {
-                      "id": "46134cee7f66b601",
+                      "id": "d5f628471d6d8708",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "0d2812b8fae0744d",
+                          "id": "3750d02a3b498c77",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -2140,7 +2119,7 @@
                           ]
                         },
                         {
-                          "id": "9e428e26fe564a30",
+                          "id": "537b208c56700ed7",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": false,
@@ -2157,7 +2136,7 @@
                           ]
                         },
                         {
-                          "id": "823750a44d35f09c",
+                          "id": "dab8ad444c706117",
                           "name": "🔵 HD 720p",
                           "type": "hls",
                           "default": false,
@@ -2182,7 +2161,7 @@
           ]
         },
         {
-          "id": "a9eeb1bf1163eb16",
+          "id": "c92a35012b405dd6",
           "name": "Leeds United vs Wolverhampton Wanderers  🕐 21:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -2191,7 +2170,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a9eeb1bf1163eb16.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c92a35012b405dd6.webp",
             "width": 820,
             "height": 540
           },
@@ -2211,19 +2190,19 @@
           ],
           "sources": [
             {
-              "id": "754c90923fe6e785",
+              "id": "4f4d1c73735dfa36",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "e16854a7518971e7",
+                  "id": "f380bffaebd9729a",
                   "name": "Leeds United vs Wolverhampton Wanderers  🕐 21:00 | 18/04 · English Premier League",
                   "streams": [
                     {
-                      "id": "5ce26bf72a8b06f4",
+                      "id": "edc6022abf71d94c",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "70a3c97d6cef266a",
+                          "id": "d9ba168252860524",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -2248,7 +2227,7 @@
           ]
         },
         {
-          "id": "5f74b37da84e7b7e",
+          "id": "3eba7948b33e6805",
           "name": "Newcastle United vs Bournemouth AFC  🕐 21:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -2257,7 +2236,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5f74b37da84e7b7e.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/3eba7948b33e6805.webp",
             "width": 820,
             "height": 540
           },
@@ -2277,19 +2256,19 @@
           ],
           "sources": [
             {
-              "id": "ad4fb1287fcdc999",
+              "id": "8452c8b48b4cafa1",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "13962aaa06040648",
+                  "id": "d220a549770f4197",
                   "name": "Newcastle United vs Bournemouth AFC  🕐 21:00 | 18/04 · English Premier League",
                   "streams": [
                     {
-                      "id": "b39240da4f6d97d4",
+                      "id": "22ee825f776b99f5",
                       "name": "🎙 Dylan",
                       "stream_links": [
                         {
-                          "id": "885dab18ff4a590e",
+                          "id": "e31de1f5c20b005c",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -2314,7 +2293,7 @@
           ]
         },
         {
-          "id": "2c83b0b7f394f843",
+          "id": "aaca70d7ab4211b2",
           "name": "Lorient vs Marseille  🕐 22:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -2323,7 +2302,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2c83b0b7f394f843.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/aaca70d7ab4211b2.webp",
             "width": 820,
             "height": 540
           },
@@ -2343,19 +2322,19 @@
           ],
           "sources": [
             {
-              "id": "0b42bb73ae334c03",
+              "id": "86d58a24fb1b4331",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "c44e8708777a9c36",
+                  "id": "b8828b645dc24d6c",
                   "name": "Lorient vs Marseille  🕐 22:00 | 18/04 · French Ligue 1",
                   "streams": [
                     {
-                      "id": "5053c1da8c03df52",
+                      "id": "9ac5e920667af12f",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "8207272a4ca1e533",
+                          "id": "cbaa2aadba7b4f42",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -2380,7 +2359,7 @@
           ]
         },
         {
-          "id": "b5106ab318785345",
+          "id": "143ae8ae47a36be2",
           "name": "Napoli vs Lazio  🕐 23:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -2389,7 +2368,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b5106ab318785345.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/143ae8ae47a36be2.webp",
             "width": 820,
             "height": 540
           },
@@ -2409,19 +2388,19 @@
           ],
           "sources": [
             {
-              "id": "c226b76595219abe",
+              "id": "875f201609c505d8",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "4af9fce93668faa8",
+                  "id": "4356531aa90933c7",
                   "name": "Napoli vs Lazio  🕐 23:00 | 18/04 · Italian Serie A",
                   "streams": [
                     {
-                      "id": "858e7a0955a25700",
+                      "id": "4e35275da7749ce8",
                       "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "2d45b509ee8c1c07",
+                          "id": "caeeedb518b0e853",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -2446,7 +2425,7 @@
           ]
         },
         {
-          "id": "19109d2a10c55e3e",
+          "id": "edfe32c1dd303eb7",
           "name": "Tottenham Hotspur vs Brighton Hove Albion  🕐 23:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -2455,7 +2434,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/19109d2a10c55e3e.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/edfe32c1dd303eb7.webp",
             "width": 820,
             "height": 540
           },
@@ -2475,19 +2454,19 @@
           ],
           "sources": [
             {
-              "id": "df648b62c529c4f5",
+              "id": "b8dab3683ed86c41",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "daa1c7f1daba3a09",
+                  "id": "17272b23ffb0d8af",
                   "name": "Tottenham Hotspur vs Brighton Hove Albion  🕐 23:30 | 18/04 · Luồng Hài Hước",
                   "streams": [
                     {
-                      "id": "61785edbae5c00d7",
+                      "id": "cc7758e7e970cf0b",
                       "name": "🎙 Thây Ma (Neymar)",
                       "stream_links": [
                         {
-                          "id": "788b5b93a2b2d70a",
+                          "id": "47d7300088b50fae",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -2506,11 +2485,11 @@
                       ]
                     },
                     {
-                      "id": "da2585270d02016c",
+                      "id": "e131db83d3f69e45",
                       "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "37437477c43032bd",
+                          "id": "8e90a472cd2cbdaf",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -2535,7 +2514,7 @@
           ]
         },
         {
-          "id": "957b73a57eec1688",
+          "id": "248b94f7629adae0",
           "name": "Eintracht Frankfurt vs RB Leipzig  🕐 23:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -2544,7 +2523,7 @@
             "padding": 0,
             "background_color": "#0a0e1a",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/957b73a57eec1688.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/248b94f7629adae0.webp",
             "width": 820,
             "height": 540
           },
@@ -2564,19 +2543,19 @@
           ],
           "sources": [
             {
-              "id": "eee443202111d02e",
+              "id": "536b278980fd4c92",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "00a4077c2433bb9a",
+                  "id": "c7af03342277551d",
                   "name": "Eintracht Frankfurt vs RB Leipzig  🕐 23:30 | 18/04 · Bundesliga",
                   "streams": [
                     {
-                      "id": "652c2839120423c0",
+                      "id": "040f94150d612b0f",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "94c8d43d9d440cd3",
+                          "id": "5c0f36e22bbda120",
                           "name": "🔵 HD Nhanh",
                           "type": "hls",
                           "default": true,
@@ -2585,6 +2564,72 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/eintracht-frankfurt-vs-rb-leipzig"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4d3f4754a6caa44b",
+          "name": "Hanoi FC vs Becamex Ho Chi Minh City  ✅",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#0a0e1a",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/4d3f4754a6caa44b.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "✅ Kết thúc",
+              "color": "#444444",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Người Kiến",
+              "position": "top-right",
+              "color": "#00601f",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "a8aac50192997957",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "abf23aee67c73958",
+                  "name": "Hanoi FC vs Becamex Ho Chi Minh City  ✅ · V.League 1",
+                  "streams": [
+                    {
+                      "id": "51fd068c696140d5",
+                      "name": "🎙 Người Kiến",
+                      "stream_links": [
+                        {
+                          "id": "dfdbcc700bda0ca3",
+                          "name": "🔵 HD Nhanh",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-nguoi-kien/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/hanoi-fc-vs-becamex-ho-chi-minh-city-kien-1776418726142-836"
                             },
                             {
                               "key": "User-Agent",
