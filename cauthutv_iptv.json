@@ -20,90 +20,7 @@
       "image": null,
       "channels": [
         {
-          "id": "30118af6af665e3c",
-          "name": "Sydney FC vs Perth Glory  🔴 LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#ffffff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/30118af6af665e3c.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "● Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Văn Chuẩn",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "8060d302cc6cd119",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "133bdfea879bf27f",
-                  "name": "Sydney FC vs Perth Glory  🔴 LIVE · Australia A-League",
-                  "streams": [
-                    {
-                      "id": "2327917d6e40c70d",
-                      "name": "🎙 Văn Chuẩn",
-                      "stream_links": [
-                        {
-                          "id": "60b896d7531d9bc8",
-                          "name": "🔵 HD Nhanh",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/sydney-fc-vs-perth-glory"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "a564820fee8a9d75",
-                          "name": "🔵 HD Nhanh",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/608ec77e3e5cb12c0d686bd13841f375/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/sydney-fc-vs-perth-glory"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "547e4c1cb4122419",
+          "id": "98b2cbd1b9aa4ef7",
           "name": "Hong Linh Ha Tinh vs XM Hai Phong FC  🔴 LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -112,7 +29,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/547e4c1cb4122419.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/98b2cbd1b9aa4ef7.webp",
             "width": 820,
             "height": 540
           },
@@ -132,27 +49,27 @@
           ],
           "sources": [
             {
-              "id": "813692d82d4e431e",
+              "id": "1e9733269885e4cd",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "dfa1f050e633fb12",
+                  "id": "7f1295dc9b19a0c3",
                   "name": "Hong Linh Ha Tinh vs XM Hai Phong FC  🔴 LIVE · Vietnam National Champion League",
                   "streams": [
                     {
-                      "id": "0cb9cc080df8bbef",
+                      "id": "2e3df8755f497af8",
                       "name": "🎙 Dylan",
                       "stream_links": [
                         {
-                          "id": "207439df8fc45335",
-                          "name": "🔵 HD Nhanh",
+                          "id": "36f4666a5f595181",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dylan/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/hong-linh-ha-tinh-vs-xm-hai-phong-fc"
+                              "value": "https://cauthutv.shop/hong-linh-ha-tinh-vs-xm-hai-phong-fc?mode=sd"
                             },
                             {
                               "key": "User-Agent",
@@ -161,15 +78,66 @@
                           ]
                         },
                         {
-                          "id": "1b5e0da02b2e748f",
-                          "name": "⚪ SD 360p",
+                          "id": "45440a5550776c76",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/live/7a22aa4a06afc1d65bdd08c360200de8/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/hong-linh-ha-tinh-vs-xm-hai-phong-fc"
+                              "value": "https://cauthutv.shop/hong-linh-ha-tinh-vs-xm-hai-phong-fc?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "6c7b17e42ccd984f",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/hong-linh-ha-tinh-vs-xm-hai-phong-fc?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/hong-linh-ha-tinh-vs-xm-hai-phong-fc/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "c3324747d62e034a",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/hong-linh-ha-tinh-vs-xm-hai-phong-fc?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/hong-linh-ha-tinh-vs-xm-hai-phong-fc/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "7497410d15ea8e3b",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/hong-linh-ha-tinh-vs-xm-hai-phong-fc?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/hong-linh-ha-tinh-vs-xm-hai-phong-fc/"
                             },
                             {
                               "key": "User-Agent",
@@ -186,7 +154,7 @@
           ]
         },
         {
-          "id": "cad0c389b29961ac",
+          "id": "17b7a6bd7b83de7f",
           "name": "Ninh Binh FC vs PVF CAND  🔴 LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -195,7 +163,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/cad0c389b29961ac.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/17b7a6bd7b83de7f.webp",
             "width": 820,
             "height": 540
           },
@@ -215,27 +183,95 @@
           ],
           "sources": [
             {
-              "id": "557ce7a9a811cc03",
+              "id": "0770eee21c1da6b9",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "ed0d245e6c0b64df",
+                  "id": "a0e7a196d9de4d68",
                   "name": "Ninh Binh FC vs PVF CAND  🔴 LIVE · Vietnam National Champion League",
                   "streams": [
                     {
-                      "id": "a3815554b85d20f9",
+                      "id": "b9b0450a5331a33e",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "fb11df2afa7a8a6f",
-                          "name": "🔵 HD Nhanh",
+                          "id": "e3e602ecdd65b01f",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-gio-tai/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/ninh-binh-fc-vs-pvf-cand"
+                              "value": "https://cauthutv.shop/ninh-binh-fc-vs-pvf-cand?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "a8c9616afd6416e6",
+                          "name": "📺 HD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/72d5d083d1a45b55b632aef6fd05c837/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/ninh-binh-fc-vs-pvf-cand?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "675c1312e95c32a2",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/ninh-binh-fc-vs-pvf-cand?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/ninh-binh-fc-vs-pvf-cand/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "7a8cbd52a02772c6",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/ninh-binh-fc-vs-pvf-cand?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/ninh-binh-fc-vs-pvf-cand/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "ec3a689001583c3a",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/ninh-binh-fc-vs-pvf-cand?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/ninh-binh-fc-vs-pvf-cand/"
                             },
                             {
                               "key": "User-Agent",
@@ -252,7 +288,7 @@
           ]
         },
         {
-          "id": "cf979f3a4b82a8fb",
+          "id": "b2b97a77b5f35859",
           "name": "Brentford vs Fulham  🔴 LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -261,7 +297,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/cf979f3a4b82a8fb.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b2b97a77b5f35859.webp",
             "width": 820,
             "height": 540
           },
@@ -281,27 +317,27 @@
           ],
           "sources": [
             {
-              "id": "d3eca1f03e5e71b1",
+              "id": "93afd66b428e9078",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "346d12cf9379fc1d",
+                  "id": "0ee34a5cb5aa63c0",
                   "name": "Brentford vs Fulham  🔴 LIVE · English Premier League",
                   "streams": [
                     {
-                      "id": "48244e211d5ad4f5",
+                      "id": "081a9bfd43ab9ded",
                       "name": "🎙 Thây Ma (Neymar)",
                       "stream_links": [
                         {
-                          "id": "7dad55b2b9ac9119",
-                          "name": "🔵 HD Nhanh",
+                          "id": "86a14d0551bf0809",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-thay-ma/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/brentford-vs-fulham"
+                              "value": "https://cauthutv.shop/brentford-vs-fulham?mode=sd"
                             },
                             {
                               "key": "User-Agent",
@@ -310,15 +346,15 @@
                           ]
                         },
                         {
-                          "id": "b357d235aed4f539",
-                          "name": "🔵 HD Nhanh",
+                          "id": "143aff30bbed71fc",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/live/61626f64c99af9468f99a5729d3fa299/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/brentford-vs-fulham"
+                              "value": "https://cauthutv.shop/brentford-vs-fulham?mode=sd"
                             },
                             {
                               "key": "User-Agent",
@@ -327,15 +363,66 @@
                           ]
                         },
                         {
-                          "id": "968e9b70851b6bf8",
-                          "name": "🔵 HD 720p",
+                          "id": "35b666ec976b39c1",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/livehd/61626f64c99af9468f99a5729d3fa299/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/brentford-vs-fulham"
+                              "value": "https://cauthutv.shop/brentford-vs-fulham?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "eb6ecb4407497f87",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/brentford-vs-fulham?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/brentford-vs-fulham/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "97a902c9f73ee285",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/brentford-vs-fulham?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/brentford-vs-fulham/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "ad3925cbb48036c5",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/brentford-vs-fulham?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/brentford-vs-fulham/"
                             },
                             {
                               "key": "User-Agent",
@@ -352,7 +439,7 @@
           ]
         },
         {
-          "id": "750172c5dd1b722f",
+          "id": "2f8d994460ae97f8",
           "name": "DNS vs KT  🕐 17:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -361,7 +448,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/750172c5dd1b722f.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2f8d994460ae97f8.webp",
             "width": 820,
             "height": 540
           },
@@ -381,27 +468,78 @@
           ],
           "sources": [
             {
-              "id": "e0219f375b81a036",
+              "id": "6719d47b16beb553",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "9e1915ff6e70d123",
+                  "id": "428b5494c49b8959",
                   "name": "DNS vs KT  🕐 17:00 | 18/04 · Liên Minh Huyền Thoại",
                   "streams": [
                     {
-                      "id": "caa211d7dc6d95e9",
+                      "id": "8ebf77da3367d095",
                       "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "67d8d1c499e5ba1a",
-                          "name": "🔵 HD Nhanh",
+                          "id": "e297ee7419fe2435",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-a-map/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/dns-vs-kt-1776292839733-830"
+                              "value": "https://cauthutv.shop/dns-vs-kt-1776292839733-830?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "8cc4697e4fd5f622",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/dns-vs-kt-1776292839733-830?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/dns-vs-kt-1776292839733-830/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "8844ed03e980a345",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/dns-vs-kt-1776292839733-830?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/dns-vs-kt-1776292839733-830/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "378722c5c07318cc",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/dns-vs-kt-1776292839733-830?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/dns-vs-kt-1776292839733-830/"
                             },
                             {
                               "key": "User-Agent",
@@ -418,7 +556,7 @@
           ]
         },
         {
-          "id": "1408db7940d274a5",
+          "id": "feae3420bc551635",
           "name": "Long An Nữ vs Thông Tin Nữ  🕐 17:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -427,7 +565,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/1408db7940d274a5.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/feae3420bc551635.webp",
             "width": 820,
             "height": 540
           },
@@ -447,27 +585,78 @@
           ],
           "sources": [
             {
-              "id": "41015518819ade84",
+              "id": "ec7998f6ed19923a",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "36fbcd17bf48a8dc",
+                  "id": "fafeb1697be4cf7d",
                   "name": "Long An Nữ vs Thông Tin Nữ  🕐 17:30 | 18/04 · Giải Bóng Chuyền VĐQG 2026",
                   "streams": [
                     {
-                      "id": "eb281b50323a65ff",
+                      "id": "f2675571045ed444",
                       "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "8ac818c24d9e9931",
-                          "name": "🔵 HD Nhanh",
+                          "id": "eb3ba6a942a2492d",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/long-an-n-vs-thng-tin-n-1776292839733-162"
+                              "value": "https://cauthutv.shop/long-an-n-vs-thng-tin-n-1776292839733-162?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "8e871b364be75958",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/long-an-n-vs-thng-tin-n-1776292839733-162?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/long-an-n-vs-thng-tin-n-1776292839733-162/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "5ab6eed99cf8e8eb",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/long-an-n-vs-thng-tin-n-1776292839733-162?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/long-an-n-vs-thng-tin-n-1776292839733-162/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "2b107560c9360a4a",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/long-an-n-vs-thng-tin-n-1776292839733-162?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/long-an-n-vs-thng-tin-n-1776292839733-162/"
                             },
                             {
                               "key": "User-Agent",
@@ -484,7 +673,7 @@
           ]
         },
         {
-          "id": "55dc40458627b192",
+          "id": "ba668679aace32bd",
           "name": "Biên Phòng vs Ninh Bình  🕐 19:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -493,7 +682,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/55dc40458627b192.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/ba668679aace32bd.webp",
             "width": 820,
             "height": 540
           },
@@ -513,27 +702,78 @@
           ],
           "sources": [
             {
-              "id": "cfb4cdcd06ada55e",
+              "id": "7a68976645bd8f4c",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "d2b70585d0dfef7f",
+                  "id": "bd40f20c7aaf56d2",
                   "name": "Biên Phòng vs Ninh Bình  🕐 19:30 | 18/04 · Giải Bóng Chuyền VĐQG 2026",
                   "streams": [
                     {
-                      "id": "b7b0edbb5ed8435d",
+                      "id": "f54fd6dd60e52246",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "edadf610696d7e14",
-                          "name": "🔵 HD Nhanh",
+                          "id": "2bbe1e64275f32eb",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-phao/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/bin-phng-vs-ninh-bnh-1776292839733-952"
+                              "value": "https://cauthutv.shop/bin-phng-vs-ninh-bnh-1776292839733-952?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "ef8a6c083f72040e",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/bin-phng-vs-ninh-bnh-1776292839733-952?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/bin-phng-vs-ninh-bnh-1776292839733-952/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "107b580790fba8da",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/bin-phng-vs-ninh-bnh-1776292839733-952?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/bin-phng-vs-ninh-bnh-1776292839733-952/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "091d54887702550a",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/bin-phng-vs-ninh-bnh-1776292839733-952?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/bin-phng-vs-ninh-bnh-1776292839733-952/"
                             },
                             {
                               "key": "User-Agent",
@@ -550,7 +790,7 @@
           ]
         },
         {
-          "id": "4eaaec67166a65c1",
+          "id": "8880686b37ba6feb",
           "name": "Udinese vs Parma  🕐 20:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -559,7 +799,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/4eaaec67166a65c1.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8880686b37ba6feb.webp",
             "width": 820,
             "height": 540
           },
@@ -579,27 +819,27 @@
           ],
           "sources": [
             {
-              "id": "b690252583153517",
+              "id": "805661d54dacbb3e",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "954dc928c36f28ce",
+                  "id": "95d8e552a7730f69",
                   "name": "Udinese vs Parma  🕐 20:00 | 18/04 · Italian Serie A",
                   "streams": [
                     {
-                      "id": "67749891ff896ab1",
+                      "id": "a9e7f98c4d0fcefd",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "3cb7c9205c5d8b2b",
-                          "name": "🔵 HD Nhanh",
+                          "id": "921f5251d2fafad6",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-nguoi-kien/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/udinese-vs-parma"
+                              "value": "https://cauthutv.shop/udinese-vs-parma?mode=sd"
                             },
                             {
                               "key": "User-Agent",
@@ -608,15 +848,15 @@
                           ]
                         },
                         {
-                          "id": "78049f2a493d9d6e",
-                          "name": "🔵 HD Nhanh",
+                          "id": "60a51e6bad79e172",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/live/ba1cc0d9af2092e14a1305b3e91a8a48/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/udinese-vs-parma"
+                              "value": "https://cauthutv.shop/udinese-vs-parma?mode=sd"
                             },
                             {
                               "key": "User-Agent",
@@ -625,15 +865,66 @@
                           ]
                         },
                         {
-                          "id": "46644de777d76245",
-                          "name": "🔵 HD 720p",
+                          "id": "9b9cd6240dd5a213",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/livehd/ba1cc0d9af2092e14a1305b3e91a8a48/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/udinese-vs-parma"
+                              "value": "https://cauthutv.shop/udinese-vs-parma?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "e56f5c559bf557f4",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/udinese-vs-parma?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/udinese-vs-parma/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "865a02b470d23126",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/udinese-vs-parma?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/udinese-vs-parma/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "e695894a0746b6ce",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/udinese-vs-parma?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/udinese-vs-parma/"
                             },
                             {
                               "key": "User-Agent",
@@ -650,7 +941,7 @@
           ]
         },
         {
-          "id": "5a07209295f6e245",
+          "id": "3a10c866666acbc4",
           "name": "Bayer 04 Leverkusen vs FC Augsburg  🕐 20:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -659,7 +950,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5a07209295f6e245.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/3a10c866666acbc4.webp",
             "width": 820,
             "height": 540
           },
@@ -679,27 +970,27 @@
           ],
           "sources": [
             {
-              "id": "f16460d03871167e",
+              "id": "5b29c89ce32a588a",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "47194adeb3fa3ad8",
+                  "id": "cfe0042a899a6c86",
                   "name": "Bayer 04 Leverkusen vs FC Augsburg  🕐 20:30 | 18/04 · Bundesliga",
                   "streams": [
                     {
-                      "id": "f59ba9ad6f5c30d9",
+                      "id": "f362e1469af7c592",
                       "name": "🎙 Nhà Đài",
                       "stream_links": [
                         {
-                          "id": "d3871996284111ad",
-                          "name": "🔵 HD Nhanh",
+                          "id": "14b5b87cbb7052e7",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://live.alilicloud.com/live/d36c3d6eeb3515c8060a6312c452f73a/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/bayer-04-leverkusen-vs-fc-augsburg"
+                              "value": "https://cauthutv.shop/bayer-04-leverkusen-vs-fc-augsburg?mode=sd"
                             },
                             {
                               "key": "User-Agent",
@@ -708,15 +999,66 @@
                           ]
                         },
                         {
-                          "id": "b5f430dec3aa88cb",
-                          "name": "🔵 HD 720p",
+                          "id": "63f456bfc16ac3ed",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/livehd/d36c3d6eeb3515c8060a6312c452f73a/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/bayer-04-leverkusen-vs-fc-augsburg"
+                              "value": "https://cauthutv.shop/bayer-04-leverkusen-vs-fc-augsburg?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "08538f6189245f55",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/bayer-04-leverkusen-vs-fc-augsburg?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/bayer-04-leverkusen-vs-fc-augsburg/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "be88c9c920ad633d",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/bayer-04-leverkusen-vs-fc-augsburg?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/bayer-04-leverkusen-vs-fc-augsburg/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "b5e2f0d6a2877537",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/bayer-04-leverkusen-vs-fc-augsburg?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/bayer-04-leverkusen-vs-fc-augsburg/"
                             },
                             {
                               "key": "User-Agent",
@@ -733,7 +1075,7 @@
           ]
         },
         {
-          "id": "352d4228e39fbe80",
+          "id": "be82b24e33b6638c",
           "name": "TSG Hoffenheim vs Borussia Dortmund  🕐 20:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -742,7 +1084,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/352d4228e39fbe80.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/be82b24e33b6638c.webp",
             "width": 820,
             "height": 540
           },
@@ -762,27 +1104,27 @@
           ],
           "sources": [
             {
-              "id": "fe9178287d119cf7",
+              "id": "f7535f8213a6c2cc",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "243f4b3d13c64e2f",
+                  "id": "45a4238d0e4c2098",
                   "name": "TSG Hoffenheim vs Borussia Dortmund  🕐 20:30 | 18/04 · Bundesliga",
                   "streams": [
                     {
-                      "id": "58a6e90f682c8fc4",
+                      "id": "34d582286da951cd",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "74b3bcb164f889e4",
-                          "name": "🔵 HD Nhanh",
+                          "id": "58bc691fdf3efe48",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/tsg-hoffenheim-vs-borussia-dortmund"
+                              "value": "https://cauthutv.shop/tsg-hoffenheim-vs-borussia-dortmund?mode=sd"
                             },
                             {
                               "key": "User-Agent",
@@ -791,15 +1133,15 @@
                           ]
                         },
                         {
-                          "id": "5fd99c480cc501a8",
-                          "name": "🔵 HD Nhanh",
+                          "id": "60542e0d38cef110",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/live/a6167bb1ef2a896ccb53b7695827aa18/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/tsg-hoffenheim-vs-borussia-dortmund"
+                              "value": "https://cauthutv.shop/tsg-hoffenheim-vs-borussia-dortmund?mode=sd"
                             },
                             {
                               "key": "User-Agent",
@@ -808,15 +1150,66 @@
                           ]
                         },
                         {
-                          "id": "6eb7512fae34de59",
-                          "name": "🔵 HD 720p",
+                          "id": "a1f87c1662e85743",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/livehd/a6167bb1ef2a896ccb53b7695827aa18/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/tsg-hoffenheim-vs-borussia-dortmund"
+                              "value": "https://cauthutv.shop/tsg-hoffenheim-vs-borussia-dortmund?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "56555b1fd5c45003",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/tsg-hoffenheim-vs-borussia-dortmund?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/tsg-hoffenheim-vs-borussia-dortmund/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "0aef5f20cbdaf533",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/tsg-hoffenheim-vs-borussia-dortmund?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/tsg-hoffenheim-vs-borussia-dortmund/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "4fff1e2aa9f97132",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/tsg-hoffenheim-vs-borussia-dortmund?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/tsg-hoffenheim-vs-borussia-dortmund/"
                             },
                             {
                               "key": "User-Agent",
@@ -833,7 +1226,7 @@
           ]
         },
         {
-          "id": "9fd36a5bbe583554",
+          "id": "806179d104da4920",
           "name": "Leeds United vs Wolverhampton Wanderers  🕐 21:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -842,7 +1235,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/9fd36a5bbe583554.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/806179d104da4920.webp",
             "width": 820,
             "height": 540
           },
@@ -862,27 +1255,112 @@
           ],
           "sources": [
             {
-              "id": "a2cd94b00ae041e1",
+              "id": "d25adc949014d6ea",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "3143f3575b86ac80",
+                  "id": "68e81f396c7d7137",
                   "name": "Leeds United vs Wolverhampton Wanderers  🕐 21:00 | 18/04 · English Premier League",
                   "streams": [
                     {
-                      "id": "c53956f7f3d830f4",
+                      "id": "3e6b80d191fd5a0b",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "085d55b9579ff396",
-                          "name": "🔵 HD Nhanh",
+                          "id": "0541b9f2de24313c",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dua-hau/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/leeds-united-vs-wolverhampton-wanderers"
+                              "value": "https://cauthutv.shop/leeds-united-vs-wolverhampton-wanderers?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "5cd8688ecba808b7",
+                          "name": "📺 HD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/513130d0df2ec10c12878cb723a0c41c/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/leeds-united-vs-wolverhampton-wanderers?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "f1fa0f53647175c6",
+                          "name": "📺 HD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/livehd/513130d0df2ec10c12878cb723a0c41c/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/leeds-united-vs-wolverhampton-wanderers?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "d4510d5b68c94679",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/leeds-united-vs-wolverhampton-wanderers?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/leeds-united-vs-wolverhampton-wanderers/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "8e61dd8c936867cf",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/leeds-united-vs-wolverhampton-wanderers?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/leeds-united-vs-wolverhampton-wanderers/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "397a145d7e917fdb",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/leeds-united-vs-wolverhampton-wanderers?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/leeds-united-vs-wolverhampton-wanderers/"
                             },
                             {
                               "key": "User-Agent",
@@ -899,7 +1377,7 @@
           ]
         },
         {
-          "id": "05ebdadb5d3f7ca8",
+          "id": "de094386f54b885f",
           "name": "Newcastle United vs Bournemouth AFC  🕐 21:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -908,7 +1386,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/05ebdadb5d3f7ca8.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/de094386f54b885f.webp",
             "width": 820,
             "height": 540
           },
@@ -928,27 +1406,112 @@
           ],
           "sources": [
             {
-              "id": "3c73860e96a35b97",
+              "id": "7ace6b627fff2d0d",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "c5c6f6dfb7c89d8a",
+                  "id": "2b280d0cf5c9943e",
                   "name": "Newcastle United vs Bournemouth AFC  🕐 21:00 | 18/04 · English Premier League",
                   "streams": [
                     {
-                      "id": "79fae8642e274c99",
+                      "id": "2fd0717268e79d30",
                       "name": "🎙 Dylan",
                       "stream_links": [
                         {
-                          "id": "2bf7b118f91a210d",
-                          "name": "🔵 HD Nhanh",
+                          "id": "e0f9bf40d422a406",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dylan/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/newcastle-united-vs-bournemouth-afc"
+                              "value": "https://cauthutv.shop/newcastle-united-vs-bournemouth-afc?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "0d221914af2b559d",
+                          "name": "📺 HD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/4c69adb1260816e20c7de405ba854e72/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/newcastle-united-vs-bournemouth-afc?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "d1f109a7b472a902",
+                          "name": "📺 HD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/livehd/4c69adb1260816e20c7de405ba854e72/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/newcastle-united-vs-bournemouth-afc?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "387f8d45ebeb92e4",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/newcastle-united-vs-bournemouth-afc?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/newcastle-united-vs-bournemouth-afc/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "e23217fde58c0fbf",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/newcastle-united-vs-bournemouth-afc?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/newcastle-united-vs-bournemouth-afc/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "db09148a46d8d3cc",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/newcastle-united-vs-bournemouth-afc?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/newcastle-united-vs-bournemouth-afc/"
                             },
                             {
                               "key": "User-Agent",
@@ -965,7 +1528,7 @@
           ]
         },
         {
-          "id": "885461c39eea955d",
+          "id": "c49b291d6eb0e5c5",
           "name": "Lorient vs Marseille  🕐 22:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -974,7 +1537,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/885461c39eea955d.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c49b291d6eb0e5c5.webp",
             "width": 820,
             "height": 540
           },
@@ -994,27 +1557,112 @@
           ],
           "sources": [
             {
-              "id": "c1707139383817f0",
+              "id": "4cfbe1b117cd69b9",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "979b0a502dfc61cb",
+                  "id": "06ed5fbe8cba8540",
                   "name": "Lorient vs Marseille  🕐 22:00 | 18/04 · French Ligue 1",
                   "streams": [
                     {
-                      "id": "d1b192a388c01676",
+                      "id": "235bd8dc4164db1b",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "b53f3dfa048a997c",
-                          "name": "🔵 HD Nhanh",
+                          "id": "d56e5fa0dfbd8912",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-gio-tai/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/lorient-vs-marseille"
+                              "value": "https://cauthutv.shop/lorient-vs-marseille?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "cf62b56ee498771e",
+                          "name": "📺 HD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/1ec8b18b7702ad50ca7905ef32b7f193/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/lorient-vs-marseille?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "63b42179648493d0",
+                          "name": "📺 HD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/livehd/1ec8b18b7702ad50ca7905ef32b7f193/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/lorient-vs-marseille?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "ddce4f5beb135e17",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/lorient-vs-marseille?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/lorient-vs-marseille/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "98a8aac7cf0f1bc9",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/lorient-vs-marseille?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/lorient-vs-marseille/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "40c3b3b86103c052",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/lorient-vs-marseille?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/lorient-vs-marseille/"
                             },
                             {
                               "key": "User-Agent",
@@ -1031,7 +1679,7 @@
           ]
         },
         {
-          "id": "06f3bf8a886de7ad",
+          "id": "5460ef8b588c4315",
           "name": "Napoli vs Lazio  🕐 23:00 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1040,7 +1688,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/06f3bf8a886de7ad.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5460ef8b588c4315.webp",
             "width": 820,
             "height": 540
           },
@@ -1060,27 +1708,78 @@
           ],
           "sources": [
             {
-              "id": "3a6ad4d5bb820a39",
+              "id": "80010ec2d3ed204c",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "153680953cf3ed6d",
+                  "id": "2c729d70741423e7",
                   "name": "Napoli vs Lazio  🕐 23:00 | 18/04 · Italian Serie A",
                   "streams": [
                     {
-                      "id": "838df01d1c34b68c",
+                      "id": "06601910d17ecac7",
                       "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "4f0298c04751d84c",
-                          "name": "🔵 HD Nhanh",
+                          "id": "3342cb4dac13109d",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/napoli-vs-lazio"
+                              "value": "https://cauthutv.shop/napoli-vs-lazio?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "2b0c9d3d1d00f7ac",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/napoli-vs-lazio?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/napoli-vs-lazio/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "3fe403ece4d54b9a",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/napoli-vs-lazio?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/napoli-vs-lazio/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "816ce8b946adc64e",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/napoli-vs-lazio?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/napoli-vs-lazio/"
                             },
                             {
                               "key": "User-Agent",
@@ -1097,7 +1796,7 @@
           ]
         },
         {
-          "id": "045e8f37ae4b063c",
+          "id": "03488fda73d80083",
           "name": "Tottenham Hotspur vs Brighton Hove Albion  🕐 23:30 | 18/04",
           "type": "multi",
           "display": "thumbnail-only",
@@ -1106,7 +1805,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/045e8f37ae4b063c.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/03488fda73d80083.webp",
             "width": 820,
             "height": 540
           },
@@ -1126,27 +1825,78 @@
           ],
           "sources": [
             {
-              "id": "8f3fc9e9f7ea5374",
+              "id": "fbe2caa7dd8d7808",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "33804758b948b3c3",
+                  "id": "4de349a0961e9c08",
                   "name": "Tottenham Hotspur vs Brighton Hove Albion  🕐 23:30 | 18/04 · Luồng Hài Hước",
                   "streams": [
                     {
-                      "id": "79d897a4d6ce2187",
+                      "id": "c4f82b6bb83e0986",
                       "name": "🎙 Thây Ma (Neymar)",
                       "stream_links": [
                         {
-                          "id": "d3d8e64e66747840",
-                          "name": "🔵 HD Nhanh",
+                          "id": "9e40de74c5db2de0",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-thay-ma/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion-thayma-1776292839733-797"
+                              "value": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion-thayma-1776292839733-797?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "bacb89d38229f20e",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion-thayma-1776292839733-797?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion-thayma-1776292839733-797/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "dcbaf58054176f10",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion-thayma-1776292839733-797?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion-thayma-1776292839733-797/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "97a348f9d770266d",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion-thayma-1776292839733-797?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion-thayma-1776292839733-797/"
                             },
                             {
                               "key": "User-Agent",
@@ -1157,19 +1907,70 @@
                       ]
                     },
                     {
-                      "id": "d3e9cb319fcd9f29",
+                      "id": "e9b8dcf0c7870b4a",
                       "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "178c0ec92e0b83db",
-                          "name": "🔵 HD Nhanh",
+                          "id": "7bdb249771249d0e",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-a-map/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion"
+                              "value": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "2bc7a1faebc63bad",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "eb9987d59e1f054f",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "bee0332d00b17a1d",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/tottenham-hotspur-vs-brighton-hove-albion/"
                             },
                             {
                               "key": "User-Agent",
@@ -1186,7 +1987,7 @@
           ]
         },
         {
-          "id": "dc0ab55b143ccb66",
+          "id": "078998987f6ce191",
           "name": "Eintracht Frankfurt vs RB Leipzig  🕐 23:30 | 18/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1195,7 +1996,7 @@
             "padding": 0,
             "background_color": "#ffffff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/dc0ab55b143ccb66.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/078998987f6ce191.webp",
             "width": 820,
             "height": 540
           },
@@ -1215,27 +2016,78 @@
           ],
           "sources": [
             {
-              "id": "9a3ee2de83b182bb",
+              "id": "5b1b3475f1382ecf",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "6ebadd6cb762a362",
+                  "id": "66bacf38e916f5f6",
                   "name": "Eintracht Frankfurt vs RB Leipzig  🕐 23:30 | 18/04 · Bundesliga",
                   "streams": [
                     {
-                      "id": "55e13ba2f29cb4ce",
+                      "id": "06b5649c34bebb02",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "5281cc192f525276",
-                          "name": "🔵 HD Nhanh",
+                          "id": "fcdc62c9f66be740",
+                          "name": "📺 HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-meo-beo/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/eintracht-frankfurt-vs-rb-leipzig"
+                              "value": "https://cauthutv.shop/eintracht-frankfurt-vs-rb-leipzig?mode=sd"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "1390265ef27c1a17",
+                          "name": "⚡ HD Nhanh",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/eintracht-frankfurt-vs-rb-leipzig?mode=flv",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/eintracht-frankfurt-vs-rb-leipzig/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "9e59773bb0af2130",
+                          "name": "📡 Nhà Đài SD",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/eintracht-frankfurt-vs-rb-leipzig?mode=ndsd",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/eintracht-frankfurt-vs-rb-leipzig/"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "6cd67fdcae9191bf",
+                          "name": "🎭 Mô Phỏng",
+                          "type": "iframe",
+                          "default": false,
+                          "url": "https://cauthutv.shop/eintracht-frankfurt-vs-rb-leipzig?mode=mp",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/eintracht-frankfurt-vs-rb-leipzig/"
                             },
                             {
                               "key": "User-Agent",
