@@ -93,23 +93,6 @@
                               "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
-                        },
-                        {
-                          "id": "0fe832ef673515b3",
-                          "name": "📡 Nhà Đài",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/livehd/ba1cc0d9af2092e14a1305b3e91a8a48/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/udinese-vs-parma"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
                         }
                       ]
                     }
@@ -166,23 +149,6 @@
                           "type": "hls",
                           "default": true,
                           "url": "https://live.alilicloud.com/live/d36c3d6eeb3515c8060a6312c452f73a/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/bayer-04-leverkusen-vs-fc-augsburg"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "667c7f2528b6e77a",
-                          "name": "📡 Nhà Đài",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/livehd/d36c3d6eeb3515c8060a6312c452f73a/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -574,23 +540,6 @@
                               "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
-                        },
-                        {
-                          "id": "9e451ea9186563dd",
-                          "name": "📡 Nhà Đài",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/livehd/1ec8b18b7702ad50ca7905ef32b7f193/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/lorient-vs-marseille"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
                         }
                       ]
                     }
@@ -657,6 +606,23 @@
                               "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
+                        },
+                        {
+                          "id": "5dcd17baa0d29181",
+                          "name": "📡 Nhà Đài",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/b21ca08a3f47722b99c8a2f3077ec933/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/napoli-vs-lazio"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -669,9 +635,9 @@
         {
           "id": "16419361d59691e4",
           "name": "Tottenham Hotspur vs Brighton Hove Albion  🕐 23:30 | 18/04",
-          "type": "multi",
+          "type": "single",
           "display": "thumbnail-only",
-          "enable_detail": true,
+          "enable_detail": false,
           "image": {
             "padding": 0,
             "background_color": "#ffffff",
@@ -944,6 +910,23 @@
                               "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
+                        },
+                        {
+                          "id": "1696e51bfddfe8dc",
+                          "name": "📡 Nhà Đài",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/de768072b3ea4329a132c5e0a201ec1e/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/as-roma-vs-atalanta"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -956,9 +939,9 @@
         {
           "id": "a1d052fe4444a599",
           "name": "Chelsea vs Manchester United  🕐 02:00 | 19/04",
-          "type": "multi",
+          "type": "single",
           "display": "thumbnail-only",
-          "enable_detail": true,
+          "enable_detail": false,
           "image": {
             "padding": 0,
             "background_color": "#ffffff",
@@ -2494,9 +2477,9 @@
         {
           "id": "4388ca436b45507e",
           "name": "Everton vs Liverpool  🕐 20:00 | 19/04",
-          "type": "multi",
+          "type": "single",
           "display": "thumbnail-only",
-          "enable_detail": true,
+          "enable_detail": false,
           "image": {
             "padding": 0,
             "background_color": "#ffffff",
@@ -2913,9 +2896,9 @@
         {
           "id": "27f7b3d11825cddb",
           "name": "Manchester City vs Arsenal  🕐 22:30 | 19/04",
-          "type": "multi",
+          "type": "single",
           "display": "thumbnail-only",
-          "enable_detail": true,
+          "enable_detail": false,
           "image": {
             "padding": 0,
             "background_color": "#ffffff",
