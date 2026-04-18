@@ -338,55 +338,47 @@ def extract_hot_matches(html, bs, debug=False):
 #  Crawl detail page → stream + logo
 # ═══════════════════════════════════════════════════════
 
-def crawl_detail(detail_url, blv, scraper):
-    html = fetch_html(detail_url, scraper, retries=2)
-    if not html: return [], {}
-    bs   = BeautifulSoup(html, "lxml")
+# ── Bảng mode cauthutv.shop ──────────────────────────────────────
+# ?mode=sd   → HD (luồng chính)
+# ?mode=flv  → HD Nhanh (flash/low-latency)
+# ?mode=ndsd → Nhà Đài SD (broadcast feed)
+# ?mode=mp   → Mô Phỏng (simulation/delay)
+STREAM_MODES = [
+    ("sd",   "📺 HD"),
+    ("flv",  "⚡ HD Nhanh"),
+    ("ndsd", "📡 Nhà Đài SD"),
+    ("mp",   "🎭 Mô Phỏng"),
+]
 
-    info = {}
+def _extract_streams_from_page(html, bs, page_url, mode_label, blv, seen):
+    """
+    Tách stream từ 1 trang (1 mode). Trả về list stream mới (chưa có trong seen).
+    """
+    added = []
 
-    # ── R2 thumbnail (pub-xxx.r2.dev) ──
-    r2_urls = re.findall(
-        r'https://pub-[a-f0-9]+\.r2\.dev/[^\s\'"<>]+\.(?:webp|jpg|jpeg|png)[^\s\'"<>]*',
-        html, re.I
-    )
-    if r2_urls:
-        info["thumb_url"] = r2_urls[0]
-
-    # ── Logo 2 đội — chuyển sang WebP CDN URL ──
-    logos = []
-    for img in bs.find_all("img", class_=lambda c: c and "img-lazy" in c):
-        src = img.get("data-src") or img.get("src","")
-        if src and src.startswith("http"):
-            _skip = ("/bgs/", "/icon-sports/", "icon_sport_", "/bg_", "/background")
-            if not any(s in src for s in _skip):
-                logos.append(to_webp_url(src))   # ← webp CDN
-    if len(logos) >= 1: info["home_logo"] = logos[0]
-    if len(logos) >= 2: info["away_logo"] = logos[1]
-
-    seen, streams = set(), []
-    def add(name, url, kind):
+    def _add(name, url, kind):
         url = url.strip()
         if url and url not in seen and len(url) > 12:
             seen.add(url)
-            streams.append({"name":name,"url":url,"type":kind,
-                            "referer":detail_url,"blv":blv})
+            added.append({"name": name, "url": url, "type": kind,
+                          "referer": page_url, "blv": blv,
+                          "mode_label": mode_label})
 
-    # ── 1. iframe embed ──
+    # 1. iframe
     for fr in bs.find_all("iframe", src=True):
         src = fr["src"]
         if re.search(r"live|stream|embed|player|sport|watch|truc.?tiep", src, re.I):
-            add("📺 Xem trực tiếp", src, "iframe")
+            _add(f"{mode_label}", src, "iframe")
 
-    # ── 2. m3u8 HLS ──
+    # 2. m3u8 HLS
     for m in re.finditer(r'(https?://[^\s\'"<>\]\\]+\.m3u8(?:[?#][^\s\'"<>\]\\]*)?)', html):
-        add("HLS", m.group(1), "hls")
+        _add(f"{mode_label}", m.group(1), "hls")
 
-    # ── 3. DASH ──
+    # 3. DASH
     for m in re.finditer(r'(https?://[^\s\'"<>\]\\]+\.mpd(?:[?#][^\s\'"<>\]\\]*)?)', html):
-        add("DASH", m.group(1), "dash")
+        _add(f"{mode_label} DASH", m.group(1), "dash")
 
-    # ── 4. JSON config trong script ──
+    # 4. JSON trong script
     for sc in bs.find_all("script"):
         c = sc.string or ""
 
@@ -394,67 +386,117 @@ def crawl_detail(detail_url, blv, scraper):
                 r'"(?:file|src|source|url|hls|playlist|videoUrl|streamUrl|hlsUrl|hlssrc)"\s*:\s*"(https?://[^"]+)"', c):
             u = m.group(1)
             if re.search(r"m3u8|stream|live|video|play|hls", u, re.I):
-                add("HLS stream", u, "hls")
+                _add(f"{mode_label}", u, "hls")
 
         for m in re.finditer(r'(?:playerConfig|player_config|PLAYER_CONFIG)\s*=\s*(\{[^;]+\})', c, re.S):
             try:
-                import json as _json
-                cfg = _json.loads(m.group(1))
+                cfg = json.loads(m.group(1))
                 srcs = cfg.get("sources", cfg.get("source", []))
                 if isinstance(srcs, str): srcs = [{"src": srcs}]
                 for s in (srcs if isinstance(srcs, list) else []):
                     u = s.get("src","") or s.get("file","") or s.get("url","")
-                    lbl = s.get("label","") or s.get("quality","") or "Auto"
+                    lbl = s.get("label","") or s.get("quality","") or ""
                     if u and u.startswith("http"):
-                        add(f"🎬 {lbl}", u, "hls")
+                        nm = f"{mode_label} {lbl}".strip() if lbl else mode_label
+                        _add(nm, u, "hls")
             except Exception:
                 pass
 
         for m in re.finditer(r'sources\s*:\s*\[([^\]]+)\]', c, re.S):
             inner = m.group(1)
             for sm in re.finditer(r'src\s*:\s*["\']([^"\']+)["\'].*?label\s*:\s*["\']([^"\']+)["\']', inner, re.S):
-                add(f"🎬 {sm.group(2)}", sm.group(1), "hls")
+                _add(f"{mode_label} {sm.group(2)}", sm.group(1), "hls")
             for sm in re.finditer(r'label\s*:\s*["\']([^"\']+)["\'].*?src\s*:\s*["\']([^"\']+)["\']', inner, re.S):
-                add(f"🎬 {sm.group(1)}", sm.group(2), "hls")
+                _add(f"{mode_label} {sm.group(1)}", sm.group(2), "hls")
 
         for m in re.finditer(r'(?:streamUrl|videoUrl|hlsUrl|playerUrl|src)\s*[=:]\s*["\']([^"\']+)["\']', c):
             u = m.group(1)
             if u.startswith("http") and re.search(r"m3u8|stream|live|cdn", u, re.I):
-                add("Live stream", u, "hls")
+                _add(f"{mode_label}", u, "hls")
 
-    # ── 5. data attributes ──
+    # 5. data attributes
     for tag in bs.find_all(attrs={"data-src": True}):
         u = tag.get("data-src","")
         if u and u.startswith("http") and re.search(r"m3u8|stream|live", u, re.I):
-            add("data-src stream", u, "hls")
+            _add(f"{mode_label}", u, "hls")
     for tag in bs.find_all(attrs={"data-stream": True}):
-        add("data-stream", tag["data-stream"], "hls")
+        _add(f"{mode_label}", tag["data-stream"], "hls")
     for tag in bs.find_all(attrs={"data-url": True}):
         u = tag.get("data-url","")
         if u and re.search(r"m3u8|stream", u, re.I):
-            add("data-url", u, "hls")
+            _add(f"{mode_label}", u, "hls")
 
-    # ── 6. Gán nhãn chất lượng ──
-    _QUAL_MAP = [
-        (re.compile(r'1080|fhd|fullhd|full.hd', re.I), "📺 Full HD 1080p"),
-        (re.compile(r'720|hd(?!c)',              re.I), "🔵 HD 720p"),
-        (re.compile(r'480|sd',                   re.I), "⚪ SD 480p"),
-        (re.compile(r'360',                      re.I), "⚪ SD 360p"),
-    ]
-    for s in streams:
-        if s["name"] in ("HLS", "HLS stream", "data-src stream", "Live stream"):
-            url_l = s["url"].lower()
-            for pat, label in _QUAL_MAP:
-                if pat.search(url_l):
-                    s["name"] = label
-                    break
-            else:
-                if s["name"] == "HLS":
-                    s["name"] = "🔵 HD Nhanh"
+    return added
+
+
+def crawl_detail(detail_url, blv, scraper):
+    """
+    Crawl trang trận đấu với từng mode (sd/flv/ndsd/mp).
+    Mỗi mode → 1 stream riêng với nhãn đúng (📺 HD, ⚡ HD Nhanh, ...).
+    Trả về (streams, info).
+    """
+    # ── Base URL (bỏ query cũ nếu có) ──
+    base_url = re.sub(r'\?.*$', '', detail_url.strip())
+
+    info   = {}
+    seen   = set()
+    streams = []
+
+    # Lấy info (logo, thumb) từ trang gốc không có mode
+    html_base = fetch_html(base_url, scraper, retries=2)
+    if html_base:
+        bs_base = BeautifulSoup(html_base, "lxml")
+
+        # R2 thumbnail
+        r2_urls = re.findall(
+            r'https://pub-[a-f0-9]+\.r2\.dev/[^\s\'"<>]+\.(?:webp|jpg|jpeg|png)[^\s\'"<>]*',
+            html_base, re.I
+        )
+        if r2_urls:
+            info["thumb_url"] = r2_urls[0]
+
+        # Logo 2 đội
+        logos = []
+        for img in bs_base.find_all("img", class_=lambda c: c and "img-lazy" in c):
+            src = img.get("data-src") or img.get("src","")
+            if src and src.startswith("http"):
+                _skip = ("/bgs/", "/icon-sports/", "icon_sport_", "/bg_", "/background")
+                if not any(s in src for s in _skip):
+                    logos.append(to_webp_url(src))
+        if len(logos) >= 1: info["home_logo"] = logos[0]
+        if len(logos) >= 2: info["away_logo"] = logos[1]
+
+    # ── Crawl từng mode → stream riêng ──
+    for mode_key, mode_label in STREAM_MODES:
+        mode_url = f"{base_url}?mode={mode_key}"
+        html_m   = fetch_html(mode_url, scraper, retries=2)
+        if not html_m:
+            log(f"    ⚠ mode={mode_key}: không tải được")
+            continue
+
+        bs_m = BeautifulSoup(html_m, "lxml")
+        new_streams = _extract_streams_from_page(
+            html_m, bs_m, mode_url, mode_label, blv, seen
+        )
+
+        if new_streams:
+            streams.extend(new_streams)
+            log(f"    ✓ mode={mode_key} ({mode_label}): {len(new_streams)} stream")
+        else:
+            # Fallback: dùng mode_url làm iframe stream
+            if mode_url not in seen:
+                seen.add(mode_url)
+                streams.append({"name": mode_label, "url": mode_url,
+                                 "type": "iframe", "referer": base_url + "/",
+                                 "blv": blv, "mode_label": mode_label})
+                log(f"    ↩ mode={mode_key} ({mode_label}): fallback iframe")
+
+        time.sleep(0.25)  # delay nhỏ giữa các mode
 
     if not streams:
-        streams.append({"name":"📺 Xem trực tiếp","url":detail_url,"type":"iframe",
-                        "referer":detail_url,"blv":blv})
+        streams.append({"name":"📺 Xem trực tiếp","url":base_url,"type":"iframe",
+                        "referer":base_url+"/","blv":blv,"mode_label":"📺 HD"})
+
     return streams, info
 
 # ═══════════════════════════════════════════════════════
@@ -1030,7 +1072,7 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     draw   = ImageDraw.Draw(canvas)
 
     # ─────────────────────────────────────────────
-    # HEADER: đường kẻ màu accent trên cùng + badge
+    # HEADER: viền trên + badge trạng thái top-left + tên giải ĐỦA GIỮA
     # ─────────────────────────────────────────────
     # Đường viền trên dày
     draw.rectangle([(0,0),(W,5)], fill=A)
@@ -1046,40 +1088,33 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
         badge_col  = (210, 75, 10)
         badge_txt  = "🕐 Sắp diễn ra"
 
-    # Vẽ pill badge trạng thái (top-left)
-    BPX, BPY = 16, 14   # padding x, y từ góc
-    bf = _font(20)
-    btw = len(badge_txt) * 11 + 20
+    BPX, BPY = 16, 10
     bth = 34
-    ov_b = Image.new("RGBA", (W, H), (0,0,0,0))
-    ov_bd = ImageDraw.Draw(ov_b)
-    ov_bd.rounded_rectangle([(BPX, BPY + 5),(BPX + btw, BPY + 5 + bth)],
-                              radius=bth//2, fill=(*badge_col, 255))
-    canvas.paste(Image.new("RGB",(W,H),(255,255,255)),
-                 mask=Image.new("L",(W,H),0))   # dummy — just paste directly
+    btw = len(badge_txt) * 11 + 20
     draw_tmp = ImageDraw.Draw(canvas)
     draw_tmp.rounded_rectangle([(BPX, BPY + 5),(BPX + btw, BPY + 5 + bth)],
                                 radius=bth//2, fill=badge_col)
     draw_tmp.text((BPX + btw//2, BPY + 5 + bth//2), badge_txt,
-                  fill=(255,255,255), font=bf, anchor="mm")
+                  fill=(255,255,255), font=_font(20), anchor="mm")
 
-    # Badge giải đấu top-right (pill nhỏ)
+    # Tên giải đấu — GIỮA, to (font 28), với nền pill accent
     if league:
-        lg_txt = league[:22]
-        lf = _font(16, bold=False)
-        lgw = len(lg_txt) * 9 + 18
-        lgh = 28
-        lgx1 = W - 16 - lgw
-        lgy1 = BPY + 9
+        lg_txt = league[:28]
+        lg_font = _font(26)
+        # ước tính độ rộng text
+        lgw = len(lg_txt) * 15 + 28
+        lgh = 38
+        lgx1 = CX - lgw // 2
+        lgy1 = BPY + 6
         draw_tmp.rounded_rectangle([(lgx1, lgy1),(lgx1+lgw, lgy1+lgh)],
                                     radius=lgh//2, fill=A)
-        draw_tmp.text((lgx1 + lgw//2, lgy1 + lgh//2), lg_txt,
-                      fill=(255,255,255), font=lf, anchor="mm")
+        draw_tmp.text((CX, lgy1 + lgh//2), lg_txt,
+                      fill=(255,255,255), font=lg_font, anchor="mm")
 
     draw = draw_tmp
 
     # Đường kẻ phân cách header/body
-    draw.line([(0, HEADER_H),(W, HEADER_H)], fill=(230,230,230), width=1)
+    draw.line([(0, HEADER_H),(W, HEADER_H)], fill=(225,225,225), width=1)
 
     # ─────────────────────────────────────────────
     # BODY: logo trái + hộp giờ/tỷ số + logo phải
