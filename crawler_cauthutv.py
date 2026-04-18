@@ -370,8 +370,11 @@ def _extract_m3u8_from_page(html: str, bs, page_url: str, blv: str, seen: set) -
         url = url.strip()
         if not url or url in seen: return
         if ".m3u8" not in url.lower(): return   # chỉ nhận m3u8
-        seen.add(url)
+        # Bỏ URL nhà đài chứa "livehd" — không dùng được
         label = _label_m3u8(url)
+        if label == "📡 Nhà Đài" and re.search(r'livehd', url, re.I):
+            return
+        seen.add(url)
         added.append({"name": label, "url": url, "type": "hls",
                       "referer": page_url, "blv": blv})
 
@@ -1081,8 +1084,8 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
         lgw = len(lg_txt) * 15 + 28
         lgh = 38
         lgx1 = CX - lgw // 2
-        # Đặt bên dưới badge: badge kết thúc ở BPY+5+bth, cộng gap 8px
-        lgy1 = BPY + 5 + bth + 8
+        # Đặt bên dưới badge: badge kết thúc ở BPY+5+bth, cộng gap 18px
+        lgy1 = BPY + 5 + bth + 18
         draw_tmp.rounded_rectangle([(lgx1, lgy1),(lgx1+lgw, lgy1+lgh)],
                                     radius=lgh//2, fill=A)
         draw_tmp.text((CX, lgy1 + lgh//2), lg_txt,
@@ -1330,14 +1333,14 @@ def build_channel(m, all_streams, index):
     content_name = name
     if league and len(league) < 50: content_name += f" · {league.strip()}"
 
-    # ≥2 BLV → enable_detail True (trang chọn BLV); 1 BLV → phát thẳng
+    # Luôn dùng single — player nội bộ xử lý danh sách stream
     has_multi = len(stream_objs) > 1
     return {
         "id":            ch_id,
         "name":          name,
-        "type":          "multi" if has_multi else "single",
+        "type":          "single",
         "display":       "thumbnail-only",
-        "enable_detail": has_multi,
+        "enable_detail": False,
         "image":         img_obj,
         "labels":        labels,
         "sources": [{
