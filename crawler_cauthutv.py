@@ -339,55 +339,56 @@ def extract_hot_matches(html, bs, debug=False):
 # ═══════════════════════════════════════════════════════
 
 # ── Bảng mode cauthutv.shop ──────────────────────────────────────
-# ?mode=sd   → HD (luồng chính)
-# ?mode=flv  → HD Nhanh (flash/low-latency)
-# ?mode=ndsd → Nhà Đài SD (broadcast feed)
-# ?mode=mp   → Mô Phỏng (simulation/delay)
+# Danh sách mode crawl — chỉ dùng để fetch HTML, KHÔNG dùng làm nhãn stream
 STREAM_MODES = [
-    ("sd",   "📺 HD"),
-    ("flv",  "⚡ HD Nhanh"),
-    ("ndsd", "📡 Nhà Đài SD"),
-    ("mp",   "🎭 Mô Phỏng"),
+    ("sd",   "sd"),
+    ("flv",  "flv"),
+    ("ndsd", "ndsd"),
+    ("mp",   "mp"),
 ]
 
-def _extract_streams_from_page(html, bs, page_url, mode_label, blv, seen):
+def _label_m3u8(url: str) -> str:
     """
-    Tách stream từ 1 trang (1 mode). Trả về list stream mới (chưa có trong seen).
+    Gán nhãn stream dựa trên URL m3u8:
+    - chứa 'index.m3u8' → 📺 HD
+    - còn lại           → 📡 Nhà Đài
+    """
+    if re.search(r'index\.m3u8', url, re.I):
+        return "📺 HD"
+    return "📡 Nhà Đài"
+
+
+def _extract_m3u8_from_page(html: str, bs, page_url: str, blv: str, seen: set) -> list:
+    """
+    Tách CHỈ các stream m3u8 HLS từ 1 trang.
+    Bỏ hoàn toàn: iframe, DASH, URL không phải .m3u8.
+    Nhãn tự động: index.m3u8 → 📺 HD | khác → 📡 Nhà Đài.
     """
     added = []
 
-    def _add(name, url, kind):
+    def _add(url):
         url = url.strip()
-        if url and url not in seen and len(url) > 12:
-            seen.add(url)
-            added.append({"name": name, "url": url, "type": kind,
-                          "referer": page_url, "blv": blv,
-                          "mode_label": mode_label})
+        if not url or url in seen: return
+        if ".m3u8" not in url.lower(): return   # chỉ nhận m3u8
+        seen.add(url)
+        label = _label_m3u8(url)
+        added.append({"name": label, "url": url, "type": "hls",
+                      "referer": page_url, "blv": blv})
 
-    # 1. iframe
-    for fr in bs.find_all("iframe", src=True):
-        src = fr["src"]
-        if re.search(r"live|stream|embed|player|sport|watch|truc.?tiep", src, re.I):
-            _add(f"{mode_label}", src, "iframe")
-
-    # 2. m3u8 HLS
+    # 1. m3u8 trực tiếp trong HTML raw
     for m in re.finditer(r'(https?://[^\s\'"<>\]\\]+\.m3u8(?:[?#][^\s\'"<>\]\\]*)?)', html):
-        _add(f"{mode_label}", m.group(1), "hls")
+        _add(m.group(1))
 
-    # 3. DASH
-    for m in re.finditer(r'(https?://[^\s\'"<>\]\\]+\.mpd(?:[?#][^\s\'"<>\]\\]*)?)', html):
-        _add(f"{mode_label} DASH", m.group(1), "dash")
-
-    # 4. JSON trong script
+    # 2. JSON trong script tags
     for sc in bs.find_all("script"):
         c = sc.string or ""
 
+        # key-value JSON: "file":"...", "src":"..."
         for m in re.finditer(
-                r'"(?:file|src|source|url|hls|playlist|videoUrl|streamUrl|hlsUrl|hlssrc)"\s*:\s*"(https?://[^"]+)"', c):
-            u = m.group(1)
-            if re.search(r"m3u8|stream|live|video|play|hls", u, re.I):
-                _add(f"{mode_label}", u, "hls")
+                r'"(?:file|src|source|url|hls|playlist|videoUrl|streamUrl|hlsUrl|hlssrc)"\s*:\s*"(https?://[^"]*\.m3u8[^"]*)"', c):
+            _add(m.group(1))
 
+        # playerConfig = {...}
         for m in re.finditer(r'(?:playerConfig|player_config|PLAYER_CONFIG)\s*=\s*(\{[^;]+\})', c, re.S):
             try:
                 cfg = json.loads(m.group(1))
@@ -395,59 +396,45 @@ def _extract_streams_from_page(html, bs, page_url, mode_label, blv, seen):
                 if isinstance(srcs, str): srcs = [{"src": srcs}]
                 for s in (srcs if isinstance(srcs, list) else []):
                     u = s.get("src","") or s.get("file","") or s.get("url","")
-                    lbl = s.get("label","") or s.get("quality","") or ""
-                    if u and u.startswith("http"):
-                        nm = f"{mode_label} {lbl}".strip() if lbl else mode_label
-                        _add(nm, u, "hls")
+                    if u and ".m3u8" in u.lower(): _add(u)
             except Exception:
                 pass
 
+        # sources:[...] mảng
         for m in re.finditer(r'sources\s*:\s*\[([^\]]+)\]', c, re.S):
-            inner = m.group(1)
-            for sm in re.finditer(r'src\s*:\s*["\']([^"\']+)["\'].*?label\s*:\s*["\']([^"\']+)["\']', inner, re.S):
-                _add(f"{mode_label} {sm.group(2)}", sm.group(1), "hls")
-            for sm in re.finditer(r'label\s*:\s*["\']([^"\']+)["\'].*?src\s*:\s*["\']([^"\']+)["\']', inner, re.S):
-                _add(f"{mode_label} {sm.group(1)}", sm.group(2), "hls")
+            for sm in re.finditer(r"(https?://[^\s'\"]+\.m3u8[^\s'\"]*)", m.group(1)):
+                _add(sm.group(1))
 
-        for m in re.finditer(r'(?:streamUrl|videoUrl|hlsUrl|playerUrl|src)\s*[=:]\s*["\']([^"\']+)["\']', c):
-            u = m.group(1)
-            if u.startswith("http") and re.search(r"m3u8|stream|live|cdn", u, re.I):
-                _add(f"{mode_label}", u, "hls")
+        # window.streamUrl = "..." style
+        for m in re.finditer(r'(?:streamUrl|videoUrl|hlsUrl|hlssrc|playerUrl)\s*[=:]\s*["\']([^"\']+\.m3u8[^"\']*)["\']', c):
+            _add(m.group(1))
 
-    # 5. data attributes
-    for tag in bs.find_all(attrs={"data-src": True}):
-        u = tag.get("data-src","")
-        if u and u.startswith("http") and re.search(r"m3u8|stream|live", u, re.I):
-            _add(f"{mode_label}", u, "hls")
-    for tag in bs.find_all(attrs={"data-stream": True}):
-        _add(f"{mode_label}", tag["data-stream"], "hls")
-    for tag in bs.find_all(attrs={"data-url": True}):
-        u = tag.get("data-url","")
-        if u and re.search(r"m3u8|stream", u, re.I):
-            _add(f"{mode_label}", u, "hls")
+    # 3. data-* attributes
+    for attr in ("data-src", "data-stream", "data-url", "data-hls"):
+        for tag in bs.find_all(attrs={attr: True}):
+            u = tag.get(attr, "")
+            if u and ".m3u8" in u.lower(): _add(u)
 
     return added
 
 
 def crawl_detail(detail_url, blv, scraper):
     """
-    Crawl trang trận đấu với từng mode (sd/flv/ndsd/mp).
-    Mỗi mode → 1 stream riêng với nhãn đúng (📺 HD, ⚡ HD Nhanh, ...).
-    Trả về (streams, info).
+    Crawl trang trận đấu qua 4 mode (sd/flv/ndsd/mp).
+    Chỉ thu thập stream m3u8 HLS:
+      - URL có index.m3u8 → nhãn 📺 HD
+      - URL m3u8 khác     → nhãn 📡 Nhà Đài
+    Không lấy iframe / DASH / URL không phải m3u8.
     """
-    # ── Base URL (bỏ query cũ nếu có) ──
     base_url = re.sub(r'\?.*$', '', detail_url.strip())
-
-    info   = {}
-    seen   = set()
+    info = {}
+    seen = set()
     streams = []
 
-    # Lấy info (logo, thumb) từ trang gốc không có mode
+    # ── Lấy logo + thumbnail từ trang gốc ──
     html_base = fetch_html(base_url, scraper, retries=2)
     if html_base:
         bs_base = BeautifulSoup(html_base, "lxml")
-
-        # R2 thumbnail
         r2_urls = re.findall(
             r'https://pub-[a-f0-9]+\.r2\.dev/[^\s\'"<>]+\.(?:webp|jpg|jpeg|png)[^\s\'"<>]*',
             html_base, re.I
@@ -455,7 +442,6 @@ def crawl_detail(detail_url, blv, scraper):
         if r2_urls:
             info["thumb_url"] = r2_urls[0]
 
-        # Logo 2 đội
         logos = []
         for img in bs_base.find_all("img", class_=lambda c: c and "img-lazy" in c):
             src = img.get("data-src") or img.get("src","")
@@ -466,36 +452,27 @@ def crawl_detail(detail_url, blv, scraper):
         if len(logos) >= 1: info["home_logo"] = logos[0]
         if len(logos) >= 2: info["away_logo"] = logos[1]
 
-    # ── Crawl từng mode → stream riêng ──
-    for mode_key, mode_label in STREAM_MODES:
+        # Thử tìm m3u8 ngay ở trang gốc
+        streams.extend(_extract_m3u8_from_page(html_base, bs_base, base_url, blv, seen))
+
+    # ── Crawl từng mode để lấy thêm m3u8 ──
+    for mode_key, _ in STREAM_MODES:
         mode_url = f"{base_url}?mode={mode_key}"
-        html_m   = fetch_html(mode_url, scraper, retries=2)
+        html_m = fetch_html(mode_url, scraper, retries=2)
         if not html_m:
-            log(f"    ⚠ mode={mode_key}: không tải được")
             continue
-
         bs_m = BeautifulSoup(html_m, "lxml")
-        new_streams = _extract_streams_from_page(
-            html_m, bs_m, mode_url, mode_label, blv, seen
-        )
+        new = _extract_m3u8_from_page(html_m, bs_m, mode_url, blv, seen)
+        if new:
+            streams.extend(new)
+            log(f"    ✓ mode={mode_key}: {len(new)} m3u8 ({[s['name'] for s in new]})")
+        time.sleep(0.2)
 
-        if new_streams:
-            streams.extend(new_streams)
-            log(f"    ✓ mode={mode_key} ({mode_label}): {len(new_streams)} stream")
-        else:
-            # Fallback: dùng mode_url làm iframe stream
-            if mode_url not in seen:
-                seen.add(mode_url)
-                streams.append({"name": mode_label, "url": mode_url,
-                                 "type": "iframe", "referer": base_url + "/",
-                                 "blv": blv, "mode_label": mode_label})
-                log(f"    ↩ mode={mode_key} ({mode_label}): fallback iframe")
-
-        time.sleep(0.25)  # delay nhỏ giữa các mode
+    # ── Sắp xếp: HD trước, Nhà Đài sau ──
+    streams.sort(key=lambda s: (0 if s["name"] == "📺 HD" else 1, s["url"]))
 
     if not streams:
-        streams.append({"name":"📺 Xem trực tiếp","url":base_url,"type":"iframe",
-                        "referer":base_url+"/","blv":blv,"mode_label":"📺 HD"})
+        log(f"    ⚠ Không tìm thấy m3u8 nào — bỏ qua stream")
 
     return streams, info
 
@@ -1097,15 +1074,15 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     draw_tmp.text((BPX + btw//2, BPY + 5 + bth//2), badge_txt,
                   fill=(255,255,255), font=_font(20), anchor="mm")
 
-    # Tên giải đấu — GIỮA, to (font 28), với nền pill accent
+    # Tên giải đấu — GIỮA, to (font 26), nằm DƯỚI badge, TRÊN logo
     if league:
-        lg_txt = league[:28]
+        lg_txt  = league[:28]
         lg_font = _font(26)
-        # ước tính độ rộng text
         lgw = len(lg_txt) * 15 + 28
         lgh = 38
         lgx1 = CX - lgw // 2
-        lgy1 = BPY + 6
+        # Đặt bên dưới badge: badge kết thúc ở BPY+5+bth, cộng gap 8px
+        lgy1 = BPY + 5 + bth + 8
         draw_tmp.rounded_rectangle([(lgx1, lgy1),(lgx1+lgw, lgy1+lgh)],
                                     radius=lgh//2, fill=A)
         draw_tmp.text((CX, lgy1 + lgh//2), lg_txt,
