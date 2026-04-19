@@ -314,22 +314,27 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
 
     # ── Body: 2 logo cùng kích thước + hộp VS/LIVE giữa ──
     NAME_H = 38; GAP = 10
+    BW = 148   # chiều rộng hộp VS/LIVE (dùng để tính vùng an toàn)
     LOGO_ZONE = BODY_H - NAME_H - GAP - 10
-    HALF_W    = W//2 - 24
-    # Giảm thêm 10px so với trước
-    LMAX = min(LOGO_ZONE - 10, HALF_W - 12) - 10
 
-    LX = W//4; RX = 3*W//4
-    LY = BODY_TOP + 8 + LMAX//2
-    NY_Y = LY + LMAX//2 + GAP + NAME_H//2   # tâm Y dòng tên đội
+    LX = W//4; RX = 3*W//4     # tâm logo trái / phải
+
+    # Logo KHÔNG được vượt qua biên hộp VS: giới hạn = (CX - BW//2 - 20) - LX
+    MAX_HALF = (CX - BW//2 - 20) - LX   # bán kính tối đa theo chiều ngang
+    # Giới hạn theo chiều dọc và cap cứng 160px
+    LMAX = min(LOGO_ZONE - 14, MAX_HALF * 2, 160)
+    LMAX = max(LMAX, 60)   # tối thiểu 60px
+
+    LY = BODY_TOP + 12 + LMAX//2
+    NY_Y = LY + LMAX//2 + GAP + NAME_H//2
 
     def draw_logo(cx, cy, url, name):
-        """Vẽ logo và resize về đúng LMAX×LMAX để 2 ảnh tương đương nhau."""
-        logo = fetch_logo(url, LMAX*3) if url else None
+        """Logo fit trong hộp LMAX×LMAX — cả 2 dùng cùng hộp → kích thước tương đương."""
+        logo = fetch_logo(url, LMAX*4) if url else None
         if logo:
             if logo.mode != "RGBA": logo = logo.convert("RGBA")
             lw, lh = logo.size
-            # Scale vừa hộp LMAX×LMAX (cả 2 logo dùng cùng scale box)
+            # Fit vào hộp vuông LMAX×LMAX giữ tỉ lệ
             sc = min(LMAX/lw, LMAX/lh, 1.0)
             nw, nh = max(1,int(lw*sc)), max(1,int(lh*sc))
             logo = logo.resize((nw,nh), Image.LANCZOS)
@@ -340,10 +345,10 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
             draw.ellipse([(cx-R2,cy-R2),(cx+R2,cy+R2)],
                          fill=(235,235,240), outline=A, width=2)
             init="".join(w[0].upper() for w in (name or "?").split()[:2]) or "?"
-            draw.text((cx,cy), init, fill=A, font=_font(44), anchor="mm")
-        # Tên đội — đậm, màu tối
+            draw.text((cx,cy), init, fill=A, font=_font(42), anchor="mm")
+        # Tên đội dưới logo
         draw.text((cx, NY_Y), (name or "?")[:18],
-                  fill=(25,25,25), font=_font(21), anchor="mm")
+                  fill=(25,25,25), font=_font(20), anchor="mm")
 
     draw_logo(LX, LY, home_logo_url, home_team)
     draw_logo(RX, LY, away_logo_url, away_team)
@@ -355,7 +360,7 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
         bbg,bfg=(255,255,255),A
         l1,l2=time_str or "VS",date_str or ""
         f1,f2=26,20
-    BW=148; BH=68 if l2 else 50
+    BH=68 if l2 else 50
     bx0,by0=CX-BW//2,LY-BH//2; bx1,by1=CX+BW//2,LY+BH//2
     draw.rounded_rectangle([(bx0,by0),(bx1,by1)], radius=12, fill=bbg, outline=A, width=3)
     if status=="live":
