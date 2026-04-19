@@ -322,7 +322,7 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     # Logo KHÔNG được vượt qua biên hộp VS: giới hạn = (CX - BW//2 - 20) - LX
     MAX_HALF = (CX - BW//2 - 20) - LX   # bán kính tối đa theo chiều ngang
     # Giới hạn theo chiều dọc và cap cứng 160px
-    LMAX = min(LOGO_ZONE - 14, MAX_HALF * 2, 160)
+    LMAX = min(LOGO_ZONE - 14, MAX_HALF * 2, 100)
     LMAX = max(LMAX, 60)   # tối thiểu 60px
 
     LY = BODY_TOP + 12 + LMAX//2
