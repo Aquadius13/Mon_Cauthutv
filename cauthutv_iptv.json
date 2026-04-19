@@ -187,7 +187,7 @@
         },
         {
           "id": "7dea4b7b77ce8f57",
-          "name": "Paris Saint Germain vs Lyon  01:45 | 20/04",
+          "name": "Paris Saint Germain vs Lyon  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": true,
@@ -201,8 +201,8 @@
           },
           "labels": [
             {
-              "text": "Sap dien ra",
-              "color": "#d54f1a",
+              "text": "Live",
+              "color": "#E73131",
               "text_color": "#fff",
               "position": "top-left"
             },
@@ -220,7 +220,7 @@
               "contents": [
                 {
                   "id": "75402fd297f3ee36",
-                  "name": "Paris Saint Germain vs Lyon  01:45 | 20/04 . French Ligue 1",
+                  "name": "Paris Saint Germain vs Lyon  LIVE . French Ligue 1",
                   "streams": [
                     {
                       "id": "f0baba5af43f79f1",
@@ -293,7 +293,7 @@
         },
         {
           "id": "640d1a3714a5d83c",
-          "name": "Juventus vs Bologna  01:45 | 20/04",
+          "name": "Juventus vs Bologna  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -307,8 +307,8 @@
           },
           "labels": [
             {
-              "text": "Sap dien ra",
-              "color": "#d54f1a",
+              "text": "Live",
+              "color": "#E73131",
               "text_color": "#fff",
               "position": "top-left"
             },
@@ -326,7 +326,7 @@
               "contents": [
                 {
                   "id": "9b43af43c94f0e1d",
-                  "name": "Juventus vs Bologna  01:45 | 20/04 . Italian Serie A",
+                  "name": "Juventus vs Bologna  LIVE . Italian Serie A",
                   "streams": [
                     {
                       "id": "4bf39bf98496c444",
@@ -376,7 +376,7 @@
         },
         {
           "id": "6292d68655eb9c16",
-          "name": "Santos Fc - SP vs Fluminense - RJ  02:00 | 20/04",
+          "name": "Santos Fc - SP vs Fluminense - RJ  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -390,8 +390,8 @@
           },
           "labels": [
             {
-              "text": "Sap dien ra",
-              "color": "#d54f1a",
+              "text": "Live",
+              "color": "#E73131",
               "text_color": "#fff",
               "position": "top-left"
             },
@@ -409,7 +409,7 @@
               "contents": [
                 {
                   "id": "87d492c311fb2405",
-                  "name": "Santos Fc - SP vs Fluminense - RJ  02:00 | 20/04 . Brazilian Serie A",
+                  "name": "Santos Fc - SP vs Fluminense - RJ  LIVE . Brazilian Serie A",
                   "streams": [
                     {
                       "id": "c444ececb9f4025e",
@@ -421,6 +421,23 @@
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-nguoi-kien/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/santos-fc-sp-vs-fluminense-rj"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "014c6335b2c31422",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/b264413aaa81a17acdef63d4353c9256/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
