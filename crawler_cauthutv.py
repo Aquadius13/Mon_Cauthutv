@@ -1029,145 +1029,153 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     # ─────────────────────────────────────────────
     # VÙNG NỀN TRẮNG: vẽ pattern sân mờ nhạt vào giữa
     # ─────────────────────────────────────────────
-    HEADER_H = 72    # chiều cao header (badge + league)
-    FOOTER_H = 60    # chiều cao footer (BLV strip)
+    # Layout chiều dọc:
+    #   0..5          → viền accent trên
+    #   5..49         → hàng badge (44px)
+    #   49..97        → thanh giải đấu nền đen (48px)
+    #   97..BODY_BOT  → body (logo + VS box)
+    #   BODY_BOT..H   → footer BLV (54px)
+    BADGE_ROW_H = 49    # badge status
+    LEAGUE_BAR_H = 48   # thanh giải đấu đen
+    HEADER_H = BADGE_ROW_H + LEAGUE_BAR_H   # = 97
+    FOOTER_H = 54
     BODY_TOP = HEADER_H
     BODY_BOT = H - FOOTER_H
     BODY_H   = BODY_BOT - BODY_TOP
     CX = W // 2
     MID_Y = BODY_TOP + BODY_H // 2
 
-    # Vẽ họa tiết sân mờ (canvas hiện tại RGB, cần tạo overlay RGBA rồi composite)
+    # Vẽ họa tiết sân mờ
     pat_ov = Image.new("RGBA", (W, H), (0,0,0,0))
     pat_d  = ImageDraw.Draw(pat_ov)
-    # Tạo rgba nhạt hơn so với accent
-    PR = (A[0], A[1], A[2], 20)
     canvas_rgba = canvas.convert("RGBA")
     _draw_sport_pattern(pat_d, pat_ov, key, W, H, BODY_TOP, BODY_BOT)
     canvas_rgba = Image.alpha_composite(canvas_rgba, pat_ov)
-
-    # Icon watermark
     _draw_sport_icon(canvas_rgba, key, A, CX, MID_Y, alpha=18)
     canvas = canvas_rgba.convert("RGB")
     draw   = ImageDraw.Draw(canvas)
 
     # ─────────────────────────────────────────────
-    # HEADER: viền trên + badge trạng thái top-left + tên giải ĐỦA GIỮA
+    # HEADER ROW 1: viền trên + badge trạng thái
     # ─────────────────────────────────────────────
-    # Đường viền trên dày
     draw.rectangle([(0,0),(W,5)], fill=A)
 
-    # Badge trạng thái top-left
     if status == "live":
-        badge_col  = (220, 30, 30)
-        badge_txt  = "● LIVE"
+        badge_col = (220, 30, 30)
+        badge_txt = "● Live"
     elif status == "finished":
-        badge_col  = (80, 80, 80)
-        badge_txt  = "✅ Kết thúc"
+        badge_col = (80, 80, 80)
+        badge_txt = "✅ Kết thúc"
     else:
-        badge_col  = (210, 75, 10)
-        badge_txt  = "🕐 Sắp diễn ra"
+        badge_col = (210, 75, 10)
+        badge_txt = "🕐 Sắp diễn ra"
 
-    BPX, BPY = 16, 10
-    bth = 34
-    btw = len(badge_txt) * 11 + 20
-    draw_tmp = ImageDraw.Draw(canvas)
-    draw_tmp.rounded_rectangle([(BPX, BPY + 5),(BPX + btw, BPY + 5 + bth)],
-                                radius=bth//2, fill=badge_col)
-    draw_tmp.text((BPX + btw//2, BPY + 5 + bth//2), badge_txt,
-                  fill=(255,255,255), font=_font(20), anchor="mm")
+    BPX, BPY = 12, 10
+    bth = 30
+    btw = len(badge_txt) * 10 + 18
+    draw.rounded_rectangle([(BPX, BPY + 5),(BPX + btw, BPY + 5 + bth)],
+                            radius=bth//2, fill=badge_col)
+    draw.text((BPX + btw//2, BPY + 5 + bth//2), badge_txt,
+              fill=(255,255,255), font=_font(18), anchor="mm")
 
-    # Tên giải đấu — GIỮA, to (font 26), nằm DƯỚI badge, TRÊN logo
+    # ─────────────────────────────────────────────
+    # HEADER ROW 2: thanh giải đấu nền đen full-width
+    # ─────────────────────────────────────────────
+    LB_TOP = BADGE_ROW_H
+    LB_BOT = BADGE_ROW_H + LEAGUE_BAR_H
+    draw.rectangle([(0, LB_TOP),(W, LB_BOT)], fill=(18, 18, 18))
+
     if league:
-        lg_txt  = league[:28]
-        lg_font = _font(26)
-        lgw = len(lg_txt) * 15 + 28
-        lgh = 38
-        lgx1 = CX - lgw // 2
-        # Đặt bên dưới badge: badge kết thúc ở BPY+5+bth, cộng gap 18px
-        lgy1 = BPY + 5 + bth + 18
-        draw_tmp.rounded_rectangle([(lgx1, lgy1),(lgx1+lgw, lgy1+lgh)],
-                                    radius=lgh//2, fill=A)
-        draw_tmp.text((CX, lgy1 + lgh//2), lg_txt,
-                      fill=(255,255,255), font=lg_font, anchor="mm")
+        # Font 31px (tăng 5 so với 26px cũ)
+        draw.text((CX, LB_TOP + LEAGUE_BAR_H//2), league[:32],
+                  fill=(255, 255, 255), font=_font(31), anchor="mm")
 
-    draw = draw_tmp
-
-    # Đường kẻ phân cách header/body
-    draw.line([(0, HEADER_H),(W, HEADER_H)], fill=(225,225,225), width=1)
+    # Đường kẻ dưới thanh giải
+    draw.line([(0, LB_BOT),(W, LB_BOT)], fill=A, width=2)
 
     # ─────────────────────────────────────────────
-    # BODY: logo trái + hộp giờ/tỷ số + logo phải
+    # BODY: logo lớn + ô tên đội bên dưới + hộp VS/LIVE giữa
     # ─────────────────────────────────────────────
-    LMAX = min(BODY_H - 60, 160)   # max logo size
-    LX = W // 4          # tâm logo trái
-    RX = 3 * W // 4      # tâm logo phải
-    LY = BODY_TOP + (BODY_H - 30) // 2   # tâm Y logo (dịch lên nhường chỗ tên đội)
-    NY = LY + LMAX // 2 + 22             # Y tên đội
+    # Chia body thành 2 phần dọc: logo zone + name zone
+    NAME_BOX_H = 44          # chiều cao ô tên đội
+    NAME_BOX_GAP = 10        # khoảng cách logo → ô tên
+    LOGO_ZONE_H = BODY_H - NAME_BOX_H - NAME_BOX_GAP - 8   # phần dành cho logo
+
+    # Logo tối đa gần bằng logo zone, để lại 8px padding mỗi bên
+    HALF_W = W // 2 - 20     # nửa chiều rộng dành cho 1 logo (~390px)
+    LMAX = min(LOGO_ZONE_H - 8, HALF_W - 10)   # logo square lớn nhất
+
+    LX = W // 4              # tâm logo trái
+    RX = 3 * W // 4          # tâm logo phải
+    LY = BODY_TOP + 4 + LMAX // 2    # tâm logo = BODY_TOP + padding + bán kính
+
+    # Y ô tên đội: ngay dưới logo
+    NY_BOX_TOP = LY + LMAX // 2 + NAME_BOX_GAP
+    NY_BOX_BOT = NY_BOX_TOP + NAME_BOX_H
 
     def draw_logo(cx, cy, url, name):
         logo = fetch_logo(url, LMAX * 3) if url else None
         if logo:
             if logo.mode != "RGBA": logo = logo.convert("RGBA")
             lw, lh = logo.size
-            scale = min((LMAX-4)/lw, (LMAX-4)/lh, 1.0)
+            scale = min((LMAX - 4)/lw, (LMAX - 4)/lh, 1.0)
             nw = max(1, int(lw*scale)); nh = max(1, int(lh*scale))
             logo = logo.resize((nw, nh), Image.LANCZOS)
-            ox, oy = cx-nw//2, cy-nh//2
-            # Drop shadow nhẹ
+            ox, oy = cx - nw//2, cy - nh//2
+            # Drop shadow
             sh = Image.new("RGBA", canvas.size, (0,0,0,0))
             ImageDraw.Draw(sh).ellipse(
-                [(ox+6, oy+nh-4),(ox+nw+6, oy+nh+14)], fill=(0,0,0,30))
+                [(ox+6, oy+nh),(ox+nw+6, oy+nh+16)], fill=(0,0,0,28))
             canvas.paste(sh.convert("RGB"), mask=sh.split()[3])
-            canvas.paste(logo.convert("RGB"), (ox,oy), logo.split()[3])
+            canvas.paste(logo.convert("RGB"), (ox, oy), logo.split()[3])
         else:
-            # Fallback circle với chữ tắt
             R2 = LMAX // 2
             draw.ellipse([(cx-R2, cy-R2),(cx+R2, cy+R2)],
                          fill=(240,240,245), outline=A, width=3)
             init = "".join(w[0].upper() for w in (name or "?").split()[:2]) or "?"
-            draw.text((cx, cy), init, fill=A, font=_font(46), anchor="mm")
+            draw.text((cx, cy), init, fill=A, font=_font(52), anchor="mm")
 
-        # Tên đội — đậm, tối, căn giữa
+        # ── Ô tên đội bo góc màu trắng với viền nhạt ──
+        BOX_PAD = 12
+        box_x0 = cx - HALF_W//2 + BOX_PAD
+        box_x1 = cx + HALF_W//2 - BOX_PAD
+        draw.rounded_rectangle([(box_x0, NY_BOX_TOP),(box_x1, NY_BOX_BOT)],
+                                radius=8, fill=(255,255,255),
+                                outline=(200,200,200), width=1)
         short = (name or "?")
         if len(short) > 16: short = short[:15] + "…"
-        # Shadow
-        draw.text((cx+1, NY+1), short, fill=(200,200,200), font=_font(22), anchor="mm")
-        draw.text((cx,   NY),   short, fill=(30, 30, 30),  font=_font(22), anchor="mm")
+        draw.text((cx, (NY_BOX_TOP + NY_BOX_BOT)//2), short,
+                  fill=(20, 20, 20), font=_font(20), anchor="mm")
 
     draw_logo(LX, LY, home_logo_url, home_team)
     draw_logo(RX, LY, away_logo_url, away_team)
 
     # ─────────────────────────────────────────────
-    # HỘP TRUNG TÂM: giờ + ngày hoặc tỷ số LIVE
+    # HỘP TRUNG TÂM: giờ/tỷ số LIVE (căn giữa theo LY)
     # ─────────────────────────────────────────────
     if status == "live":
-        # Hộp xanh lá LIVE với tỷ số (nếu có) hoặc chữ LIVE
-        box_bg   = (34, 160, 60)
-        box_fg   = (255, 255, 255)
-        line1    = "LIVE"
-        line1_f  = 22
-        line2    = ""
-        line2_f  = 18
+        box_bg  = (34, 160, 60)
+        box_fg  = (255, 255, 255)
+        line1   = "LIVE"
+        line1_f = 22
+        line2   = ""
+        line2_f = 18
     else:
-        box_bg   = (255, 255, 255)
-        box_fg   = A
-        line1    = time_str if time_str else "VS"
-        line1_f  = 26
-        line2    = date_str if date_str else ""
-        line2_f  = 22
+        box_bg  = (255, 255, 255)
+        box_fg  = A
+        line1   = time_str if time_str else "VS"
+        line1_f = 26
+        line2   = date_str if date_str else ""
+        line2_f = 20
 
-    # Kích thước hộp
     BOX_W = 148
     BOX_H = 68 if line2 else 50
     bx0 = CX - BOX_W//2; bx1 = CX + BOX_W//2
     by0 = LY - BOX_H//2; by1 = LY + BOX_H//2
 
-    # Hộp + viền
     draw.rounded_rectangle([(bx0,by0),(bx1,by1)], radius=12,
                              fill=box_bg, outline=A, width=3)
 
-    # Nếu LIVE: thêm chấm đỏ nhỏ + chữ LIVE
     if status == "live":
         draw.ellipse([(bx0+14, LY-6),(bx0+26, LY+6)], fill=(255,60,60))
         draw.text((CX+8, LY), "LIVE", fill=(255,255,255), font=_font(24), anchor="mm")
@@ -1176,32 +1184,30 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
             draw.text((CX, by0 + BOX_H//2 - line1_f//2 - 2), line1,
                       fill=box_fg, font=_font(line1_f), anchor="mm")
             draw.text((CX, by0 + BOX_H//2 + line2_f//2 + 2), line2,
-                      fill=(130,130,130), font=_font(line2_f, bold=False), anchor="mm")
+                      fill=(110,110,110), font=_font(line2_f, bold=False), anchor="mm")
         else:
             draw.text((CX, LY), line1, fill=box_fg, font=_font(line1_f), anchor="mm")
 
     # ─────────────────────────────────────────────
-    # FOOTER: dải màu accent + BLV (nếu có)
+    # FOOTER: BLV pill
     # ─────────────────────────────────────────────
-    draw.line([(0, BODY_BOT),(W, BODY_BOT)], fill=(230,230,230), width=1)
+    draw.line([(0, BODY_BOT),(W, BODY_BOT)], fill=(215,215,215), width=1)
 
-    # Nền footer gradient nhẹ
     for y in range(BODY_BOT, H):
         t = (y - BODY_BOT) / FOOTER_H
-        r_ = int(246 + (A[0]-246)*t*0.4)
-        g_ = int(246 + (A[1]-246)*t*0.4)
-        b_ = int(246 + (A[2]-246)*t*0.4)
+        r_ = int(246 + (A[0]-246)*t*0.35)
+        g_ = int(246 + (A[1]-246)*t*0.35)
+        b_ = int(246 + (A[2]-246)*t*0.35)
         draw.line([(0,y),(W,y)], fill=(r_,g_,b_))
 
-    # BLV pill trong footer (vẽ mờ placeholder — label thực do JSON điều khiển)
     if blv_text:
         FY = BODY_BOT + FOOTER_H // 2
         bpw = len(blv_text) * 10 + 32
-        bph = 34
+        bph = 32
         draw.rounded_rectangle([(16, FY-bph//2),(16+bpw, FY+bph//2)],
                                 radius=bph//2, fill=(34,160,60))
         draw.text((16 + bpw//2, FY), f"🎙 {blv_text}",
-                  fill=(255,255,255), font=_font(18, bold=False), anchor="mm")
+                  fill=(255,255,255), font=_font(17, bold=False), anchor="mm")
 
     # Viền dưới cùng
     draw.rectangle([(0,H-4),(W,H)], fill=A)
