@@ -306,10 +306,10 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
 
     # ── Thanh giải đấu: nền trắng, viền accent, chữ màu accent ──
     draw.rectangle([(0,5),(W,LEAGUE_H)], fill=(255,255,255))
-    draw.rectangle([(0,LEAGUE_H),(W,LEAGUE_H+2)], fill=A)   # gạch dưới
+    LEAGUE_TEXT_Y = 5 + (LEAGUE_H-5)//2 + 50   # hạ xuống 50px
+    draw.rectangle([(0, LEAGUE_TEXT_Y+18),(W, LEAGUE_TEXT_Y+20)], fill=A)   # gạch dưới hạ theo
     if league:
-        # Chữ màu accent đậm, không cần nền đen
-        draw.text((CX, 5+(LEAGUE_H-5)//2), league[:36],
+        draw.text((CX, LEAGUE_TEXT_Y), league[:36],
                   fill=A, font=_font(30), anchor="mm")
 
     # ── Body: 2 logo cùng kích thước + hộp VS/LIVE giữa ──
@@ -411,9 +411,9 @@ def build_channel(m, all_streams, index):
     labels=[{**sc_map.get(status,sc_map["live"]),"position":"top-left"}]
     blv_names=[s["blv"] for s in m.get("blv_sources",[]) if s.get("blv")]
     if len(blv_names)>1:
-        labels.append({"text":f"BLV {len(blv_names)}","position":"bottom-left","color":"#1a8a2e","text_color":"#fff"})
+        labels.append({"text":f"🎙 {len(blv_names)} BLV","position":"bottom-left","color":"#1a8a2e","text_color":"#fff"})
     elif blv_names:
-        labels.append({"text":f"BLV {blv_names[0]}","position":"bottom-left","color":"#1a8a2e","text_color":"#fff"})
+        labels.append({"text":f"🎙 {blv_names[0]}","position":"bottom-left","color":"#1a8a2e","text_color":"#fff"})
     blv_text=blv_names[0] if len(blv_names)==1 else (f"{len(blv_names)} BLV" if blv_names else "")
     blv_groups={}
     for s in all_streams:
@@ -423,7 +423,7 @@ def build_channel(m, all_streams, index):
     stream_objs=[]
     for idx,(bk,raw_s) in enumerate(blv_groups.items()):
         if not raw_s: continue
-        slabel=f"BLV {bk}" if bk!="__" else f"Nguon {idx+1}"
+        slabel=f"🎙 {bk}" if bk!="__" else f"Nguon {idx+1}"
         slinks=[{"id":make_id(ch_id,f"b{idx}",f"l{li}"),"name":s.get("name","Auto"),
                  "type":s["type"],"default":li==0,"url":s["url"],
                  "request_headers":[{"key":"Referer","value":s.get("referer",BASE_URL+"/")},
