@@ -20,196 +20,7 @@
       "image": null,
       "channels": [
         {
-          "id": "e169a53f6df1e688",
-          "name": "Paris Saint Germain vs Lyon  LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": true,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e169a53f6df1e688.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 2 BLV",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "8fc4adc55a846397",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "5275d0c5d4caec03",
-                  "name": "Paris Saint Germain vs Lyon  LIVE . French Ligue 1",
-                  "streams": [
-                    {
-                      "id": "12b2079c02744966",
-                      "name": "🎙 Lò A Mập",
-                      "stream_links": [
-                        {
-                          "id": "a356f6c1f467dc90",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-a-map/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/paris-saint-germain-vs-lyon-map-1776601667772-907"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "id": "5168f7669fadc8de",
-                      "name": "🎙 Cháo Quẩy",
-                      "stream_links": [
-                        {
-                          "id": "0b9af89c4b039470",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/paris-saint-germain-vs-lyon"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "68fabf4674db9fcf",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/2b58b5c897421579fb0e16d8c586fb4a/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/paris-saint-germain-vs-lyon"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "c6b67066df32cee1",
-          "name": "Juventus vs Bologna  LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c6b67066df32cee1.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Thây Ma (Neymar)",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "6a2f0cd9daa96709",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "3668caeb01a642ed",
-                  "name": "Juventus vs Bologna  LIVE . Italian Serie A",
-                  "streams": [
-                    {
-                      "id": "5114981c24d98471",
-                      "name": "🎙 Thây Ma (Neymar)",
-                      "stream_links": [
-                        {
-                          "id": "886e4ec7904754eb",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-thay-ma/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/juventus-vs-bologna"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "6d8b817011466c1f",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/9edb60e32940c7beecb50fbc0c9b7395/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/juventus-vs-bologna"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "d4a4e084c790b676",
+          "id": "8a3bfaf2bf76d760",
           "name": "Santos Fc - SP vs Fluminense - RJ  LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -218,7 +29,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d4a4e084c790b676.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8a3bfaf2bf76d760.webp",
             "width": 820,
             "height": 540
           },
@@ -238,19 +49,19 @@
           ],
           "sources": [
             {
-              "id": "6d938aabd70297de",
+              "id": "c75f7f0014aad904",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "649b43cc44493d2a",
+                  "id": "ee81d39e5a4c8889",
                   "name": "Santos Fc - SP vs Fluminense - RJ  LIVE . Brazilian Serie A",
                   "streams": [
                     {
-                      "id": "f747156dd8929fd8",
+                      "id": "c0e475b04f922a9a",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "be8b82f9d7d0d852",
+                          "id": "e15b9bb2dbc18535",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -267,7 +78,7 @@
                           ]
                         },
                         {
-                          "id": "8aec2059b6c0f259",
+                          "id": "a5b28d2d36949965",
                           "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
@@ -292,7 +103,262 @@
           ]
         },
         {
-          "id": "6d9dcdfc5177b370",
+          "id": "8900d3cd56d6d3d2",
+          "name": "River Plate vs Boca Juniors  LIVE",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8900d3cd56d6d3d2.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Nhà Đài",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "23ae7e4f24bc3229",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "7e1b49f5bc04a87a",
+                  "name": "River Plate vs Boca Juniors  LIVE . Argentine Division 1",
+                  "streams": [
+                    {
+                      "id": "bf0a4e4c9442f08a",
+                      "name": "🎙 Nhà Đài",
+                      "stream_links": [
+                        {
+                          "id": "9c3a98e63832c2b9",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/1f3c1d864ae1cdd0dc103dee71c76093/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/river-plate-vs-boca-juniors"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7dea4b7b77ce8f57",
+          "name": "Paris Saint Germain vs Lyon  01:45 | 20/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": true,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7dea4b7b77ce8f57.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 2 BLV",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "a675e01d3f198f3a",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "75402fd297f3ee36",
+                  "name": "Paris Saint Germain vs Lyon  01:45 | 20/04 . French Ligue 1",
+                  "streams": [
+                    {
+                      "id": "f0baba5af43f79f1",
+                      "name": "🎙 Lò A Mập",
+                      "stream_links": [
+                        {
+                          "id": "d16c280df4d9d66c",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-a-map/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/paris-saint-germain-vs-lyon-map-1776601667772-907"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "76fe9990a7d7274a",
+                      "name": "🎙 Cháo Quẩy",
+                      "stream_links": [
+                        {
+                          "id": "89da35b447a4989f",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/paris-saint-germain-vs-lyon"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "335d9c21367743f8",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/2b58b5c897421579fb0e16d8c586fb4a/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/paris-saint-germain-vs-lyon"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "640d1a3714a5d83c",
+          "name": "Juventus vs Bologna  01:45 | 20/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/640d1a3714a5d83c.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Thây Ma (Neymar)",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "d0ced7e54a02f5bc",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "9b43af43c94f0e1d",
+                  "name": "Juventus vs Bologna  01:45 | 20/04 . Italian Serie A",
+                  "streams": [
+                    {
+                      "id": "4bf39bf98496c444",
+                      "name": "🎙 Thây Ma (Neymar)",
+                      "stream_links": [
+                        {
+                          "id": "fa6d93289cfbfc8f",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-thay-ma/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/juventus-vs-bologna"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "aca26706d5619028",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/9edb60e32940c7beecb50fbc0c9b7395/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/juventus-vs-bologna"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "e747a539b470b846",
           "name": "Oklahoma City Thunder vs Phoenix Suns  02:30 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -301,7 +367,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6d9dcdfc5177b370.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e747a539b470b846.webp",
             "width": 820,
             "height": 540
           },
@@ -321,19 +387,19 @@
           ],
           "sources": [
             {
-              "id": "e06b36afad2b497e",
+              "id": "761150123a252c1c",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "097a747004136ab7",
+                  "id": "5eaa76df6c51e823",
                   "name": "Oklahoma City Thunder vs Phoenix Suns  02:30 | 20/04 . NBA  (Bóng Rổ)",
                   "streams": [
                     {
-                      "id": "8f4abc6370534201",
+                      "id": "d08f9922a0999b14",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "3bdef19daf9a495d",
+                          "id": "44ea94f97e459ddd",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -342,72 +408,6 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/oklahoma-city-thunder-vs-phoenix-suns-1776601667773-814"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "64c33de7031a9869",
-          "name": "River Plate vs Boca Juniors  03:00 | 20/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/64c33de7031a9869.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "Sap dien ra",
-              "color": "#d54f1a",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Nhà Đài",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "a68e04477111097a",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "b31e42f91fbe56fa",
-                  "name": "River Plate vs Boca Juniors  03:00 | 20/04 . Argentine Division 1",
-                  "streams": [
-                    {
-                      "id": "fb",
-                      "name": "Truc tiep",
-                      "stream_links": [
-                        {
-                          "id": "lnk0",
-                          "name": "Link 1",
-                          "type": "iframe",
-                          "default": true,
-                          "url": "https://cauthutv.shop/river-plate-vs-boca-juniors",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/river-plate-vs-boca-juniors"
                             },
                             {
                               "key": "User-Agent",
