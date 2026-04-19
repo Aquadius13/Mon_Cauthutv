@@ -1079,19 +1079,21 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
               fill=(255,255,255), font=_font(18), anchor="mm")
 
     # ─────────────────────────────────────────────
-    # HEADER ROW 2: thanh giải đấu nền đen full-width
+    # HEADER ROW 2: thanh giải đấu nền đen + viền màu môn thể thao
     # ─────────────────────────────────────────────
     LB_TOP = BADGE_ROW_H
     LB_BOT = BADGE_ROW_H + LEAGUE_BAR_H
     draw.rectangle([(0, LB_TOP),(W, LB_BOT)], fill=(18, 18, 18))
+    # Viền accent màu theo môn thể thao (trên + dưới + trái + phải 3px)
+    draw.rectangle([(0, LB_TOP),(W, LB_TOP+3)], fill=A)
+    draw.rectangle([(0, LB_BOT-3),(W, LB_BOT)], fill=A)
+    draw.rectangle([(0, LB_TOP),(3, LB_BOT)], fill=A)
+    draw.rectangle([(W-3, LB_TOP),(W, LB_BOT)], fill=A)
 
     if league:
-        # Font 31px (tăng 5 so với 26px cũ)
-        draw.text((CX, LB_TOP + LEAGUE_BAR_H//2), league[:32],
+        # Font 31px, hạ thêm 15px so với tâm bar
+        draw.text((CX, LB_TOP + LEAGUE_BAR_H//2 + 15), league[:32],
                   fill=(255, 255, 255), font=_font(31), anchor="mm")
-
-    # Đường kẻ dưới thanh giải
-    draw.line([(0, LB_BOT),(W, LB_BOT)], fill=A, width=2)
 
     # ─────────────────────────────────────────────
     # BODY: logo lớn + ô tên đội bên dưới + hộp VS/LIVE giữa
@@ -1103,7 +1105,7 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
 
     # Logo tối đa gần bằng logo zone, để lại 8px padding mỗi bên
     HALF_W = W // 2 - 20     # nửa chiều rộng dành cho 1 logo (~390px)
-    LMAX = min(LOGO_ZONE_H - 8, HALF_W - 10)   # logo square lớn nhất
+    LMAX = min(LOGO_ZONE_H - 8, HALF_W - 10) - 10   # giảm 10px
 
     LX = W // 4              # tâm logo trái
     RX = 3 * W // 4          # tâm logo phải
@@ -1135,13 +1137,8 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
             init = "".join(w[0].upper() for w in (name or "?").split()[:2]) or "?"
             draw.text((cx, cy), init, fill=A, font=_font(52), anchor="mm")
 
-        # ── Ô tên đội bo góc màu trắng với viền nhạt ──
+        # ── Tên đội — không khung viền ──
         BOX_PAD = 12
-        box_x0 = cx - HALF_W//2 + BOX_PAD
-        box_x1 = cx + HALF_W//2 - BOX_PAD
-        draw.rounded_rectangle([(box_x0, NY_BOX_TOP),(box_x1, NY_BOX_BOT)],
-                                radius=8, fill=(255,255,255),
-                                outline=(200,200,200), width=1)
         short = (name or "?")
         if len(short) > 16: short = short[:15] + "…"
         draw.text((cx, (NY_BOX_TOP + NY_BOX_BOT)//2), short,
@@ -1339,14 +1336,14 @@ def build_channel(m, all_streams, index):
     content_name = name
     if league and len(league) < 50: content_name += f" · {league.strip()}"
 
-    # Luôn dùng single — player nội bộ xử lý danh sách stream
+    # ≥2 BLV → enable_detail True; 1 BLV → False (phát thẳng)
     has_multi = len(stream_objs) > 1
     return {
         "id":            ch_id,
         "name":          name,
         "type":          "single",
         "display":       "thumbnail-only",
-        "enable_detail": False,
+        "enable_detail": has_multi,
         "image":         img_obj,
         "labels":        labels,
         "sources": [{
