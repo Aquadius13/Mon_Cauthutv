@@ -287,74 +287,72 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     if not _PIL: return b""
     W, H = 820, 540
     key = _sport_key(sport, league)
-    bg_base, ac_base = _THEMES.get(key, _THEMES["default"])
-    bg, A = _team_palette(home_team, away_team, bg_base, ac_base)
+    _, ac_base = _THEMES.get(key, _THEMES["default"])
+    # Nền trắng cố định — màu accent độc nhất mỗi trận
+    _, A = _team_palette(home_team, away_team, (245,245,248), ac_base)
 
-    canvas = Image.new("RGB", (W, H), bg)
+    canvas = Image.new("RGB", (W, H), (252, 252, 254))   # nền trắng sáng
     draw   = ImageDraw.Draw(canvas)
 
-    BADGE_H  = 46
-    LEAGUE_H = 50
-    FOOTER_H = 52
-    HEADER_H = BADGE_H + LEAGUE_H
-    BODY_TOP = HEADER_H
+    LEAGUE_H = 56    # thanh giải đấu
+    FOOTER_H = 48    # footer (không còn BLV pill nhưng giữ khoảng thở)
+    BODY_TOP = LEAGUE_H
     BODY_BOT = H - FOOTER_H
     BODY_H   = BODY_BOT - BODY_TOP
     CX = W // 2
 
+    # ── Viền trên accent ──
     draw.rectangle([(0,0),(W,5)], fill=A)
 
-    if status == "live":   bc, bt = (220,30,30),  "Live"
-    elif status=="finished": bc, bt = (80,80,80), "Ket thuc"
-    else:                  bc, bt = (210,75,10), "Sap dien ra"
-    bw = len(bt)*10+18; bh = 30
-    draw.rounded_rectangle([(12,10),(12+bw,10+bh)], radius=bh//2, fill=bc)
-    draw.text((12+bw//2, 10+bh//2), bt, fill=(255,255,255), font=_font(18), anchor="mm")
-
-    LB_T, LB_B = BADGE_H, BADGE_H + LEAGUE_H
-    draw.rectangle([(0,LB_T),(W,LB_B)], fill=(18,18,18))
-    draw.rectangle([(0,LB_T),(W,LB_T+3)], fill=A)
-    draw.rectangle([(0,LB_B-3),(W,LB_B)], fill=A)
-    draw.rectangle([(0,LB_T),(3,LB_B)], fill=A)
-    draw.rectangle([(W-3,LB_T),(W,LB_B)], fill=A)
+    # ── Thanh giải đấu: nền trắng, viền accent, chữ màu accent ──
+    draw.rectangle([(0,5),(W,LEAGUE_H)], fill=(255,255,255))
+    draw.rectangle([(0,LEAGUE_H),(W,LEAGUE_H+2)], fill=A)   # gạch dưới
     if league:
-        draw.text((CX, LB_T+LEAGUE_H//2+8), league[:32],
-                  fill=(255,255,255), font=_font(29), anchor="mm")
+        # Chữ màu accent đậm, không cần nền đen
+        draw.text((CX, 5+(LEAGUE_H-5)//2), league[:36],
+                  fill=A, font=_font(30), anchor="mm")
 
-    NAME_H=40; GAP=8
-    LOGO_H=BODY_H-NAME_H-GAP-8
-    HALF_W=W//2-20
-    LMAX=min(LOGO_H-8, HALF_W-10)-10
-    LX=W//4; RX=3*W//4
-    LY=BODY_TOP+4+LMAX//2
-    NY_TOP=LY+LMAX//2+GAP
-    NY_BOT=NY_TOP+NAME_H
+    # ── Body: 2 logo cùng kích thước + hộp VS/LIVE giữa ──
+    NAME_H = 38; GAP = 10
+    LOGO_ZONE = BODY_H - NAME_H - GAP - 10
+    HALF_W    = W//2 - 24
+    # Giảm thêm 10px so với trước
+    LMAX = min(LOGO_ZONE - 10, HALF_W - 12) - 10
+
+    LX = W//4; RX = 3*W//4
+    LY = BODY_TOP + 8 + LMAX//2
+    NY_Y = LY + LMAX//2 + GAP + NAME_H//2   # tâm Y dòng tên đội
 
     def draw_logo(cx, cy, url, name):
+        """Vẽ logo và resize về đúng LMAX×LMAX để 2 ảnh tương đương nhau."""
         logo = fetch_logo(url, LMAX*3) if url else None
         if logo:
             if logo.mode != "RGBA": logo = logo.convert("RGBA")
             lw, lh = logo.size
-            sc = min((LMAX-4)/lw, (LMAX-4)/lh, 1.0)
+            # Scale vừa hộp LMAX×LMAX (cả 2 logo dùng cùng scale box)
+            sc = min(LMAX/lw, LMAX/lh, 1.0)
             nw, nh = max(1,int(lw*sc)), max(1,int(lh*sc))
             logo = logo.resize((nw,nh), Image.LANCZOS)
             ox, oy = cx-nw//2, cy-nh//2
             canvas.paste(logo.convert("RGB"), (ox,oy), logo.split()[3])
         else:
-            R2=LMAX//2
-            draw.ellipse([(cx-R2,cy-R2),(cx+R2,cy+R2)], fill=(230,230,235), outline=A, width=2)
+            R2 = LMAX//2
+            draw.ellipse([(cx-R2,cy-R2),(cx+R2,cy+R2)],
+                         fill=(235,235,240), outline=A, width=2)
             init="".join(w[0].upper() for w in (name or "?").split()[:2]) or "?"
-            draw.text((cx,cy), init, fill=A, font=_font(46), anchor="mm")
-        draw.text((cx,(NY_TOP+NY_BOT)//2), (name or "?")[:16],
-                  fill=(20,20,20), font=_font(20), anchor="mm")
+            draw.text((cx,cy), init, fill=A, font=_font(44), anchor="mm")
+        # Tên đội — đậm, màu tối
+        draw.text((cx, NY_Y), (name or "?")[:18],
+                  fill=(25,25,25), font=_font(21), anchor="mm")
 
     draw_logo(LX, LY, home_logo_url, home_team)
     draw_logo(RX, LY, away_logo_url, away_team)
 
+    # ── Hộp VS / LIVE giữa ──
     if status=="live":
         bbg,bfg,l1,l2,f1,f2=(34,160,60),(255,255,255),"LIVE","",22,18
     else:
-        bbg,bfg=((255,255,255),A)
+        bbg,bfg=(255,255,255),A
         l1,l2=time_str or "VS",date_str or ""
         f1,f2=26,20
     BW=148; BH=68 if l2 else 50
@@ -369,16 +367,9 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     else:
         draw.text((CX,LY),l1,fill=bfg,font=_font(f1),anchor="mm")
 
-    draw.line([(0,BODY_BOT),(W,BODY_BOT)], fill=(210,210,210), width=1)
-    for y in range(BODY_BOT,H):
-        t=(y-BODY_BOT)/FOOTER_H
-        draw.line([(0,y),(W,y)], fill=(int(246+(A[0]-246)*t*0.3),
-                                       int(246+(A[1]-246)*t*0.3),
-                                       int(246+(A[2]-246)*t*0.3)))
-    if blv_text:
-        FY=BODY_BOT+FOOTER_H//2; pw=len(blv_text)*10+32; ph=30
-        draw.rounded_rectangle([(14,FY-ph//2),(14+pw,FY+ph//2)], radius=ph//2, fill=(34,160,60))
-        draw.text((14+pw//2,FY),f"BLV {blv_text}",fill=(255,255,255),font=_font(17,bold=False),anchor="mm")
+    # ── Footer: nền trắng nhạt, không có BLV pill, viền dưới accent ──
+    draw.line([(0,BODY_BOT),(W,BODY_BOT)], fill=(220,220,225), width=1)
+    draw.rectangle([(0,BODY_BOT),(W,H)], fill=(250,250,252))
     draw.rectangle([(0,H-4),(W,H)], fill=A)
 
     buf=io.BytesIO()
