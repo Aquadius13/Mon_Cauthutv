@@ -20,173 +20,7 @@
       "image": null,
       "channels": [
         {
-          "id": "d9d23ea3dfff1f9f",
-          "name": "Sporting CP vs Benfica  LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d9d23ea3dfff1f9f.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Dylan",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "ac50e1f68a43cffb",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "c01a95000bd8d443",
-                  "name": "Sporting CP vs Benfica  LIVE . Portuguese Primera Liga",
-                  "streams": [
-                    {
-                      "id": "a3bc003fd2449bda",
-                      "name": "🎙 Dylan",
-                      "stream_links": [
-                        {
-                          "id": "ea0d3878e119ca3a",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dylan/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/sporting-cp-vs-benfica"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "190cf86aa1f87f24",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/cc446b4e11f04e0e682a6ecc04bd4e06/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/sporting-cp-vs-benfica"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "0316dd429ff3c625",
-          "name": "Borussia Monchengladbach vs 1. FSV Mainz 05  LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/0316dd429ff3c625.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Mèo Béo",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "74367171461e69f6",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "2f062a4566a4f9e1",
-                  "name": "Borussia Monchengladbach vs 1. FSV Mainz 05  LIVE . Bundesliga",
-                  "streams": [
-                    {
-                      "id": "4cef56413849f900",
-                      "name": "🎙 Mèo Béo",
-                      "stream_links": [
-                        {
-                          "id": "cf87429b48703b9c",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-meo-beo/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/borussia-monchengladbach-vs-1-fsv-mainz-05"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "a919a21398830dd5",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/58f29eef02d681aecf3fe392d7953a7f/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/borussia-monchengladbach-vs-1-fsv-mainz-05"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "7dea4b7b77ce8f57",
+          "id": "e169a53f6df1e688",
           "name": "Paris Saint Germain vs Lyon  LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -195,7 +29,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7dea4b7b77ce8f57.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e169a53f6df1e688.webp",
             "width": 820,
             "height": 540
           },
@@ -215,19 +49,19 @@
           ],
           "sources": [
             {
-              "id": "a675e01d3f198f3a",
+              "id": "8fc4adc55a846397",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "75402fd297f3ee36",
+                  "id": "5275d0c5d4caec03",
                   "name": "Paris Saint Germain vs Lyon  LIVE . French Ligue 1",
                   "streams": [
                     {
-                      "id": "f0baba5af43f79f1",
+                      "id": "12b2079c02744966",
                       "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "d16c280df4d9d66c",
+                          "id": "a356f6c1f467dc90",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -246,11 +80,11 @@
                       ]
                     },
                     {
-                      "id": "76fe9990a7d7274a",
+                      "id": "5168f7669fadc8de",
                       "name": "🎙 Cháo Quẩy",
                       "stream_links": [
                         {
-                          "id": "89da35b447a4989f",
+                          "id": "0b9af89c4b039470",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -267,7 +101,7 @@
                           ]
                         },
                         {
-                          "id": "335d9c21367743f8",
+                          "id": "68fabf4674db9fcf",
                           "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
@@ -292,7 +126,7 @@
           ]
         },
         {
-          "id": "640d1a3714a5d83c",
+          "id": "c6b67066df32cee1",
           "name": "Juventus vs Bologna  LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -301,7 +135,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/640d1a3714a5d83c.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c6b67066df32cee1.webp",
             "width": 820,
             "height": 540
           },
@@ -321,19 +155,19 @@
           ],
           "sources": [
             {
-              "id": "d0ced7e54a02f5bc",
+              "id": "6a2f0cd9daa96709",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "9b43af43c94f0e1d",
+                  "id": "3668caeb01a642ed",
                   "name": "Juventus vs Bologna  LIVE . Italian Serie A",
                   "streams": [
                     {
-                      "id": "4bf39bf98496c444",
+                      "id": "5114981c24d98471",
                       "name": "🎙 Thây Ma (Neymar)",
                       "stream_links": [
                         {
-                          "id": "fa6d93289cfbfc8f",
+                          "id": "886e4ec7904754eb",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -350,7 +184,7 @@
                           ]
                         },
                         {
-                          "id": "aca26706d5619028",
+                          "id": "6d8b817011466c1f",
                           "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
@@ -375,7 +209,7 @@
           ]
         },
         {
-          "id": "6292d68655eb9c16",
+          "id": "d4a4e084c790b676",
           "name": "Santos Fc - SP vs Fluminense - RJ  LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -384,7 +218,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6292d68655eb9c16.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d4a4e084c790b676.webp",
             "width": 820,
             "height": 540
           },
@@ -404,19 +238,19 @@
           ],
           "sources": [
             {
-              "id": "6d186120289e2736",
+              "id": "6d938aabd70297de",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "87d492c311fb2405",
+                  "id": "649b43cc44493d2a",
                   "name": "Santos Fc - SP vs Fluminense - RJ  LIVE . Brazilian Serie A",
                   "streams": [
                     {
-                      "id": "c444ececb9f4025e",
+                      "id": "f747156dd8929fd8",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "9d9c5a041e024c10",
+                          "id": "be8b82f9d7d0d852",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -433,7 +267,7 @@
                           ]
                         },
                         {
-                          "id": "014c6335b2c31422",
+                          "id": "8aec2059b6c0f259",
                           "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
@@ -458,7 +292,7 @@
           ]
         },
         {
-          "id": "c9466f4599b779f8",
+          "id": "6d9dcdfc5177b370",
           "name": "Oklahoma City Thunder vs Phoenix Suns  02:30 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -467,7 +301,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c9466f4599b779f8.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6d9dcdfc5177b370.webp",
             "width": 820,
             "height": 540
           },
@@ -487,19 +321,19 @@
           ],
           "sources": [
             {
-              "id": "506b911a19a571ae",
+              "id": "e06b36afad2b497e",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "7cc649c2e1f3940a",
+                  "id": "097a747004136ab7",
                   "name": "Oklahoma City Thunder vs Phoenix Suns  02:30 | 20/04 . NBA  (Bóng Rổ)",
                   "streams": [
                     {
-                      "id": "fd8b4244c64160ed",
+                      "id": "8f4abc6370534201",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "d6d70daec6e996d1",
+                          "id": "3bdef19daf9a495d",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -524,7 +358,7 @@
           ]
         },
         {
-          "id": "57c137765bf2207a",
+          "id": "64c33de7031a9869",
           "name": "River Plate vs Boca Juniors  03:00 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -533,7 +367,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/57c137765bf2207a.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/64c33de7031a9869.webp",
             "width": 820,
             "height": 540
           },
@@ -553,11 +387,11 @@
           ],
           "sources": [
             {
-              "id": "ecdc836da47f0fcc",
+              "id": "a68e04477111097a",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "df2162b52d8bfbf4",
+                  "id": "b31e42f91fbe56fa",
                   "name": "River Plate vs Boca Juniors  03:00 | 20/04 . Argentine Division 1",
                   "streams": [
                     {
@@ -590,7 +424,7 @@
           ]
         },
         {
-          "id": "70d9ee39c35408c9",
+          "id": "bad1bbd069389f09",
           "name": "Palmeiras - SP vs Athletico Paranaense  04:30 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -599,7 +433,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/70d9ee39c35408c9.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/bad1bbd069389f09.webp",
             "width": 820,
             "height": 540
           },
@@ -619,19 +453,19 @@
           ],
           "sources": [
             {
-              "id": "56e75a562c8e069c",
+              "id": "3e7e00a83789a6ed",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "3734266658b21648",
+                  "id": "ef34aa8223c07b14",
                   "name": "Palmeiras - SP vs Athletico Paranaense  04:30 | 20/04 . Brazilian Serie A",
                   "streams": [
                     {
-                      "id": "da27ce217611bc5c",
+                      "id": "9244c04952547995",
                       "name": "🎙 Táo",
                       "stream_links": [
                         {
-                          "id": "57a36e93dec52ab9",
+                          "id": "57e2d6544db399dd",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -656,7 +490,7 @@
           ]
         },
         {
-          "id": "075c8ce62425c7ab",
+          "id": "550e37b190aaf04d",
           "name": "WrestleMania 42 vs WrestleMania 42  05:00 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -665,7 +499,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/075c8ce62425c7ab.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/550e37b190aaf04d.webp",
             "width": 820,
             "height": 540
           },
@@ -685,19 +519,19 @@
           ],
           "sources": [
             {
-              "id": "5ff897c1c077dde4",
+              "id": "ad7183023120de48",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "c2137432287ed530",
+                  "id": "8dda68d737a4b8d4",
                   "name": "WrestleMania 42 vs WrestleMania 42  05:00 | 20/04 . WWE",
                   "streams": [
                     {
-                      "id": "b4b2edc8b8245c2d",
+                      "id": "94dfcfca8439a1e3",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "41f93f1e5c305a0a",
+                          "id": "d965138bae7e29b0",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -722,7 +556,7 @@
           ]
         },
         {
-          "id": "0dda7c099e2cd913",
+          "id": "e2b3c2ea49d2c60c",
           "name": "Flamengo - RJ vs Bahia  05:30 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -731,7 +565,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/0dda7c099e2cd913.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e2b3c2ea49d2c60c.webp",
             "width": 820,
             "height": 540
           },
@@ -751,19 +585,19 @@
           ],
           "sources": [
             {
-              "id": "d386b634af9b3011",
+              "id": "c647dafb4b3ac661",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "9f48a154e263367e",
+                  "id": "721ce1b15175eba9",
                   "name": "Flamengo - RJ vs Bahia  05:30 | 20/04 . Brazilian Serie A",
                   "streams": [
                     {
-                      "id": "cc8297c669f16ca7",
+                      "id": "e99996cfd62696ec",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "4bb7a80dc5273896",
+                          "id": "8723ae0701152ccf",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -788,7 +622,7 @@
           ]
         },
         {
-          "id": "5f0abfa392129c7b",
+          "id": "7757904fca1a5aff",
           "name": "Detroit Pistons vs Orlando Magic  05:30 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -797,7 +631,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5f0abfa392129c7b.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7757904fca1a5aff.webp",
             "width": 820,
             "height": 540
           },
@@ -817,19 +651,19 @@
           ],
           "sources": [
             {
-              "id": "fe6b73c2dd598429",
+              "id": "6ca56853eed668ad",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "71a7c7ef7c870f2a",
+                  "id": "57fb6da1bae9211c",
                   "name": "Detroit Pistons vs Orlando Magic  05:30 | 20/04 . NBA  (Bóng Rổ)",
                   "streams": [
                     {
-                      "id": "5a5e47c25dabd489",
+                      "id": "4f09db5553a0bc66",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "54dc65b423d49d0b",
+                          "id": "c797c2d38d43fdb3",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -854,7 +688,7 @@
           ]
         },
         {
-          "id": "e990b820307529d2",
+          "id": "93c0b806df519521",
           "name": "Los Angeles FC vs San Jose Earthquakes  06:00 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -863,7 +697,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e990b820307529d2.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/93c0b806df519521.webp",
             "width": 820,
             "height": 540
           },
@@ -883,19 +717,19 @@
           ],
           "sources": [
             {
-              "id": "524bff05f626ce83",
+              "id": "d7810d0502104f6a",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "6dba67e220dd0d80",
+                  "id": "d76a169951492431",
                   "name": "Los Angeles FC vs San Jose Earthquakes  06:00 | 20/04 . United States Major League Soccer",
                   "streams": [
                     {
-                      "id": "417d9e3a2f7b823c",
+                      "id": "6af8b0836d79e891",
                       "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "2d16daa061613b0d",
+                          "id": "32b6e18e36298317",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -920,7 +754,7 @@
           ]
         },
         {
-          "id": "bb9d90288d64ae30",
+          "id": "d63f4469b25be9fc",
           "name": "San Antonio Spurs vs Portland Trail Blazers  08:00 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -929,7 +763,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/bb9d90288d64ae30.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d63f4469b25be9fc.webp",
             "width": 820,
             "height": 540
           },
@@ -949,19 +783,19 @@
           ],
           "sources": [
             {
-              "id": "a10395c96e0d6a45",
+              "id": "497dc568217cc046",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "d0efcb38f81d2f82",
+                  "id": "50ee0425837e0b64",
                   "name": "San Antonio Spurs vs Portland Trail Blazers  08:00 | 20/04 . NBA  (Bóng Rổ)",
                   "streams": [
                     {
-                      "id": "df51167fa643afc7",
+                      "id": "e91029c16b366df8",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "f3f92e8475595859",
+                          "id": "eadd1b994783c02b",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -986,7 +820,7 @@
           ]
         },
         {
-          "id": "cf982114e5b41440",
+          "id": "7bacbd047aa4635c",
           "name": "Xiamen Chengyi vs Shenzhen 2028  14:00 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -995,7 +829,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/cf982114e5b41440.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7bacbd047aa4635c.webp",
             "width": 820,
             "height": 540
           },
@@ -1015,19 +849,19 @@
           ],
           "sources": [
             {
-              "id": "64b02b8cb1cb8a47",
+              "id": "894467eeec70e004",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "9cfe4a4b947e33d2",
+                  "id": "bb10cd5858d59846",
                   "name": "Xiamen Chengyi vs Shenzhen 2028  14:00 | 20/04 . Chinese FA Cup",
                   "streams": [
                     {
-                      "id": "ef18b2a79b1c63da",
+                      "id": "c3df5eac957959d8",
                       "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "67902f7c389774b3",
+                          "id": "7e9f865d5ecdcb23",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1052,7 +886,7 @@
           ]
         },
         {
-          "id": "668cebfa2eb0aa50",
+          "id": "bc86edbc3d953684",
           "name": "Semen Padang vs Persatuan Sepakbola Indonesia Jepara  15:30 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1061,7 +895,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/668cebfa2eb0aa50.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/bc86edbc3d953684.webp",
             "width": 820,
             "height": 540
           },
@@ -1081,19 +915,19 @@
           ],
           "sources": [
             {
-              "id": "f12201e305b1dc72",
+              "id": "1ab25a0d679e12d0",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "135d89a8f9cdebce",
+                  "id": "02132deacb736f23",
                   "name": "Semen Padang vs Persatuan Sepakbola Indonesia Jepara  15:30 | 20/04 . Indonesian Super League",
                   "streams": [
                     {
-                      "id": "e992eaed38534d29",
+                      "id": "abe2b9c6ba970648",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "30186b482f36162c",
+                          "id": "02662f966142e7a9",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1118,7 +952,7 @@
           ]
         },
         {
-          "id": "085689207aa0b33b",
+          "id": "e401321f73adbd53",
           "name": "FK Oleksandria vs Veres  17:00 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1127,7 +961,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/085689207aa0b33b.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e401321f73adbd53.webp",
             "width": 820,
             "height": 540
           },
@@ -1147,19 +981,19 @@
           ],
           "sources": [
             {
-              "id": "4804f0f229f587c4",
+              "id": "b452536887d325ba",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "f35a3d76f4eeb75a",
+                  "id": "367f79dfb84494a7",
                   "name": "FK Oleksandria vs Veres  17:00 | 20/04 . Ukrainian Premier League",
                   "streams": [
                     {
-                      "id": "4691af70009ee35f",
+                      "id": "a3c50e758dd74145",
                       "name": "🎙 Táo",
                       "stream_links": [
                         {
-                          "id": "ccd567906daba361",
+                          "id": "ed0b54b609d26050",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1184,7 +1018,7 @@
           ]
         },
         {
-          "id": "62bf57d2cc080834",
+          "id": "48dac3e346dff05a",
           "name": "Galatasaray W vs Aras Kargo W  18:00 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1193,7 +1027,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/62bf57d2cc080834.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/48dac3e346dff05a.webp",
             "width": 820,
             "height": 540
           },
@@ -1213,19 +1047,19 @@
           ],
           "sources": [
             {
-              "id": "3de11f06581f1342",
+              "id": "9b18580f095a3da3",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "4e0417af2ee2daba",
+                  "id": "fb93caf74c3f9186",
                   "name": "Galatasaray W vs Aras Kargo W  18:00 | 20/04 . Bóng chuyền nữ Thổ Nhĩ Kỳ",
                   "streams": [
                     {
-                      "id": "70398295bf7ac2fd",
+                      "id": "9619b6746a0103ca",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "6ac4a2292394cee4",
+                          "id": "34f9ccd2e602fd9c",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1250,7 +1084,7 @@
           ]
         },
         {
-          "id": "4d522bab080954c3",
+          "id": "f6b12d4f19fe762e",
           "name": "Lion City Sailors vs Young Lions  18:30 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1259,7 +1093,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/4d522bab080954c3.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/f6b12d4f19fe762e.webp",
             "width": 820,
             "height": 540
           },
@@ -1279,19 +1113,19 @@
           ],
           "sources": [
             {
-              "id": "953922d3cc69838b",
+              "id": "f8a1de12ab93b314",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "be391df4584c8671",
+                  "id": "4017c77dc054f056",
                   "name": "Lion City Sailors vs Young Lions  18:30 | 20/04 . Singapore Premier League",
                   "streams": [
                     {
-                      "id": "e4f74708b5e7a7b4",
+                      "id": "07e5f9a8bd5bb720",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "461920f7066c693a",
+                          "id": "387f27ba9cd190a0",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1316,7 +1150,7 @@
           ]
         },
         {
-          "id": "4add324cfbe4cf30",
+          "id": "643b11d0c95cb4c5",
           "name": "Dewa United FC vs Persib Bandung  19:00 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1325,7 +1159,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/4add324cfbe4cf30.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/643b11d0c95cb4c5.webp",
             "width": 820,
             "height": 540
           },
@@ -1345,19 +1179,19 @@
           ],
           "sources": [
             {
-              "id": "c0fd64aeb85880f5",
+              "id": "fb9233daa7186bb9",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "a6a36c14c592e49e",
+                  "id": "2cf8b0ae2a980ce2",
                   "name": "Dewa United FC vs Persib Bandung  19:00 | 20/04 . Indonesian Super League",
                   "streams": [
                     {
-                      "id": "054f86d8463e12e7",
+                      "id": "add37db6a8ffa603",
                       "name": "🎙 Cháo Quẩy",
                       "stream_links": [
                         {
-                          "id": "bfc41a712f4694dc",
+                          "id": "2f7ab9e99a9ae18e",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1382,7 +1216,7 @@
           ]
         },
         {
-          "id": "c9947db04115570e",
+          "id": "9340d5fd62e2bbbb",
           "name": "Nilufer Bld. Nữ vs THY Nữ  20:00 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1391,7 +1225,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c9947db04115570e.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/9340d5fd62e2bbbb.webp",
             "width": 820,
             "height": 540
           },
@@ -1411,19 +1245,19 @@
           ],
           "sources": [
             {
-              "id": "eb8f8b5175350e3d",
+              "id": "f28463775f77937b",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "aeb293de7984ff4a",
+                  "id": "6f116281f9b6643b",
                   "name": "Nilufer Bld. Nữ vs THY Nữ  20:00 | 20/04 . Bóng chuyền nữ Thổ Nhĩ Kỳ",
                   "streams": [
                     {
-                      "id": "13a27e477aad72d6",
+                      "id": "ae0c47dcd10e6d05",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "b76bd0939658baaa",
+                          "id": "24c9482caad6acd9",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1448,7 +1282,7 @@
           ]
         },
         {
-          "id": "ac93dbad7b887a75",
+          "id": "29e3704c7ac72a79",
           "name": "FC Botosani vs Metaloglobus  21:30 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1457,7 +1291,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/ac93dbad7b887a75.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/29e3704c7ac72a79.webp",
             "width": 820,
             "height": 540
           },
@@ -1477,19 +1311,19 @@
           ],
           "sources": [
             {
-              "id": "1904a3e582b1b4a4",
+              "id": "82089c5d29bb53c2",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "b19cf123760f5b3d",
+                  "id": "ffefdb3fa3fa8109",
                   "name": "FC Botosani vs Metaloglobus  21:30 | 20/04 . Romanian Super Liga",
                   "streams": [
                     {
-                      "id": "23bdefa928f654ce",
+                      "id": "00a53bb1a95caa1b",
                       "name": "🎙 Dylan",
                       "stream_links": [
                         {
-                          "id": "870909d26e51ac86",
+                          "id": "18b449073e5ca80a",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1514,7 +1348,7 @@
           ]
         },
         {
-          "id": "3b9068ff17250e4d",
+          "id": "05088125b89e6f25",
           "name": "FC Shakhtar Donetsk vs Polissya Zhytomyr  22:00 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1523,7 +1357,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/3b9068ff17250e4d.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/05088125b89e6f25.webp",
             "width": 820,
             "height": 540
           },
@@ -1543,19 +1377,19 @@
           ],
           "sources": [
             {
-              "id": "2958a2c5f969124c",
+              "id": "f603569e7b2626c4",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "6d12a648580a3006",
+                  "id": "3a6d058a2579ffe0",
                   "name": "FC Shakhtar Donetsk vs Polissya Zhytomyr  22:00 | 20/04 . Ukrainian Premier League",
                   "streams": [
                     {
-                      "id": "69fb8e0a3b73d622",
+                      "id": "4575b66d6905f8e5",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "e624415baaabf0b8",
+                          "id": "786894ef2220e122",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1580,7 +1414,7 @@
           ]
         },
         {
-          "id": "1154e79f09c75ba1",
+          "id": "33a8984bc8fbe660",
           "name": "Vissel Kobe vs Al-Ahli SFC  23:15 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1589,7 +1423,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/1154e79f09c75ba1.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/33a8984bc8fbe660.webp",
             "width": 820,
             "height": 540
           },
@@ -1609,19 +1443,19 @@
           ],
           "sources": [
             {
-              "id": "b3169f1484f69037",
+              "id": "ea48223309ebc2ab",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "4fa9166638a35294",
+                  "id": "8fb745ef510147fa",
                   "name": "Vissel Kobe vs Al-Ahli SFC  23:15 | 20/04 . AFC Champions League Elite",
                   "streams": [
                     {
-                      "id": "755eaf367089a0a9",
+                      "id": "92e03c298731a727",
                       "name": "🎙 Thây Ma (Neymar)",
                       "stream_links": [
                         {
-                          "id": "f0ab155a7ac8c0ca",
+                          "id": "3de21b8b7c191c78",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
