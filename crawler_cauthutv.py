@@ -455,8 +455,10 @@ def build_channel(m, all_streams, index):
                         "contents":[{"id":make_id(ch_id,"ct"),"name":content_name,"streams":stream_objs}]}]}
 
 def build_json(channels,now_str):
-    return {"id":"cauthutv-live","name":"CauThu TV - Truc tiep the thao",
-            "url":BASE_URL+"/","disable_ads":True,"color":"#0f3460","grid_number":2,
+    return {"id":"cauthutv-live","name":"CauThu TV - Trực tiếp thể thao",
+            "url":BASE_URL+"/",
+            "description":"Nền tảng xem thể thao trực tuyến hàng đầu Việt Nam. Trực tiếp bóng đá, bóng rổ, tennis, esports với bình luận tiếng Việt chất lượng cao.",
+            "disable_ads":True,"color":"#0f3460","grid_number":2,
             "image":{"type":"cover","url":SITE_ICON},
             "groups":[{"id":"tran-hot","name":"Cac Tran Hot","display":"vertical",
                        "grid_number":2,"enable_detail":False,"image":None,"channels":channels}]}
