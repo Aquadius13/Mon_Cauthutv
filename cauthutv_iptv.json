@@ -1,8 +1,7 @@
 {
   "id": "cauthutv-live",
-  "name": "CauThu TV - Trực tiếp thể thao",
+  "name": "CauThu TV - Truc tiep the thao",
   "url": "https://cauthutv.shop/",
-  "description": "Nền tảng xem thể thao trực tuyến hàng đầu Việt Nam. Trực tiếp bóng đá, bóng rổ, tennis, esports với bình luận tiếng Việt chất lượng cao.",
   "disable_ads": true,
   "color": "#0f3460",
   "grid_number": 2,
@@ -13,7 +12,7 @@
   "groups": [
     {
       "id": "tran-hot",
-      "name": "🔥 Các Trận Hot",
+      "name": "Cac Tran Hot",
       "display": "vertical",
       "grid_number": 2,
       "enable_detail": false,
@@ -21,13 +20,13 @@
       "channels": [
         {
           "id": "15a2ef1773ba578c",
-          "name": "WrestleMania 42 vs WrestleMania 42  🔴 LIVE",
+          "name": "WrestleMania 42 vs WrestleMania 42  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/15a2ef1773ba578c.webp",
             "width": 820,
@@ -35,13 +34,13 @@
           },
           "labels": [
             {
-              "text": "● Live",
+              "text": "Live",
               "color": "#E73131",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Pháo",
+              "text": "BLV Pháo",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -54,15 +53,15 @@
               "contents": [
                 {
                   "id": "141e9b70297632b6",
-                  "name": "WrestleMania 42 vs WrestleMania 42  🔴 LIVE · WWE",
+                  "name": "WrestleMania 42 vs WrestleMania 42  LIVE . WWE",
                   "streams": [
                     {
                       "id": "afd04a27fc28a5c6",
-                      "name": "🎙 Pháo",
+                      "name": "BLV Pháo",
                       "stream_links": [
                         {
                           "id": "66a1363a3ef417ca",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-phao/index.m3u8",
@@ -73,7 +72,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -87,13 +86,13 @@
         },
         {
           "id": "bbf9ad311f2581a1",
-          "name": "Auckland FC vs Central Coast Mariners  🕐 10:00 | 19/04",
+          "name": "Auckland FC vs Central Coast Mariners  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/bbf9ad311f2581a1.webp",
             "width": 820,
@@ -101,13 +100,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
-              "color": "#d54f1a",
+              "text": "Live",
+              "color": "#E73131",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Văn Chuẩn",
+              "text": "BLV Văn Chuẩn",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -120,15 +119,15 @@
               "contents": [
                 {
                   "id": "2f2d755333dc40af",
-                  "name": "Auckland FC vs Central Coast Mariners  🕐 10:00 | 19/04 · Australia A-League",
+                  "name": "Auckland FC vs Central Coast Mariners  LIVE . Australia A-League",
                   "streams": [
                     {
                       "id": "4b0d044709c5accf",
-                      "name": "🎙 Văn Chuẩn",
+                      "name": "BLV Văn Chuẩn",
                       "stream_links": [
                         {
                           "id": "c36435f88bc5b2c0",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
@@ -139,13 +138,13 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         },
                         {
                           "id": "ca6f752ca0ef2db2",
-                          "name": "📡 Nhà Đài",
+                          "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/live/5a357125fb22b7874b27907663bd6597/playlist.m3u8",
@@ -156,7 +155,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -170,13 +169,13 @@
         },
         {
           "id": "c54ed91ee9b1ddc2",
-          "name": "Thanh Hóa Nữ vs Lào Cai Nữ  🕐 12:00 | 19/04",
+          "name": "Thanh Hóa Nữ vs Lào Cai Nữ  12:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c54ed91ee9b1ddc2.webp",
             "width": 820,
@@ -184,13 +183,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Chim Nhỏ",
+              "text": "BLV Chim Nhỏ",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -203,15 +202,15 @@
               "contents": [
                 {
                   "id": "c7af1531b8fa18ee",
-                  "name": "Thanh Hóa Nữ vs Lào Cai Nữ  🕐 12:00 | 19/04 · Giải Bóng Chuyền VĐQG 2026",
+                  "name": "Thanh Hóa Nữ vs Lào Cai Nữ  12:00 | 19/04 . Giải Bóng Chuyền VĐQG 2026",
                   "streams": [
                     {
                       "id": "48afaf1b682bf575",
-                      "name": "🎙 Chim Nhỏ",
+                      "name": "BLV Chim Nhỏ",
                       "stream_links": [
                         {
                           "id": "5bdb2cd28d2932c4",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
@@ -222,7 +221,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -236,13 +235,13 @@
         },
         {
           "id": "9ab8bb4493fdfa6c",
-          "name": "Adelaide United vs Macarthur FC  🕐 12:30 | 19/04",
+          "name": "Adelaide United vs Macarthur FC  12:30 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/9ab8bb4493fdfa6c.webp",
             "width": 820,
@@ -250,13 +249,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Táo",
+              "text": "BLV Táo",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -269,15 +268,15 @@
               "contents": [
                 {
                   "id": "8141fb98b6496a6b",
-                  "name": "Adelaide United vs Macarthur FC  🕐 12:30 | 19/04 · Australia A-League",
+                  "name": "Adelaide United vs Macarthur FC  12:30 | 19/04 . Australia A-League",
                   "streams": [
                     {
                       "id": "8252f12267966b6a",
-                      "name": "🎙 Táo",
+                      "name": "BLV Táo",
                       "stream_links": [
                         {
                           "id": "059fb26508a18c39",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
@@ -288,7 +287,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -302,13 +301,13 @@
         },
         {
           "id": "2ba2960066e12a67",
-          "name": "TP Hồ Chí Minh vs Hà Nội  🕐 14:30 | 19/04",
+          "name": "TP Hồ Chí Minh vs Hà Nội  14:30 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2ba2960066e12a67.webp",
             "width": 820,
@@ -316,13 +315,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Chim Nhỏ",
+              "text": "BLV Chim Nhỏ",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -335,15 +334,15 @@
               "contents": [
                 {
                   "id": "751a3f57592d9a91",
-                  "name": "TP Hồ Chí Minh vs Hà Nội  🕐 14:30 | 19/04 · Giải Bóng Chuyền VĐQG 2026",
+                  "name": "TP Hồ Chí Minh vs Hà Nội  14:30 | 19/04 . Giải Bóng Chuyền VĐQG 2026",
                   "streams": [
                     {
                       "id": "4ba34381b6cb2216",
-                      "name": "🎙 Chim Nhỏ",
+                      "name": "BLV Chim Nhỏ",
                       "stream_links": [
                         {
                           "id": "71c56e8433b14f30",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
@@ -354,7 +353,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -368,13 +367,13 @@
         },
         {
           "id": "74f3a18b656fc071",
-          "name": "BRO vs NS  🕐 15:00 | 19/04",
+          "name": "BRO vs NS  15:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/74f3a18b656fc071.webp",
             "width": 820,
@@ -382,13 +381,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Dưa Hấu",
+              "text": "BLV Dưa Hấu",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -401,15 +400,15 @@
               "contents": [
                 {
                   "id": "8b8ef376f20e063a",
-                  "name": "BRO vs NS  🕐 15:00 | 19/04 · Liên Minh Huyền Thoại",
+                  "name": "BRO vs NS  15:00 | 19/04 . Liên Minh Huyền Thoại",
                   "streams": [
                     {
                       "id": "7bc445b54e5565b3",
-                      "name": "🎙 Dưa Hấu",
+                      "name": "BLV Dưa Hấu",
                       "stream_links": [
                         {
                           "id": "394b668af70c3a95",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dua-hau/index.m3u8",
@@ -420,7 +419,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -434,13 +433,13 @@
         },
         {
           "id": "7a2a319fe8cfedcf",
-          "name": "Al-Shabab SC (Seeb) vs Al Kuwait SC  🕐 16:00 | 19/04",
+          "name": "Al-Shabab SC (Seeb) vs Al Kuwait SC  16:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7a2a319fe8cfedcf.webp",
             "width": 820,
@@ -448,13 +447,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Nhà Đài",
+              "text": "BLV Nhà Đài",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -467,11 +466,11 @@
               "contents": [
                 {
                   "id": "0b6ad43ab0207c0c",
-                  "name": "Al-Shabab SC (Seeb) vs Al Kuwait SC  🕐 16:00 | 19/04 · AFC Challenge League",
+                  "name": "Al-Shabab SC (Seeb) vs Al Kuwait SC  16:00 | 19/04 . AFC Challenge League",
                   "streams": [
                     {
                       "id": "fb",
-                      "name": "Trực tiếp",
+                      "name": "Truc tiep",
                       "stream_links": [
                         {
                           "id": "lnk0",
@@ -486,7 +485,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -500,13 +499,13 @@
         },
         {
           "id": "6bd50fc0491f8ca4",
-          "name": "KRX vs T1  🕐 17:00 | 19/04",
+          "name": "KRX vs T1  17:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6bd50fc0491f8ca4.webp",
             "width": 820,
@@ -514,13 +513,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Dưa Hấu",
+              "text": "BLV Dưa Hấu",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -533,15 +532,15 @@
               "contents": [
                 {
                   "id": "7b37cec7c4426094",
-                  "name": "KRX vs T1  🕐 17:00 | 19/04 · Liên Minh Huyền Thoại",
+                  "name": "KRX vs T1  17:00 | 19/04 . Liên Minh Huyền Thoại",
                   "streams": [
                     {
                       "id": "bc74aa1038ce3b86",
-                      "name": "🎙 Dưa Hấu",
+                      "name": "BLV Dưa Hấu",
                       "stream_links": [
                         {
                           "id": "12215f96412f839c",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dua-hau/index.m3u8",
@@ -552,7 +551,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -566,13 +565,13 @@
         },
         {
           "id": "c85f8d85e151aecd",
-          "name": "Ninh Bình Nữ vs Viettinbank Nữ  🕐 17:30 | 19/04",
+          "name": "Ninh Bình Nữ vs Viettinbank Nữ  17:30 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c85f8d85e151aecd.webp",
             "width": 820,
@@ -580,13 +579,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Pháo",
+              "text": "BLV Pháo",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -599,15 +598,15 @@
               "contents": [
                 {
                   "id": "fa4cb45d186eeb7c",
-                  "name": "Ninh Bình Nữ vs Viettinbank Nữ  🕐 17:30 | 19/04 · Giải Bóng Chuyền VĐQG 2026",
+                  "name": "Ninh Bình Nữ vs Viettinbank Nữ  17:30 | 19/04 . Giải Bóng Chuyền VĐQG 2026",
                   "streams": [
                     {
                       "id": "6fad3034e79aae63",
-                      "name": "🎙 Pháo",
+                      "name": "BLV Pháo",
                       "stream_links": [
                         {
                           "id": "2c60ed5392ad53cd",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-phao/index.m3u8",
@@ -618,7 +617,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -632,13 +631,13 @@
         },
         {
           "id": "758e1d876ac6cd84",
-          "name": "Cremonese vs Torino  🕐 17:30 | 19/04",
+          "name": "Cremonese vs Torino  17:30 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/758e1d876ac6cd84.webp",
             "width": 820,
@@ -646,13 +645,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Văn Chuẩn",
+              "text": "BLV Văn Chuẩn",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -665,15 +664,15 @@
               "contents": [
                 {
                   "id": "9113ced5e545b2b4",
-                  "name": "Cremonese vs Torino  🕐 17:30 | 19/04 · Italian Serie A",
+                  "name": "Cremonese vs Torino  17:30 | 19/04 . Italian Serie A",
                   "streams": [
                     {
                       "id": "c1af5d128e032f64",
-                      "name": "🎙 Văn Chuẩn",
+                      "name": "BLV Văn Chuẩn",
                       "stream_links": [
                         {
                           "id": "e685839cf4eee2ee",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
@@ -684,13 +683,13 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         },
                         {
                           "id": "25abf04b503f79a3",
-                          "name": "📡 Nhà Đài",
+                          "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/live/f978c691c301692ca116e8f3461819ff/playlist.m3u8",
@@ -701,7 +700,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -715,13 +714,13 @@
         },
         {
           "id": "c46e8a6226662db2",
-          "name": "CLB Thanh Hoa vs Song Lam Nghe An  🕐 18:00 | 19/04",
+          "name": "CLB Thanh Hoa vs Song Lam Nghe An  18:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c46e8a6226662db2.webp",
             "width": 820,
@@ -729,13 +728,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Thây Ma (Neymar)",
+              "text": "BLV Thây Ma (Neymar)",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -748,15 +747,15 @@
               "contents": [
                 {
                   "id": "76ef4a52feb78448",
-                  "name": "CLB Thanh Hoa vs Song Lam Nghe An  🕐 18:00 | 19/04 · Vietnam National Champion League",
+                  "name": "CLB Thanh Hoa vs Song Lam Nghe An  18:00 | 19/04 . Vietnam National Champion League",
                   "streams": [
                     {
                       "id": "f015ccace243fb36",
-                      "name": "🎙 Thây Ma (Neymar)",
+                      "name": "BLV Thây Ma (Neymar)",
                       "stream_links": [
                         {
                           "id": "2da07fd54b0abf33",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-thay-ma/index.m3u8",
@@ -767,7 +766,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -781,13 +780,13 @@
         },
         {
           "id": "2c6cc530e1ed7729",
-          "name": "SHB Da Nang vs Thep Xanh Nam Dinh FC  🕐 18:00 | 19/04",
+          "name": "SHB Da Nang vs Thep Xanh Nam Dinh FC  18:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2c6cc530e1ed7729.webp",
             "width": 820,
@@ -795,13 +794,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Táo",
+              "text": "BLV Táo",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -814,15 +813,15 @@
               "contents": [
                 {
                   "id": "3a1ced0f24d61ce2",
-                  "name": "SHB Da Nang vs Thep Xanh Nam Dinh FC  🕐 18:00 | 19/04 · Vietnam National Champion League",
+                  "name": "SHB Da Nang vs Thep Xanh Nam Dinh FC  18:00 | 19/04 . Vietnam National Champion League",
                   "streams": [
                     {
                       "id": "3ff39c63e52d579c",
-                      "name": "🎙 Táo",
+                      "name": "BLV Táo",
                       "stream_links": [
                         {
                           "id": "662c56ee5d22a0f6",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
@@ -833,7 +832,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -847,13 +846,13 @@
         },
         {
           "id": "8f62691d846cb873",
-          "name": "Cong An Ho Chi Minh City vs Cong An Ha Noi FC  🕐 18:00 | 19/04",
+          "name": "Cong An Ho Chi Minh City vs Cong An Ha Noi FC  18:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8f62691d846cb873.webp",
             "width": 820,
@@ -861,13 +860,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Cháo Quẩy",
+              "text": "BLV Cháo Quẩy",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -880,15 +879,15 @@
               "contents": [
                 {
                   "id": "0aac2295bf9baa53",
-                  "name": "Cong An Ho Chi Minh City vs Cong An Ha Noi FC  🕐 18:00 | 19/04 · Vietnam National Champion League",
+                  "name": "Cong An Ho Chi Minh City vs Cong An Ha Noi FC  18:00 | 19/04 . Vietnam National Champion League",
                   "streams": [
                     {
                       "id": "22aee40abb236565",
-                      "name": "🎙 Cháo Quẩy",
+                      "name": "BLV Cháo Quẩy",
                       "stream_links": [
                         {
                           "id": "24518bce17f5f815",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
@@ -899,7 +898,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -913,13 +912,13 @@
         },
         {
           "id": "3f7a041a7bb8f174",
-          "name": "The Cong Viettel vs Hoang Anh Gia Lai  🕐 19:15 | 19/04",
+          "name": "The Cong Viettel vs Hoang Anh Gia Lai  19:15 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/3f7a041a7bb8f174.webp",
             "width": 820,
@@ -927,13 +926,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 A Tai",
+              "text": "BLV A Tai",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -946,15 +945,15 @@
               "contents": [
                 {
                   "id": "ce52f26cd1f9a2ed",
-                  "name": "The Cong Viettel vs Hoang Anh Gia Lai  🕐 19:15 | 19/04 · Vietnam National Champion League",
+                  "name": "The Cong Viettel vs Hoang Anh Gia Lai  19:15 | 19/04 . Vietnam National Champion League",
                   "streams": [
                     {
                       "id": "8f71cf3ef8c1af73",
-                      "name": "🎙 A Tai",
+                      "name": "BLV A Tai",
                       "stream_links": [
                         {
                           "id": "9a5f10d5c2263fa9",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-gio-tai/index.m3u8",
@@ -965,7 +964,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -979,13 +978,13 @@
         },
         {
           "id": "b06236ca1412d0ed",
-          "name": "Everton vs Liverpool  🕐 20:00 | 19/04",
+          "name": "Everton vs Liverpool  20:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": true,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b06236ca1412d0ed.webp",
             "width": 820,
@@ -993,13 +992,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 2 BLV",
+              "text": "BLV 2",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1012,15 +1011,15 @@
               "contents": [
                 {
                   "id": "d2798b533fc8f2fa",
-                  "name": "Everton vs Liverpool  🕐 20:00 | 19/04 · English Premier League",
+                  "name": "Everton vs Liverpool  20:00 | 19/04 . English Premier League",
                   "streams": [
                     {
                       "id": "d40a0a397111439b",
-                      "name": "🎙 Lò A Mập",
+                      "name": "BLV Lò A Mập",
                       "stream_links": [
                         {
                           "id": "86adfb62ec0e3b4d",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-a-map/index.m3u8",
@@ -1031,13 +1030,13 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         },
                         {
                           "id": "277f1e80a76d1cc7",
-                          "name": "📡 Nhà Đài",
+                          "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/live/e2a3503f60b99e3cd9293293934e9287/playlist.m3u8",
@@ -1048,7 +1047,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -1056,11 +1055,11 @@
                     },
                     {
                       "id": "d92b586c95fa44fc",
-                      "name": "🎙 Người Kiến",
+                      "name": "BLV Người Kiến",
                       "stream_links": [
                         {
                           "id": "752d15e120d663b7",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-nguoi-kien/index.m3u8",
@@ -1071,7 +1070,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -1085,13 +1084,13 @@
         },
         {
           "id": "2f19f7664b16545b",
-          "name": "Aston Villa vs Sunderland  🕐 20:00 | 19/04",
+          "name": "Aston Villa vs Sunderland  20:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2f19f7664b16545b.webp",
             "width": 820,
@@ -1099,13 +1098,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Dylan",
+              "text": "BLV Dylan",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1118,15 +1117,15 @@
               "contents": [
                 {
                   "id": "81e88c4bbd145434",
-                  "name": "Aston Villa vs Sunderland  🕐 20:00 | 19/04 · English Premier League",
+                  "name": "Aston Villa vs Sunderland  20:00 | 19/04 . English Premier League",
                   "streams": [
                     {
                       "id": "5193e49f58832b0d",
-                      "name": "🎙 Dylan",
+                      "name": "BLV Dylan",
                       "stream_links": [
                         {
                           "id": "aea2bb30e52c1fa9",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dylan/index.m3u8",
@@ -1137,13 +1136,13 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         },
                         {
                           "id": "27d330c2b3290d9d",
-                          "name": "📡 Nhà Đài",
+                          "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/live/49712b640fefc9d7de1c824c21fd24bc/playlist.m3u8",
@@ -1154,7 +1153,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -1168,13 +1167,13 @@
         },
         {
           "id": "0e870000d6af8b8e",
-          "name": "Nottingham Forest vs Burnley  🕐 20:00 | 19/04",
+          "name": "Nottingham Forest vs Burnley  20:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/0e870000d6af8b8e.webp",
             "width": 820,
@@ -1182,13 +1181,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Văn Chuẩn",
+              "text": "BLV Văn Chuẩn",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1201,15 +1200,15 @@
               "contents": [
                 {
                   "id": "91b707300cacbd05",
-                  "name": "Nottingham Forest vs Burnley  🕐 20:00 | 19/04 · English Premier League",
+                  "name": "Nottingham Forest vs Burnley  20:00 | 19/04 . English Premier League",
                   "streams": [
                     {
                       "id": "ba6bbbdbdc46e84e",
-                      "name": "🎙 Văn Chuẩn",
+                      "name": "BLV Văn Chuẩn",
                       "stream_links": [
                         {
                           "id": "7ee2a65c9e6922e6",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
@@ -1220,13 +1219,13 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         },
                         {
                           "id": "04f8b685f7dff8a9",
-                          "name": "📡 Nhà Đài",
+                          "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
                           "url": "https://live.alilicloud.com/live/6ac17d178db08cfa5b7d7a87705ad095/playlist.m3u8",
@@ -1237,7 +1236,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -1251,13 +1250,13 @@
         },
         {
           "id": "164dbbe0c4229992",
-          "name": "Công An TP HCM vs Đà Nẵng  🕐 20:00 | 19/04",
+          "name": "Công An TP HCM vs Đà Nẵng  20:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/164dbbe0c4229992.webp",
             "width": 820,
@@ -1265,13 +1264,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Mèo Béo",
+              "text": "BLV Mèo Béo",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1284,15 +1283,15 @@
               "contents": [
                 {
                   "id": "4e494fa3ddf7e8f8",
-                  "name": "Công An TP HCM vs Đà Nẵng  🕐 20:00 | 19/04 · Giải Bóng Chuyền VĐQG 2026",
+                  "name": "Công An TP HCM vs Đà Nẵng  20:00 | 19/04 . Giải Bóng Chuyền VĐQG 2026",
                   "streams": [
                     {
                       "id": "97b14025783358d0",
-                      "name": "🎙 Mèo Béo",
+                      "name": "BLV Mèo Béo",
                       "stream_links": [
                         {
                           "id": "401ba0b9520cc927",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-meo-beo/index.m3u8",
@@ -1303,7 +1302,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -1317,13 +1316,13 @@
         },
         {
           "id": "d5877619095db466",
-          "name": "Al-Wasl SC vs Al Nassr FC  🕐 21:00 | 19/04",
+          "name": "Al-Wasl SC vs Al Nassr FC  21:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d5877619095db466.webp",
             "width": 820,
@@ -1331,13 +1330,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Nhà Đài",
+              "text": "BLV Nhà Đài",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1350,15 +1349,15 @@
               "contents": [
                 {
                   "id": "a725bc502453d6df",
-                  "name": "Al-Wasl SC vs Al Nassr FC  🕐 21:00 | 19/04 · AFC Champions League 2",
+                  "name": "Al-Wasl SC vs Al Nassr FC  21:00 | 19/04 . AFC Champions League 2",
                   "streams": [
                     {
                       "id": "99595dfc264d1b84",
-                      "name": "🎙 Nhà Đài",
+                      "name": "BLV Nhà Đài",
                       "stream_links": [
                         {
                           "id": "bb058810d54218b6",
-                          "name": "📡 Nhà Đài",
+                          "name": "Nha Dai SD",
                           "type": "hls",
                           "default": true,
                           "url": "https://live.alilicloud.com/live/efaf7e4efbfcd5ae18d8cb880f907bc7/playlist.m3u8",
@@ -1369,7 +1368,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -1383,13 +1382,13 @@
         },
         {
           "id": "55cb6076d70bc807",
-          "name": "FC Bayern Munich vs VfB Stuttgart  🕐 22:30 | 19/04",
+          "name": "FC Bayern Munich vs VfB Stuttgart  22:30 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/55cb6076d70bc807.webp",
             "width": 820,
@@ -1397,13 +1396,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Thây Ma (Neymar)",
+              "text": "BLV Thây Ma (Neymar)",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1416,15 +1415,15 @@
               "contents": [
                 {
                   "id": "955d158362d106db",
-                  "name": "FC Bayern Munich vs VfB Stuttgart  🕐 22:30 | 19/04 · Bundesliga",
+                  "name": "FC Bayern Munich vs VfB Stuttgart  22:30 | 19/04 . Bundesliga",
                   "streams": [
                     {
                       "id": "ee54fe837c8a631f",
-                      "name": "🎙 Thây Ma (Neymar)",
+                      "name": "BLV Thây Ma (Neymar)",
                       "stream_links": [
                         {
                           "id": "d642f3cd72038274",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-thay-ma/index.m3u8",
@@ -1435,7 +1434,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -1449,13 +1448,13 @@
         },
         {
           "id": "bb98f2a2aee30ef5",
-          "name": "Manchester City vs Arsenal  🕐 22:30 | 19/04",
+          "name": "Manchester City vs Arsenal  22:30 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": true,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/bb98f2a2aee30ef5.webp",
             "width": 820,
@@ -1463,13 +1462,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 3 BLV",
+              "text": "BLV 3",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1482,15 +1481,15 @@
               "contents": [
                 {
                   "id": "2a8b4430a9b55fbd",
-                  "name": "Manchester City vs Arsenal  🕐 22:30 | 19/04 · Trung Lập",
+                  "name": "Manchester City vs Arsenal  22:30 | 19/04 . Trung Lập",
                   "streams": [
                     {
                       "id": "448f74918aeaae6d",
-                      "name": "🎙 Cháo Quẩy",
+                      "name": "BLV Cháo Quẩy",
                       "stream_links": [
                         {
                           "id": "799be97e77b56c37",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
@@ -1501,7 +1500,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -1509,11 +1508,11 @@
                     },
                     {
                       "id": "652f90fc8753fa2f",
-                      "name": "🎙 A Tai",
+                      "name": "BLV A Tai",
                       "stream_links": [
                         {
                           "id": "0e802d0311b32993",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-gio-tai/index.m3u8",
@@ -1524,7 +1523,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -1532,11 +1531,11 @@
                     },
                     {
                       "id": "135cc3ee3f08e16f",
-                      "name": "🎙 PHÁO x MÈO BÉO",
+                      "name": "BLV PHÁO x MÈO BÉO",
                       "stream_links": [
                         {
                           "id": "bd8ace7803006ec8",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-meo-beo/index.m3u8",
@@ -1547,7 +1546,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
@@ -1561,13 +1560,13 @@
         },
         {
           "id": "2f9339321987780a",
-          "name": "Pisa vs Genoa  🕐 23:00 | 19/04",
+          "name": "Pisa vs Genoa  23:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
           "image": {
             "padding": 0,
-            "background_color": "#ffffff",
+            "background_color": "#fff",
             "display": "cover",
             "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2f9339321987780a.webp",
             "width": 820,
@@ -1575,13 +1574,13 @@
           },
           "labels": [
             {
-              "text": "🕐 Sắp diễn ra",
+              "text": "Sap dien ra",
               "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
             {
-              "text": "🎙 Người Kiến",
+              "text": "BLV Người Kiến",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1594,15 +1593,15 @@
               "contents": [
                 {
                   "id": "c69df09e79ca8a6f",
-                  "name": "Pisa vs Genoa  🕐 23:00 | 19/04 · Italian Serie A",
+                  "name": "Pisa vs Genoa  23:00 | 19/04 . Italian Serie A",
                   "streams": [
                     {
                       "id": "88fc1aa6a16bd18b",
-                      "name": "🎙 Người Kiến",
+                      "name": "BLV Người Kiến",
                       "stream_links": [
                         {
                           "id": "d35ee1aeefb860f6",
-                          "name": "📺 HD",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-nguoi-kien/index.m3u8",
@@ -1613,7 +1612,7 @@
                             },
                             {
                               "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
                         }
