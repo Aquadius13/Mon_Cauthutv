@@ -142,6 +142,23 @@
                               "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
+                        },
+                        {
+                          "id": "2f195fde276ac05c",
+                          "name": "📡 Nhà Đài",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/6043b18f321ed5449c955a7f11db1818/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/vitoria-ba-vs-corinthians-sp"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -189,15 +206,15 @@
                   "name": "Cruzeiro - MG vs Grêmio - RS  🔴 LIVE · Brazilian Serie A",
                   "streams": [
                     {
-                      "id": "fb",
-                      "name": "Trực tiếp",
+                      "id": "774c3939ac1f12ee",
+                      "name": "🎙 Nhà Đài",
                       "stream_links": [
                         {
-                          "id": "lnk0",
-                          "name": "Link 1",
-                          "type": "iframe",
+                          "id": "a4d795014752c25c",
+                          "name": "📡 Nhà Đài",
+                          "type": "hls",
                           "default": true,
-                          "url": "https://cauthutv.shop/cruzeiro-mg-vs-gremio-rs",
+                          "url": "https://live.alilicloud.com/live/adf1a2c7874698c8a29d992dfb7f356e/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -1723,72 +1740,6 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/pisa-vs-genoa"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "8e73023b709bf270",
-          "name": "Vasco da Gama Saf - RJ vs São Paulo - SP  ✅",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#ffffff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8e73023b709bf270.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "✅ Kết thúc",
-              "color": "#444444",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Nhà Đài",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "9540732acbf98d20",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "dcd7cf65380318ba",
-                  "name": "Vasco da Gama Saf - RJ vs São Paulo - SP  ✅ · Brazilian Serie A",
-                  "streams": [
-                    {
-                      "id": "a6a907bc51de88cb",
-                      "name": "🎙 Nhà Đài",
-                      "stream_links": [
-                        {
-                          "id": "6fbde3b9c399da31",
-                          "name": "📡 Nhà Đài",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://live.alilicloud.com/live/12a46b686e7c39b776a2db3401ba1481/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/vasco-da-gama-saf-rj-vs-sao-paulo-sp"
                             },
                             {
                               "key": "User-Agent",
