@@ -19,7 +19,73 @@
       "image": null,
       "channels": [
         {
-          "id": "c164ad1946e5aba0",
+          "id": "1700561e99b666e1",
+          "name": "Al-Shabab SC (Seeb) vs Al Kuwait SC  LIVE",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/1700561e99b666e1.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "BLV Nhà Đài",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "c149c719af490ad1",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "0d7ecde1d654033c",
+                  "name": "Al-Shabab SC (Seeb) vs Al Kuwait SC  LIVE . AFC Challenge League",
+                  "streams": [
+                    {
+                      "id": "be8f01bde8295a60",
+                      "name": "BLV Nhà Đài",
+                      "stream_links": [
+                        {
+                          "id": "d0979039b2fea9a3",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://live.alilicloud.com/live/6e62815d5a6eea51598bd1d296466f08/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/al-shabab-sc-seeb-vs-al-kuwait-sc"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "81cb0c2c8478ab41",
           "name": "TP Hồ Chí Minh vs Hà Nội  14:30 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -28,7 +94,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c164ad1946e5aba0.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/81cb0c2c8478ab41.webp",
             "width": 820,
             "height": 540
           },
@@ -48,23 +114,23 @@
           ],
           "sources": [
             {
-              "id": "9de01181d8b1d477",
+              "id": "03576b8a2af42352",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "f3f62be13b211350",
+                  "id": "7b06ae9a5c4abb97",
                   "name": "TP Hồ Chí Minh vs Hà Nội  14:30 | 19/04 . Giải Bóng Chuyền VĐQG 2026",
                   "streams": [
                     {
-                      "id": "fbe5101adde248e2",
-                      "name": "BLV Chim Nhỏ",
+                      "id": "fb",
+                      "name": "Truc tiep",
                       "stream_links": [
                         {
-                          "id": "43fbd5bb850de697",
-                          "name": "HD",
-                          "type": "hls",
+                          "id": "lnk0",
+                          "name": "Link 1",
+                          "type": "iframe",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
+                          "url": "https://cauthutv.shop/tp-h-ch-minh-vs-h-ni-1776516007882-132",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -85,7 +151,7 @@
           ]
         },
         {
-          "id": "e6e6518d761de725",
+          "id": "612b56f050a6a24d",
           "name": "BRO vs NS  15:00 | 19/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -94,7 +160,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e6e6518d761de725.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/612b56f050a6a24d.webp",
             "width": 820,
             "height": 540
           },
@@ -114,19 +180,19 @@
           ],
           "sources": [
             {
-              "id": "50c6e9fee5f94144",
+              "id": "c69533cf69a929c4",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "dd30c918006d4995",
+                  "id": "48eeea39cd47beb7",
                   "name": "BRO vs NS  15:00 | 19/04 . Liên Minh Huyền Thoại",
                   "streams": [
                     {
-                      "id": "c06a1d8911a906a2",
+                      "id": "0b5781ca5e9dc563",
                       "name": "BLV Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "323d3fad150a96aa",
+                          "id": "00f7d1685c902ca2",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -135,72 +201,6 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/bro-vs-ns-1776516007882-235"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "e3fdf8c1ed83de7f",
-          "name": "Al-Shabab SC (Seeb) vs Al Kuwait SC  16:00 | 19/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e3fdf8c1ed83de7f.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "Sap dien ra",
-              "color": "#d54f1a",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "BLV Nhà Đài",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "7291f95cf525ae42",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "bf1aebad3df6c53c",
-                  "name": "Al-Shabab SC (Seeb) vs Al Kuwait SC  16:00 | 19/04 . AFC Challenge League",
-                  "streams": [
-                    {
-                      "id": "fb",
-                      "name": "Truc tiep",
-                      "stream_links": [
-                        {
-                          "id": "lnk0",
-                          "name": "Link 1",
-                          "type": "iframe",
-                          "default": true,
-                          "url": "https://cauthutv.shop/al-shabab-sc-seeb-vs-al-kuwait-sc",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/al-shabab-sc-seeb-vs-al-kuwait-sc"
                             },
                             {
                               "key": "User-Agent",
