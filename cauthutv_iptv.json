@@ -76,23 +76,6 @@
                               "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
-                        },
-                        {
-                          "id": "2d557c97dd616abd",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/28ba4f2a00fdf1f035e78488d25eaa04/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/the-cong-viettel-vs-hoang-anh-gia-lai"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
                         }
                       ]
                     }
@@ -442,7 +425,7 @@
         },
         {
           "id": "c5ac121860f48643",
-          "name": "Al-Wasl SC vs Al Nassr FC  21:00 | 19/04",
+          "name": "Al-Wasl SC vs Al Nassr FC  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -456,8 +439,8 @@
           },
           "labels": [
             {
-              "text": "Sap dien ra",
-              "color": "#d54f1a",
+              "text": "Live",
+              "color": "#E73131",
               "text_color": "#fff",
               "position": "top-left"
             },
@@ -475,18 +458,18 @@
               "contents": [
                 {
                   "id": "bab3486d598f654e",
-                  "name": "Al-Wasl SC vs Al Nassr FC  21:00 | 19/04 . AFC Champions League 2",
+                  "name": "Al-Wasl SC vs Al Nassr FC  LIVE . AFC Champions League 2",
                   "streams": [
                     {
-                      "id": "b47a5eee788e3620",
-                      "name": "🎙 Nhà Đài",
+                      "id": "fb",
+                      "name": "Truc tiep",
                       "stream_links": [
                         {
-                          "id": "e88f6603d749956d",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
+                          "id": "lnk0",
+                          "name": "Link 1",
+                          "type": "iframe",
                           "default": true,
-                          "url": "https://live.alilicloud.com/live/efaf7e4efbfcd5ae18d8cb880f907bc7/playlist.m3u8",
+                          "url": "https://cauthutv.shop/al-wasl-sc-vs-al-nassr-fc",
                           "request_headers": [
                             {
                               "key": "Referer",
