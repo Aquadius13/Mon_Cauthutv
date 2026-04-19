@@ -20,73 +20,7 @@
       "image": null,
       "channels": [
         {
-          "id": "a193aa8d41b5385d",
-          "name": "Palmeiras - SP vs Athletico Paranaense  LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a193aa8d41b5385d.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Táo",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "3a3fb9eb400fe7e2",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "f6c5f85504244250",
-                  "name": "Palmeiras - SP vs Athletico Paranaense  LIVE . Brazilian Serie A",
-                  "streams": [
-                    {
-                      "id": "cb873139f3a29c95",
-                      "name": "🎙 Táo",
-                      "stream_links": [
-                        {
-                          "id": "0d38ef77ed241e5f",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/palmeiras-sp-vs-athletico-paranaense"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "4f69da3b561db501",
+          "id": "edddb67519a77c30",
           "name": "Flamengo - RJ vs Bahia  LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -95,7 +29,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/4f69da3b561db501.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/edddb67519a77c30.webp",
             "width": 820,
             "height": 540
           },
@@ -115,23 +49,40 @@
           ],
           "sources": [
             {
-              "id": "fe2e7b856a17d341",
+              "id": "d7a800ba103d4adf",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "9f657b7a385c6b7f",
+                  "id": "84c4fabf7d09a648",
                   "name": "Flamengo - RJ vs Bahia  LIVE . Brazilian Serie A",
                   "streams": [
                     {
-                      "id": "d72894aa3293cbe6",
+                      "id": "5c3126d2ed8c45fc",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "34fcf71f04c8c7a8",
+                          "id": "45d8532888504e5f",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-gio-tai/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/flamengo-rj-vs-bahia"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "123e5c0620f885a2",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/6a5e3f97233ee29db95390b61a1c3eca/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -152,7 +103,173 @@
           ]
         },
         {
-          "id": "b5009a0e845a30b6",
+          "id": "17885129141853b8",
+          "name": "Los Angeles FC vs San Jose Earthquakes  LIVE",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/17885129141853b8.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Chim Nhỏ",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "7e7a0217bdafb040",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "e90aa2eb4dc6faae",
+                  "name": "Los Angeles FC vs San Jose Earthquakes  LIVE . United States Major League Soccer",
+                  "streams": [
+                    {
+                      "id": "d0f400212cbbcf47",
+                      "name": "🎙 Chim Nhỏ",
+                      "stream_links": [
+                        {
+                          "id": "bfa907de41f02a50",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/los-angeles-fc-vs-san-jose-earthquakes"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "f3890df27ad9955c",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/d34d4f9606d62294592fd4de667c849d/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/los-angeles-fc-vs-san-jose-earthquakes"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d8b71d3dcfb5ee8e",
+          "name": "Palmeiras - SP vs Athletico Paranaense  04:30 | 20/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d8b71d3dcfb5ee8e.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Táo",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "eb04ab82597b546c",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "a90b13d1cbc1cada",
+                  "name": "Palmeiras - SP vs Athletico Paranaense  04:30 | 20/04 . Brazilian Serie A",
+                  "streams": [
+                    {
+                      "id": "8edc8b0a581a1b01",
+                      "name": "🎙 Táo",
+                      "stream_links": [
+                        {
+                          "id": "f6ae12d77bcc7638",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/palmeiras-sp-vs-athletico-paranaense"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "1a02ad73ba7f155a",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/bb9fc0b7ef758e73a4f61a9b595db7e5/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/palmeiras-sp-vs-athletico-paranaense"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c40535e04d6804ee",
           "name": "WrestleMania 42 vs WrestleMania 42  05:00 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -161,7 +278,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b5009a0e845a30b6.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c40535e04d6804ee.webp",
             "width": 820,
             "height": 540
           },
@@ -181,19 +298,19 @@
           ],
           "sources": [
             {
-              "id": "eec0f845ab2092d8",
+              "id": "26c032dcfeff762d",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "ccb19783db6382ed",
+                  "id": "7a41196afd8ebf02",
                   "name": "WrestleMania 42 vs WrestleMania 42  05:00 | 20/04 . WWE",
                   "streams": [
                     {
-                      "id": "3e7e0c8e1a25b4f9",
+                      "id": "da76c15b3e9c144d",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "7c03c5234950a0ea",
+                          "id": "0566b68d2df88efd",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -218,7 +335,7 @@
           ]
         },
         {
-          "id": "b5b84efdb4271ed4",
+          "id": "9c1789ce70934e3b",
           "name": "Detroit Pistons vs Orlando Magic  05:30 | 20/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -227,7 +344,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b5b84efdb4271ed4.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/9c1789ce70934e3b.webp",
             "width": 820,
             "height": 540
           },
@@ -247,19 +364,19 @@
           ],
           "sources": [
             {
-              "id": "1168522e349c1590",
+              "id": "26142f9009672cd0",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "3d150496ac6b47d7",
+                  "id": "cd5574d0227f38c8",
                   "name": "Detroit Pistons vs Orlando Magic  05:30 | 20/04 . NBA  (Bóng Rổ)",
                   "streams": [
                     {
-                      "id": "8042d8658ea948a5",
+                      "id": "98882a3770839c6c",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "e5400af60693737e",
+                          "id": "69e2858fc6ca8e24",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -268,72 +385,6 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/detroit-pistons-vs-orlando-magic-1776601667773-71"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "045954aa752b2d85",
-          "name": "Los Angeles FC vs San Jose Earthquakes  06:00 | 20/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/045954aa752b2d85.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "Sap dien ra",
-              "color": "#d54f1a",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Chim Nhỏ",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "ae6c99464b722bf4",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "3a1ae319549a22ee",
-                  "name": "Los Angeles FC vs San Jose Earthquakes  06:00 | 20/04 . United States Major League Soccer",
-                  "streams": [
-                    {
-                      "id": "11c944fb14c07fcb",
-                      "name": "🎙 Chim Nhỏ",
-                      "stream_links": [
-                        {
-                          "id": "b5adc5294c2a08c0",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/los-angeles-fc-vs-san-jose-earthquakes"
                             },
                             {
                               "key": "User-Agent",
