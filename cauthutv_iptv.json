@@ -21,7 +21,7 @@
       "channels": [
         {
           "id": "86a38d2c87c33b14",
-          "name": "Banfield vs Independiente Rivadavia  LIVE",
+          "name": "Banfield vs Independiente Rivadavia  03:15 | 21/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -35,8 +35,8 @@
           },
           "labels": [
             {
-              "text": "Live",
-              "color": "#E73131",
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
               "text_color": "#fff",
               "position": "top-left"
             },
@@ -54,7 +54,7 @@
               "contents": [
                 {
                   "id": "3dff1c1fd61754dc",
-                  "name": "Banfield vs Independiente Rivadavia  LIVE . Argentine Division 1",
+                  "name": "Banfield vs Independiente Rivadavia  03:15 | 21/04 . Argentine Division 1",
                   "streams": [
                     {
                       "id": "723b9311589ffcef",
@@ -499,7 +499,73 @@
           ]
         },
         {
-          "id": "1e7f1e8817665203",
+          "id": "dee70ec3c16077d6",
+          "name": "South Melbourne vs Tahiti United  14:00 | 21/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/dee70ec3c16077d6.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Chim Nhỏ",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "a7824e39931db82e",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "780eafd87c6386a8",
+                  "name": "South Melbourne vs Tahiti United  14:00 | 21/04 . OFC Pro League",
+                  "streams": [
+                    {
+                      "id": "aae1cd5afae1feed",
+                      "name": "🎙 Chim Nhỏ",
+                      "stream_links": [
+                        {
+                          "id": "aaabe5517865d38b",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/south-melbourne-vs-tahiti-united-1776721201553-894"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5b1ceb6c0c989d22",
           "name": "Football Club Seoul vs Bucheon FC 1995  17:30 | 21/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -508,7 +574,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/1e7f1e8817665203.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5b1ceb6c0c989d22.webp",
             "width": 820,
             "height": 540
           },
@@ -528,19 +594,19 @@
           ],
           "sources": [
             {
-              "id": "9f0e48318e4a760a",
+              "id": "1c5be8e93c81f245",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "a301309573f85ccb",
+                  "id": "c643a3c2ad91765e",
                   "name": "Football Club Seoul vs Bucheon FC 1995  17:30 | 21/04 . Korean K League 1",
                   "streams": [
                     {
-                      "id": "c6835ea0ff4f52c6",
+                      "id": "c43e68a561c35ec3",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "4fcf63983fd07366",
+                          "id": "be053a2c66591ab0",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -565,7 +631,7 @@
           ]
         },
         {
-          "id": "91b47fb130286868",
+          "id": "48307c50986e6b61",
           "name": "Chengdu Rongcheng vs Yunnan Yukun  18:35 | 21/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -574,7 +640,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/91b47fb130286868.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/48307c50986e6b61.webp",
             "width": 820,
             "height": 540
           },
@@ -594,19 +660,19 @@
           ],
           "sources": [
             {
-              "id": "b65275f9102a2920",
+              "id": "ed72a92e1967ee37",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "936f10491dbc03b2",
+                  "id": "5127e8d4ed4445c5",
                   "name": "Chengdu Rongcheng vs Yunnan Yukun  18:35 | 21/04 . Chinese Football Super League",
                   "streams": [
                     {
-                      "id": "48caa2d9c1a47d78",
+                      "id": "f7fb6f624a3c05bd",
                       "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "ba8ea17abd247262",
+                          "id": "bb2371e50354b02b",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -631,7 +697,7 @@
           ]
         },
         {
-          "id": "94ae198b8e154cd5",
+          "id": "6f766604da70db80",
           "name": "Shanghai Port vs Chongqing Tonglianglong  19:00 | 21/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -640,7 +706,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/94ae198b8e154cd5.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6f766604da70db80.webp",
             "width": 820,
             "height": 540
           },
@@ -660,19 +726,19 @@
           ],
           "sources": [
             {
-              "id": "514806f7a5bee7dd",
+              "id": "a48d4d11986c5437",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "72ef648372c44633",
+                  "id": "61fbf32f58a8dfc7",
                   "name": "Shanghai Port vs Chongqing Tonglianglong  19:00 | 21/04 . Chinese Football Super League",
                   "streams": [
                     {
-                      "id": "5821f385a47cbb09",
+                      "id": "dd65cff1ffd3a212",
                       "name": "🎙 Cháo Quẩy",
                       "stream_links": [
                         {
-                          "id": "e67d7476978e27ad",
+                          "id": "cd747517073ab9c1",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -697,7 +763,7 @@
           ]
         },
         {
-          "id": "83f6f784d745e245",
+          "id": "fdd21be51295d3b4",
           "name": "FK Tauras Taurage vs Hegelmann Litauen  20:00 | 21/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -706,7 +772,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/83f6f784d745e245.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/fdd21be51295d3b4.webp",
             "width": 820,
             "height": 540
           },
@@ -726,19 +792,19 @@
           ],
           "sources": [
             {
-              "id": "dc85b528bb827ea3",
+              "id": "658aa26b0665f430",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "cd24b85ba684537d",
+                  "id": "363be9a1981a9cbe",
                   "name": "FK Tauras Taurage vs Hegelmann Litauen  20:00 | 21/04 . Lithuanian Cup",
                   "streams": [
                     {
-                      "id": "3dccb3b1c2445536",
+                      "id": "1275e07739847eaa",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "f89a37c104e0f9fa",
+                          "id": "f6878f04be007525",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -763,7 +829,7 @@
           ]
         },
         {
-          "id": "88a18306af4f8577",
+          "id": "0de91a1f9985d989",
           "name": "Chennaiyin FC vs Mohammedan SC  21:00 | 21/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -772,7 +838,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/88a18306af4f8577.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/0de91a1f9985d989.webp",
             "width": 820,
             "height": 540
           },
@@ -792,19 +858,19 @@
           ],
           "sources": [
             {
-              "id": "d1b1d793e3bde7f9",
+              "id": "103163ac31eef323",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "1e17fd29b6194306",
+                  "id": "5b90c8c76c0a5e08",
                   "name": "Chennaiyin FC vs Mohammedan SC  21:00 | 21/04 . Indian Super League",
                   "streams": [
                     {
-                      "id": "40a16d82a7665ee9",
+                      "id": "3a317fdc80afa530",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "eeae48d283fb27e9",
+                          "id": "c15eb291da5571dd",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -829,7 +895,7 @@
           ]
         },
         {
-          "id": "4bfb9f520e48a031",
+          "id": "6e240fe1d09b2faa",
           "name": "FC Bukovyna chernivtsi vs Dynamo Kyiv  22:00 | 21/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -838,7 +904,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/4bfb9f520e48a031.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6e240fe1d09b2faa.webp",
             "width": 820,
             "height": 540
           },
@@ -858,19 +924,19 @@
           ],
           "sources": [
             {
-              "id": "7e77ef453fe616f9",
+              "id": "acf4064c7ebfbeea",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "3cdd11b312991796",
+                  "id": "3b779cfe98073165",
                   "name": "FC Bukovyna chernivtsi vs Dynamo Kyiv  22:00 | 21/04 . Ukrainian Cup",
                   "streams": [
                     {
-                      "id": "2d026b71dfb88bb7",
+                      "id": "3e8672e70da91987",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "d70fce7bc3c0fb99",
+                          "id": "2201b79101da507f",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -895,7 +961,7 @@
           ]
         },
         {
-          "id": "fb3ea45a0685ed8d",
+          "id": "6f92a93afea0d5a9",
           "name": "Ziraat Bankasi vs Galatasaray  23:00 | 21/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -904,7 +970,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/fb3ea45a0685ed8d.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6f92a93afea0d5a9.webp",
             "width": 820,
             "height": 540
           },
@@ -924,19 +990,19 @@
           ],
           "sources": [
             {
-              "id": "74e97b27ce9a6ac9",
+              "id": "263f5222ffc101be",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "ef6e3020dc092337",
+                  "id": "da8865853ccdd51f",
                   "name": "Ziraat Bankasi vs Galatasaray  23:00 | 21/04 . Bóng Chuyền Nam Thổ Nhĩ Kỳ",
                   "streams": [
                     {
-                      "id": "84d8ae9099d82882",
+                      "id": "2909877a084aad4c",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "26fb7a16e0cefd78",
+                          "id": "72b9cfa7cfd96e03",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -961,7 +1027,7 @@
           ]
         },
         {
-          "id": "3607658d3413502e",
+          "id": "46406b599e427131",
           "name": "Machida Zelvia vs Shabab Al Ahli  23:15 | 21/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -970,7 +1036,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/3607658d3413502e.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/46406b599e427131.webp",
             "width": 820,
             "height": 540
           },
@@ -990,19 +1056,19 @@
           ],
           "sources": [
             {
-              "id": "2f10122bd5f3d897",
+              "id": "885daad9677e651e",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "d5dd0c656b4791b7",
+                  "id": "67e177a443c8760e",
                   "name": "Machida Zelvia vs Shabab Al Ahli  23:15 | 21/04 . AFC Champions League Elite",
                   "streams": [
                     {
-                      "id": "a4310bb9becb6b8d",
+                      "id": "7971f9a19414569f",
                       "name": "🎙 Thây Ma (Neymar)",
                       "stream_links": [
                         {
-                          "id": "db3943d02776ae27",
+                          "id": "b9a164eb902a6aaf",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1027,7 +1093,7 @@
           ]
         },
         {
-          "id": "a4da9d09a20fcee4",
+          "id": "8637777a435a18e2",
           "name": "RCD Mallorca vs Valencia CF  00:00 | 22/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1036,7 +1102,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a4da9d09a20fcee4.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8637777a435a18e2.webp",
             "width": 820,
             "height": 540
           },
@@ -1056,19 +1122,19 @@
           ],
           "sources": [
             {
-              "id": "977a6eca93bffc67",
+              "id": "9995fd91f70423e3",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "03d39cd4154d6709",
+                  "id": "b7b7dcad562e7d3f",
                   "name": "RCD Mallorca vs Valencia CF  00:00 | 22/04 . Spanish La Liga",
                   "streams": [
                     {
-                      "id": "f0000564cd69873b",
+                      "id": "bd853d991a9fd6df",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "852da17a7dcd9b76",
+                          "id": "3143ac1496e11447",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1093,7 +1159,7 @@
           ]
         },
         {
-          "id": "0aee9463286326f0",
+          "id": "f054204a1374ca6c",
           "name": "Athletic Club vs CA Osasuna  00:00 | 22/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1102,7 +1168,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/0aee9463286326f0.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/f054204a1374ca6c.webp",
             "width": 820,
             "height": 540
           },
@@ -1122,19 +1188,19 @@
           ],
           "sources": [
             {
-              "id": "c767a4869667cf84",
+              "id": "096027ad29974d40",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "c78136d2ed8ffb24",
+                  "id": "87b075702e0cd3bf",
                   "name": "Athletic Club vs CA Osasuna  00:00 | 22/04 . Spanish La Liga",
                   "streams": [
                     {
-                      "id": "90ad34d83a5110e2",
+                      "id": "56d7c34fb5b44161",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "8df499a75c0a9731",
+                          "id": "e61263d25784651b",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1159,7 +1225,7 @@
           ]
         },
         {
-          "id": "635412ef83972f4d",
+          "id": "5e3017207c614b14",
           "name": "Brighton Hove Albion vs Chelsea  02:00 | 22/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1168,7 +1234,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/635412ef83972f4d.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5e3017207c614b14.webp",
             "width": 820,
             "height": 540
           },
@@ -1188,19 +1254,19 @@
           ],
           "sources": [
             {
-              "id": "da786bb50f7883ef",
+              "id": "b71625d4c0a43876",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "f1bb40a6ab1fa599",
+                  "id": "ec81daf090d97989",
                   "name": "Brighton Hove Albion vs Chelsea  02:00 | 22/04 . Luồng Hài Hước",
                   "streams": [
                     {
-                      "id": "c30cb27467691b76",
+                      "id": "a64e5689e3a7e57b",
                       "name": "🎙 Thây Ma (Neymar)",
                       "stream_links": [
                         {
-                          "id": "6a1a934cd31381ee",
+                          "id": "5b1b57d9d2c32da3",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1219,11 +1285,11 @@
                       ]
                     },
                     {
-                      "id": "1114158f1266f04f",
+                      "id": "243044af7ac00af8",
                       "name": "🎙 Dylan",
                       "stream_links": [
                         {
-                          "id": "1f51dedfb4f82978",
+                          "id": "5853238471d897b6",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1248,7 +1314,7 @@
           ]
         },
         {
-          "id": "e6d828ecde4f2fef",
+          "id": "874fc8b736798394",
           "name": "Inter Milan vs Como  02:00 | 22/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1257,7 +1323,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e6d828ecde4f2fef.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/874fc8b736798394.webp",
             "width": 820,
             "height": 540
           },
@@ -1277,19 +1343,19 @@
           ],
           "sources": [
             {
-              "id": "39f0c4fc291d21f9",
+              "id": "243e14cc1ca6ca63",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "fc20b62660f5dcad",
+                  "id": "77c08a38423239ef",
                   "name": "Inter Milan vs Como  02:00 | 22/04 . Coppa Italia",
                   "streams": [
                     {
-                      "id": "1b1fe77a05fe3b7f",
+                      "id": "ade26b7040340c50",
                       "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "f5cd921ed804f9c7",
+                          "id": "f4cf56cfa4cfeeab",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1314,7 +1380,7 @@
           ]
         },
         {
-          "id": "6e85f7874bf6094b",
+          "id": "c6a820393556a325",
           "name": "RC Lens vs Toulouse FC  02:10 | 22/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1323,7 +1389,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6e85f7874bf6094b.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c6a820393556a325.webp",
             "width": 820,
             "height": 540
           },
@@ -1343,19 +1409,19 @@
           ],
           "sources": [
             {
-              "id": "288392797e15e112",
+              "id": "6eecdfb0e71a33a0",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "df2e031ecc77d385",
+                  "id": "61fd65a66122ca71",
                   "name": "RC Lens vs Toulouse FC  02:10 | 22/04 . Coupe de France",
                   "streams": [
                     {
-                      "id": "69907e3b84814737",
+                      "id": "46ee02b2b48df3b8",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "08d7021c2d7d8a53",
+                          "id": "5cd6e5fc28833bb9",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1380,7 +1446,7 @@
           ]
         },
         {
-          "id": "e66e3ed885046c16",
+          "id": "3e6b2a7b8cd9f07f",
           "name": "Girona FC vs Real Betis  02:30 | 22/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1389,7 +1455,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e66e3ed885046c16.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/3e6b2a7b8cd9f07f.webp",
             "width": 820,
             "height": 540
           },
@@ -1409,19 +1475,19 @@
           ],
           "sources": [
             {
-              "id": "e24228bc7d8738db",
+              "id": "96954323147f5d99",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "f8c0472977065e70",
+                  "id": "9619de4f3b611883",
                   "name": "Girona FC vs Real Betis  02:30 | 22/04 . Spanish La Liga",
                   "streams": [
                     {
-                      "id": "bbef106f5d69d987",
+                      "id": "01966e4139067c42",
                       "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "007f79d82c8aafa8",
+                          "id": "018c6bbef3ee0271",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1446,7 +1512,7 @@
           ]
         },
         {
-          "id": "db2051767ba64231",
+          "id": "a7268b47b1cc07b2",
           "name": "Real Madrid vs Deportivo Alavés  02:30 | 22/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1455,7 +1521,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/db2051767ba64231.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a7268b47b1cc07b2.webp",
             "width": 820,
             "height": 540
           },
@@ -1475,19 +1541,19 @@
           ],
           "sources": [
             {
-              "id": "2f8654a119928958",
+              "id": "b6050abed4e64ca3",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "80d1369bffcce93c",
+                  "id": "04fdedf9246d92bd",
                   "name": "Real Madrid vs Deportivo Alavés  02:30 | 22/04 . LaLiga",
                   "streams": [
                     {
-                      "id": "03d715a39e0d74fd",
+                      "id": "36752147e113d1a0",
                       "name": "🎙 Cháo Quẩy",
                       "stream_links": [
                         {
-                          "id": "5695572cf93e36a1",
+                          "id": "fe80b08b2e5e57a1",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1506,11 +1572,11 @@
                       ]
                     },
                     {
-                      "id": "1dbb50df8a52f260",
+                      "id": "38f065e007b0d733",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "fde826a9f71d617d",
+                          "id": "f4bbada81644366a",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1535,7 +1601,7 @@
           ]
         },
         {
-          "id": "2e8be9b9136d2e92",
+          "id": "8a5dcb91638f21f2",
           "name": "Botafogo - RJ vs Chapecoense - SC  03:00 | 22/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1544,7 +1610,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2e8be9b9136d2e92.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8a5dcb91638f21f2.webp",
             "width": 820,
             "height": 540
           },
@@ -1564,19 +1630,19 @@
           ],
           "sources": [
             {
-              "id": "0168ae05aec98cc0",
+              "id": "f23314e4536d8088",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "9a02d4851b59009a",
+                  "id": "48a5de21b71e914f",
                   "name": "Botafogo - RJ vs Chapecoense - SC  03:00 | 22/04 . Brazilian Cup",
                   "streams": [
                     {
-                      "id": "e3c491a38f115ecc",
+                      "id": "7bac7a6836e665b4",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "88a265f9cdb4544d",
+                          "id": "d1d2d1a606c764c4",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1601,7 +1667,7 @@
           ]
         },
         {
-          "id": "f095aef0a9c9d405",
+          "id": "2fe3a6b42179a49a",
           "name": "São Paulo - SP vs Juventude  05:15 | 22/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1610,7 +1676,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/f095aef0a9c9d405.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2fe3a6b42179a49a.webp",
             "width": 820,
             "height": 540
           },
@@ -1630,19 +1696,19 @@
           ],
           "sources": [
             {
-              "id": "51db57095265d216",
+              "id": "517518f4c5f37fc4",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "1207823fa283c7a7",
+                  "id": "751e754c23e5b383",
                   "name": "São Paulo - SP vs Juventude  05:15 | 22/04 . Brazilian Cup",
                   "streams": [
                     {
-                      "id": "e20fc3114bee4a6e",
+                      "id": "170667d80b4d5d1b",
                       "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "a13c108c21ecc219",
+                          "id": "22234416f410fa6f",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1667,7 +1733,7 @@
           ]
         },
         {
-          "id": "83f5812f6510f8ad",
+          "id": "751785b7059c20b0",
           "name": "Boston Celtics vs Philadelphia 76ers  06:00 | 22/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1676,7 +1742,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/83f5812f6510f8ad.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/751785b7059c20b0.webp",
             "width": 820,
             "height": 540
           },
@@ -1696,19 +1762,19 @@
           ],
           "sources": [
             {
-              "id": "69256b8af6ded0d4",
+              "id": "8e9641d11190c0d0",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "df6a5fb9045d564a",
+                  "id": "c858900f2ca874cc",
                   "name": "Boston Celtics vs Philadelphia 76ers  06:00 | 22/04 . NBA  (Bóng Rổ)",
                   "streams": [
                     {
-                      "id": "32ee25617d6e4f23",
+                      "id": "e34d1171c3bddc49",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "38ddab97d3946eb2",
+                          "id": "944782370436ef38",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1733,7 +1799,7 @@
           ]
         },
         {
-          "id": "fdb568f5a67be520",
+          "id": "cb9294ef6646c54d",
           "name": "NXT vs NXT  07:00 | 22/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1742,7 +1808,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/fdb568f5a67be520.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/cb9294ef6646c54d.webp",
             "width": 820,
             "height": 540
           },
@@ -1762,19 +1828,19 @@
           ],
           "sources": [
             {
-              "id": "ff9dc90ef48e0b21",
+              "id": "0e266e8aea7963b1",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "a755ac2902fdd785",
+                  "id": "6a5b6b911665662f",
                   "name": "NXT vs NXT  07:00 | 22/04 . WWE",
                   "streams": [
                     {
-                      "id": "1df409d05bf45433",
+                      "id": "7d410e4281821fb1",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "e15f04ea245dd347",
+                          "id": "661d9147d86404bd",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1799,7 +1865,7 @@
           ]
         },
         {
-          "id": "56b3c05fc2d05e4c",
+          "id": "e770bd4783637273",
           "name": "San Antonio Spurs vs Portland Trail Blazers  07:00 | 22/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -1808,7 +1874,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/56b3c05fc2d05e4c.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e770bd4783637273.webp",
             "width": 820,
             "height": 540
           },
@@ -1828,19 +1894,19 @@
           ],
           "sources": [
             {
-              "id": "fdfd8a8f2ff57a2c",
+              "id": "481c3bd6cf3daf84",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "6f0a674aa01a20a5",
+                  "id": "1120fa1d64eea571",
                   "name": "San Antonio Spurs vs Portland Trail Blazers  07:00 | 22/04 . NBA  (Bóng Rổ)",
                   "streams": [
                     {
-                      "id": "54be21f7eef45b00",
+                      "id": "d41712b8e3e78c02",
                       "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "91f257038275e244",
+                          "id": "a961f0dd3fa2ae81",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1849,6 +1915,2517 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/san-antonio-spurs-vs-portland-trail-blazers-1776644653468-64"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "9ed0f2e62da53398",
+          "name": "Queretaro FC vs Cruz Azul  08:00 | 22/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/9ed0f2e62da53398.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Táo",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "99add219a79b7790",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "e957aa15fd7fe07f",
+                  "name": "Queretaro FC vs Cruz Azul  08:00 | 22/04 . Mexico Liga MX",
+                  "streams": [
+                    {
+                      "id": "1f3648f45d73d68c",
+                      "name": "🎙 Táo",
+                      "stream_links": [
+                        {
+                          "id": "63a987527fb17ab3",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/queretaro-fc-vs-cruz-azul"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "70711237d0191447",
+          "name": "Los Angeles Lakers vs Houston Rockets  09:30 | 22/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/70711237d0191447.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Văn Chuẩn",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "2fc9022ebd5e5257",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "01e77b966b61f6da",
+                  "name": "Los Angeles Lakers vs Houston Rockets  09:30 | 22/04 . NBA  (Bóng Rổ)",
+                  "streams": [
+                    {
+                      "id": "c0d0a58a389c2750",
+                      "name": "🎙 Văn Chuẩn",
+                      "stream_links": [
+                        {
+                          "id": "9b99e9419fc9d0bb",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/los-angeles-lakers-vs-houston-rockets-1776721201553-226"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d3c400b470904184",
+          "name": "KT vs KRX  15:00 | 22/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d3c400b470904184.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Dưa Hấu",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "98f2e34cd7a4b593",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "792964eee94031d9",
+                  "name": "KT vs KRX  15:00 | 22/04 . Liên Minh Huyền Thoại",
+                  "streams": [
+                    {
+                      "id": "365d87ff40ca50f1",
+                      "name": "🎙 Dưa Hấu",
+                      "stream_links": [
+                        {
+                          "id": "4f9b8981ab73513b",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dua-hau/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/kt-vs-krx-1776721201553-924"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "beb8774249a94b8d",
+          "name": "PSIM Yogyakarta vs Persatuan Sepakbola Indonesia Jakarta  15:30 | 22/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/beb8774249a94b8d.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Chim Nhỏ",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "9c7c021b1cf8e73a",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "c2e471772cdb284b",
+                  "name": "PSIM Yogyakarta vs Persatuan Sepakbola Indonesia Jakarta  15:30 | 22/04 . Indonesian Super League",
+                  "streams": [
+                    {
+                      "id": "6115ae2032cb9fbd",
+                      "name": "🎙 Chim Nhỏ",
+                      "stream_links": [
+                        {
+                          "id": "a0c53f45cee23de4",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/psim-yogyakarta-vs-persatuan-sepakbola-indonesia-jakarta"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "682b469d753f5a97",
+          "name": "HLE vs NS  17:00 | 22/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/682b469d753f5a97.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Dưa Hấu",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "3327f391cfdbc76b",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "3a6549202ea020eb",
+                  "name": "HLE vs NS  17:00 | 22/04 . Liên Minh Huyền Thoại",
+                  "streams": [
+                    {
+                      "id": "fb",
+                      "name": "Truc tiep",
+                      "stream_links": [
+                        {
+                          "id": "lnk0",
+                          "name": "Link 1",
+                          "type": "iframe",
+                          "default": true,
+                          "url": "https://cauthutv.shop/hle-vs-ns-1776721201553-175",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/hle-vs-ns-1776721201553-175"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "23772d2026dd35ca",
+          "name": "Gamba Osaka vs Avispa Fukuoka  17:00 | 22/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/23772d2026dd35ca.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Cháo Quẩy",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "1ab9c2092419d9e4",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "d5bc7fb3fb0c29ec",
+                  "name": "Gamba Osaka vs Avispa Fukuoka  17:00 | 22/04 . Japanese J1 League",
+                  "streams": [
+                    {
+                      "id": "a98e89c3cb6e7bba",
+                      "name": "🎙 Cháo Quẩy",
+                      "stream_links": [
+                        {
+                          "id": "e75f4f90f15dfcfc",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/gamba-osaka-vs-avispa-fukuoka"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a4e0806afedcc80e",
+          "name": "Shanghai Shenhua vs Qingdao Hainiu  19:00 | 22/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a4e0806afedcc80e.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Thây Ma (Neymar)",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "ca9db288ca95f997",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "489669e8daf4e849",
+                  "name": "Shanghai Shenhua vs Qingdao Hainiu  19:00 | 22/04 . Chinese Football Super League",
+                  "streams": [
+                    {
+                      "id": "8679941007c18d21",
+                      "name": "🎙 Thây Ma (Neymar)",
+                      "stream_links": [
+                        {
+                          "id": "ad471b080be2de41",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-thay-ma/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/shanghai-shenhua-vs-qingdao-hainiu"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "00b6fdb884c71afd",
+          "name": "Termez Surkhon vs Mashal Muborak  20:00 | 22/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/00b6fdb884c71afd.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Mèo Béo",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "d38a0e383d1b1345",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "b002a30b24fd3d91",
+                  "name": "Termez Surkhon vs Mashal Muborak  20:00 | 22/04 . Uzbekistan Super League",
+                  "streams": [
+                    {
+                      "id": "837f8b65bbbe6a91",
+                      "name": "🎙 Mèo Béo",
+                      "stream_links": [
+                        {
+                          "id": "6f7cc059867fb502",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-meo-beo/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/termez-surkhon-vs-mashal-muborak"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1088169ba1af877b",
+          "name": "Gazovik Orenburg vs FC Pari Nizhniy Novgorod  21:30 | 22/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/1088169ba1af877b.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Dylan",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "00b166fbb48c8cbd",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "b1509c7263ed853e",
+                  "name": "Gazovik Orenburg vs FC Pari Nizhniy Novgorod  21:30 | 22/04 . Russian Premier League",
+                  "streams": [
+                    {
+                      "id": "4528bfdc7f650b33",
+                      "name": "🎙 Dylan",
+                      "stream_links": [
+                        {
+                          "id": "0e7e88a1f3ce4a04",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dylan/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/gazovik-orenburg-vs-fc-pari-nizhniy-novgorod"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f71c092069d98383",
+          "name": "Buxoro FK vs Pakhtakor  22:15 | 22/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/f71c092069d98383.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Táo",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "b5fa0711ed840623",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "07e7646f2111e7b6",
+                  "name": "Buxoro FK vs Pakhtakor  22:15 | 22/04 . Uzbekistan Super League",
+                  "streams": [
+                    {
+                      "id": "06458830b5be98d1",
+                      "name": "🎙 Táo",
+                      "stream_links": [
+                        {
+                          "id": "45fc8fbdd1a258e2",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/buxoro-fk-vs-pakhtakor"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ebe924f8c5ad4092",
+          "name": "Bodo Glimt vs KFUM Oslo  23:00 | 22/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/ebe924f8c5ad4092.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 A Tai",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "fd2d6e531e7234a7",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "d1c2db344c7c6139",
+                  "name": "Bodo Glimt vs KFUM Oslo  23:00 | 22/04 . Norwegian SAS Braathens Cup",
+                  "streams": [
+                    {
+                      "id": "a0782df864ac5ac4",
+                      "name": "🎙 A Tai",
+                      "stream_links": [
+                        {
+                          "id": "33fbd01f2c3edaa0",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-gio-tai/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/bodo-glimt-vs-kfum-oslo"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a877ce390c3aadb9",
+          "name": "Paris Saint Germain vs FC Nantes  00:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a877ce390c3aadb9.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Cháo Quẩy",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "43913742738418c3",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "a260a2658e5d326f",
+                  "name": "Paris Saint Germain vs FC Nantes  00:00 | 23/04 . French Ligue 1",
+                  "streams": [
+                    {
+                      "id": "6e4d653dcca90fc0",
+                      "name": "🎙 Cháo Quẩy",
+                      "stream_links": [
+                        {
+                          "id": "8f4a7269ce720e12",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/paris-saint-germain-vs-fc-nantes"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d677d05bf3d6af07",
+          "name": "Elche vs Atletico Madrid  00:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d677d05bf3d6af07.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Người Kiến",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "50c7c8b25bccd878",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "70c0e3a9987e1c7e",
+                  "name": "Elche vs Atletico Madrid  00:00 | 23/04 . Spanish La Liga",
+                  "streams": [
+                    {
+                      "id": "d2145f9477b095ec",
+                      "name": "🎙 Người Kiến",
+                      "stream_links": [
+                        {
+                          "id": "7ede864b048bb0ac",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-nguoi-kien/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/elche-vs-atletico-madrid"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2b363cc5706c8d94",
+          "name": "Real Sociedad vs Getafe  01:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2b363cc5706c8d94.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Táo",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "6d81b89fb544024b",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "1c63476c446e8cab",
+                  "name": "Real Sociedad vs Getafe  01:00 | 23/04 . Spanish La Liga",
+                  "streams": [
+                    {
+                      "id": "84471d53608d70c7",
+                      "name": "🎙 Táo",
+                      "stream_links": [
+                        {
+                          "id": "9e1848d8a3d76d24",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/real-sociedad-vs-getafe"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "da477474578a7a38",
+          "name": "Bayer 04 Leverkusen vs FC Bayern Munich  01:45 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/da477474578a7a38.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Pháo",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "57a89234d023b882",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "6a8ecd6accbc2daf",
+                  "name": "Bayer 04 Leverkusen vs FC Bayern Munich  01:45 | 23/04 . DFB Pokal",
+                  "streams": [
+                    {
+                      "id": "6557c352e29bb056",
+                      "name": "🎙 Pháo",
+                      "stream_links": [
+                        {
+                          "id": "a29e474edf62683e",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-phao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/bayer-04-leverkusen-vs-fc-bayern-munich-1776721201553-569"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a9fa587673d6535b",
+          "name": "Burnley vs Manchester City  02:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": true,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a9fa587673d6535b.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 2 BLV",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "ca9e269d27249b3b",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "a6e80d9aa70a5e35",
+                  "name": "Burnley vs Manchester City  02:00 | 23/04 . Off Fan Man City",
+                  "streams": [
+                    {
+                      "id": "e9d142c1a0b5f437",
+                      "name": "🎙 Mèo Béo",
+                      "stream_links": [
+                        {
+                          "id": "27b1fab4513f650a",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-meo-beo/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/burnley-vs-manchester-city-1776721201553-126"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "3c6cf187ec105906",
+                      "name": "🎙 Cháo Quẩy",
+                      "stream_links": [
+                        {
+                          "id": "78eb786ef72e0fea",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/burnley-vs-manchester-city-chaoquay-1776721201553-560"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ed66847b06593474",
+          "name": "RC Strasbourg Alsace vs OGC Nice  02:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/ed66847b06593474.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Văn Chuẩn",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "ad2cb0227aa1fb5f",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "2fcd24ee67be345e",
+                  "name": "RC Strasbourg Alsace vs OGC Nice  02:00 | 23/04 . Coupe de France",
+                  "streams": [
+                    {
+                      "id": "bac67a877f4f02d7",
+                      "name": "🎙 Văn Chuẩn",
+                      "stream_links": [
+                        {
+                          "id": "d1cd5a005b981814",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/rc-strasbourg-alsace-vs-ogc-nice-1776721201553-971"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "50ea60c6a62073b2",
+          "name": "Atalanta vs Lazio  02:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/50ea60c6a62073b2.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Dylan",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "af4e0588deb66177",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "c2a3510a1bcf6d7b",
+                  "name": "Atalanta vs Lazio  02:00 | 23/04 . Coppa Italia",
+                  "streams": [
+                    {
+                      "id": "401001bbbcd8633f",
+                      "name": "🎙 Dylan",
+                      "stream_links": [
+                        {
+                          "id": "dceb67491f2962ba",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dylan/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/atalanta-vs-lazio-1776721201553-523"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8c76512bd02f8375",
+          "name": "Bournemouth AFC vs Leeds United  02:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8c76512bd02f8375.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 A Tai",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "3d89837240a2b772",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "7c212de378cbd5ac",
+                  "name": "Bournemouth AFC vs Leeds United  02:00 | 23/04 . English Premier League",
+                  "streams": [
+                    {
+                      "id": "5b4c5673f516d596",
+                      "name": "🎙 A Tai",
+                      "stream_links": [
+                        {
+                          "id": "f892e0a1b47342a8",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-gio-tai/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/bournemouth-afc-vs-leeds-united"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d22e3d49be8d302e",
+          "name": "FC Barcelona vs RC Celta  02:30 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": true,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d22e3d49be8d302e.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 3 BLV",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "f61dfd0726835895",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "4f90beed9dc85d16",
+                  "name": "FC Barcelona vs RC Celta  02:30 | 23/04 . Off Fan Barcelona",
+                  "streams": [
+                    {
+                      "id": "71b6ce7f1f2b4889",
+                      "name": "🎙 Chim Nhỏ",
+                      "stream_links": [
+                        {
+                          "id": "e8a03951d2f1ea02",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/fc-barcelona-vs-rc-celta-1776721201553-470"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "4be1f53c86d2eeb8",
+                      "name": "🎙 Lò A Mập",
+                      "stream_links": [
+                        {
+                          "id": "300577488d1da2c7",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-a-map/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/fc-barcelona-vs-rc-celta-map-1776721201553-59"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "681ca0d3310a2cd2",
+                      "name": "🎙 Thây Ma (Neymar)",
+                      "stream_links": [
+                        {
+                          "id": "312bc5e940fe2ced",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-thay-ma/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/fc-barcelona-vs-rc-celta-thayma-1776721201553-76"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8eb33271ccdf1d90",
+          "name": "FC Porto vs Sporting CP  02:45 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8eb33271ccdf1d90.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Người Kiến",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "4c1656ff6169034c",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "78f21aa37615eb21",
+                  "name": "FC Porto vs Sporting CP  02:45 | 23/04 . Portuguese Cup",
+                  "streams": [
+                    {
+                      "id": "fd20aed1ad856f1d",
+                      "name": "🎙 Người Kiến",
+                      "stream_links": [
+                        {
+                          "id": "1c0f980d3fab5f4f",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-nguoi-kien/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/fc-porto-vs-sporting-cp-1776721201553-68"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "68287325f76d4656",
+          "name": "Detroit Pistons vs Orlando Magic  06:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/68287325f76d4656.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Văn Chuẩn",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "2ba1692783e1e4da",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "5f3b2477420caae7",
+                  "name": "Detroit Pistons vs Orlando Magic  06:00 | 23/04 . NBA  (Bóng Rổ)",
+                  "streams": [
+                    {
+                      "id": "f5a836933540de29",
+                      "name": "🎙 Văn Chuẩn",
+                      "stream_links": [
+                        {
+                          "id": "ed6e7394429efb45",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/detroit-pistons-vs-orlando-magic-1776721201553-254"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2802ae95ca399598",
+          "name": "Columbus Crew vs Los Angeles Galaxy  06:30 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2802ae95ca399598.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Chim Nhỏ",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "0a4ee7c1eab590b7",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "3dbd5349334ae6b7",
+                  "name": "Columbus Crew vs Los Angeles Galaxy  06:30 | 23/04 . United States Major League Soccer",
+                  "streams": [
+                    {
+                      "id": "2bccaab7101927f6",
+                      "name": "🎙 Chim Nhỏ",
+                      "stream_links": [
+                        {
+                          "id": "def73c7c050cf183",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/columbus-crew-vs-los-angeles-galaxy"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d413b3d17c09aa5b",
+          "name": "Real Salt Lake vs Inter Miami CF  08:30 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d413b3d17c09aa5b.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Cháo Quẩy",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "0b719e0b5df7ea6a",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "37cce9724f0d14ef",
+                  "name": "Real Salt Lake vs Inter Miami CF  08:30 | 23/04 . United States Major League Soccer",
+                  "streams": [
+                    {
+                      "id": "924bd797ba51df2b",
+                      "name": "🎙 Cháo Quẩy",
+                      "stream_links": [
+                        {
+                          "id": "663ddfb29f1b4a2f",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/real-salt-lake-vs-inter-miami-cf"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6fbe8d96f4e32629",
+          "name": "Los Angeles FC vs Colorado Rapids  09:30 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6fbe8d96f4e32629.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Táo",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "050928c7d846a765",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "e5d78cde29c38d45",
+                  "name": "Los Angeles FC vs Colorado Rapids  09:30 | 23/04 . United States Major League Soccer",
+                  "streams": [
+                    {
+                      "id": "91154bc44688792c",
+                      "name": "🎙 Táo",
+                      "stream_links": [
+                        {
+                          "id": "4dbfa1bbf281f324",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/los-angeles-fc-vs-colorado-rapids"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "0c500ab313cee59a",
+          "name": "BRO vs DK  15:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/0c500ab313cee59a.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Dưa Hấu",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "a0c32379533429ce",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "3dc29a086c360aa9",
+                  "name": "BRO vs DK  15:00 | 23/04 . Liên Minh Huyền Thoại",
+                  "streams": [
+                    {
+                      "id": "8e8a6e9ef526f0c0",
+                      "name": "🎙 Dưa Hấu",
+                      "stream_links": [
+                        {
+                          "id": "ae0f413476d7e538",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dua-hau/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/bro-vs-dk-1776721201553-864"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "e92f2644d4b093e0",
+          "name": "Persita Tangerang vs Bali United  15:30 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e92f2644d4b093e0.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Văn Chuẩn",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "5ec3959233f7cad9",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "c0a4ca9c585f531f",
+                  "name": "Persita Tangerang vs Bali United  15:30 | 23/04 . Indonesian Super League",
+                  "streams": [
+                    {
+                      "id": "08091249a8154418",
+                      "name": "🎙 Văn Chuẩn",
+                      "stream_links": [
+                        {
+                          "id": "01e0ca6a4dc347b3",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/persita-tangerang-vs-bali-united"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a7f6a25c79070d50",
+          "name": "GEN vs DNS  17:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a7f6a25c79070d50.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Dưa Hấu",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "207f7b18da2c987b",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "2cda7d0a55b16723",
+                  "name": "GEN vs DNS  17:00 | 23/04 . Liên Minh Huyền Thoại",
+                  "streams": [
+                    {
+                      "id": "528d1b4ca59a1896",
+                      "name": "🎙 Dưa Hấu",
+                      "stream_links": [
+                        {
+                          "id": "c44fc0148f9e46ea",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dua-hau/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/gen-vs-dns-1776721201553-182"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6e45203e53ff293d",
+          "name": "Malut United vs Persebaya Surabaya  19:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6e45203e53ff293d.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Táo",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "fe98075f44fe005b",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "6a1d2aa70c9401b9",
+                  "name": "Malut United vs Persebaya Surabaya  19:00 | 23/04 . Indonesian Super League",
+                  "streams": [
+                    {
+                      "id": "a01437f7ef0cf477",
+                      "name": "🎙 Táo",
+                      "stream_links": [
+                        {
+                          "id": "29a9572bee504768",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/malut-united-vs-persebaya-surabaya"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "e7290f162641f957",
+          "name": "Zorya vs FC Shakhtar Donetsk  19:30 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e7290f162641f957.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 A Tai",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "f6019027a0bd146e",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "df7961ef78e1e308",
+                  "name": "Zorya vs FC Shakhtar Donetsk  19:30 | 23/04 . Ukrainian Premier League",
+                  "streams": [
+                    {
+                      "id": "07fe04d92586832c",
+                      "name": "🎙 A Tai",
+                      "stream_links": [
+                        {
+                          "id": "408ff8ad2356d793",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-gio-tai/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/zorya-vs-fc-shakhtar-donetsk"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "e72bcfd6cd734a5e",
+          "name": "Hà Nội Nữ vs Thông Tin Nữ  19:30 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e72bcfd6cd734a5e.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Chim Nhỏ",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "35a3ed4e45d95450",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "0795860e845489fb",
+                  "name": "Hà Nội Nữ vs Thông Tin Nữ  19:30 | 23/04 . Cúp Hùng Vương 2026",
+                  "streams": [
+                    {
+                      "id": "52ac2f6185d018a5",
+                      "name": "🎙 Chim Nhỏ",
+                      "stream_links": [
+                        {
+                          "id": "cece41136586d11a",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/h-ni-n-vs-thng-tin-n-1776721201553-7"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "73103590b5c4f930",
+          "name": "Al-Sharjah vs Al Wahda(UAE)  21:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/73103590b5c4f930.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Thây Ma (Neymar)",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "40ab0e15faabfed8",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "1f04895b28452a5b",
+                  "name": "Al-Sharjah vs Al Wahda(UAE)  21:00 | 23/04 . United Arab Emirates Adnoc Pro-League",
+                  "streams": [
+                    {
+                      "id": "3e52ba09fa406268",
+                      "name": "🎙 Thây Ma (Neymar)",
+                      "stream_links": [
+                        {
+                          "id": "78ecef5bf787a14b",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-thay-ma/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/al-sharjah-vs-al-wahdauae"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "53051073342153bd",
+          "name": "Biên Phòng MB vs Hà Nội  21:30 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/53051073342153bd.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Pháo",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "af83cfbceb95b81d",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "d22bd456d429777c",
+                  "name": "Biên Phòng MB vs Hà Nội  21:30 | 23/04 . Cúp Hùng Vương 2026",
+                  "streams": [
+                    {
+                      "id": "27b11735f2157060",
+                      "name": "🎙 Pháo",
+                      "stream_links": [
+                        {
+                          "id": "f59416b970e9d88a",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-phao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/bin-phng-mb-vs-h-ni-1776721201553-823"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bb48f5bd587962d6",
+          "name": "El Mokawloon El Arab vs Ittihad Alexandria SC  22:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/bb48f5bd587962d6.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Người Kiến",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "8b68a0c5260a9e49",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "0e31b62d3fc94ec2",
+                  "name": "El Mokawloon El Arab vs Ittihad Alexandria SC  22:00 | 23/04 . Egyptian Premier League",
+                  "streams": [
+                    {
+                      "id": "cfe15d3ff1f39f6a",
+                      "name": "🎙 Người Kiến",
+                      "stream_links": [
+                        {
+                          "id": "0865a9e6291caf6d",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-nguoi-kien/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/el-mokawloon-el-arab-vs-ittihad-alexandria-sc"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8f2cc24795ccda42",
+          "name": "Istanbul GSK vs Fenerbahce  23:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8f2cc24795ccda42.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Lò A Mập",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "a5437767c3217e9c",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "5e15b6ca2ccca2ee",
+                  "name": "Istanbul GSK vs Fenerbahce  23:00 | 23/04 . Efeler Ligi",
+                  "streams": [
+                    {
+                      "id": "d86b11e07d2dcdf6",
+                      "name": "🎙 Lò A Mập",
+                      "stream_links": [
+                        {
+                          "id": "89228914a78fc988",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-a-map/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/istanbul-gsk-vs-fenerbahce-1776721201553-303"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "df833c7fd3016891",
+          "name": "Al Najma(KSA) vs Al Taawoun  23:10 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/df833c7fd3016891.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Mèo Béo",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "3fcd324f52561e73",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "3ed10e652ed6a3de",
+                  "name": "Al Najma(KSA) vs Al Taawoun  23:10 | 23/04 . Saudi Professional League",
+                  "streams": [
+                    {
+                      "id": "874a69cabfa9bf77",
+                      "name": "🎙 Mèo Béo",
+                      "stream_links": [
+                        {
+                          "id": "474513a5c051622a",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-meo-beo/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/al-najmaksa-vs-al-taawoun"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "75b62829ce1eeaa9",
+          "name": "Preah Khan Reach Svay Rieng FC vs Nagaworld FC  18:00 | 25/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/75b62829ce1eeaa9.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "Sap dien ra",
+              "color": "#d54f1a",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Người Kiến",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "7a971314bf68ed5e",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "e1154e43a4c5f6ca",
+                  "name": "Preah Khan Reach Svay Rieng FC vs Nagaworld FC  18:00 | 25/04 . Cambodian Premier League",
+                  "streams": [
+                    {
+                      "id": "7436aadfccd3ee38",
+                      "name": "🎙 Người Kiến",
+                      "stream_links": [
+                        {
+                          "id": "28057896ca3ab831",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-nguoi-kien/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/preah-khan-reach-svay-rieng-fc-vs-nagaworld-fc"
                             },
                             {
                               "key": "User-Agent",
