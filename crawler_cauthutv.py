@@ -315,7 +315,7 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
 
     LX = W//4; RX = 3*W//4
     MAX_HALF = (CX - BW//2 - 20) - LX
-    LMAX = min(BODY_H - NAME_H - GAP - 20, MAX_HALF * 2, 110)
+    LMAX = min(BODY_H - NAME_H - GAP - 20, MAX_HALF * 2, 132)   # 110 × 1.2
     LMAX = max(LMAX, 60)
 
     CONTENT_H = LMAX + GAP + NAME_H
@@ -337,28 +337,29 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
             draw.ellipse([(cx-R2,cy-R2),(cx+R2,cy+R2)],
                          fill=(235,235,240), outline=A, width=2)
             draw.text((cx,cy), "".join(w[0].upper() for w in (name or "?").split()[:2]) or "?",
-                      fill=A, font=_font(42), anchor="mm")
-        # Tên đội bold
+                      fill=A, font=_font(50), anchor="mm")
+        # Tên đội bold — tăng 20%: 22 → 26
         draw.text((cx, NY_Y), (name or "?")[:18],
-                  fill=(20,20,20), font=_font(22,bold=True), anchor="mm")
+                  fill=(20,20,20), font=_font(26, bold=True), anchor="mm")
 
     draw_logo(LX, LY, home_logo_url, home_team)
     draw_logo(RX, LY, away_logo_url, away_team)
 
-    # ── Hộp VS / LIVE giữa ──
+    # ── Hộp VS / LIVE giữa — font tăng 20% ──
     if status == "live":
-        bbg, l1, l2, f1, f2 = (34,160,60), "LIVE", "", 24, 20
+        bbg, l1, l2, f1, f2 = (34,160,60), "LIVE", "", 29, 24
     else:
         bbg = (255,255,255)
         l1, l2 = time_str or "VS", date_str or ""
-        f1, f2 = 28, 22
-    BH = 70 if l2 else 52
-    bx0,by0 = CX-BW//2, LY-BH//2
-    bx1,by1 = CX+BW//2, LY+BH//2
-    draw.rounded_rectangle([(bx0,by0),(bx1,by1)], radius=14, fill=bbg, outline=A, width=3)
+        f1, f2 = 34, 26   # 28×1.2≈34, 22×1.2≈26
+    BH = 84 if l2 else 62   # 70×1.2=84, 52×1.2≈62
+    BW2 = 176              # 148×1.2≈176
+    bx0,by0 = CX-BW2//2, LY-BH//2
+    bx1,by1 = CX+BW2//2, LY+BH//2
+    draw.rounded_rectangle([(bx0,by0),(bx1,by1)], radius=16, fill=bbg, outline=A, width=3)
     if status == "live":
-        draw.ellipse([(bx0+14,LY-7),(bx0+27,LY+7)], fill=(255,50,50))
-        draw.text((CX+8, LY), "LIVE", fill=(255,255,255), font=_font(f1), anchor="mm")
+        draw.ellipse([(bx0+14,LY-8),(bx0+30,LY+8)], fill=(255,50,50))
+        draw.text((CX+10, LY), "LIVE", fill=(255,255,255), font=_font(f1), anchor="mm")
     elif l2:
         draw.text((CX, by0+BH//2-f1//2-2), l1, fill=A, font=_font(f1), anchor="mm")
         draw.text((CX, by0+BH//2+f2//2+2), l2, fill=(100,100,100),
@@ -397,10 +398,11 @@ def build_name(m):
 def build_channel(m, all_streams, index):
     ch_id=make_id("ctt",index,re.sub(r"[^a-z0-9]","-",m.get("base_title","").lower())[:24])
     name=build_name(m); league=m.get("league",""); status=m.get("status","upcoming")
-    sc_map={"live":{"text":"Live","color":"#E73131","text_color":"#fff"},
-            "upcoming":{"text":"Sap dien ra","color":"#d54f1a","text_color":"#fff"},
+    sc_map={"live":{"text":"● Live","color":"#E73131","text_color":"#fff"},
             "finished":{"text":"Ket thuc","color":"#444","text_color":"#fff"}}
-    labels=[{**sc_map.get(status,sc_map["live"]),"position":"top-left"}]
+    labels=[]
+    if status in sc_map:
+        labels=[{**sc_map[status],"position":"top-left"}]
     blv_names=[s["blv"] for s in m.get("blv_sources",[]) if s.get("blv")]
     if len(blv_names)>1:
         labels.append({"text":f"🎙 {len(blv_names)} BLV","position":"bottom-left","color":"#1a8a2e","text_color":"#fff"})
