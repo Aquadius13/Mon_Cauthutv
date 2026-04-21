@@ -104,7 +104,7 @@
         },
         {
           "id": "d6be1f4eaa493b18",
-          "name": "Chengdu Rongcheng vs Yunnan Yukun  18:35 | 21/04",
+          "name": "Chengdu Rongcheng vs Yunnan Yukun  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -117,6 +117,12 @@
             "height": 540
           },
           "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
             {
               "text": "🎙 Lò A Mập",
               "position": "bottom-left",
@@ -131,7 +137,7 @@
               "contents": [
                 {
                   "id": "2cc0cd8a01e13eb4",
-                  "name": "Chengdu Rongcheng vs Yunnan Yukun  18:35 | 21/04 . Chinese Football Super League",
+                  "name": "Chengdu Rongcheng vs Yunnan Yukun  LIVE . Chinese Football Super League",
                   "streams": [
                     {
                       "id": "174ef2a36a130205",
@@ -153,6 +159,23 @@
                               "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
+                        },
+                        {
+                          "id": "7cf4ae22471f561e",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/2261fcdb2416aa008a10818f0852e8cd/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/chengdu-rongcheng-vs-yunnan-yukun"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -164,7 +187,7 @@
         },
         {
           "id": "b9454bf0bc6b0667",
-          "name": "Shanghai Port vs Chongqing Tonglianglong  19:00 | 21/04",
+          "name": "Shanghai Port vs Chongqing Tonglianglong  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -177,6 +200,12 @@
             "height": 540
           },
           "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
             {
               "text": "🎙 Cháo Quẩy",
               "position": "bottom-left",
@@ -191,7 +220,7 @@
               "contents": [
                 {
                   "id": "54793d4b5bd28ed5",
-                  "name": "Shanghai Port vs Chongqing Tonglianglong  19:00 | 21/04 . Chinese Football Super League",
+                  "name": "Shanghai Port vs Chongqing Tonglianglong  LIVE . Chinese Football Super League",
                   "streams": [
                     {
                       "id": "7dc474371b92fc93",
@@ -203,6 +232,23 @@
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/shanghai-port-vs-chongqing-tonglianglong"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "e1bfac91f561fe77",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/b2adf209922e784927831dd4cb01656d/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
