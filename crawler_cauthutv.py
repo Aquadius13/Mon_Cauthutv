@@ -239,7 +239,7 @@ def _sport_key(sport, league):
     if re.search(r'basketball|bong.?ro|nba', raw): return "basketball"
     if re.search(r'tennis|atp|wta', raw): return "tennis"
     if re.search(r'volleyball|bong.?chuyen|vnl', raw): return "volleyball"
-    if re.search(r'esport|lol|dota|csgo|valorant|pubg|gaming', raw): return "esports"
+    if re.search(r'esport|lol|dota|csgo|valorant|pubg|gaming|lck|lpl|lcs|vcs|\bkt\b|rolster|t1|gen\.g|faker', raw): return "esports"
     if re.search(r'boxing|mma|ufc|muay', raw): return "boxing"
     if re.search(r'badminton|cau.?long', raw): return "badminton"
     if re.search(r'golf|pga', raw): return "golf"
@@ -315,7 +315,7 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
 
     LX = W//4; RX = 3*W//4
     MAX_HALF = (CX - BW//2 - 20) - LX
-    LMAX = min(BODY_H - NAME_H - GAP - 20, MAX_HALF * 2, 132)   # 110 × 1.2
+    LMAX = min(BODY_H - NAME_H - GAP - 20, MAX_HALF * 2, 172)   # 132 × 1.3 ≈ 172
     LMAX = max(LMAX, 60)
 
     CONTENT_H = LMAX + GAP + NAME_H
@@ -340,7 +340,7 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
                       fill=A, font=_font(50), anchor="mm")
         # Tên đội bold — tăng 20%: 22 → 26
         draw.text((cx, NY_Y), (name or "?")[:18],
-                  fill=(20,20,20), font=_font(26, bold=True), anchor="mm")
+                  fill=(20,20,20), font=_font(26, bold=False), anchor="mm")
 
     draw_logo(LX, LY, home_logo_url, home_team)
     draw_logo(RX, LY, away_logo_url, away_team)
