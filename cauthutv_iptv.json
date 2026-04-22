@@ -20,90 +20,7 @@
       "image": null,
       "channels": [
         {
-          "id": "263ccb1166dfea8c",
-          "name": "Real Sociedad vs Getafe  LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/263ccb1166dfea8c.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "● Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Táo",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "6a71d89f15a83204",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "00546a02f67f64b3",
-                  "name": "Real Sociedad vs Getafe  LIVE . Spanish La Liga",
-                  "streams": [
-                    {
-                      "id": "81641a8ac8ffcc08",
-                      "name": "🎙 Táo",
-                      "stream_links": [
-                        {
-                          "id": "da5c2cc87774e5d3",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/real-sociedad-vs-getafe"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "3435016d59d81a43",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/98fbb1b33eccfca41189e9778df0e5f1/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/real-sociedad-vs-getafe"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "e8d76261e632af4c",
+          "id": "d58ad80f0003042d",
           "name": "Bayer 04 Leverkusen vs FC Bayern Munich  LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -112,7 +29,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e8d76261e632af4c.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d58ad80f0003042d.webp",
             "width": 820,
             "height": 540
           },
@@ -132,19 +49,19 @@
           ],
           "sources": [
             {
-              "id": "5c14897e673d59aa",
+              "id": "1c0ddc7a40deb46c",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "56926e35f96d23dd",
+                  "id": "7b40a92097854e9c",
                   "name": "Bayer 04 Leverkusen vs FC Bayern Munich  LIVE . DFB Pokal",
                   "streams": [
                     {
-                      "id": "97e0b715b52f32cd",
+                      "id": "26bc10f80be631ea",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "5ac5659ba12e91fb",
+                          "id": "ed0f79c655ed1dfc",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -169,7 +86,7 @@
           ]
         },
         {
-          "id": "95831ef8531f7b59",
+          "id": "a2770f271956b98f",
           "name": "Burnley vs Manchester City  LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -178,7 +95,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/95831ef8531f7b59.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a2770f271956b98f.webp",
             "width": 820,
             "height": 540
           },
@@ -198,19 +115,42 @@
           ],
           "sources": [
             {
-              "id": "f427528c546eee5b",
+              "id": "0b3663f2ab8870c4",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "ee18f9e0b7951d3e",
-                  "name": "Burnley vs Manchester City  LIVE . Off Fan Man City",
+                  "id": "fc208a05dce64b51",
+                  "name": "Burnley vs Manchester City  LIVE . Trung Lập",
                   "streams": [
                     {
-                      "id": "e0390ea293f6a458",
+                      "id": "6eeba5af4efbaaba",
+                      "name": "🎙 Cháo Quẩy",
+                      "stream_links": [
+                        {
+                          "id": "ce803cc34d1de89a",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/burnley-vs-manchester-city-quay-1776888385455-836"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "3fc6033309c3dfe2",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "4c62ebac7aa7b597",
+                          "id": "29b5b3f15c91336b",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -227,29 +167,6 @@
                           ]
                         }
                       ]
-                    },
-                    {
-                      "id": "ece2bbd9eea53572",
-                      "name": "🎙 Cháo Quẩy",
-                      "stream_links": [
-                        {
-                          "id": "3406a19c9ec8a4ff",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/burnley-vs-manchester-city-chaoquay-1776721201553-560"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
                     }
                   ]
                 }
@@ -258,7 +175,7 @@
           ]
         },
         {
-          "id": "7ef6793719ec8b21",
+          "id": "a062ef56d5e0ee23",
           "name": "RC Strasbourg Alsace vs OGC Nice  LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -267,7 +184,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7ef6793719ec8b21.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a062ef56d5e0ee23.webp",
             "width": 820,
             "height": 540
           },
@@ -287,11 +204,11 @@
           ],
           "sources": [
             {
-              "id": "d6263c4c461b83c1",
+              "id": "abe7924b9e1e784f",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "f9e52d1851103eb3",
+                  "id": "162de51e85b07f1c",
                   "name": "RC Strasbourg Alsace vs OGC Nice  LIVE . Coupe de France",
                   "streams": [
                     {
@@ -324,8 +241,8 @@
           ]
         },
         {
-          "id": "326234e2e50d184f",
-          "name": "Atalanta vs Lazio  02:00 | 23/04",
+          "id": "d07d0e879f6775d4",
+          "name": "Atalanta vs Lazio  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -333,11 +250,17 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/326234e2e50d184f.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d07d0e879f6775d4.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
             {
               "text": "🎙 Dylan",
               "position": "bottom-left",
@@ -347,19 +270,19 @@
           ],
           "sources": [
             {
-              "id": "b24042856a2f0226",
+              "id": "66b8d0cbf02c57d2",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "6aded47cfd7e6bda",
-                  "name": "Atalanta vs Lazio  02:00 | 23/04 . Coppa Italia",
+                  "id": "e83c876cdee4d0df",
+                  "name": "Atalanta vs Lazio  LIVE . Coppa Italia",
                   "streams": [
                     {
-                      "id": "99e9dd1fe5beec73",
+                      "id": "de38aae957f5f868",
                       "name": "🎙 Dylan",
                       "stream_links": [
                         {
-                          "id": "9b8bc7a98c09add2",
+                          "id": "fd91fd5223458599",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -384,8 +307,8 @@
           ]
         },
         {
-          "id": "ff9d1e35947a0cc8",
-          "name": "Bournemouth AFC vs Leeds United  02:00 | 23/04",
+          "id": "f3deb34013178034",
+          "name": "Bournemouth AFC vs Leeds United  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -393,11 +316,17 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/ff9d1e35947a0cc8.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/f3deb34013178034.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
             {
               "text": "🎙 A Tai",
               "position": "bottom-left",
@@ -407,19 +336,19 @@
           ],
           "sources": [
             {
-              "id": "851b78a9c3d902c1",
+              "id": "8989cdda2aa59774",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "7b85db0bceff47e8",
-                  "name": "Bournemouth AFC vs Leeds United  02:00 | 23/04 . English Premier League",
+                  "id": "a26f3b52ea96e601",
+                  "name": "Bournemouth AFC vs Leeds United  LIVE . English Premier League",
                   "streams": [
                     {
-                      "id": "89fff379d7905046",
+                      "id": "2c7bcc13fc0af02c",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "ab282232cc3a7d7c",
+                          "id": "8687adec533839dd",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -436,7 +365,7 @@
                           ]
                         },
                         {
-                          "id": "7dbb115a1e1b4c2d",
+                          "id": "1ea521634f1325c6",
                           "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
@@ -461,8 +390,8 @@
           ]
         },
         {
-          "id": "9b861de5a5c16880",
-          "name": "FC Barcelona vs RC Celta  02:30 | 23/04",
+          "id": "b56b07fc12c95ccc",
+          "name": "FC Barcelona vs RC Celta  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": true,
@@ -470,13 +399,19 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/9b861de5a5c16880.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b56b07fc12c95ccc.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
             {
-              "text": "🎙 3 BLV",
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 2 BLV",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -484,42 +419,19 @@
           ],
           "sources": [
             {
-              "id": "80cc90c8a9698b37",
+              "id": "71b00a2151d0e5ea",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "26d7293fd4589464",
-                  "name": "FC Barcelona vs RC Celta  02:30 | 23/04 . Off Fan Barcelona",
+                  "id": "e48e013593b64888",
+                  "name": "FC Barcelona vs RC Celta  LIVE . Luồng Cảm Xúc",
                   "streams": [
                     {
-                      "id": "65a87a1875ef9648",
-                      "name": "🎙 Chim Nhỏ",
-                      "stream_links": [
-                        {
-                          "id": "eee6dbced22146a3",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/fc-barcelona-vs-rc-celta-1776721201553-470"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "id": "68a524438c7c2570",
+                      "id": "7ac60fff676999d2",
                       "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "51470c611c27986c",
+                          "id": "13ed8b02f9c2e120",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -538,11 +450,11 @@
                       ]
                     },
                     {
-                      "id": "247edc71bfbf881f",
+                      "id": "78a38a8518367486",
                       "name": "🎙 Neymar",
                       "stream_links": [
                         {
-                          "id": "2229487d37c87de6",
+                          "id": "6fdc1d208d4d4e44",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -567,8 +479,8 @@
           ]
         },
         {
-          "id": "82d53c7304ffd594",
-          "name": "FC Porto vs Sporting CP  02:45 | 23/04",
+          "id": "7cf78a6552e52080",
+          "name": "FC Porto vs Sporting CP  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -576,11 +488,17 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/82d53c7304ffd594.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7cf78a6552e52080.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
             {
               "text": "🎙 Người Kiến",
               "position": "bottom-left",
@@ -590,19 +508,19 @@
           ],
           "sources": [
             {
-              "id": "00458e3ee2217637",
+              "id": "cc3bbdc3417028eb",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "0cef53027470ff73",
-                  "name": "FC Porto vs Sporting CP  02:45 | 23/04 . Portuguese Cup",
+                  "id": "5fcee31f9610278c",
+                  "name": "FC Porto vs Sporting CP  LIVE . Portuguese Cup",
                   "streams": [
                     {
-                      "id": "c7f54d74919f959c",
+                      "id": "eb27ec3d8b59c60e",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "1b6e766fdbed06b5",
+                          "id": "c7be27e9e9980c53",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -611,6 +529,66 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/fc-porto-vs-sporting-cp-1776721201553-68"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "94b742a018697790",
+          "name": "CD Victoria vs Juticalpa  04:00 | 23/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/94b742a018697790.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "🎙 Chim Nhỏ",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "6e05ab110446be14",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "acde4642b8007c72",
+                  "name": "CD Victoria vs Juticalpa  04:00 | 23/04 . Honduras Primera Division",
+                  "streams": [
+                    {
+                      "id": "ac9e0cf48f0b5795",
+                      "name": "🎙 Chim Nhỏ",
+                      "stream_links": [
+                        {
+                          "id": "9713078cc760c90a",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/cd-victoria-vs-juticalpa"
                             },
                             {
                               "key": "User-Agent",
