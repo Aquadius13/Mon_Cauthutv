@@ -20,8 +20,8 @@
       "image": null,
       "channels": [
         {
-          "id": "21969cafdeba0412",
-          "name": "BRO vs DK  15:00 | 23/04",
+          "id": "58945bd6891cf94d",
+          "name": "Persita Tangerang vs Bali United  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -29,13 +29,19 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/21969cafdeba0412.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/58945bd6891cf94d.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
             {
-              "text": "🎙 Dưa Hấu",
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Văn Chuẩn",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -43,27 +49,27 @@
           ],
           "sources": [
             {
-              "id": "35d540770df1c4dc",
+              "id": "b21566c0da9866c7",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "4538be75f03e6e21",
-                  "name": "BRO vs DK  15:00 | 23/04 . Liên Minh Huyền Thoại",
+                  "id": "7e0084144e718c90",
+                  "name": "Persita Tangerang vs Bali United  LIVE . Indonesian Super League",
                   "streams": [
                     {
-                      "id": "b0d00cb08f05e297",
-                      "name": "🎙 Dưa Hấu",
+                      "id": "bd428303e97991e4",
+                      "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "02d808d6d3d30dba",
+                          "id": "fc5d03a26d477d84",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dua-hau/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-van-chuan/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/bro-vs-dk-1776721201553-864"
+                              "value": "https://cauthutv.shop/persita-tangerang-vs-bali-united"
                             },
                             {
                               "key": "User-Agent",
@@ -80,8 +86,8 @@
           ]
         },
         {
-          "id": "7b9ec2e88692ed0e",
-          "name": "Persita Tangerang vs Bali United  15:30 | 23/04",
+          "id": "bc7898152b5c1717",
+          "name": "BRO vs DK  15:00 | 23/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -89,13 +95,13 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7b9ec2e88692ed0e.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/bc7898152b5c1717.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
             {
-              "text": "🎙 Văn Chuẩn",
+              "text": "🎙 Dưa Hấu",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -103,27 +109,27 @@
           ],
           "sources": [
             {
-              "id": "c6f3db040e59c082",
+              "id": "8e1a958af16fb71c",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "62de56059ab739a1",
-                  "name": "Persita Tangerang vs Bali United  15:30 | 23/04 . Indonesian Super League",
+                  "id": "8e65fc25ed0afde4",
+                  "name": "BRO vs DK  15:00 | 23/04 . Liên Minh Huyền Thoại",
                   "streams": [
                     {
-                      "id": "d576650acb7ba217",
-                      "name": "🎙 Văn Chuẩn",
+                      "id": "84bb32d2d1f884c4",
+                      "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "5d9dad0b2517c446",
+                          "id": "1ebc12beec57b9b3",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-dua-hau/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/persita-tangerang-vs-bali-united"
+                              "value": "https://cauthutv.shop/bro-vs-dk-1776721201553-864"
                             },
                             {
                               "key": "User-Agent",
