@@ -20,7 +20,90 @@
       "image": null,
       "channels": [
         {
-          "id": "0d0f0df2c7d716ba",
+          "id": "86a1b53db9e7797d",
+          "name": "Zorya vs FC Shakhtar Donetsk  LIVE",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/86a1b53db9e7797d.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 A Tai",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "6342481da4f78b0e",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "f845d0a49e8d74cf",
+                  "name": "Zorya vs FC Shakhtar Donetsk  LIVE . Ukrainian Premier League",
+                  "streams": [
+                    {
+                      "id": "b32c1f607d826259",
+                      "name": "🎙 A Tai",
+                      "stream_links": [
+                        {
+                          "id": "9ded961c83daf04b",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-gio-tai/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/zorya-vs-fc-shakhtar-donetsk"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "8859e1fb0eefe92e",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/f0653da7fc737c82bf11be133e209fb2/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/zorya-vs-fc-shakhtar-donetsk"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5ea7d6345662b752",
           "name": "GEN vs DNS  17:00 | 23/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -29,7 +112,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/0d0f0df2c7d716ba.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5ea7d6345662b752.webp",
             "width": 820,
             "height": 540
           },
@@ -43,19 +126,19 @@
           ],
           "sources": [
             {
-              "id": "559b2768816a1323",
+              "id": "810a491bb91432bd",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "21d68ecde8038ffc",
+                  "id": "d8358a91fc46a1fa",
                   "name": "GEN vs DNS  17:00 | 23/04 . Liên Minh Huyền Thoại",
                   "streams": [
                     {
-                      "id": "1492d4c04ca98e3f",
+                      "id": "5fe711b53331e52c",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "dfe9da428e0c6d8a",
+                          "id": "7b920f5aa3a477b3",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -80,7 +163,7 @@
           ]
         },
         {
-          "id": "485c6628bf536b75",
+          "id": "5f6a8efd33973b6e",
           "name": "Malut United vs Persebaya Surabaya  19:00 | 23/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -89,7 +172,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/485c6628bf536b75.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5f6a8efd33973b6e.webp",
             "width": 820,
             "height": 540
           },
@@ -103,19 +186,19 @@
           ],
           "sources": [
             {
-              "id": "926408481f05949e",
+              "id": "e07583966893deb3",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "dd4192f33f54fb47",
+                  "id": "3802f7bd58845421",
                   "name": "Malut United vs Persebaya Surabaya  19:00 | 23/04 . Indonesian Super League",
                   "streams": [
                     {
-                      "id": "994f2446dd9c8670",
+                      "id": "a3d7bd2a11892337",
                       "name": "🎙 Táo",
                       "stream_links": [
                         {
-                          "id": "925bba79d9fd5ef9",
+                          "id": "21ef98287efc0248",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -130,60 +213,17 @@
                               "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
                             }
                           ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "41e4620b25901995",
-          "name": "Zorya vs FC Shakhtar Donetsk  19:30 | 23/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/41e4620b25901995.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "🎙 A Tai",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "eea57157bffa5804",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "a6b6949a7ed673d8",
-                  "name": "Zorya vs FC Shakhtar Donetsk  19:30 | 23/04 . Ukrainian Premier League",
-                  "streams": [
-                    {
-                      "id": "d5554e71a565ff18",
-                      "name": "🎙 A Tai",
-                      "stream_links": [
+                        },
                         {
-                          "id": "42dffffe68828c32",
-                          "name": "HD",
+                          "id": "eb59b5b4b7335df9",
+                          "name": "Nha Dai SD",
                           "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-gio-tai/index.m3u8",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/b08b128cd772985178a8ddea344b785d/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/zorya-vs-fc-shakhtar-donetsk"
+                              "value": "https://cauthutv.shop/malut-united-vs-persebaya-surabaya"
                             },
                             {
                               "key": "User-Agent",
