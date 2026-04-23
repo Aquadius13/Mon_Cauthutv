@@ -20,8 +20,8 @@
       "image": null,
       "channels": [
         {
-          "id": "175a5c9b29d21103",
-          "name": "Detroit Pistons vs Orlando Magic  06:00 | 23/04",
+          "id": "fda81e706d5a1796",
+          "name": "Real Salt Lake vs Inter Miami CF  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -29,13 +29,19 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/175a5c9b29d21103.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/fda81e706d5a1796.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
             {
-              "text": "🎙 Văn Chuẩn",
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Cháo Quẩy",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -43,27 +49,44 @@
           ],
           "sources": [
             {
-              "id": "a37adcab52841ffe",
+              "id": "b11d41825ba0cdb6",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "8006521d4cb3082c",
-                  "name": "Detroit Pistons vs Orlando Magic  06:00 | 23/04 . NBA  (Bóng Rổ)",
+                  "id": "d82522b25356f53a",
+                  "name": "Real Salt Lake vs Inter Miami CF  LIVE . United States Major League Soccer",
                   "streams": [
                     {
-                      "id": "19cff73c19df9fa0",
-                      "name": "🎙 Văn Chuẩn",
+                      "id": "02297c5eaf1f5083",
+                      "name": "🎙 Cháo Quẩy",
                       "stream_links": [
                         {
-                          "id": "b0d323ebd9a7eae6",
+                          "id": "6f24f32ce67fc353",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/detroit-pistons-vs-orlando-magic-1776721201553-254"
+                              "value": "https://cauthutv.shop/real-salt-lake-vs-inter-miami-cf"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "48d1da86ccf637df",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/eb4b717e05d96a6e1041ccd14527c569/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/real-salt-lake-vs-inter-miami-cf"
                             },
                             {
                               "key": "User-Agent",
@@ -81,7 +104,7 @@
         },
         {
           "id": "825acf8b6a7b831c",
-          "name": "Columbus Crew vs Los Angeles Galaxy  06:30 | 23/04",
+          "name": "Columbus Crew vs Los Angeles Galaxy  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -95,7 +118,13 @@
           },
           "labels": [
             {
-              "text": "🎙 Chim Nhỏ",
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Nhà Đài",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -108,18 +137,18 @@
               "contents": [
                 {
                   "id": "a1e8f21953d4bb17",
-                  "name": "Columbus Crew vs Los Angeles Galaxy  06:30 | 23/04 . United States Major League Soccer",
+                  "name": "Columbus Crew vs Los Angeles Galaxy  LIVE . United States Major League Soccer",
                   "streams": [
                     {
                       "id": "d5eab8788fd13201",
-                      "name": "🎙 Chim Nhỏ",
+                      "name": "🎙 Nhà Đài",
                       "stream_links": [
                         {
                           "id": "3624421fd9359770",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chim-nho/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-dylan/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -140,8 +169,8 @@
           ]
         },
         {
-          "id": "6f541b3369c181f9",
-          "name": "Real Salt Lake vs Inter Miami CF  08:30 | 23/04",
+          "id": "fd9cd25776feba49",
+          "name": "Detroit Pistons vs Orlando Magic  06:00 | 23/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -149,13 +178,13 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6f541b3369c181f9.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/fd9cd25776feba49.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
             {
-              "text": "🎙 Cháo Quẩy",
+              "text": "🎙 Văn Chuẩn",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -163,27 +192,27 @@
           ],
           "sources": [
             {
-              "id": "4ea10903db55304b",
+              "id": "52126de426943aae",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "c1aca9c9bede29ea",
-                  "name": "Real Salt Lake vs Inter Miami CF  08:30 | 23/04 . United States Major League Soccer",
+                  "id": "c5c98b8299dec822",
+                  "name": "Detroit Pistons vs Orlando Magic  06:00 | 23/04 . NBA  (Bóng Rổ)",
                   "streams": [
                     {
-                      "id": "c106f1ec4bd5857e",
-                      "name": "🎙 Cháo Quẩy",
+                      "id": "e50babd4fee6970b",
+                      "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "f7e6962630375c66",
+                          "id": "5cf63b4a4ddf05e8",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-chao-quay/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-van-chuan/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/real-salt-lake-vs-inter-miami-cf"
+                              "value": "https://cauthutv.shop/detroit-pistons-vs-orlando-magic-1776721201553-254"
                             },
                             {
                               "key": "User-Agent",
@@ -240,6 +269,23 @@
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2030.info/str01/blv-tao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/los-angeles-fc-vs-colorado-rapids"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "2acf199a0b563867",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/bd49fc2319e2103512f74aca266841aa/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
