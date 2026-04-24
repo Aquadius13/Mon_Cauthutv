@@ -20,7 +20,239 @@
       "image": null,
       "channels": [
         {
-          "id": "aabc93aee8aef01c",
+          "id": "84f6475bdfe8f4a5",
+          "name": "Persatuan Sepakbola Indonesia Jepara vs PSBS Biak Numfor  LIVE",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/84f6475bdfe8f4a5.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 A Tai",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "8ef1a1a3dc0ad820",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "6227e3917f165acf",
+                  "name": "Persatuan Sepakbola Indonesia Jepara vs PSBS Biak Numfor  LIVE . Indonesian Super League",
+                  "streams": [
+                    {
+                      "id": "a3d2ebb9df6072f3",
+                      "name": "🎙 A Tai",
+                      "stream_links": [
+                        {
+                          "id": "3539c526c18a8982",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-gio-tai/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/persatuan-sepakbola-indonesia-jepara-vs-psbs-biak-numfor"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "f4c8a140670b40ad",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/fe8ea8bee5a99d7016f33b7e07e8ac4c/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/persatuan-sepakbola-indonesia-jepara-vs-psbs-biak-numfor"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "b9e431504883a7f0",
+          "name": "Macarthur FC vs Wellington Phoenix  LIVE",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b9e431504883a7f0.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Táo",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "abb5370c72415119",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "01e76006ef8a7ec5",
+                  "name": "Macarthur FC vs Wellington Phoenix  LIVE . Australia A-League",
+                  "streams": [
+                    {
+                      "id": "09dc8f916f99bf8e",
+                      "name": "🎙 Táo",
+                      "stream_links": [
+                        {
+                          "id": "d473c7fa83d52aba",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-tao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/macarthur-fc-vs-wellington-phoenix"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "983f145a13c8d4fa",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/84d36fc9c2255a0519458848bfac0adc/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/macarthur-fc-vs-wellington-phoenix"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a9605abc1129fd91",
+          "name": "Hoang Anh Gia Lai vs XM Hai Phong FC  LIVE",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a9605abc1129fd91.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Pháo",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "10e24bd69dc17f4e",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "9c81c43243e919e1",
+                  "name": "Hoang Anh Gia Lai vs XM Hai Phong FC  LIVE . Vietnam National Champion League",
+                  "streams": [
+                    {
+                      "id": "2fc8bffddaaeeffb",
+                      "name": "🎙 Pháo",
+                      "stream_links": [
+                        {
+                          "id": "bca45ba84f94fda2",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-phao/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/hoang-anh-gia-lai-vs-xm-hai-phong-fc"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "47642b7bd05be161",
           "name": "BFX vs KT  15:00 | 24/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -29,7 +261,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/aabc93aee8aef01c.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/47642b7bd05be161.webp",
             "width": 820,
             "height": 540
           },
@@ -43,19 +275,19 @@
           ],
           "sources": [
             {
-              "id": "f0deba8aa4820a2d",
+              "id": "778b7c02d989e7e0",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "b38eb181be285b07",
+                  "id": "b4d0be2611a4695e",
                   "name": "BFX vs KT  15:00 | 24/04 . Liên Minh Huyền Thoại",
                   "streams": [
                     {
-                      "id": "a7f355e9890902f2",
+                      "id": "d92d2e8c76c97d6d",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "f14d66fb68dd6084",
+                          "id": "4f18d37f8b7ada05",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -80,127 +312,7 @@
           ]
         },
         {
-          "id": "db3ab4aa4446c1c3",
-          "name": "Persatuan Sepakbola Indonesia Jepara vs PSBS Biak Numfor  15:30 | 24/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/db3ab4aa4446c1c3.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "🎙 A Tai",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "b40495ce8fa5d9a3",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "68544060c41246d9",
-                  "name": "Persatuan Sepakbola Indonesia Jepara vs PSBS Biak Numfor  15:30 | 24/04 . Indonesian Super League",
-                  "streams": [
-                    {
-                      "id": "74789549cb8997c9",
-                      "name": "🎙 A Tai",
-                      "stream_links": [
-                        {
-                          "id": "2ef6a7efa9a18c48",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-gio-tai/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/persatuan-sepakbola-indonesia-jepara-vs-psbs-biak-numfor"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "b21aca58a6345105",
-          "name": "Macarthur FC vs Wellington Phoenix  16:35 | 24/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b21aca58a6345105.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "🎙 Táo",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "a303373fb8c72362",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "42df347e8a80ff40",
-                  "name": "Macarthur FC vs Wellington Phoenix  16:35 | 24/04 . Australia A-League",
-                  "streams": [
-                    {
-                      "id": "117596f7f4c026da",
-                      "name": "🎙 Táo",
-                      "stream_links": [
-                        {
-                          "id": "08c04e1805d2c18e",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-tao/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/macarthur-fc-vs-wellington-phoenix"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "adb781299d9da760",
+          "id": "3c1c9cb8f46f3858",
           "name": "Pháp vs Thái Lan  17:00 | 24/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -209,7 +321,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/adb781299d9da760.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/3c1c9cb8f46f3858.webp",
             "width": 820,
             "height": 540
           },
@@ -223,19 +335,19 @@
           ],
           "sources": [
             {
-              "id": "4b373a8ae5c754e0",
+              "id": "a33e4d6d4f301099",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "c3da2e2934d34358",
+                  "id": "7195fe9bd7a1b98b",
                   "name": "Pháp vs Thái Lan  17:00 | 24/04 . Thomas & Uber Cup",
                   "streams": [
                     {
-                      "id": "2d9659ce70d74430",
+                      "id": "8c579a2e441aeafa",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "7db13f810af9e013",
+                          "id": "270147f95a066d3b",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -260,7 +372,7 @@
           ]
         },
         {
-          "id": "fd25389dd0c31b54",
+          "id": "5721c8e61a381f72",
           "name": "HLE vs KRX  17:00 | 24/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -269,7 +381,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/fd25389dd0c31b54.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5721c8e61a381f72.webp",
             "width": 820,
             "height": 540
           },
@@ -283,19 +395,19 @@
           ],
           "sources": [
             {
-              "id": "bd6bd5fbf223f964",
+              "id": "c367774dfcc2855d",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "5e3c92fcfc235450",
+                  "id": "48c88a6c38490625",
                   "name": "HLE vs KRX  17:00 | 24/04 . Liên Minh Huyền Thoại",
                   "streams": [
                     {
-                      "id": "b9f9a85135d3fee9",
+                      "id": "a4b68f3428a891b0",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "b78258acbc87bbde",
+                          "id": "c2bc58ecb735fa2c",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -304,66 +416,6 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/hle-vs-krx-1776963987461-918"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "7e751405448a8c85",
-          "name": "Hoang Anh Gia Lai vs XM Hai Phong FC  17:00 | 24/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7e751405448a8c85.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "🎙 Pháo",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "3acf73054fa6cced",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "b200390f845a2e49",
-                  "name": "Hoang Anh Gia Lai vs XM Hai Phong FC  17:00 | 24/04 . Vietnam National Champion League",
-                  "streams": [
-                    {
-                      "id": "8fbbfb5cdcd06e09",
-                      "name": "🎙 Pháo",
-                      "stream_links": [
-                        {
-                          "id": "37a862d448e9ce3b",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-phao/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/hoang-anh-gia-lai-vs-xm-hai-phong-fc"
                             },
                             {
                               "key": "User-Agent",
