@@ -24,7 +24,7 @@
           "name": "Real Betis vs Real Madrid  LIVE",
           "type": "single",
           "display": "thumbnail-only",
-          "enable_detail": true,
+          "enable_detail": false,
           "image": {
             "padding": 0,
             "background_color": "#fff",
@@ -41,7 +41,7 @@
               "position": "top-left"
             },
             {
-              "text": "🎙 2 BLV",
+              "text": "🎙 Cháo Quẩy",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -70,46 +70,6 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/real-betis-vs-real-madrid-quay-1776971420634-786"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "id": "9d4aba29d772dd84",
-                      "name": "🎙 Lò A Mập",
-                      "stream_links": [
-                        {
-                          "id": "90ac67b7cd1ecef4",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-a-map/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/real-betis-vs-real-madrid"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "de4378531f820e53",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/6214b3023c63e928cf8c58213c405314/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/real-betis-vs-real-madrid"
                             },
                             {
                               "key": "User-Agent",
