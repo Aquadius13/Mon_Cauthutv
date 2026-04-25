@@ -600,15 +600,15 @@
                   "name": "Hisamitsu Springs Nữ vs Osaka Marvelous Nữ  14:05 | 26/04 . SV.League Women",
                   "streams": [
                     {
-                      "id": "fb",
-                      "name": "Truc tiep",
+                      "id": "64a03e0950840470",
+                      "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "lnk0",
-                          "name": "Link 1",
-                          "type": "iframe",
+                          "id": "c35133e06c2e72ba",
+                          "name": "HD",
+                          "type": "hls",
                           "default": true,
-                          "url": "https://cauthutv.shop/hisamitsu-springs-n-osaka-marvelous-n-1777137900176-732",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-chim-nho/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -1004,7 +1004,7 @@
           },
           "labels": [
             {
-              "text": "🎙 Cháo Quẩy",
+              "text": "🎙 Người Kiến",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1021,14 +1021,14 @@
                   "streams": [
                     {
                       "id": "b08cbbfb2e873699",
-                      "name": "🎙 Cháo Quẩy",
+                      "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
                           "id": "c9c2fd0ce69fda1e",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-chao-quay/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-nguoi-kien/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -1169,22 +1169,22 @@
           ]
         },
         {
-          "id": "1a30261bd5c6c140",
-          "name": "Biên Phòng MB vs Công An TPHCM  21:00 | 26/04",
+          "id": "fd6ddfd95b5d8553",
+          "name": "Chelsea vs Leeds United  21:00 | 26/04",
           "type": "single",
           "display": "thumbnail-only",
-          "enable_detail": false,
+          "enable_detail": true,
           "image": {
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/1a30261bd5c6c140.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/fd6ddfd95b5d8553.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
             {
-              "text": "🎙 Mèo Béo",
+              "text": "🎙 2 BLV",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1192,27 +1192,50 @@
           ],
           "sources": [
             {
-              "id": "d108111d668700c4",
+              "id": "76211b92609d6e0a",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "00f92d4e2d0c7da0",
-                  "name": "Biên Phòng MB vs Công An TPHCM  21:00 | 26/04 . Cúp Hùng Vương 2026",
+                  "id": "77a1f54341f95fc5",
+                  "name": "Chelsea vs Leeds United  21:00 | 26/04 . Trung Lập",
                   "streams": [
                     {
-                      "id": "36c00012b61f635d",
-                      "name": "🎙 Mèo Béo",
+                      "id": "522a93a5a3030515",
+                      "name": "🎙 Cháo Quẩy",
                       "stream_links": [
                         {
-                          "id": "b1bc84a62edaaa3c",
+                          "id": "9e7be463177b61c1",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-meo-beo/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-chao-quay/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/bin-phng-mb-vs-cng-an-tphcm-1777073253642-79"
+                              "value": "https://cauthutv.shop/chelsea-vs-leeds-united-quay-1777146012327-810"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "6a6a9c5088ebd638",
+                      "name": "🎙 Dylan",
+                      "stream_links": [
+                        {
+                          "id": "66b19a8d52348a63",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-dylan/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/chelsea-vs-leeds-united"
                             },
                             {
                               "key": "User-Agent",
@@ -1229,8 +1252,8 @@
           ]
         },
         {
-          "id": "9fa394c89553fd53",
-          "name": "Chelsea vs Leeds United  21:00 | 26/04",
+          "id": "4b3f25b7119a5a3f",
+          "name": "Biên Phòng MB vs Công An TPHCM  21:00 | 26/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -1238,13 +1261,13 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/9fa394c89553fd53.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/4b3f25b7119a5a3f.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
             {
-              "text": "🎙 Dylan",
+              "text": "🎙 Mèo Béo",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1252,27 +1275,27 @@
           ],
           "sources": [
             {
-              "id": "8e992a9c0763cf6b",
+              "id": "a9a4540c7d74481f",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "38ce56f7edc9d053",
-                  "name": "Chelsea vs Leeds United  21:00 | 26/04 . FA Cup",
+                  "id": "bd2811290e82f5fc",
+                  "name": "Biên Phòng MB vs Công An TPHCM  21:00 | 26/04 . Cúp Hùng Vương 2026",
                   "streams": [
                     {
-                      "id": "aa3634e8630907b4",
-                      "name": "🎙 Dylan",
+                      "id": "b804ce2997b1060b",
+                      "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "886b6a44a861ce4f",
+                          "id": "9ae2363f72cff63c",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-dylan/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-meo-beo/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/chelsea-vs-leeds-united"
+                              "value": "https://cauthutv.shop/bin-phng-mb-vs-cng-an-tphcm-1777073253642-79"
                             },
                             {
                               "key": "User-Agent",
@@ -1364,7 +1387,7 @@
           },
           "labels": [
             {
-              "text": "🎙 Dưa Hấu",
+              "text": "🎙 Người Kiến",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1381,14 +1404,14 @@
                   "streams": [
                     {
                       "id": "7bcf1decb3c84655",
-                      "name": "🎙 Dưa Hấu",
+                      "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
                           "id": "55f30a0216585f51",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-dua-hau/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-nguoi-kien/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -1484,7 +1507,7 @@
           },
           "labels": [
             {
-              "text": "🎙 Cháo Quẩy",
+              "text": "🎙 Văn Chuẩn",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -1501,14 +1524,14 @@
                   "streams": [
                     {
                       "id": "24bcce1ad14ef399",
-                      "name": "🎙 Cháo Quẩy",
+                      "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
                           "id": "1dc9ca7f6e06d9b0",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-chao-quay/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-van-chuan/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -1573,6 +1596,66 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/torino-vs-inter-milan"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3236df47ccf866a6",
+          "name": "Galatasaray vs Fenerbahce  00:00 | 27/04",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/3236df47ccf866a6.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "🎙 Neymar",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "2db4083c90fa242b",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "241e8d809762207d",
+                  "name": "Galatasaray vs Fenerbahce  00:00 | 27/04 . Turkish Super League",
+                  "streams": [
+                    {
+                      "id": "3d1a160d41e1153c",
+                      "name": "🎙 Neymar",
+                      "stream_links": [
+                        {
+                          "id": "f10ee35b2685254b",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-thay-ma/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/galatasaray-vs-fenerbahce"
                             },
                             {
                               "key": "User-Agent",
