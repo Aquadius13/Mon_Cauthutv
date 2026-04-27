@@ -21,7 +21,7 @@
       "channels": [
         {
           "id": "b45c85415a3315f7",
-          "name": "Ziraat Bankasi vs Galatasaray  23:00 | 27/04",
+          "name": "Ziraat Bankasi vs Galatasaray  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -34,6 +34,12 @@
             "height": 540
           },
           "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
             {
               "text": "🎙 Chim Nhỏ",
               "position": "bottom-left",
@@ -48,7 +54,7 @@
               "contents": [
                 {
                   "id": "4cb72d0934ba80b3",
-                  "name": "Ziraat Bankasi vs Galatasaray  23:00 | 27/04 . Efeler Ligi",
+                  "name": "Ziraat Bankasi vs Galatasaray  LIVE . Efeler Ligi",
                   "streams": [
                     {
                       "id": "40119c23473b1c0b",
@@ -81,7 +87,7 @@
         },
         {
           "id": "221a63a09d0d6912",
-          "name": "Trung Quốc vs Ấn Độ  23:30 | 27/04",
+          "name": "Trung Quốc vs Ấn Độ  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -94,6 +100,12 @@
             "height": 540
           },
           "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
             {
               "text": "🎙 Người Kiến",
               "position": "bottom-left",
@@ -108,7 +120,7 @@
               "contents": [
                 {
                   "id": "b2c3216ba2fa84fc",
-                  "name": "Trung Quốc vs Ấn Độ  23:30 | 27/04 . Thomas & Uber Cup",
+                  "name": "Trung Quốc vs Ấn Độ  LIVE . Thomas & Uber Cup",
                   "streams": [
                     {
                       "id": "f722f15a382bcefe",
@@ -180,23 +192,6 @@
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-dylan/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/cagliari-vs-atalanta"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "171353a2c9b16214",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/b302a7d59c51a56f286a2a80005790a7/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
