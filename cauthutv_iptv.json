@@ -20,8 +20,8 @@
       "image": null,
       "channels": [
         {
-          "id": "22dfa18148a1a4a9",
-          "name": "NEC Red Rockets Nữ (Jpn) vs Harudot Chonburi Nữ (Tha)  15:00 | 27/04",
+          "id": "022614b6475cd71b",
+          "name": "FK Epitsentr Dunayivtsi vs FK Oleksandria  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -29,13 +29,19 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/22dfa18148a1a4a9.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/022614b6475cd71b.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
             {
-              "text": "🎙 Chim Nhỏ",
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Mèo Béo",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -43,27 +49,44 @@
           ],
           "sources": [
             {
-              "id": "89d30202683d7be4",
+              "id": "49b09d04acd911db",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "a5540eb06c0349fb",
-                  "name": "NEC Red Rockets Nữ (Jpn) vs Harudot Chonburi Nữ (Tha)  15:00 | 27/04 . AVC Champions League Nữ",
+                  "id": "8a4b3ee7a6c9cb40",
+                  "name": "FK Epitsentr Dunayivtsi vs FK Oleksandria  LIVE . Ukrainian Premier League",
                   "streams": [
                     {
-                      "id": "f89a0f424b68eddc",
-                      "name": "🎙 Chim Nhỏ",
+                      "id": "329527841eada810",
+                      "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "13ba3a93e73498f9",
+                          "id": "f57c9641482de060",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-chim-nho/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-meo-beo/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/nec-red-rockets-w-vs-harudot-chonburi-w-1777151298402-227"
+                              "value": "https://cauthutv.shop/fk-epitsentr-dunayivtsi-vs-fk-oleksandria"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "2f9de4d48c6ea38f",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/a1a3a82a8504340df8be271fb41f11fa/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/fk-epitsentr-dunayivtsi-vs-fk-oleksandria"
                             },
                             {
                               "key": "User-Agent",
@@ -140,8 +163,8 @@
           ]
         },
         {
-          "id": "67d0927fccbdf3ec",
-          "name": "FK Epitsentr Dunayivtsi vs FK Oleksandria  17:00 | 27/04",
+          "id": "717feaea8c854ca3",
+          "name": "Casper Ruud vs Alejandro Davidovich Fokina  16:00 | 27/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -149,13 +172,13 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/67d0927fccbdf3ec.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/717feaea8c854ca3.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
             {
-              "text": "🎙 Mèo Béo",
+              "text": "🎙 Người Kiến",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -163,27 +186,27 @@
           ],
           "sources": [
             {
-              "id": "4ba5551026fb2408",
+              "id": "49da694860b2496e",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "5bec6df4a4947f02",
-                  "name": "FK Epitsentr Dunayivtsi vs FK Oleksandria  17:00 | 27/04 . Ukrainian Premier League",
+                  "id": "82967cecf28e4ca6",
+                  "name": "Casper Ruud vs Alejandro Davidovich Fokina  16:00 | 27/04 . ATP Madrid",
                   "streams": [
                     {
-                      "id": "a88b781a9b1e6b9e",
-                      "name": "🎙 Mèo Béo",
+                      "id": "170c6e98cbdd1354",
+                      "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "ee3bbd92c33e4bba",
+                          "id": "d019eebd3a2c35a3",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-meo-beo/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-nguoi-kien/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/fk-epitsentr-dunayivtsi-vs-fk-oleksandria"
+                              "value": "https://cauthutv.shop/casper-ruud-alejandro-davidovich-fokina-1777281660652-784"
                             },
                             {
                               "key": "User-Agent",
