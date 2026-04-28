@@ -20,8 +20,8 @@
       "image": null,
       "channels": [
         {
-          "id": "ad47a7e80db5d586",
-          "name": "Đài Loan vs Indonesia  15:00 | 28/04",
+          "id": "bc08810ae31ffe93",
+          "name": "Arema FC vs Persebaya Surabaya  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -29,13 +29,19 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/ad47a7e80db5d586.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/bc08810ae31ffe93.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
             {
-              "text": "🎙 Lò A Mập",
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Chim Nhỏ",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -43,27 +49,27 @@
           ],
           "sources": [
             {
-              "id": "7cab154d6fe2b088",
+              "id": "27857924011850d1",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "96d58167d0c51340",
-                  "name": "Đài Loan vs Indonesia  15:00 | 28/04 . Thomas & Uber Cup",
+                  "id": "8d3acb563f0d8a79",
+                  "name": "Arema FC vs Persebaya Surabaya  LIVE . Indonesian Super League",
                   "streams": [
                     {
-                      "id": "8c097bea13851ed5",
-                      "name": "🎙 Lò A Mập",
+                      "id": "f3a5954a5c0789bd",
+                      "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "9b0ab28f60ce6453",
+                          "id": "69f86c653e110a60",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-a-map/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-chim-nho/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/i-loan-vs-indonesia-1777326976044-269"
+                              "value": "https://cauthutv.shop/arema-fc-vs-persebaya-surabaya"
                             },
                             {
                               "key": "User-Agent",
@@ -80,8 +86,8 @@
           ]
         },
         {
-          "id": "093b2cfbd9e9399b",
-          "name": "Arema FC vs Persebaya Surabaya  15:30 | 28/04",
+          "id": "93471c1690774b0e",
+          "name": "Đài Loan vs Indonesia  15:00 | 28/04",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -89,13 +95,13 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/093b2cfbd9e9399b.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/93471c1690774b0e.webp",
             "width": 820,
             "height": 540
           },
           "labels": [
             {
-              "text": "🎙 Chim Nhỏ",
+              "text": "🎙 Lò A Mập",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -103,27 +109,27 @@
           ],
           "sources": [
             {
-              "id": "6705ff9ce0e65d7c",
+              "id": "38e0c3195a0e44d1",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "a01afef2b6a67c0c",
-                  "name": "Arema FC vs Persebaya Surabaya  15:30 | 28/04 . Indonesian Super League",
+                  "id": "595fff196fb56084",
+                  "name": "Đài Loan vs Indonesia  15:00 | 28/04 . Thomas & Uber Cup",
                   "streams": [
                     {
-                      "id": "aaa0e5dd2bad09fc",
-                      "name": "🎙 Chim Nhỏ",
+                      "id": "4bbbc23f499cb455",
+                      "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "e62490c4173af102",
+                          "id": "f6477cdab44eea89",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-chim-nho/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-a-map/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/arema-fc-vs-persebaya-surabaya"
+                              "value": "https://cauthutv.shop/i-loan-vs-indonesia-1777326976044-269"
                             },
                             {
                               "key": "User-Agent",
