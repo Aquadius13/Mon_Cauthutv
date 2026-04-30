@@ -20,7 +20,90 @@
       "image": null,
       "channels": [
         {
-          "id": "009dbc77b1e997e8",
+          "id": "32f37f3a5de0efcc",
+          "name": "PSIM Yogyakarta vs Persita Tangerang  LIVE",
+          "type": "single",
+          "display": "thumbnail-only",
+          "enable_detail": false,
+          "image": {
+            "padding": 0,
+            "background_color": "#fff",
+            "display": "cover",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/32f37f3a5de0efcc.webp",
+            "width": 820,
+            "height": 540
+          },
+          "labels": [
+            {
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Văn Chuẩn",
+              "position": "bottom-left",
+              "color": "#1a8a2e",
+              "text_color": "#fff"
+            }
+          ],
+          "sources": [
+            {
+              "id": "f5d2272372758e83",
+              "name": "CauThuTV Live",
+              "contents": [
+                {
+                  "id": "acd1d4c41b5d6a4a",
+                  "name": "PSIM Yogyakarta vs Persita Tangerang  LIVE . Indonesian Super League",
+                  "streams": [
+                    {
+                      "id": "787a9cd41314294c",
+                      "name": "🎙 Văn Chuẩn",
+                      "stream_links": [
+                        {
+                          "id": "b6e748d92cceb06f",
+                          "name": "HD",
+                          "type": "hls",
+                          "default": true,
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-van-chuan/index.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/psim-yogyakarta-vs-persita-tangerang"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "3c0b1aa057ba3f31",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/4f2f4ff05ecfea560a8f9842cbca5379/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/psim-yogyakarta-vs-persita-tangerang"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f4ee44f9717d0c3a",
           "name": "Stefanos Tsitsipas vs Casper Ruud  LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -29,7 +112,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/009dbc77b1e997e8.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/f4ee44f9717d0c3a.webp",
             "width": 820,
             "height": 540
           },
@@ -49,19 +132,19 @@
           ],
           "sources": [
             {
-              "id": "8a52cf57e68634bb",
+              "id": "0418f6d17685937d",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "4d0e9cf17764fc39",
+                  "id": "20f6870ff95a5901",
                   "name": "Stefanos Tsitsipas vs Casper Ruud  LIVE . ATP Madrid",
                   "streams": [
                     {
-                      "id": "b76b47fe5ab52a18",
+                      "id": "90add663881e7db7",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "ad1a04f4ec783d54",
+                          "id": "bde68b41b30733b8",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -86,7 +169,7 @@
           ]
         },
         {
-          "id": "b16b85bca51561b6",
+          "id": "6a89ea67b7ccdda2",
           "name": "Supreme Chonburi  W vs Zhetysu W  15:00 | 30/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -95,7 +178,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b16b85bca51561b6.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6a89ea67b7ccdda2.webp",
             "width": 820,
             "height": 540
           },
@@ -109,19 +192,19 @@
           ],
           "sources": [
             {
-              "id": "4ae11359dbfd21be",
+              "id": "370990d4f030df52",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "72bcc761a42ade44",
+                  "id": "4d9b6cf071f1c5c2",
                   "name": "Supreme Chonburi  W vs Zhetysu W  15:00 | 30/04 . AVC Champions League Women",
                   "streams": [
                     {
-                      "id": "637400e07e855bde",
+                      "id": "25aa12342268cf67",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "823f835cda9e0c20",
+                          "id": "8e7c3c887fbcac9c",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -146,7 +229,7 @@
           ]
         },
         {
-          "id": "beb37815f8ad5992",
+          "id": "f967bf94ca75b952",
           "name": "Nhật Bản vs Thái Lan  15:00 | 30/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -155,7 +238,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/beb37815f8ad5992.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/f967bf94ca75b952.webp",
             "width": 820,
             "height": 540
           },
@@ -169,19 +252,19 @@
           ],
           "sources": [
             {
-              "id": "962b6d1890a61d21",
+              "id": "ae2cd21eb2d02dd4",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "aebf7e89e2696d6f",
+                  "id": "6f9dfac85d34822d",
                   "name": "Nhật Bản vs Thái Lan  15:00 | 30/04 . Thomas & Uber Cup",
                   "streams": [
                     {
-                      "id": "66b6bd47be9d8f9e",
+                      "id": "64b4991594f07c0e",
                       "name": "🎙 Người Cát",
                       "stream_links": [
                         {
-                          "id": "7af0fec75d5dd7bd",
+                          "id": "249524bf404f5f05",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -206,7 +289,7 @@
           ]
         },
         {
-          "id": "416f3d8f506d98fb",
+          "id": "fcd3e7b0816e489d",
           "name": "GEN vs KRK  15:00 | 30/04",
           "type": "single",
           "display": "thumbnail-only",
@@ -215,7 +298,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/416f3d8f506d98fb.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/fcd3e7b0816e489d.webp",
             "width": 820,
             "height": 540
           },
@@ -229,19 +312,19 @@
           ],
           "sources": [
             {
-              "id": "d19afc1fb7da7152",
+              "id": "7d7000bc252b7c1c",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "cd69fb1aa267a1c0",
+                  "id": "0016e5efe62b0e58",
                   "name": "GEN vs KRK  15:00 | 30/04 . Liên Minh Huyền Thoại",
                   "streams": [
                     {
-                      "id": "3837352c6c7701b5",
+                      "id": "0d512bdb2a78cdf9",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "d76ece7123600ad3",
+                          "id": "28e2fadebeb846a2",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -250,66 +333,6 @@
                             {
                               "key": "Referer",
                               "value": "https://cauthutv.shop/gen-vs-krk-1777417382749-789"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "0e13eaadbd956e28",
-          "name": "PSIM Yogyakarta vs Persita Tangerang  15:30 | 30/04",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/0e13eaadbd956e28.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "🎙 Văn Chuẩn",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "cbb0000be2f0436f",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "2d0c7ff9d3a6c1d7",
-                  "name": "PSIM Yogyakarta vs Persita Tangerang  15:30 | 30/04 . Indonesian Super League",
-                  "streams": [
-                    {
-                      "id": "943334f3d858dd32",
-                      "name": "🎙 Văn Chuẩn",
-                      "stream_links": [
-                        {
-                          "id": "f7efc5f6661aeff8",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-van-chuan/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/psim-yogyakarta-vs-persita-tangerang"
                             },
                             {
                               "key": "User-Agent",
