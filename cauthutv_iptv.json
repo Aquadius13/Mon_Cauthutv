@@ -20,256 +20,7 @@
       "image": null,
       "channels": [
         {
-          "id": "bbb504d4953b0053",
-          "name": "Pisa vs Lecce  LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/bbb504d4953b0053.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "● Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Dylan",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "35c87d029673b2bc",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "68821526d1c26a5c",
-                  "name": "Pisa vs Lecce  LIVE . Italian Serie A",
-                  "streams": [
-                    {
-                      "id": "faa7a6976b35d3f1",
-                      "name": "🎙 Dylan",
-                      "stream_links": [
-                        {
-                          "id": "f6072ec97ddd51f6",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-dylan/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/pisa-vs-lecce"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "3246c8ae66d7f471",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/ad48fe45aa1cc9cb5547d6cf07242b01/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/pisa-vs-lecce"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "1553f3a1c67f5432",
-          "name": "Leeds United vs Burnley  LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/1553f3a1c67f5432.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "● Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Lò A Mập",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "2108c7864f55a87c",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "e452b9b8e57a92d2",
-                  "name": "Leeds United vs Burnley  LIVE . English Premier League",
-                  "streams": [
-                    {
-                      "id": "792cd5397546a44a",
-                      "name": "🎙 Lò A Mập",
-                      "stream_links": [
-                        {
-                          "id": "2c33d4c595f7013f",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-a-map/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/leeds-united-vs-burnley"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "4b47740aaa17d7f8",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/f1ba36a5165cf1258a45b3666a90d781/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/leeds-united-vs-burnley"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "5b4f6c4a9ce6b90c",
-          "name": "Girona FC vs RCD Mallorca  LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5b4f6c4a9ce6b90c.webp",
-            "width": 820,
-            "height": 540
-          },
-          "labels": [
-            {
-              "text": "● Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Chim Nhỏ",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "eb42f6ace3b0cf2e",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "6862c4b6113bdc49",
-                  "name": "Girona FC vs RCD Mallorca  LIVE . Spanish La Liga",
-                  "streams": [
-                    {
-                      "id": "60ed8033159a4832",
-                      "name": "🎙 Chim Nhỏ",
-                      "stream_links": [
-                        {
-                          "id": "69971e6f2dbb7113",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-chim-nho/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/girona-fc-vs-rcd-mallorca"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "5696774c9808194e",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/76e3e20ceb87a4987dddcb8b121e0a95/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/girona-fc-vs-rcd-mallorca"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "67b6abc46bd22263",
+          "id": "35c79f7c319d8c66",
           "name": "SmackDown vs SmackDown  07:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -278,7 +29,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/67b6abc46bd22263.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/35c79f7c319d8c66.webp",
             "width": 820,
             "height": 540
           },
@@ -292,19 +43,19 @@
           ],
           "sources": [
             {
-              "id": "af14a60c65cfbfd5",
+              "id": "35510d25656fa9ee",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "c666ca90e9772ab9",
+                  "id": "731b50d069dafaad",
                   "name": "SmackDown vs SmackDown  07:00 | 02/05 . WWE",
                   "streams": [
                     {
-                      "id": "3f8318e21468f44b",
+                      "id": "089efbf6b03be4c9",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "fc7e25a4fdd98bbe",
+                          "id": "2c5e9862829252e3",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -329,7 +80,7 @@
           ]
         },
         {
-          "id": "51b613d655017215",
+          "id": "02c46d55aef3c308",
           "name": "Auckland FC vs Melbourne City  12:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -338,7 +89,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/51b613d655017215.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/02c46d55aef3c308.webp",
             "width": 820,
             "height": 540
           },
@@ -352,19 +103,19 @@
           ],
           "sources": [
             {
-              "id": "11832e3f09e5ea6e",
+              "id": "0873cfacc781f874",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "19793de6c249b420",
+                  "id": "8a8e8e0b9139940d",
                   "name": "Auckland FC vs Melbourne City  12:00 | 02/05 . Australia A-League",
                   "streams": [
                     {
-                      "id": "5fa22a3f26c23f18",
+                      "id": "b4360bd4a7e1986a",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "f1da22009f0feaa6",
+                          "id": "94397a65d1f3ef0a",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -389,7 +140,7 @@
           ]
         },
         {
-          "id": "6c1340788645e6f2",
+          "id": "a3f9d856c3055f4e",
           "name": "Nagoya vs JT Thunders  13:05 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -398,7 +149,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6c1340788645e6f2.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a3f9d856c3055f4e.webp",
             "width": 820,
             "height": 540
           },
@@ -412,19 +163,19 @@
           ],
           "sources": [
             {
-              "id": "f6f872ccb62f55c0",
+              "id": "fcc1a5b8505027b9",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "d2b26c3c604e8cf3",
+                  "id": "e84faec2012253e6",
                   "name": "Nagoya vs JT Thunders  13:05 | 02/05 . SV.League",
                   "streams": [
                     {
-                      "id": "abb991db22c7f8c4",
+                      "id": "e732b16f7c49a367",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "f420416a233c7a34",
+                          "id": "803112eec6104a12",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -449,7 +200,7 @@
           ]
         },
         {
-          "id": "19eecb3aa295a16d",
+          "id": "e086fcc45d821f27",
           "name": "JTEKT vs Tokyo Great Bears  14:05 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -458,7 +209,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/19eecb3aa295a16d.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e086fcc45d821f27.webp",
             "width": 820,
             "height": 540
           },
@@ -472,19 +223,19 @@
           ],
           "sources": [
             {
-              "id": "4f4213012da09f03",
+              "id": "26d3bfe9b38ca119",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "f4a3cfb33e60deab",
+                  "id": "f1261e2daea68018",
                   "name": "JTEKT vs Tokyo Great Bears  14:05 | 02/05 . SV.League",
                   "streams": [
                     {
-                      "id": "106982d3ee890b9a",
+                      "id": "8f564fc1e6a4382c",
                       "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "26f20c8b241bf67a",
+                          "id": "f817d9ee7fdff6ad",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -509,7 +260,7 @@
           ]
         },
         {
-          "id": "35414a2833c45e67",
+          "id": "a948cd0ac93fecf3",
           "name": "GEN vs DK  15:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -518,7 +269,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/35414a2833c45e67.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a948cd0ac93fecf3.webp",
             "width": 820,
             "height": 540
           },
@@ -532,19 +283,19 @@
           ],
           "sources": [
             {
-              "id": "45bfdb807ca5822f",
+              "id": "0e353fdc94622465",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "0bb44ff959cca08f",
+                  "id": "a6bfa37db746e391",
                   "name": "GEN vs DK  15:00 | 02/05 . LCK",
                   "streams": [
                     {
-                      "id": "49aae5ad0ecba86b",
+                      "id": "70d4855f47a44b7c",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "3eccb6e8fe3a4459",
+                          "id": "db85294352a5cdb5",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -569,7 +320,7 @@
           ]
         },
         {
-          "id": "fdc180e80f938345",
+          "id": "e976747bd5fd238a",
           "name": "Melbourne Victory vs Sydney FC  16:40 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -578,7 +329,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/fdc180e80f938345.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e976747bd5fd238a.webp",
             "width": 820,
             "height": 540
           },
@@ -592,19 +343,19 @@
           ],
           "sources": [
             {
-              "id": "9840ad5649ff4b75",
+              "id": "aa367e837d703770",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "9383ffa2e6a84934",
+                  "id": "5d17174151176e82",
                   "name": "Melbourne Victory vs Sydney FC  16:40 | 02/05 . Australia A-League",
                   "streams": [
                     {
-                      "id": "7578be798a73f6a0",
+                      "id": "290fa4e404afe676",
                       "name": "🎙 Táo",
                       "stream_links": [
                         {
-                          "id": "1435ea10df1bb4e6",
+                          "id": "8eaf9a7477597c06",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -629,7 +380,7 @@
           ]
         },
         {
-          "id": "aac79bc030b6e92b",
+          "id": "bd6dd5abcfa4f2de",
           "name": "KRX vs NS  17:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -638,7 +389,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/aac79bc030b6e92b.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/bd6dd5abcfa4f2de.webp",
             "width": 820,
             "height": 540
           },
@@ -652,19 +403,19 @@
           ],
           "sources": [
             {
-              "id": "89a8ae743e3e3aee",
+              "id": "4bfc941730d82caf",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "55d4e57bbbbae033",
+                  "id": "4e49e94cf078a917",
                   "name": "KRX vs NS  17:00 | 02/05 . LCK",
                   "streams": [
                     {
-                      "id": "43ac13abd6665be8",
+                      "id": "cd69bf9ced6c6d7d",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "acabd0dbfbde72a8",
+                          "id": "614156b1efbd20e9",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -689,7 +440,7 @@
           ]
         },
         {
-          "id": "a47a65e7e8a9a4a2",
+          "id": "f8e8793fe9beceec",
           "name": "XM Hai Phong FC vs Cong An Ha Noi FC  18:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -698,7 +449,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a47a65e7e8a9a4a2.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/f8e8793fe9beceec.webp",
             "width": 820,
             "height": 540
           },
@@ -712,19 +463,19 @@
           ],
           "sources": [
             {
-              "id": "497ff6ba7bb1d842",
+              "id": "1e3736f87cb839b3",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "04ea9bb5ba4cf278",
+                  "id": "a25d64d465c2b2e6",
                   "name": "XM Hai Phong FC vs Cong An Ha Noi FC  18:00 | 02/05 . Vietnam National Champion League",
                   "streams": [
                     {
-                      "id": "5646fde6c3a85392",
+                      "id": "23b7ecb87622f27d",
                       "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "f24baf210f286020",
+                          "id": "97cfc10aeb0b3050",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -749,7 +500,7 @@
           ]
         },
         {
-          "id": "6097d4b35c2390b5",
+          "id": "ee4ce9054ed04698",
           "name": "Becamex Ho Chi Minh City vs CLB Thanh Hoa  18:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -758,7 +509,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6097d4b35c2390b5.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/ee4ce9054ed04698.webp",
             "width": 820,
             "height": 540
           },
@@ -772,19 +523,19 @@
           ],
           "sources": [
             {
-              "id": "0ef63ed9c54a7fca",
+              "id": "621c851afbb20d59",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "63988ca9422dcf8f",
+                  "id": "a6b0f2876b500399",
                   "name": "Becamex Ho Chi Minh City vs CLB Thanh Hoa  18:00 | 02/05 . Vietnam National Champion League",
                   "streams": [
                     {
-                      "id": "a7561a81e38bc521",
+                      "id": "73bbe557ef76e4fd",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "9bcd5eb0b2ab0ec1",
+                          "id": "ff62907a2f76670b",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -809,7 +560,7 @@
           ]
         },
         {
-          "id": "119ef0a9bdd16424",
+          "id": "eb97edc85793d91a",
           "name": "PVF CAND vs Hong Linh Ha Tinh  18:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -818,7 +569,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/119ef0a9bdd16424.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/eb97edc85793d91a.webp",
             "width": 820,
             "height": 540
           },
@@ -832,19 +583,19 @@
           ],
           "sources": [
             {
-              "id": "ac82e7bda3099f02",
+              "id": "2454a714316f6f29",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "f4005fe91d8d3138",
+                  "id": "a8b065d2b136b3a8",
                   "name": "PVF CAND vs Hong Linh Ha Tinh  18:00 | 02/05 . Vietnam National Champion League",
                   "streams": [
                     {
-                      "id": "a397ce229aabe49b",
+                      "id": "7ed94fcc8b10d8cf",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "6b041a6c3e55987a",
+                          "id": "75d71b1097712159",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -869,7 +620,7 @@
           ]
         },
         {
-          "id": "22a7e7e0971c8c94",
+          "id": "f26eeb96c2405cbd",
           "name": "Villarreal CF vs Levante  19:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -878,7 +629,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/22a7e7e0971c8c94.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/f26eeb96c2405cbd.webp",
             "width": 820,
             "height": 540
           },
@@ -892,19 +643,19 @@
           ],
           "sources": [
             {
-              "id": "f1e34747ea1d18ea",
+              "id": "15254a24773e9ca6",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "3fb60da4be6f0505",
+                  "id": "798762e63c4945ac",
                   "name": "Villarreal CF vs Levante  19:00 | 02/05 . Spanish La Liga",
                   "streams": [
                     {
-                      "id": "4960827b80cfa270",
+                      "id": "8201045e7b3aae60",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "fd028c4d738fd08b",
+                          "id": "0421f43694028354",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -929,7 +680,7 @@
           ]
         },
         {
-          "id": "cd9fe16b95730f09",
+          "id": "8d384707c7ecb5ab",
           "name": "FC Nantes vs Marseille  20:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -938,7 +689,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/cd9fe16b95730f09.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8d384707c7ecb5ab.webp",
             "width": 820,
             "height": 540
           },
@@ -952,19 +703,19 @@
           ],
           "sources": [
             {
-              "id": "0b3e253f29a04157",
+              "id": "d9018c4be9129791",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "93988aaf99044004",
+                  "id": "104ed8ea23dfa468",
                   "name": "FC Nantes vs Marseille  20:00 | 02/05 . French Ligue 1",
                   "streams": [
                     {
-                      "id": "173b1ea34dc09315",
+                      "id": "c45e9d62d78a56bb",
                       "name": "🎙 Táo",
                       "stream_links": [
                         {
-                          "id": "58f05800a7ab5b94",
+                          "id": "bda3ceed7d2d10df",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -989,7 +740,7 @@
           ]
         },
         {
-          "id": "e44e50215cbb9556",
+          "id": "5fe9a72d0ab47ccf",
           "name": "FC Bayern Munich vs 1. FC Heidenheim 1846  20:30 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -998,7 +749,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e44e50215cbb9556.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5fe9a72d0ab47ccf.webp",
             "width": 820,
             "height": 540
           },
@@ -1012,19 +763,19 @@
           ],
           "sources": [
             {
-              "id": "d7ec3adc8e950d1d",
+              "id": "8fefef752d07aa1a",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "d1d3b58e7d6e966d",
+                  "id": "66a6b7a6192dfcee",
                   "name": "FC Bayern Munich vs 1. FC Heidenheim 1846  20:30 | 02/05 . Bundesliga",
                   "streams": [
                     {
-                      "id": "299ce07de81672f6",
+                      "id": "c399f50775b74b34",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "9129ae129f02b3f0",
+                          "id": "dcdf0d82bf9ecb1d",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1049,7 +800,7 @@
           ]
         },
         {
-          "id": "e82f3cfec375f6ec",
+          "id": "2018f4b6f19f2b5b",
           "name": "Vakifbank W vs Conegliano W  21:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -1058,7 +809,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e82f3cfec375f6ec.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2018f4b6f19f2b5b.webp",
             "width": 820,
             "height": 540
           },
@@ -1072,19 +823,19 @@
           ],
           "sources": [
             {
-              "id": "7e21e51773fdf001",
+              "id": "7a3e0a5a4ba30401",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "0f06444a1f2a690e",
+                  "id": "15a7207930ec2eb1",
                   "name": "Vakifbank W vs Conegliano W  21:00 | 02/05 . Champions League Women",
                   "streams": [
                     {
-                      "id": "2e170f5b7c742b9d",
+                      "id": "d2421cb1434558f1",
                       "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "0ad40b7eefb51e26",
+                          "id": "0bde20f7ed3fad51",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1109,7 +860,7 @@
           ]
         },
         {
-          "id": "3d82a571f2b9d592",
+          "id": "8374546f4edcb69b",
           "name": "Brentford vs West Ham United  21:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -1118,7 +869,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/3d82a571f2b9d592.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8374546f4edcb69b.webp",
             "width": 820,
             "height": 540
           },
@@ -1132,19 +883,19 @@
           ],
           "sources": [
             {
-              "id": "a77d9607bea5bba4",
+              "id": "a44a53d739ff5cd3",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "f2350bb0dd313121",
+                  "id": "602269a8b29129a1",
                   "name": "Brentford vs West Ham United  21:00 | 02/05 . English Premier League",
                   "streams": [
                     {
-                      "id": "f4acd6ec9a0451e6",
+                      "id": "ffbf5c6f1826c9c0",
                       "name": "🎙 Dylan",
                       "stream_links": [
                         {
-                          "id": "f951a542a7d17875",
+                          "id": "eca3795f3ec63b8f",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1169,7 +920,7 @@
           ]
         },
         {
-          "id": "ac0a5d20426b24e8",
+          "id": "26579323180c7911",
           "name": "Wolverhampton Wanderers vs Sunderland  21:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -1178,7 +929,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/ac0a5d20426b24e8.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/26579323180c7911.webp",
             "width": 820,
             "height": 540
           },
@@ -1192,19 +943,19 @@
           ],
           "sources": [
             {
-              "id": "031a2755a5c3219a",
+              "id": "854de16fe71d921d",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "89b0ca3428baff06",
+                  "id": "dccf099819cc8e4d",
                   "name": "Wolverhampton Wanderers vs Sunderland  21:00 | 02/05 . English Premier League",
                   "streams": [
                     {
-                      "id": "d72d21247a5ae2df",
+                      "id": "14b8918ca12c5493",
                       "name": "🎙 Cháo Quẩy",
                       "stream_links": [
                         {
-                          "id": "5e7c6c0f128eab3c",
+                          "id": "a108eca9f203497b",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1229,7 +980,7 @@
           ]
         },
         {
-          "id": "d52cf39e180c60b2",
+          "id": "a983d3a33f340d82",
           "name": "Newcastle United vs Brighton Hove Albion  21:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -1238,7 +989,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/d52cf39e180c60b2.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a983d3a33f340d82.webp",
             "width": 820,
             "height": 540
           },
@@ -1252,19 +1003,19 @@
           ],
           "sources": [
             {
-              "id": "a5c7502ff7c7034b",
+              "id": "8c51adc1c163e58b",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "e8b02a337024b8c3",
+                  "id": "7cc386b9f996f950",
                   "name": "Newcastle United vs Brighton Hove Albion  21:00 | 02/05 . English Premier League",
                   "streams": [
                     {
-                      "id": "21c72fa3d603f14e",
+                      "id": "c7bb1a53b447d80c",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "ba01a481609f9c30",
+                          "id": "cec1a7d3947f2062",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1289,7 +1040,7 @@
           ]
         },
         {
-          "id": "249cc60520108a4b",
+          "id": "aec347bf4e4fcf2d",
           "name": "Valencia CF vs Atletico Madrid  21:15 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -1298,7 +1049,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/249cc60520108a4b.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/aec347bf4e4fcf2d.webp",
             "width": 820,
             "height": 540
           },
@@ -1312,19 +1063,19 @@
           ],
           "sources": [
             {
-              "id": "7ed18c09114a7823",
+              "id": "4f891c814c637660",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "db1c3181aeb3749a",
+                  "id": "f1b1ed037a521d1e",
                   "name": "Valencia CF vs Atletico Madrid  21:15 | 02/05 . Spanish La Liga",
                   "streams": [
                     {
-                      "id": "a055e5d95af306bf",
+                      "id": "3af5b1516c768c41",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "0bd58a5e6452a00d",
+                          "id": "fdefefb9591aee64",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1349,7 +1100,7 @@
           ]
         },
         {
-          "id": "4a151e6adf22acfa",
+          "id": "43297229002c34cb",
           "name": "Paris Saint Germain vs Lorient  22:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -1358,7 +1109,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/4a151e6adf22acfa.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/43297229002c34cb.webp",
             "width": 820,
             "height": 540
           },
@@ -1372,19 +1123,19 @@
           ],
           "sources": [
             {
-              "id": "7c2ba52e3a2e1ace",
+              "id": "b8edcd749ce8ea37",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "38c9e7e80274ff0a",
+                  "id": "86b71c74d1915389",
                   "name": "Paris Saint Germain vs Lorient  22:00 | 02/05 . French Ligue 1",
                   "streams": [
                     {
-                      "id": "4331fa1d6aa5ff21",
+                      "id": "3211cbb0c11e704c",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "0bbcaf38709e69dd",
+                          "id": "8a4e401b2eb161ca",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1401,7 +1152,7 @@
                           ]
                         },
                         {
-                          "id": "95f409254440a8e6",
+                          "id": "2bdf810ec01b71b7",
                           "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
@@ -1426,7 +1177,7 @@
           ]
         },
         {
-          "id": "a079c2a0bb700363",
+          "id": "b9080bea210b314e",
           "name": "Como vs Napoli  23:00 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -1435,7 +1186,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a079c2a0bb700363.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b9080bea210b314e.webp",
             "width": 820,
             "height": 540
           },
@@ -1449,19 +1200,19 @@
           ],
           "sources": [
             {
-              "id": "0103e54a28ea75ee",
+              "id": "82298cf175e61cf7",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "94b79610adbe5241",
+                  "id": "cce63c4009331112",
                   "name": "Como vs Napoli  23:00 | 02/05 . Italian Serie A",
                   "streams": [
                     {
-                      "id": "71040ea157d0dff8",
+                      "id": "6ec3c6c154359453",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "922cc28d009aa24f",
+                          "id": "da2c177017c60eca",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1478,7 +1229,7 @@
                           ]
                         },
                         {
-                          "id": "8b8cab389b1452ed",
+                          "id": "985b3a285dd02763",
                           "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
@@ -1503,7 +1254,7 @@
           ]
         },
         {
-          "id": "15402baf34db2528",
+          "id": "1b4fb8b22508b5e8",
           "name": "Arsenal vs Fulham  23:30 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -1512,7 +1263,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/15402baf34db2528.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/1b4fb8b22508b5e8.webp",
             "width": 820,
             "height": 540
           },
@@ -1526,19 +1277,19 @@
           ],
           "sources": [
             {
-              "id": "bcba0dc4d13a2078",
+              "id": "9f6151c7eb1070be",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "0baa51f5adb5a402",
+                  "id": "ad52888910aa307f",
                   "name": "Arsenal vs Fulham  23:30 | 02/05 . Off Fan Phú Thảo",
                   "streams": [
                     {
-                      "id": "3c3a7f61f8f1ae96",
+                      "id": "a0db7e04b7f092f4",
                       "name": "🎙 Pháo",
                       "stream_links": [
                         {
-                          "id": "af058ff9b338e8fa",
+                          "id": "58c4baecf8b439d9",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1557,11 +1308,11 @@
                       ]
                     },
                     {
-                      "id": "16f7b518f76c88a3",
+                      "id": "334227ebde6aed6f",
                       "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "9fe47da314f20a7b",
+                          "id": "527bff4a05716753",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1580,11 +1331,11 @@
                       ]
                     },
                     {
-                      "id": "544ebb6e64d25c17",
+                      "id": "c4315f8f1ecbbcf6",
                       "name": "🎙 Fanta",
                       "stream_links": [
                         {
-                          "id": "9ce0d7506e8bd989",
+                          "id": "a96ad7c9c815122f",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1609,7 +1360,7 @@
           ]
         },
         {
-          "id": "1dc8b45bd3af2a29",
+          "id": "944cc969da33672b",
           "name": "Deportivo Alavés vs Athletic Club  23:30 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -1618,7 +1369,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/1dc8b45bd3af2a29.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/944cc969da33672b.webp",
             "width": 820,
             "height": 540
           },
@@ -1632,19 +1383,19 @@
           ],
           "sources": [
             {
-              "id": "1d253c8499569d67",
+              "id": "9b62375c011fcc1d",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "cfaf2e99a1ac92a8",
+                  "id": "b6d0fca5a1554fc4",
                   "name": "Deportivo Alavés vs Athletic Club  23:30 | 02/05 . Spanish La Liga",
                   "streams": [
                     {
-                      "id": "30db37d09ecd3b77",
+                      "id": "3ce4f25e7b090a41",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "0e69c45548ed11ec",
+                          "id": "a8a104d6f504c848",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1661,7 +1412,7 @@
                           ]
                         },
                         {
-                          "id": "e0d203b1e355b6a9",
+                          "id": "4d7afd92c0fd3bbc",
                           "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
@@ -1686,7 +1437,7 @@
           ]
         },
         {
-          "id": "40368ffb6d9111f6",
+          "id": "bfe45bed451612f3",
           "name": "Bayer 04 Leverkusen vs RB Leipzig  23:30 | 02/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -1695,7 +1446,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/40368ffb6d9111f6.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/bfe45bed451612f3.webp",
             "width": 820,
             "height": 540
           },
@@ -1709,19 +1460,19 @@
           ],
           "sources": [
             {
-              "id": "49b6236c049904dc",
+              "id": "ba193bc75c77b0ca",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "f8894addbd3df71d",
+                  "id": "97eada5626c17497",
                   "name": "Bayer 04 Leverkusen vs RB Leipzig  23:30 | 02/05 . Bundesliga",
                   "streams": [
                     {
-                      "id": "af70fd4608bfc639",
+                      "id": "9da5e9c51083e08b",
                       "name": "🎙 Dylan",
                       "stream_links": [
                         {
-                          "id": "c814ee06c5191baf",
+                          "id": "26b6cf13d4121b9b",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1738,7 +1489,7 @@
                           ]
                         },
                         {
-                          "id": "c52b8e4bddb0e45c",
+                          "id": "c54fcb9a24e78550",
                           "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
