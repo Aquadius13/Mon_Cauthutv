@@ -21,7 +21,7 @@
       "channels": [
         {
           "id": "8a1662a0bbb14962",
-          "name": "Thailand U17 Women vs Vietnam U17 Women  14:30 | 01/05",
+          "name": "Thailand U17 Women vs Vietnam U17 Women  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -35,7 +35,13 @@
           },
           "labels": [
             {
-              "text": "🎙 Táo",
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 Nhà Đài",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -48,18 +54,18 @@
               "contents": [
                 {
                   "id": "2596eb77818d4c65",
-                  "name": "Thailand U17 Women vs Vietnam U17 Women  14:30 | 01/05 . AFC U17 Women's Asian Cup",
+                  "name": "Thailand U17 Women vs Vietnam U17 Women  LIVE . AFC U17 Women's Asian Cup",
                   "streams": [
                     {
-                      "id": "9119d7a41ea0fe45",
-                      "name": "🎙 Táo",
+                      "id": "fb",
+                      "name": "Truc tiep",
                       "stream_links": [
                         {
-                          "id": "b8ce36df1fc91c1d",
-                          "name": "HD",
-                          "type": "hls",
+                          "id": "lnk0",
+                          "name": "Link 1",
+                          "type": "iframe",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-tao/index.m3u8",
+                          "url": "https://cauthutv.shop/thailand-u17-women-vs-vietnam-u17-women",
                           "request_headers": [
                             {
                               "key": "Referer",
