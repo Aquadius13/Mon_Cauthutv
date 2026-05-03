@@ -20,196 +20,7 @@
       "image": null,
       "channels": [
         {
-          "id": "c27cdd7a295eba02",
-          "name": "Aston Villa vs Tottenham Hotspur  LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": true,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/c27cdd7a295eba02.webp",
-            "width": 820,
-            "height": 660
-          },
-          "labels": [
-            {
-              "text": "● Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 2 BLV",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "97cb23aca8e67a6a",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "a418fd3a508471d3",
-                  "name": "Aston Villa vs Tottenham Hotspur  LIVE . Luồng Doanh Nhân",
-                  "streams": [
-                    {
-                      "id": "fc6f7cb18164b173",
-                      "name": "🎙 Fanta",
-                      "stream_links": [
-                        {
-                          "id": "915e2b26eb20aea1",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-fanta/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/aston-villa-vs-tottenham-hotspur-fanta-1777750482482-920"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "id": "e80663b6a8690641",
-                      "name": "🎙 Lò A Mập",
-                      "stream_links": [
-                        {
-                          "id": "3aa5c9179de4875a",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-a-map/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/aston-villa-vs-tottenham-hotspur"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "80438bbfb4b4b244",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/2f247b5c4ec4f5f51277ad6756e86044/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/aston-villa-vs-tottenham-hotspur"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "12329dc39b01bc2f",
-          "name": "Al Qadsiah vs Al Nassr FC  LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/12329dc39b01bc2f.webp",
-            "width": 820,
-            "height": 660
-          },
-          "labels": [
-            {
-              "text": "● Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 A Tai",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "a8879c252967c9c2",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "673b27e45a4c6295",
-                  "name": "Al Qadsiah vs Al Nassr FC  LIVE . Saudi Professional League",
-                  "streams": [
-                    {
-                      "id": "187abb853acacf9b",
-                      "name": "🎙 A Tai",
-                      "stream_links": [
-                        {
-                          "id": "914ed4b9d6fe643a",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-gio-tai/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/al-qadsiah-vs-al-nassr-fc"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "d9bf2689059f0660",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/a0e7190e06581c9ffe1311772e5a018a/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/al-qadsiah-vs-al-nassr-fc"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "fed7fbcd8b2860da",
+          "id": "91423c83c4e827a5",
           "name": "Lyon vs Stade Rennais FC  LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -218,7 +29,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/fed7fbcd8b2860da.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/91423c83c4e827a5.webp",
             "width": 820,
             "height": 660
           },
@@ -238,19 +49,19 @@
           ],
           "sources": [
             {
-              "id": "7bdebc08053039a4",
+              "id": "6d3af8280bce38b2",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "88bd2eaa80e413ba",
+                  "id": "ad3193f3cd3ef169",
                   "name": "Lyon vs Stade Rennais FC  LIVE . French Ligue 1",
                   "streams": [
                     {
-                      "id": "13a7a4997fd09641",
+                      "id": "f46b9f730c489f7c",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "d651a05471abf398",
+                          "id": "624c4063dc11aff6",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -267,7 +78,7 @@
                           ]
                         },
                         {
-                          "id": "bd8cc18b52775094",
+                          "id": "8a0715d44e22cfeb",
                           "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
@@ -292,90 +103,7 @@
           ]
         },
         {
-          "id": "0de0957808cff8b3",
-          "name": "Inter Milan vs Parma  LIVE",
-          "type": "single",
-          "display": "thumbnail-only",
-          "enable_detail": false,
-          "image": {
-            "padding": 0,
-            "background_color": "#fff",
-            "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/0de0957808cff8b3.webp",
-            "width": 820,
-            "height": 660
-          },
-          "labels": [
-            {
-              "text": "● Live",
-              "color": "#E73131",
-              "text_color": "#fff",
-              "position": "top-left"
-            },
-            {
-              "text": "🎙 Chim Nhỏ",
-              "position": "bottom-left",
-              "color": "#1a8a2e",
-              "text_color": "#fff"
-            }
-          ],
-          "sources": [
-            {
-              "id": "2ae596c8e3721a52",
-              "name": "CauThuTV Live",
-              "contents": [
-                {
-                  "id": "7d8ae949d9b46931",
-                  "name": "Inter Milan vs Parma  LIVE . Italian Serie A",
-                  "streams": [
-                    {
-                      "id": "0224ebd0e8e13899",
-                      "name": "🎙 Chim Nhỏ",
-                      "stream_links": [
-                        {
-                          "id": "cc4c64e77fa25514",
-                          "name": "HD",
-                          "type": "hls",
-                          "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-chim-nho/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/inter-milan-vs-parma"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "bae3e9840b7e42d4",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/7d0249401f71814078e8319ecbe63650/playlist.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/inter-milan-vs-parma"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "42b282e2dc211adf",
+          "id": "5f73a8bbcc590870",
           "name": "RCD Espanyol de Barcelona vs Real Madrid  LIVE",
           "type": "single",
           "display": "thumbnail-only",
@@ -384,7 +112,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/42b282e2dc211adf.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5f73a8bbcc590870.webp",
             "width": 820,
             "height": 660
           },
@@ -404,19 +132,19 @@
           ],
           "sources": [
             {
-              "id": "2ad097acb66907d1",
+              "id": "2889903af9243a88",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "ddd05aa854147b52",
+                  "id": "dc0685717480ce37",
                   "name": "RCD Espanyol de Barcelona vs Real Madrid  LIVE . Spanish La Liga",
                   "streams": [
                     {
-                      "id": "2bc2e773afd11e24",
+                      "id": "cecee9ea9cb34d61",
                       "name": "🎙 Cháo Quẩy",
                       "stream_links": [
                         {
-                          "id": "3befcc30ba078167",
+                          "id": "3e16d9370a9eb938",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -433,7 +161,7 @@
                           ]
                         },
                         {
-                          "id": "e629c6428bf83486",
+                          "id": "d4fd517fcd1f1bf2",
                           "name": "Nha Dai SD",
                           "type": "hls",
                           "default": false,
@@ -452,11 +180,11 @@
                       ]
                     },
                     {
-                      "id": "23dfc0f0eed46068",
+                      "id": "7606bba5fa4509ab",
                       "name": "🎙 Người Kiến",
                       "stream_links": [
                         {
-                          "id": "4825c1a070a38241",
+                          "id": "ec6c346a8081fac2",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -481,8 +209,8 @@
           ]
         },
         {
-          "id": "5470e8a7790457cb",
-          "name": "SC Freiburg vs VfL Wolfsburg  00:30 | 04/05",
+          "id": "a71a0155a8853824",
+          "name": "Inter Milan vs Parma  01:45 | 04/05",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -490,13 +218,13 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5470e8a7790457cb.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a71a0155a8853824.webp",
             "width": 820,
             "height": 660
           },
           "labels": [
             {
-              "text": "🎙 Nhà Đài",
+              "text": "🎙 Chim Nhỏ",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -504,27 +232,44 @@
           ],
           "sources": [
             {
-              "id": "5a4eae92e4448810",
+              "id": "919f47dc91e52f5a",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "4bbf50a6ee0fa593",
-                  "name": "SC Freiburg vs VfL Wolfsburg  00:30 | 04/05 . Bundesliga",
+                  "id": "ad9717bca271669f",
+                  "name": "Inter Milan vs Parma  01:45 | 04/05 . Italian Serie A",
                   "streams": [
                     {
-                      "id": "c1c672789abdc81d",
-                      "name": "🎙 Nhà Đài",
+                      "id": "5507bef16c8b73a0",
+                      "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "f8f591a7d7937675",
-                          "name": "Nha Dai SD",
+                          "id": "96208da8ba979af5",
+                          "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://live.alilicloud.com/live/1ae0335305f0883cd8a5561bdbe5a768/playlist.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-chim-nho/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/sc-freiburg-vs-vfl-wolfsburg"
+                              "value": "https://cauthutv.shop/inter-milan-vs-parma"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "0ccf2887323d4b53",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/7d0249401f71814078e8319ecbe63650/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/inter-milan-vs-parma"
                             },
                             {
                               "key": "User-Agent",
@@ -541,7 +286,7 @@
           ]
         },
         {
-          "id": "4d45e32e9a00f2a7",
+          "id": "b5b84efdb4271ed4",
           "name": "Detroit Pistons vs Orlando Magic  02:30 | 04/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -550,7 +295,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/4d45e32e9a00f2a7.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b5b84efdb4271ed4.webp",
             "width": 820,
             "height": 660
           },
@@ -564,19 +309,19 @@
           ],
           "sources": [
             {
-              "id": "a463e665ebd0bae6",
+              "id": "1168522e349c1590",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "804dcdfcaef53de9",
+                  "id": "3d150496ac6b47d7",
                   "name": "Detroit Pistons vs Orlando Magic  02:30 | 04/05 . NBA",
                   "streams": [
                     {
-                      "id": "58fe725e2b65613e",
+                      "id": "8042d8658ea948a5",
                       "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "4a7382bdf16d7a6d",
+                          "id": "e5400af60693737e",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -601,7 +346,7 @@
           ]
         },
         {
-          "id": "5cd11ae1a28d359d",
+          "id": "0e56e2a735241500",
           "name": "Internacional - RS vs Fluminense - RJ  04:30 | 04/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -610,7 +355,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/5cd11ae1a28d359d.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/0e56e2a735241500.webp",
             "width": 820,
             "height": 660
           },
@@ -624,40 +369,23 @@
           ],
           "sources": [
             {
-              "id": "7b35072d5f58d142",
+              "id": "c6e906372cde099e",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "59170b034bb01b94",
+                  "id": "9bb8017d3f4def37",
                   "name": "Internacional - RS vs Fluminense - RJ  04:30 | 04/05 . Brazilian Serie A",
                   "streams": [
                     {
-                      "id": "d24fffe657dd3857",
+                      "id": "f39a5b29aebc26f6",
                       "name": "🎙 Táo",
                       "stream_links": [
                         {
-                          "id": "49b56afd24e0dd7f",
+                          "id": "43d2b5325aae2b6e",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
                           "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-tao/index.m3u8",
-                          "request_headers": [
-                            {
-                              "key": "Referer",
-                              "value": "https://cauthutv.shop/internacional-rs-vs-fluminense-rj"
-                            },
-                            {
-                              "key": "User-Agent",
-                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "0e40de4bad4a15d9",
-                          "name": "Nha Dai SD",
-                          "type": "hls",
-                          "default": false,
-                          "url": "https://live.alilicloud.com/live/fd666b858af2d7a75467583e203676a5/playlist.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
@@ -678,7 +406,7 @@
           ]
         },
         {
-          "id": "689192e2e85df38c",
+          "id": "7ef242354d6c5c73",
           "name": "Cleveland Cavaliers vs Toronto Raptors  06:30 | 04/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -687,7 +415,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/689192e2e85df38c.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7ef242354d6c5c73.webp",
             "width": 820,
             "height": 660
           },
@@ -701,19 +429,19 @@
           ],
           "sources": [
             {
-              "id": "003801c3132a794e",
+              "id": "6caec5fb7ceb47f3",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "116288e1f1cf006f",
+                  "id": "260c2cebc386decd",
                   "name": "Cleveland Cavaliers vs Toronto Raptors  06:30 | 04/05 . NBA",
                   "streams": [
                     {
-                      "id": "bf510eeeb55f46d3",
+                      "id": "3bd27234ed719958",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "282b9ad76bc6df26",
+                          "id": "78d6560a9868f4e4",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -738,7 +466,7 @@
           ]
         },
         {
-          "id": "53f8bb8e62567f2a",
+          "id": "cb30f6f485a07013",
           "name": "Toluca vs Pachuca  08:15 | 04/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -747,7 +475,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/53f8bb8e62567f2a.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/cb30f6f485a07013.webp",
             "width": 820,
             "height": 660
           },
@@ -761,19 +489,19 @@
           ],
           "sources": [
             {
-              "id": "c38d00aa04918746",
+              "id": "b8206e86316861c7",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "ae0f4fef14c6f3e7",
+                  "id": "e2e4e0a2655f0070",
                   "name": "Toluca vs Pachuca  08:15 | 04/05 . Mexico Liga MX",
                   "streams": [
                     {
-                      "id": "157b702887e873ff",
+                      "id": "ee79835fe847eba8",
                       "name": "🎙 Táo",
                       "stream_links": [
                         {
-                          "id": "7de03ce126bb947a",
+                          "id": "9843107a39de66c8",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -798,7 +526,7 @@
           ]
         },
         {
-          "id": "ca17c8f91054f7dc",
+          "id": "27268575821841fb",
           "name": "Pachuca Women vs Chivas Guadalajara Women  10:10 | 04/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -807,7 +535,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/ca17c8f91054f7dc.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/27268575821841fb.webp",
             "width": 820,
             "height": 660
           },
@@ -821,19 +549,19 @@
           ],
           "sources": [
             {
-              "id": "373aa72632e5c242",
+              "id": "9371e0a23043a298",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "9b09de9289128cc5",
+                  "id": "833abccb39a33391",
                   "name": "Pachuca Women vs Chivas Guadalajara Women  10:10 | 04/05 . Mexico Liga MX Femenil",
                   "streams": [
                     {
-                      "id": "6191529287125e26",
+                      "id": "fd7f6958bde52082",
                       "name": "🎙 Văn Chuẩn",
                       "stream_links": [
                         {
-                          "id": "1b4ecdfb32cc5aa0",
+                          "id": "fb52d58d6127dc4c",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -858,7 +586,7 @@
           ]
         },
         {
-          "id": "69c5d660813c74c0",
+          "id": "295aeeaa75184c1a",
           "name": "Persib Bandung vs PSIM Yogyakarta  15:30 | 04/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -867,7 +595,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/69c5d660813c74c0.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/295aeeaa75184c1a.webp",
             "width": 820,
             "height": 660
           },
@@ -881,19 +609,19 @@
           ],
           "sources": [
             {
-              "id": "0885e81bb038aa98",
+              "id": "4ec7a79fdb9056a7",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "cf1e55022255e1a7",
+                  "id": "8ccc1874104aa60f",
                   "name": "Persib Bandung vs PSIM Yogyakarta  15:30 | 04/05 . Indonesian Super League",
                   "streams": [
                     {
-                      "id": "13ea9f3f74cc2700",
+                      "id": "71982445c9502922",
                       "name": "🎙 Mèo Béo",
                       "stream_links": [
                         {
-                          "id": "0cd08f4c440bc61e",
+                          "id": "779c4bbf522987d9",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -918,7 +646,7 @@
           ]
         },
         {
-          "id": "8044717bda7f4731",
+          "id": "9ce3405bb65b4979",
           "name": "Vietnam U17 Women vs China U17 Women  18:30 | 04/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -927,7 +655,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/8044717bda7f4731.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/9ce3405bb65b4979.webp",
             "width": 820,
             "height": 660
           },
@@ -941,19 +669,19 @@
           ],
           "sources": [
             {
-              "id": "0d7574ac5abcc0f3",
+              "id": "99dbde6bebb4d498",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "6c7b30e7d61efb04",
+                  "id": "97a31b62c9b38a14",
                   "name": "Vietnam U17 Women vs China U17 Women  18:30 | 04/05 . AFC U17 Women's Asian Cup",
                   "streams": [
                     {
-                      "id": "c22680206d752221",
+                      "id": "25673e9d1a27522f",
                       "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "4b16fe4fd2fa88eb",
+                          "id": "2f9e6c23f78b4011",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -978,7 +706,7 @@
           ]
         },
         {
-          "id": "b454df53a676799d",
+          "id": "620f14a54ba2bbcc",
           "name": "Persatuan Sepakbola Indonesia Jepara vs Persatuan Sepakbola Indonesia Jakarta  19:00 | 04/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -987,7 +715,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b454df53a676799d.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/620f14a54ba2bbcc.webp",
             "width": 820,
             "height": 660
           },
@@ -1001,19 +729,19 @@
           ],
           "sources": [
             {
-              "id": "5f302172f6972012",
+              "id": "4d7d3da2b09d6d65",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "388fb63b6b44a7ce",
+                  "id": "147ed1e17597301a",
                   "name": "Persatuan Sepakbola Indonesia Jepara vs Persatuan Sepakbola Indonesia Jakarta  19:00 | 04/05 . Indonesian Super League",
                   "streams": [
                     {
-                      "id": "014a0fcd0516704f",
+                      "id": "5f9ca6e11ea01090",
                       "name": "🎙 Chim Nhỏ",
                       "stream_links": [
                         {
-                          "id": "5604311f830b0c2a",
+                          "id": "3cc1adc591261af5",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1038,7 +766,7 @@
           ]
         },
         {
-          "id": "7f82c4cc4a90c5a3",
+          "id": "6f6155e9e8f2f198",
           "name": "Chelsea vs Nottingham Forest  21:00 | 04/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -1047,7 +775,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7f82c4cc4a90c5a3.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/6f6155e9e8f2f198.webp",
             "width": 820,
             "height": 660
           },
@@ -1061,19 +789,19 @@
           ],
           "sources": [
             {
-              "id": "df93318425951be8",
+              "id": "5575fecc01d166e9",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "d175fd0b6c988523",
+                  "id": "d6373bb084add95e",
                   "name": "Chelsea vs Nottingham Forest  21:00 | 04/05 . Off Fan Chelsea",
                   "streams": [
                     {
-                      "id": "232e2c2c0dd29aef",
+                      "id": "9d6581fe947d179e",
                       "name": "🎙 Dylan",
                       "stream_links": [
                         {
-                          "id": "ba512d580d556952",
+                          "id": "ca7c23793ac0fc2d",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1092,11 +820,11 @@
                       ]
                     },
                     {
-                      "id": "f567e19db939fea9",
+                      "id": "8dada1cf2560d734",
                       "name": "🎙 Cháo Quẩy",
                       "stream_links": [
                         {
-                          "id": "a7b60bfff725f2dd",
+                          "id": "e20691f1bf3da8d4",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1115,11 +843,11 @@
                       ]
                     },
                     {
-                      "id": "46e4eb0e004ef726",
+                      "id": "fee5bd3bb21b5e3f",
                       "name": "🎙 Fanta",
                       "stream_links": [
                         {
-                          "id": "f3bdd9b67fa0170e",
+                          "id": "c3779b609aa82dfb",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
@@ -1144,7 +872,7 @@
           ]
         },
         {
-          "id": "b7d3009cecf8b03a",
+          "id": "e0607e5505313347",
           "name": "Cremonese vs Lazio  23:30 | 04/05",
           "type": "single",
           "display": "thumbnail-only",
@@ -1153,7 +881,7 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/b7d3009cecf8b03a.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/e0607e5505313347.webp",
             "width": 820,
             "height": 660
           },
@@ -1167,19 +895,19 @@
           ],
           "sources": [
             {
-              "id": "2dd6666099d570db",
+              "id": "12a10905b302e821",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "58cbf8229d8427f6",
+                  "id": "551b1d397c89e075",
                   "name": "Cremonese vs Lazio  23:30 | 04/05 . Italian Serie A",
                   "streams": [
                     {
-                      "id": "dd51cbf96574d205",
+                      "id": "cb55cc671c71b7be",
                       "name": "🎙 Lò A Mập",
                       "stream_links": [
                         {
-                          "id": "fd51fe66d3c039ce",
+                          "id": "9a2b2a2b1b22afd3",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
