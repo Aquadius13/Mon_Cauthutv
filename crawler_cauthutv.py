@@ -263,29 +263,251 @@ def _font(size, bold=True):
         except: pass
     return ImageFont.load_default()
 
-def fetch_logo(url, max_px=260):
+def _load_image_from_url(url, max_px=400):
+    """Download and return PIL RGBA image from url, or None on failure."""
     if not url or not _PIL: return None
-    for try_url in ([to_webp_url(url), url] if to_webp_url(url)!=url else [url]):
-        try:
-            r = requests.get(try_url.strip(), timeout=7,
-                             headers={"User-Agent":"Mozilla/5.0","Accept":"image/webp,image/*"}, stream=True)
-            r.raise_for_status()
-            if "html" in r.headers.get("content-type",""): continue
-            data = b""
-            for chunk in r.iter_content(65536):
-                data += chunk
-                if len(data)>2_000_000: break
-            img = Image.open(io.BytesIO(data)).convert("RGBA")
-            img.thumbnail((max_px, max_px), Image.LANCZOS)
-            return img
-        except: continue
-    return None
+    try:
+        r = requests.get(url.strip(), timeout=8,
+                         headers={"User-Agent":"Mozilla/5.0","Accept":"image/webp,image/*,*/*"}, stream=True)
+        r.raise_for_status()
+        ct = r.headers.get("content-type","")
+        if "html" in ct and "svg" not in ct: return None
+        data = b""
+        for chunk in r.iter_content(65536):
+            data += chunk
+            if len(data) > 3_000_000: break
+        img = Image.open(io.BytesIO(data)).convert("RGBA")
+        img.thumbnail((max_px, max_px), Image.LANCZOS)
+        return img
+    except: return None
+
+def _trim_whitespace(img):
+    """Cắt bỏ vùng trắng/trong suốt xung quanh logo để 2 logo có kích thước thật đồng đều.
+    Xử lý được PNG alpha và ảnh JPG/WebP nền trắng."""
+    if not _PIL or img is None: return img
+    rgba = img.convert("RGBA")
+    r_ch, g_ch, b_ch, a_ch = rgba.split()
+    try:
+        import numpy as np
+        arr_a = np.array(a_ch)
+        arr_r = np.array(r_ch); arr_g = np.array(g_ch); arr_b = np.array(b_ch)
+        # Pixel "trống" = trong suốt (alpha<10) HOẶC gần trắng (r,g,b > 240)
+        empty = (arr_a < 10) | ((arr_r > 240) & (arr_g > 240) & (arr_b > 240))
+        non_empty = ~empty
+        rows = np.any(non_empty, axis=1)
+        cols = np.any(non_empty, axis=0)
+        if not rows.any() or not cols.any(): return img
+        rmin, rmax = int(np.where(rows)[0][0]),  int(np.where(rows)[0][-1])
+        cmin, cmax = int(np.where(cols)[0][0]),  int(np.where(cols)[0][-1])
+    except ImportError:
+        # Fallback: dùng PIL getbbox trên alpha channel
+        bbox = a_ch.getbbox()
+        if not bbox: return img
+        cmin, rmin, cmax, rmax = bbox[0], bbox[1], bbox[2]-1, bbox[3]-1
+    # Padding 4px mỗi phía để logo không bị cắt sát
+    pad = 4
+    rmin = max(0, rmin - pad); rmax = min(img.height - 1, rmax + pad)
+    cmin = max(0, cmin - pad); cmax = min(img.width  - 1, cmax + pad)
+    if cmax <= cmin or rmax <= rmin: return img
+    return img.crop((cmin, rmin, cmax + 1, rmax + 1))
+
+# ── Country-code map: tên quốc gia → ISO 3166-1 alpha-2 (lower) ──
+_COUNTRY_CODES = {
+    "vietnam":"vn","viet nam":"vn","việt nam":"vn",
+    "china":"cn","trung quoc":"cn","trung quốc":"cn",
+    "france":"fr","pháp":"fr","phap":"fr",
+    "japan":"jp","nhat ban":"jp","nhật bản":"jp",
+    "south korea":"kr","korea":"kr","han quoc":"kr","hàn quốc":"kr",
+    "north korea":"kp",
+    "thailand":"th","thai lan":"th","thái lan":"th",
+    "indonesia":"id",
+    "malaysia":"my",
+    "philippines":"ph",
+    "singapore":"sg",
+    "myanmar":"mm",
+    "cambodia":"kh",
+    "laos":"la",
+    "australia":"au","uc":"au","úc":"au",
+    "india":"in","an do":"in",
+    "usa":"us","united states":"us","my":"us",
+    "brazil":"br","brazil":"br",
+    "argentina":"ar",
+    "germany":"de","duc":"de","đức":"de",
+    "spain":"es","tay ban nha":"es","tây ban nha":"es",
+    "italy":"it","y":"it",
+    "england":"gb-eng","great britain":"gb",
+    "netherlands":"nl","ha lan":"nl","hà lan":"nl",
+    "portugal":"pt","bo dao nha":"pt","bồ đào nha":"pt",
+    "russia":"ru","nga":"ru",
+    "ukraine":"ua",
+    "poland":"pl","ba lan":"pl",
+    "czech":"cz",
+    "croatia":"hr",
+    "sweden":"se","thuy dien":"se",
+    "norway":"no","na uy":"no",
+    "denmark":"dk","dan mach":"dk",
+    "belgium":"be","bi":"be","bỉ":"be",
+    "switzerland":"ch","thuy si":"ch","thụy sĩ":"ch",
+    "austria":"at","ao":"at",
+    "turkey":"tr","tho nhi ky":"tr","thổ nhĩ kỳ":"tr",
+    "iran":"ir",
+    "saudi arabia":"sa","a rap xeut":"sa","ả rập xê út":"sa",
+    "qatar":"qa",
+    "uae":"ae","united arab emirates":"ae",
+    "iraq":"iq",
+    "mexico":"mx","mexico":"mx",
+    "colombia":"co",
+    "chile":"cl",
+    "uruguay":"uy",
+    "nigeria":"ng",
+    "ghana":"gh",
+    "egypt":"eg","ai cap":"eg","ai cập":"eg",
+    "morocco":"ma","maroc":"ma",
+    "senegal":"sn",
+    "cameroon":"cm",
+    "canada":"ca",
+    "new zealand":"nz",
+    "scotland":"gb-sct",
+    "wales":"gb-wls",
+    "ireland":"ie",
+}
+
+# ── Esports / NBA / football team logo map ──
+_TEAM_LOGO_URLS = {
+    # eSports
+    "kt":          "https://lol.fandom.com/wiki/Special:FilePath/KT_Rolster_2023.png",
+    "kt rolster":  "https://lol.fandom.com/wiki/Special:FilePath/KT_Rolster_2023.png",
+    "kt esport":   "https://lol.fandom.com/wiki/Special:FilePath/KT_Rolster_2023.png",
+    "gen.g":       "https://lol.fandom.com/wiki/Special:FilePath/Gen.G_2024.png",
+    "gen g":       "https://lol.fandom.com/wiki/Special:FilePath/Gen.G_2024.png",
+    "geng":        "https://lol.fandom.com/wiki/Special:FilePath/Gen.G_2024.png",
+    "gen.g esports":"https://lol.fandom.com/wiki/Special:FilePath/Gen.G_2024.png",
+    "t1":          "https://lol.fandom.com/wiki/Special:FilePath/T1_2022.png",
+    "bro":         "https://lol.fandom.com/wiki/Special:FilePath/BRION_2024.png",
+    "brion":       "https://lol.fandom.com/wiki/Special:FilePath/BRION_2024.png",
+    "dns":         "https://lol.fandom.com/wiki/Special:FilePath/DRX_2023.png",
+    "drx":         "https://lol.fandom.com/wiki/Special:FilePath/DRX_2023.png",
+    "bfx":         "https://lol.fandom.com/wiki/Special:FilePath/Bilibili_Gaming_2024.png",
+    "cloud9":      "https://lol.fandom.com/wiki/Special:FilePath/Cloud9_2021.png",
+    "c9":          "https://lol.fandom.com/wiki/Special:FilePath/Cloud9_2021.png",
+    "fnatic":      "https://lol.fandom.com/wiki/Special:FilePath/Fnatic_2021.png",
+    "g2":          "https://lol.fandom.com/wiki/Special:FilePath/G2_Esports_2022.png",
+    "navi":        "https://lol.fandom.com/wiki/Special:FilePath/Natus_Vincere_2021.png",
+    "evil geniuses":"https://lol.fandom.com/wiki/Special:FilePath/Evil_Geniuses_2023.png",
+    "eg":          "https://lol.fandom.com/wiki/Special:FilePath/Evil_Geniuses_2023.png",
+    # NBA teams — ESPN logo CDN (các URL đã xác nhận hoạt động)
+    "lakers":           "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/lal.png",
+    "los angeles lakers":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/lal.png",
+    "celtics":          "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/bos.png",
+    "boston celtics":   "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/bos.png",
+    "warriors":         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/gs.png",
+    "golden state warriors":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/gs.png",
+    "bulls":            "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/chi.png",
+    "chicago bulls":    "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/chi.png",
+    "heat":             "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mia.png",
+    "miami heat":       "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mia.png",
+    "nets":             "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/bkn.png",
+    "brooklyn nets":    "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/bkn.png",
+    "knicks":           "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/ny.png",
+    "new york knicks":  "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/ny.png",
+    "clippers":         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/lac.png",
+    "los angeles clippers":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/lac.png",
+    "bucks":            "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mil.png",
+    "milwaukee bucks":  "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mil.png",
+    "76ers":            "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/phi.png",
+    "philadelphia 76ers":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/phi.png",
+    "suns":             "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/phx.png",
+    "phoenix suns":     "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/phx.png",
+    "mavericks":        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/dal.png",
+    "dallas mavericks": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/dal.png",
+    "nuggets":          "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/den.png",
+    "denver nuggets":   "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/den.png",
+    "thunder":          "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/okc.png",
+    "oklahoma city thunder":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/okc.png",
+    "raptors":          "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/tor.png",
+    "toronto raptors":  "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/tor.png",
+    "cavaliers":        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/cle.png",
+    "cleveland cavaliers":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/cle.png",
+    "pistons":          "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/det.png",
+    "detroit pistons":  "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/det.png",
+    "magic":            "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/orl.png",
+    "orlando magic":    "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/orl.png",
+    "pacers":           "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/ind.png",
+    "indiana pacers":   "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/ind.png",
+    "hawks":            "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/atl.png",
+    "atlanta hawks":    "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/atl.png",
+    "wizards":          "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/wsh.png",
+    "washington wizards":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/wsh.png",
+    "hornets":          "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/cha.png",
+    "charlotte hornets":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/cha.png",
+    "timberwolves":     "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/min.png",
+    "minnesota timberwolves":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/min.png",
+    "jazz":             "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/utah.png",
+    "utah jazz":        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/utah.png",
+    "pelicans":         "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/no.png",
+    "new orleans pelicans":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/no.png",
+    "grizzlies":        "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mem.png",
+    "memphis grizzlies":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/mem.png",
+    "rockets":          "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/hou.png",
+    "houston rockets":  "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/hou.png",
+    "spurs":            "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/sa.png",
+    "san antonio spurs":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/sa.png",
+    "kings":            "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/sac.png",
+    "sacramento kings": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/sac.png",
+    "trail blazers":    "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/por.png",
+    "portland trail blazers":"https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/por.png",
+}
+
+def _get_country_flag_img(team_name):
+    """Try to get flag image for country teams via flagcdn.com."""
+    if not _PIL: return None
+    key = team_name.lower().strip()
+    # Remove prefixes like "U17 Women", "U20", etc.
+    clean = re.sub(r'\s*(u\d+|women|men|national|team)\s*', ' ', key, flags=re.I).strip()
+    code = _COUNTRY_CODES.get(clean) or _COUNTRY_CODES.get(key)
+    if not code: return None
+    # flagcdn.com provides SVG/PNG flags
+    flag_url = f"https://flagcdn.com/w160/{code.replace('-','_')}.png"
+    img = _load_image_from_url(flag_url, 300)
+    if img:
+        log(f"    [logo] flag {team_name} -> {flag_url}")
+    return img
+
+def _get_team_logo_img(team_name):
+    """Look up team logo from the static map."""
+    if not _PIL: return None
+    key = team_name.lower().strip()
+    url = _TEAM_LOGO_URLS.get(key)
+    if not url:
+        # Try partial match (e.g. "KT Rolster" → "kt rolster")
+        for k, v in _TEAM_LOGO_URLS.items():
+            if k in key or key in k:
+                url = v; break
+    if not url: return None
+    img = _load_image_from_url(url, 400)
+    if img:
+        log(f"    [logo] static map {team_name} -> {url}")
+    return img
+
+def fetch_logo(url, max_px=390, team_name=""):
+    """Fetch logo from URL; if missing/failed, try fallback sources."""
+    if not _PIL: return None
+    img = None
+    if url:
+        for try_url in ([to_webp_url(url), url] if to_webp_url(url)!=url else [url]):
+            img = _load_image_from_url(try_url, max_px)
+            if img: break
+    if img is None and team_name:
+        img = _get_team_logo_img(team_name)
+    if img is None and team_name:
+        img = _get_country_flag_img(team_name)
+    return img
 
 def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
                    time_str="", date_str="", status="upcoming",
                    league="", sport="", blv_text=""):
     if not _PIL: return b""
-    W, H = 820, 540
+    W, H = 820, 660   # Tăng chiều cao cho logo +40% (361px)
     key = _sport_key(sport, league)
     _, ac_base = _THEMES.get(key, _THEMES["default"])
     _, A = _team_palette(home_team, away_team, (245,245,248), ac_base)
@@ -310,37 +532,46 @@ def make_thumbnail(home_team, away_team, home_logo_url, away_logo_url,
     draw.rectangle([(0, LEAGUE_H-3),(W, LEAGUE_H)], fill=A)
 
     # ── Body: 2 logo + tên đội + hộp VS/LIVE ──
-    NAME_H = 40; GAP = 12
+    # Logo tăng thêm 40% (so với lần trước 258 → 361); tên đội tăng 20%: 31 → 37
+    NAME_H = 52; GAP = 16
     BW = 148
 
     LX = W//4; RX = 3*W//4
     MAX_HALF = (CX - BW//2 - 20) - LX
-    LMAX = min(BODY_H - NAME_H - GAP - 20, MAX_HALF * 2, 172)   # 132 × 1.3 ≈ 172
-    LMAX = max(LMAX, 60)
+    # Tăng 40% so với 258 → 361, giới hạn bởi không gian thực tế
+    LMAX = min(BODY_H - NAME_H - GAP - 16, MAX_HALF * 2, 361)
+    LMAX = max(LMAX, 90)
+    # LOGO_BOX: bounding box vuông dùng chung cho cả 2 logo → kích thước đồng đều
+    LOGO_BOX = LMAX
 
-    CONTENT_H = LMAX + GAP + NAME_H
+    CONTENT_H = LOGO_BOX + GAP + NAME_H
     TOP_PAD   = (BODY_H - CONTENT_H) // 2
-    LY   = BODY_TOP + TOP_PAD + LMAX // 2
-    NY_Y = LY + LMAX // 2 + GAP + NAME_H // 2
+    LY   = BODY_TOP + TOP_PAD + LOGO_BOX // 2
+    NY_Y = LY + LOGO_BOX // 2 + GAP + NAME_H // 2
 
     def draw_logo(cx, cy, url, name):
-        logo = fetch_logo(url, LMAX*4) if url else None
+        # Thử lấy logo, fallback theo tên đội
+        logo = fetch_logo(url, LOGO_BOX * 4, team_name=name)
         if logo:
             if logo.mode != "RGBA": logo = logo.convert("RGBA")
+            # ── Trim vùng trắng/trong suốt trước khi scale ──
+            # Giải quyết trường hợp logo VN nhỏ hơn TQ do padding trắng khác nhau
+            logo = _trim_whitespace(logo)
             lw, lh = logo.size
-            sc = min(LMAX/lw, LMAX/lh, 1.0)
-            nw, nh = max(1,int(lw*sc)), max(1,int(lh*sc))
-            logo = logo.resize((nw,nh), Image.LANCZOS)
-            canvas.paste(logo.convert("RGB"), (cx-nw//2, cy-nh//2), logo.split()[3])
+            # Scale đồng đều vào bounding box LOGO_BOX × LOGO_BOX
+            sc = min(LOGO_BOX / lw, LOGO_BOX / lh, 1.0)
+            nw, nh = max(1, int(lw * sc)), max(1, int(lh * sc))
+            logo = logo.resize((nw, nh), Image.LANCZOS)
+            canvas.paste(logo.convert("RGB"), (cx - nw//2, cy - nh//2), logo.split()[3])
         else:
-            R2 = LMAX//2
-            draw.ellipse([(cx-R2,cy-R2),(cx+R2,cy+R2)],
+            R2 = LOGO_BOX // 2
+            draw.ellipse([(cx-R2, cy-R2), (cx+R2, cy+R2)],
                          fill=(235,235,240), outline=A, width=2)
-            draw.text((cx,cy), "".join(w[0].upper() for w in (name or "?").split()[:2]) or "?",
-                      fill=A, font=_font(50), anchor="mm")
-        # Tên đội bold — tăng 20%: 22 → 26
-        draw.text((cx, NY_Y), (name or "?")[:18],
-                  fill=(20,20,20), font=_font(26, bold=False), anchor="mm")
+            draw.text((cx, cy), "".join(w[0].upper() for w in (name or "?").split()[:2]) or "?",
+                      fill=A, font=_font(66), anchor="mm")
+        # Tên đội — tăng 20%: 31 → 37
+        draw.text((cx, NY_Y), (name or "?")[:22],
+                  fill=(20,20,20), font=_font(37, bold=False), anchor="mm")
 
     draw_logo(LX, LY, home_logo_url, home_team)
     draw_logo(RX, LY, away_logo_url, away_team)
@@ -431,13 +662,13 @@ def build_channel(m, all_streams, index):
             "request_headers":[{"key":"Referer","value":fb},{"key":"User-Agent","value":CHROME_UA}]}]})
     la,lb=m.get("home_logo",""),m.get("away_logo","")
     if thumb:=m.get("thumb_url",""):
-        img_obj={"padding":0,"background_color":"#fff","display":"cover","url":thumb,"width":820,"height":540}
+        img_obj={"padding":0,"background_color":"#fff","display":"cover","url":thumb,"width":820,"height":660}
     elif _PIL:
         raw=make_thumbnail(m.get("home_team",""),m.get("away_team",""),la,lb,
                            m.get("time_str",""),m.get("date_str",""),
                            status,league,m.get("sport",""),blv_text)
         cdn_url=save_thumbnail(raw,ch_id)
-        img_obj=({"padding":0,"background_color":"#fff","display":"cover","url":cdn_url,"width":820,"height":540}
+        img_obj=({"padding":0,"background_color":"#fff","display":"cover","url":cdn_url,"width":820,"height":660}
                  if cdn_url else PLACEHOLDER)
     else:
         img_obj=PLACEHOLDER
