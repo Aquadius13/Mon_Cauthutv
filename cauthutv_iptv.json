@@ -169,8 +169,8 @@
           ]
         },
         {
-          "id": "2917ce1130ff1aaa",
-          "name": "DNS vs BFX  17:00 | 03/05",
+          "id": "7ecfc069cbffea52",
+          "name": "Song Lam Nghe An vs Hoang Anh Gia Lai  LIVE",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -178,13 +178,19 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/2917ce1130ff1aaa.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/7ecfc069cbffea52.webp",
             "width": 820,
             "height": 660
           },
           "labels": [
             {
-              "text": "🎙 Dưa Hấu",
+              "text": "● Live",
+              "color": "#E73131",
+              "text_color": "#fff",
+              "position": "top-left"
+            },
+            {
+              "text": "🎙 A Tai",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -192,27 +198,44 @@
           ],
           "sources": [
             {
-              "id": "6a724b899903e26e",
+              "id": "08d6e79904523f05",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "fcadd6b762abcedf",
-                  "name": "DNS vs BFX  17:00 | 03/05 . LCK",
+                  "id": "b8db13f7a34ff95e",
+                  "name": "Song Lam Nghe An vs Hoang Anh Gia Lai  LIVE . Vietnam National Champion League",
                   "streams": [
                     {
-                      "id": "be8b4912994fe27e",
-                      "name": "🎙 Dưa Hấu",
+                      "id": "4fba666100b30add",
+                      "name": "🎙 A Tai",
                       "stream_links": [
                         {
-                          "id": "20977b0b75c70f14",
+                          "id": "dcc0747e872f6a9d",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-dua-hau/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-gio-tai/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/dns-vs-bfx-1777750482482-238"
+                              "value": "https://cauthutv.shop/song-lam-nghe-an-vs-hoang-anh-gia-lai"
+                            },
+                            {
+                              "key": "User-Agent",
+                              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "72df916620c38f77",
+                          "name": "Nha Dai SD",
+                          "type": "hls",
+                          "default": false,
+                          "url": "https://live.alilicloud.com/live/48b8916f9f47a438c3b732444c041862/playlist.m3u8",
+                          "request_headers": [
+                            {
+                              "key": "Referer",
+                              "value": "https://cauthutv.shop/song-lam-nghe-an-vs-hoang-anh-gia-lai"
                             },
                             {
                               "key": "User-Agent",
@@ -229,8 +252,8 @@
           ]
         },
         {
-          "id": "113823eff9216194",
-          "name": "Song Lam Nghe An vs Hoang Anh Gia Lai  18:00 | 03/05",
+          "id": "a46c7c6892140282",
+          "name": "DNS vs BFX  17:00 | 03/05",
           "type": "single",
           "display": "thumbnail-only",
           "enable_detail": false,
@@ -238,13 +261,13 @@
             "padding": 0,
             "background_color": "#fff",
             "display": "cover",
-            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/113823eff9216194.webp",
+            "url": "https://raw.githubusercontent.com/Aquadius13/Mon_Cauthutv/main/thumbnails/a46c7c6892140282.webp",
             "width": 820,
             "height": 660
           },
           "labels": [
             {
-              "text": "🎙 A Tai",
+              "text": "🎙 Dưa Hấu",
               "position": "bottom-left",
               "color": "#1a8a2e",
               "text_color": "#fff"
@@ -252,27 +275,27 @@
           ],
           "sources": [
             {
-              "id": "9bcbc6393a266a30",
+              "id": "300fd912df5780b8",
               "name": "CauThuTV Live",
               "contents": [
                 {
-                  "id": "b6b69ea11e9d830d",
-                  "name": "Song Lam Nghe An vs Hoang Anh Gia Lai  18:00 | 03/05 . Vietnam National Champion League",
+                  "id": "686d5fe5f135c85c",
+                  "name": "DNS vs BFX  17:00 | 03/05 . LCK",
                   "streams": [
                     {
-                      "id": "141409eea6e538fc",
-                      "name": "🎙 A Tai",
+                      "id": "836f2a2ffec01f3b",
+                      "name": "🎙 Dưa Hấu",
                       "stream_links": [
                         {
-                          "id": "a89e3765d6302b0f",
+                          "id": "966b8dfb22829426",
                           "name": "HD",
                           "type": "hls",
                           "default": true,
-                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-gio-tai/index.m3u8",
+                          "url": "https://pull.globalcdnnetworksc2031.info/str01/blv-dua-hau/index.m3u8",
                           "request_headers": [
                             {
                               "key": "Referer",
-                              "value": "https://cauthutv.shop/song-lam-nghe-an-vs-hoang-anh-gia-lai"
+                              "value": "https://cauthutv.shop/dns-vs-bfx-1777750482482-238"
                             },
                             {
                               "key": "User-Agent",
